@@ -1,0 +1,217 @@
+/* =========================
+   REGISTER (scoped)
+========================= */
+.SIGN-UP, .SIGN-UP * {
+  box-sizing: border-box;
+}
+
+body { margin: 0; }
+
+.SIGN-UP {
+  background-color: #ffffff;
+  width: 100%;
+  min-width: 1440px;
+  min-height: 1024px;
+  position: relative;
+  overflow: hidden;
+  font-family: "Poppins", Helvetica, Arial, sans-serif;
+}
+
+/* background image */
+.SIGN-UP .BACKGROUND {
+  position: absolute;
+  top: 130px;
+  left: 35px;
+  width: 1369px;
+  height: 883px;
+  object-fit: cover;
+  border-radius: 26px;
+  z-index: 0;
+}
+
+/* navbar top */
+.SIGN-UP .rectangle {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 1440px;
+  height: 110px;
+  background-color: #ffffff;
+  z-index: 2;
+}
+
+/* logo */
+.SIGN-UP .group {
+  position: absolute;
+  top: 31px;
+  left: 44px;
+  width: 56px;
+  height: 48px;
+  z-index: 3;
+}
+
+.SIGN-UP .ellipse {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 48px;
+  height: 48px;
+  background-color: #2e5aa7;
+  border-radius: 24px;
+}
+
+.SIGN-UP .text-wrapper {
+  position: absolute;
+  top: 9px;
+  left: 14px;
+  width: 40px;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 20px;
+  line-height: normal;
+}
+
+/* brand */
+.SIGN-UP .div {
+  position: absolute;
+  top: 40px;
+  left: 103px;
+  font-weight: 700;
+  color: #1e293b;
+  font-size: 24px;
+  z-index: 3;
+}
+
+/* menu */
+.SIGN-UP .text-wrapper-2,
+.SIGN-UP .text-wrapper-3,
+.SIGN-UP .text-wrapper-4,
+.SIGN-UP .text-wrapper-5 {
+  position: absolute;
+  top: 46px;
+  width: 162px;
+  font-weight: 400;
+  color: #000000;
+  font-size: 24px;
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none;
+  z-index: 3;
+}
+
+.SIGN-UP .text-wrapper-2 { left: 766px; }
+.SIGN-UP .text-wrapper-3 { left: 880px; }
+.SIGN-UP .text-wrapper-4 { left: 997px; }
+.SIGN-UP .text-wrapper-5 { left: 1109px; }
+
+/* button masuk */
+.SIGN-UP .rectangle-2 {
+  position: absolute;
+  top: 34px;
+  left: 1257px;
+  width: 134px;
+  height: 61px;
+  background-color: #1e5abc;
+  border-radius: 11px;
+  z-index: 3;
+}
+
+.SIGN-UP .text-wrapper-6 {
+  position: absolute;
+  top: 44px;
+  left: 1243px;
+  width: 162px;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 24px;
+  text-align: center;
+  text-decoration: none;
+  z-index: 4;
+}
+
+/* card putih */
+.SIGN-UP .rectangle-3 {
+  position: absolute;
+  top: 174px;
+  left: 288px;
+  width: 893px;
+  height: 781px;
+  background-color: #ffffff;
+  z-index: 1;
+}
+
+/* title */
+.SIGN-UP .text-wrapper-7 {
+  position: absolute;
+  top: 210px;
+  left: 593px;
+  font-weight: 700;
+  color: #1e5abc;
+  font-size: 64px;
+  text-align: center;
+  z-index: 2;
+}
+
+/* input groups position (ikut figma) */
+.SIGN-UP .group-2 { position: absolute; top: 327px; left: 396px; width: 650px; height: 76px; z-index: 2; }
+.SIGN-UP .group-3 { position: absolute; top: 432px; left: 396px; width: 650px; height: 76px; z-index: 2; }
+.SIGN-UP .group-4 { position: absolute; top: 537px; left: 396px; width: 650px; height: 76px; z-index: 2; }
+.SIGN-UP .group-5 { position: absolute; top: 642px; left: 396px; width: 650px; height: 76px; z-index: 2; }
+
+/* border box (kayak rectangle-4) */
+.SIGN-UP .rectangle-4 {
+  position: absolute;
+  inset: 0;
+  background-color: #ffffff;
+  border: 4px solid;
+  border-color: #1e5abc;
+}
+
+/* input beneran */
+.SIGN-UP .input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 648px;
+  height: 76px;
+  border: 4px solid #1e5abc;
+  background: transparent;
+  padding: 0 24px;
+  font-size: 20px;
+  outline: none;
+}
+
+/* button signup */
+.SIGN-UP .group-6 {
+  position: absolute;
+  top: 813px;
+  left: 615px;
+  width: 209px;
+  height: 55px;
+  z-index: 2;
+}
+
+.SIGN-UP .btn-signup {
+  width: 207px;
+  height: 55px;
+  border: none;
+  border-radius: 11px;
+  background-color: #febd19;
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* link bawah */
+.SIGN-UP .text-wrapper-13 {
+  position: absolute;
+  top: 718px;
+  left: 396px;
+  font-style: italic;
+  font-weight: 400;
+  color: #1e5abc;
+  font-size: 24px;
+  text-decoration: none;
+  z-index: 2;
+}
