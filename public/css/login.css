@@ -1,0 +1,221 @@
+/* =========================
+   LOGIN PAGE (scoped)
+   supaya tidak tabrakan dgn CSS lain
+========================= */
+
+.LOGIN, .LOGIN * {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+/* Container */
+.LOGIN .BACKGROUND {
+  position: absolute;
+  top: 115px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 883px;
+  border-radius: 26px;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Top Bar */
+.LOGIN .rectangle {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 1440px;
+  height: 110px;
+  background-color: #ffffff;
+}
+
+/* Logo */
+.LOGIN .group {
+  position: absolute;
+  top: 31px;
+  left: 44px;
+  width: 56px;
+  height: 48px;
+}
+
+.LOGIN .ellipse {
+  width: 48px;
+  height: 48px;
+  background-color: #2e5aa7;
+  border-radius: 50%;
+}
+
+.LOGIN .text-wrapper {
+  position: absolute;
+  top: 9px;
+  left: 14px;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 20px;
+}
+
+/* Brand */
+.LOGIN .brand {
+  position: absolute;
+  top: 40px;
+  left: 103px;
+  font-weight: 700;
+  color: #1e293b;
+  font-size: 24px;
+}
+
+/* Menu (link) */
+.LOGIN .menu {
+  position: absolute;
+  top: 46px;
+  font-size: 24px;
+  color: #000;
+  text-decoration: none;
+}
+
+.LOGIN .home { left: 766px; }
+.LOGIN .tentang { left: 880px; }
+.LOGIN .fitur { left: 997px; }
+.LOGIN .harga { left: 1109px; } /* aku samain seperti landing page biar rapi */
+
+.LOGIN .rectangle-2 {
+  position: absolute;
+  top: 34px;
+  left: 1257px;
+  width: 134px;
+  height: 61px;
+  background-color: #1e5abc;
+  border-radius: 11px;
+}
+
+.LOGIN .menu.masuk {
+  position: absolute;
+  top: 44px;
+  left: 1243px;
+  width: 162px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* Welcome Text */
+.LOGIN .title {
+  position: absolute;
+  top: 186px;
+  left: 307px;
+  width: 829px;
+  text-align: center;
+  font-size: 60px;
+  font-weight: 700;
+  color: #000;
+}
+
+/* Login Card */
+.LOGIN .rectangle-3 {
+  position: absolute;
+  top: 306px;
+  left: 288px;
+  width: 893px;
+  height: 523px;
+  background-color: #ffffff;
+}
+
+/* Title */
+.LOGIN .login-title {
+  position: absolute;
+  top: 353px;
+  left: 616px;
+  font-size: 64px;
+  font-weight: 700;
+  color: #1e5abc;
+}
+
+.LOGIN .signup {
+  position: absolute;
+  top: 649px;
+  left: 395px;
+  font-style: italic;
+  color: #1e5abc;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+/* Input Fields wrapper */
+.LOGIN .group-2,
+.LOGIN .group-3 {
+  position: absolute;
+  left: 394px;
+  width: 650px;
+  height: 76px;
+}
+
+.LOGIN .group-2 { top: 460px; }
+.LOGIN .group-3 { top: 573px; }
+
+/* Kalau kamu pakai div placeholder */
+.LOGIN .input-box {
+  width: 648px;
+  height: 76px;
+  background-color: #ffffff;
+  border: 4px solid #1e5abc;
+}
+
+.LOGIN .input-label {
+  position: absolute;
+  top: 23px;
+  left: 36px;
+  font-size: 20px;
+  color: #989898;
+}
+
+/* Kalau kamu pakai <input> beneran (rekomendasi) */
+.LOGIN .input {
+  width: 648px;
+  height: 76px;
+  border: 4px solid #1e5abc;
+  background: #fff;
+  padding: 0 24px;
+  font-size: 20px;
+  outline: none;
+}
+
+/* Login Button (kalau masih div) */
+.LOGIN .button-login {
+  position: absolute;
+  top: 710px;
+  left: 616px;
+  width: 207px;
+  height: 55px;
+  background-color: #febd19;
+  border-radius: 11px;
+}
+
+.LOGIN .button-text {
+  position: absolute;
+  top: 721px;
+  left: 669px;
+  font-size: 30px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Login Button (kalau pakai <button>) */
+.LOGIN .btn-login {
+  position: absolute;
+  top: 710px;
+  left: 616px;
+  width: 207px;
+  height: 55px;
+  border: none;
+  border-radius: 11px;
+  background: #febd19;
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: 700;
+  cursor: pointer;
+}
