@@ -5,9 +5,19 @@
   <meta charset="utf-8" />
   <title>IsyaratKita</title>
 
+  <!-- GOOGLE FONT: POPPINS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- CSS -->
   <link rel="stylesheet" href="css/globals.css">
-<link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
   <!-- PAGE 1 -->
@@ -46,7 +56,6 @@
       <div class="text-wrapper-9">Daftar!</div>
     </div>
   </div>
-
 
   <!-- PAGE 2 -->
   <div class="ABOUT-US-VISI-MISI" id="tentang">
@@ -97,7 +106,6 @@
     <div class="text-wrapper-10">IsyaratKita Menyediakan :</div>
   </div>
 
-
   <!-- PAGE 3 -->
   <div class="FITUR-HARGA-PAKET" id="fitur">
     <div class="rectangle"></div>
@@ -144,7 +152,6 @@
     <div class="quiz-icon">📝</div>
     <div class="video-icon">🎥</div>
   </div>
-
 
   <!-- PAGE 4 -->
   <div class="PAKET-PAKET" id="harga">
@@ -198,7 +205,6 @@
     </p>
   </div>
 
-
   <!-- PAGE 5 -->
   <div class="lastt" id="last">
     <div class="rectangle-1"></div>
@@ -231,4 +237,3 @@
 
 </body>
 </html>
-

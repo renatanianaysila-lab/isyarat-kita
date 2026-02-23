@@ -2,13 +2,23 @@
    RESET / BASIC
 ========================= */
 * { box-sizing: border-box; }
-body { margin: 0; background: #fff; font-family: Arial, Helvetica, sans-serif; }
 
-/* Biar link ga ada garis bawah */
-a { text-decoration: none; color: inherit; }
+html { scroll-behavior: smooth; }
+
+body{
+  margin: 0;
+  background: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Link ga ada underline + ikut warna parent */
+a{
+  text-decoration: none;
+  color: inherit;
+}
 
 /* =========================
-   PAGE 1 - HOME (Anima)
+   PAGE 1 - HOME
 ========================= */
 .HOME-PAGE{
   background:#fff;
@@ -23,7 +33,8 @@ a { text-decoration: none; color: inherit; }
 .HOME-PAGE .rectangle{
   position:absolute;
   top:5px; left:0;
-  width:100%; height:110px;
+  width:100%;
+  height:110px;
   background:#fff;
   z-index:5;
 }
@@ -178,14 +189,14 @@ a { text-decoration: none; color: inherit; }
   text-align:center;
 }
 
-/* HERO GRADIENT pengganti gambar */
+/* HERO GRADIENT */
 .HOME-PAGE .hero-bg{
   position:absolute;
   top:115px;
   left:50%;
   transform:translateX(-50%);
   width:90%;
-  height:883px;           /* biar luas kaya figma */
+  height:883px;
   border-radius:26px;
   background: linear-gradient(120deg,#c7d2fe 0%,#93c5fd 40%,#fde68a 100%);
   box-shadow:0 10px 30px rgba(0,0,0,.12);
@@ -204,10 +215,11 @@ a { text-decoration: none; color: inherit; }
   overflow:hidden;
 }
 
-/* navbar top (copy basic) */
+/* navbar top */
 .ABOUT-US-VISI-MISI .rectangle{
   position:absolute; top:5px; left:0;
-  width:1440px; height:110px;
+  width:100%;
+  height:110px;
   background:#fff;
 }
 .ABOUT-US-VISI-MISI .group{
@@ -382,7 +394,7 @@ a { text-decoration: none; color: inherit; }
 /* navbar putih atas */
 .FITUR-HARGA-PAKET .rectangle-3{
   position:absolute; top:5px; left:0;
-  width:1440px; height:110px;
+  width:100%; height:110px;
   background:#fff;
 }
 .FITUR-HARGA-PAKET .LOGO{
@@ -402,22 +414,6 @@ a { text-decoration: none; color: inherit; }
   position:absolute; top:9px; left:59px;
   font-weight:700; color:#1e293b; font-size:24px;
 }
-
-/* menu */
-.FITUR-HARGA-PAKET .text-wrapper-3,
-.FITUR-HARGA-PAKET .text-wrapper-4,
-.FITUR-HARGA-PAKET .text-wrapper-5,
-.FITUR-HARGA-PAKET .text-wrapper-6{
-  position:absolute; top:46px;
-  width:162px;
-  font-size:24px;
-  text-align:center;
-  color:#000;
-}
-.FITUR-HARGA-PAKET .text-wrapper-3{ left:766px; }
-.FITUR-HARGA-PAKET .text-wrapper-4{ left:880px; }
-.FITUR-HARGA-PAKET .text-wrapper-5{ left:997px; }
-.FITUR-HARGA-PAKET .text-wrapper-6{ left:1109px; }
 
 /* tombol masuk */
 .FITUR-HARGA-PAKET .MASUK{
@@ -464,6 +460,24 @@ a { text-decoration: none; color: inherit; }
 .FITUR-HARGA-PAKET .quiz-icon{ left:670px; top:170px; }
 .FITUR-HARGA-PAKET .community-icon{ left:1165px; top:175px; }
 
+/* FIX MENU PAGE 3 (ANTI TABRAKAN CLASS) */
+.FITUR-HARGA-PAKET .menu-home,
+.FITUR-HARGA-PAKET .menu-tentang,
+.FITUR-HARGA-PAKET .menu-fitur,
+.FITUR-HARGA-PAKET .menu-harga{
+  position:absolute;
+  top:46px;
+  width:162px;
+  font-size:24px;
+  text-align:center;
+  color:#000;
+  font-family: "Poppins", sans-serif; /* FIX: jangan Poppins-Regular */
+}
+.FITUR-HARGA-PAKET .menu-home{ left:766px; }
+.FITUR-HARGA-PAKET .menu-tentang{ left:880px; }
+.FITUR-HARGA-PAKET .menu-fitur{ left:997px; }
+.FITUR-HARGA-PAKET .menu-harga{ left:1109px; }
+
 /* =========================
    PAGE 4 - HARGA
 ========================= */
@@ -496,7 +510,7 @@ a { text-decoration: none; color: inherit; }
 /* navbar putih atas */
 .PAKET-PAKET .div{
   position:absolute; top:5px; left:0;
-  width:1440px; height:110px; background:#fff;
+  width:100%; height:110px; background:#fff;
 }
 .PAKET-PAKET .LOGO{
   position:absolute; top:31px; left:44px;
@@ -609,7 +623,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* =========================
-   PAGE 5 - LAST (gradient)
+   PAGE 5 - LAST
 ========================= */
 .lastt{
   background:#fff;
@@ -731,29 +745,56 @@ a { text-decoration: none; color: inherit; }
   z-index:4;
 }
 
-/* =========================
-   OPTIONAL: SMOOTH SCROLL
-========================= */
-html { scroll-behavior: smooth; }
+/* ===== MATIIN STICKY / FIXED NAVBAR ===== */
+.HOME-PAGE .rectangle,
+.ABOUT-US-VISI-MISI .rectangle,
+.FITUR-HARGA-PAKET .rectangle-3,
+.PAKET-PAKET .div,
+.lastt .rectangle-1{
+  position: absolute !important;
+  top: 5px !important;   /* sesuai desain kamu */
+  left: 0 !important;
+}
 
-/* ====== FIX LINK (BIAR GA ADA UNDERLINE + WARNA NGACO) ====== */
-a { text-decoration: none; color: inherit; }
+/* kalau ada wrapper navbar yang dibuat fixed/sticky */
+nav, header, .navbar{
+  position: static !important;
+  top: auto !important;
+}
 
-/* ====== FIX MENU PAGE 3 (ANTI TABRAKAN CLASS) ====== */
+/* ========= TAMPILKAN NAVBAR CUMA DI HOME ========= */
+.ABOUT-US-VISI-MISI .rectangle,
+.ABOUT-US-VISI-MISI .group,
+.ABOUT-US-VISI-MISI .div,
+.ABOUT-US-VISI-MISI .text-wrapper-2,
+.ABOUT-US-VISI-MISI .text-wrapper-3,
+.ABOUT-US-VISI-MISI .text-wrapper-4,
+.ABOUT-US-VISI-MISI .text-wrapper-5,
+.ABOUT-US-VISI-MISI .rectangle-2,
+.ABOUT-US-VISI-MISI .text-wrapper-6,
+.FITUR-HARGA-PAKET .rectangle-3,
+.FITUR-HARGA-PAKET .LOGO,
 .FITUR-HARGA-PAKET .menu-home,
 .FITUR-HARGA-PAKET .menu-tentang,
 .FITUR-HARGA-PAKET .menu-fitur,
-.FITUR-HARGA-PAKET .menu-harga{
-  position:absolute;
-  top:46px;
-  width:162px;
-  font-size:24px;
-  text-align:center;
-  color:#000;
-  font-family: "Poppins-Regular", Helvetica, sans-serif;
+.FITUR-HARGA-PAKET .menu-harga,
+.FITUR-HARGA-PAKET .MASUK,
+.PAKET-PAKET .div,
+.PAKET-PAKET .LOGO,
+.PAKET-PAKET .text-wrapper-3,
+.PAKET-PAKET .text-wrapper-4,
+.PAKET-PAKET .text-wrapper-5,
+.PAKET-PAKET .text-wrapper-6,
+.PAKET-PAKET .MASUK,
+.lastt .rectangle-1,
+.lastt .ellipse-1,
+.lastt .ik,
+.lastt .isyarat-kita,
+.lastt .home,
+.lastt .tentang,
+.lastt .fitur,
+.lastt .harga,
+.lastt .rectangle-2,
+.lastt .masuk2{
+  display: none;
 }
-
-.FITUR-HARGA-PAKET .menu-home{ left:766px; }
-.FITUR-HARGA-PAKET .menu-tentang{ left:880px; }
-.FITUR-HARGA-PAKET .menu-fitur{ left:997px; }
-.FITUR-HARGA-PAKET .menu-harga{ left:1109px; }
