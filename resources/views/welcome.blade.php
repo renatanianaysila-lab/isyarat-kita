@@ -146,9 +146,9 @@
       Ruang diskusi untuk berbagi pengalaman dan membangun komunikasi inklusif bersama sesama pembelajar dan pengajar.
     </p>
 
-    <div class="community-icon">🤝</div>
-    <div class="quiz-icon">📝</div>
-    <div class="video-icon">🎥</div>
+    <img src="{{ asset('img/video.png') }}" class="video-icon" alt="Video">
+<img src="{{ asset('img/quiz.png') }}" class="quiz-icon" alt="Quiz">
+<img src="{{ asset('img/social-justice.png') }}" class="community-icon" alt="Community">
   </div>
 
   <!-- PAGE 4 -->

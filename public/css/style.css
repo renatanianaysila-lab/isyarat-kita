@@ -452,10 +452,14 @@ a{
 }
 
 /* icon emoji */
-.video-icon, .quiz-icon, .community-icon{
-  position:absolute;
-  font-size:90px;
+.video-icon,
+.quiz-icon,
+.community-icon{
+  position: absolute;
+  width: 100px;   /* ubah sesuai selera */
+  height: auto;
 }
+
 .FITUR-HARGA-PAKET .video-icon{ left:185px; top:175px; }
 .FITUR-HARGA-PAKET .quiz-icon{ left:670px; top:170px; }
 .FITUR-HARGA-PAKET .community-icon{ left:1165px; top:175px; }
