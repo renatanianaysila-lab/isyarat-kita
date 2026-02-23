@@ -25,11 +25,9 @@
     <div class="hero-bg"></div>
 
     <div class="rectangle"></div>
-    <div class="group">
-      <div class="ellipse"></div>
-      <div class="text-wrapper">IK</div>
-    </div>
-    <div class="div">IsyaratKita</div>
+    <a href="#home" class="logo-wrapper">
+  <img src="img/LOGO.png" alt="IsyaratKita" class="logo-img">
+</a>
 
     <a class="text-wrapper-2" href="#home">HOME</a>
     <a class="text-wrapper-3" href="#tentang">TENTANG</a>

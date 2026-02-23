@@ -834,3 +834,23 @@ a{
   display: none !important;
 }
 
+/* ===== LOGO PNG (NAVBAR FIXED) ===== */
+.logo-wrapper{
+  position: fixed;
+  top: 22px;      /* atur kalau mau naik/turun */
+  left: 44px;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+}
+
+.logo-img{
+  height: 70px;   /* ubah 50-70 sesuai selera */
+  width: auto;
+}
+
+/* matiin style logo lama (kalau masih ada di HTML lain) */
+.HOME-PAGE .group,
+.HOME-PAGE .div{
+  display: none;
+}
