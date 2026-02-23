@@ -745,24 +745,47 @@ a{
   z-index:4;
 }
 
-/* ===== MATIIN STICKY / FIXED NAVBAR ===== */
-.HOME-PAGE .rectangle,
-.ABOUT-US-VISI-MISI .rectangle,
-.FITUR-HARGA-PAKET .rectangle-3,
-.PAKET-PAKET .div,
-.lastt .rectangle-1{
-  position: absolute !important;
-  top: 5px !important;   /* sesuai desain kamu */
-  left: 0 !important;
+/* ===== HOME NAVBAR ===== */
+.HOME-PAGE .rectangle{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110px;
+  z-index: 9999;
 }
 
-/* kalau ada wrapper navbar yang dibuat fixed/sticky */
-nav, header, .navbar{
-  position: static !important;
-  top: auto !important;
+/* Semua isi navbar HOME ikut fixed */
+.HOME-PAGE .group,
+.HOME-PAGE .div,
+.HOME-PAGE .text-wrapper-2,
+.HOME-PAGE .text-wrapper-3,
+.HOME-PAGE .text-wrapper-4,
+.HOME-PAGE .text-wrapper-5,
+.HOME-PAGE .rectangle-2,
+.HOME-PAGE .text-wrapper-6{
+  position: fixed;
+  z-index: 10000;
 }
 
-/* ========= TAMPILKAN NAVBAR CUMA DI HOME ========= */
+/* Sesuaikan top agar tetap di posisi awal */
+.HOME-PAGE .group{ top:31px; left:44px; }
+.HOME-PAGE .div{ top:40px; left:103px; }
+
+.HOME-PAGE .text-wrapper-2{ top:46px; left:766px; }
+.HOME-PAGE .text-wrapper-3{ top:46px; left:880px; }
+.HOME-PAGE .text-wrapper-4{ top:46px; left:997px; }
+.HOME-PAGE .text-wrapper-5{ top:46px; left:1109px; }
+
+.HOME-PAGE .rectangle-2{ top:34px; left:1257px; }
+.HOME-PAGE .text-wrapper-6{ top:44px; left:1243px; }
+
+/* Supaya konten tidak ketiban navbar */
+.HOME-PAGE{
+  padding-top:110px;
+}
+
+/* PAGE 2 */
 .ABOUT-US-VISI-MISI .rectangle,
 .ABOUT-US-VISI-MISI .group,
 .ABOUT-US-VISI-MISI .div,
@@ -771,21 +794,33 @@ nav, header, .navbar{
 .ABOUT-US-VISI-MISI .text-wrapper-4,
 .ABOUT-US-VISI-MISI .text-wrapper-5,
 .ABOUT-US-VISI-MISI .rectangle-2,
-.ABOUT-US-VISI-MISI .text-wrapper-6,
+.ABOUT-US-VISI-MISI .text-wrapper-6{
+  display: none !important;
+}
+
+/* PAGE 3 */
 .FITUR-HARGA-PAKET .rectangle-3,
 .FITUR-HARGA-PAKET .LOGO,
 .FITUR-HARGA-PAKET .menu-home,
 .FITUR-HARGA-PAKET .menu-tentang,
 .FITUR-HARGA-PAKET .menu-fitur,
 .FITUR-HARGA-PAKET .menu-harga,
-.FITUR-HARGA-PAKET .MASUK,
+.FITUR-HARGA-PAKET .MASUK{
+  display: none !important;
+}
+
+/* PAGE 4 */
 .PAKET-PAKET .div,
 .PAKET-PAKET .LOGO,
 .PAKET-PAKET .text-wrapper-3,
 .PAKET-PAKET .text-wrapper-4,
 .PAKET-PAKET .text-wrapper-5,
 .PAKET-PAKET .text-wrapper-6,
-.PAKET-PAKET .MASUK,
+.PAKET-PAKET .MASUK{
+  display: none !important;
+}
+
+/* PAGE 5 */
 .lastt .rectangle-1,
 .lastt .ellipse-1,
 .lastt .ik,
@@ -796,6 +831,6 @@ nav, header, .navbar{
 .lastt .harga,
 .lastt .rectangle-2,
 .lastt .masuk2{
-  display: none;
+  display: none !important;
 }
 
