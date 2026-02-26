@@ -1,0 +1,32 @@
+/* Form Styling */
+.payment-form{
+  margin-top:10px;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.form-group{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+.form-group label{
+  font-size:13px;
+  font-weight:800;
+}
+
+.form-group input{
+  padding:10px 12px;
+  border-radius:10px;
+  border:1px solid rgba(15,23,42,.15);
+  font-size:13px;
+  background:#fff;
+}
+
+.form-group input:focus{
+  outline:none;
+  border-color: var(--blue);
+  box-shadow:0 0 0 3px rgba(30,86,183,.15);
+}
