@@ -1,22 +1,32 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('/login', 'login');
+// LOGIN
+Route::get('/login', function () {
+    return view('login');
+})->name('login');
 
-Route::view('/register', 'register');
-
-Route::post('/upload-bukti', function (Illuminate\Http\Request $request) {
-
+Route::post('/login', function (Request $request) {
     $request->validate([
-        'nama' => 'required',
-        'transaksi' => 'required',
-        'bukti' => 'required|file|mimes:jpg,jpeg,png,pdf|max:2048'
+        'email' => 'required',
+        'password' => 'required',
     ]);
 
-    return back()->with('success', 'Bukti pembayaran berhasil dikirim!');
+    return redirect('/dashboard-murid');
+});
+
+// REGISTER
+Route::get('/register', function () {
+    return view('register');
+});
+
+// DASHBOARD MURID
+Route::get('/dashboard-murid', function () {
+    return view('dashboard-murid');
 });
