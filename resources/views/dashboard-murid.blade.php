@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>IsyaratKita - Dashboard Murid</title>
-  <link rel="stylesheet" href="dashboard-murid.css"/>
+  <link rel="stylesheet" href="{{ asset('css/dashboard-murid.css') }}">
 </head>
 <body>
 
