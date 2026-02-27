@@ -20,16 +20,16 @@
     <!-- SIDEBAR -->
     <aside class="sidebar">
       <div class="brand">
-        <div class="brand-badge"></div>
-        <div class="brand-text">
+  <img class="logo-img" src="{{ asset('img/LOGO.png') }}" alt="Logo">
+  <div class="brand-text">
           <div class="brand-name">IsyaratKita</div>
           <div class="brand-sub">Dashboard Murid</div>
         </div>
       </div>
 
       <nav class="menu">
-        <a class="menu-item active" href="/dashboard-square-01.png">
-  <img class="menu-icon" src="{{ asset('img/home-outline.png') }}" alt="">
+        <a class="menu-item active" href="{{ url('/dashboard-murid') }}">
+  <img class="menu-icon" src="{{ asset('img/dashboard-square-01.png') }}" alt="">
   Dashboard
 </a>
 
