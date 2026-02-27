@@ -28,7 +28,7 @@
       </div>
 
       <nav class="menu">
-        <a class="menu-item active" href="/dashboard-murid">
+        <a class="menu-item active" href="/dashboard-square-01.png">
   <img class="menu-icon" src="{{ asset('img/home-outline.png') }}" alt="">
   Dashboard
 </a>
