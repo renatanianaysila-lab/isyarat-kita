@@ -82,8 +82,8 @@
       <header class="topbar">
   <div class="search">
     <input type="text" placeholder="Search..." />
-    <span class="search-icon">🔎</span>
-  </div>
+    <img class="search-img" src="{{ asset('img/search-visual.png') }}" alt="Search">
+</div>
 
   <div class="top-actions">
 

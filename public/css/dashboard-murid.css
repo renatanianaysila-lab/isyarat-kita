@@ -585,3 +585,18 @@ a{ text-decoration:none; color:inherit; }
   font-weight:600;
   margin-top:4px;
 }
+
+.search{
+  position:relative;
+}
+
+.search-img{
+  position:absolute;
+  right:12px;
+  top:50%;
+  transform:translateY(-50%);
+  width:18px;
+  height:18px;
+  object-fit:contain;
+  pointer-events:none;
+}
