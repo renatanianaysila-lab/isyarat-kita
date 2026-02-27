@@ -115,7 +115,7 @@ a{ text-decoration:none; color:inherit; }
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:30px 40px; 
+  padding:0 18px; 
 }
 
 .search{
@@ -167,7 +167,9 @@ a{ text-decoration:none; color:inherit; }
 
 /* ====== CONTENT ====== */
 .content{
-  padding:18px;
+  padding:40px 60px;
+  max-width:1200px;
+  margin:0 auto;
 }
 
 .greet h1{
