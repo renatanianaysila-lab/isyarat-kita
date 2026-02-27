@@ -521,3 +521,35 @@ a{ text-decoration:none; color:inherit; }
   color:#64748b;
   font-weight:600;
 }
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:10px 8px;
+}
+
+.logo-img{
+  width:46px;
+  height:46px;
+  object-fit:contain;
+}
+
+.brand-text{
+  display:flex;
+  flex-direction:column;
+  line-height:1.05;
+}
+
+.brand-name{
+  font-weight:800;
+  font-size:22px;
+  color:#1e293b;
+}
+
+.brand-sub{
+  font-size:13px;
+  color:#64748b;
+  font-weight:600;
+  margin-top:4px;
+}

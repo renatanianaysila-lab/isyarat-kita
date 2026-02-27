@@ -20,8 +20,11 @@
     <!-- SIDEBAR -->
     <aside class="sidebar">
       <div class="brand">
-  <div class="brand-badge">IK</div>
-  <div class="brand-sub">Dashboard Murid</div>
+  <img class="logo-img" src="{{ asset('img/LOGO.png') }}" alt="IsyaratKita">
+  <div class="brand-text">
+    <div class="brand-name">IsyaratKita</div>
+    <div class="brand-sub">Dashboard Murid</div>
+  </div>
 </div>
 
       <nav class="menu">
