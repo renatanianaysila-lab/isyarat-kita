@@ -232,24 +232,35 @@
           <form class="pay-form" action="/upload-bukti" method="POST" enctype="multipart/form-data">
             @csrf
 
-            <div class="form-grid">
-              <div class="form-group">
-                <label>Nama Lengkap</label>
-                <input type="text" name="nama" placeholder="Masukkan nama lengkap" required>
-              </div>
+            <table class="form-table" width="100%" cellpadding="10">
+  <tr>
+    <td><label>Nama Lengkap</label></td>
+    <td>
+      <input type="text" name="nama" placeholder="Masukkan nama lengkap" required>
+    </td>
+  </tr>
 
-              <div class="form-group">
-                <label>Nomor Transaksi</label>
-                <input type="text" name="transaksi" placeholder="Contoh: TRX-00123" required>
-              </div>
+  <tr>
+    <td><label>Nomor Transaksi</label></td>
+    <td>
+      <input type="text" name="transaksi" placeholder="Contoh: TRX-00123" required>
+    </td>
+  </tr>
 
-              <div class="form-group full">
-                <label>Upload Bukti (jpg/png/pdf)</label>
-                <input type="file" name="bukti" accept=".jpg,.jpeg,.png,.pdf" required>
-              </div>
-            </div>
+  <tr>
+    <td><label>Upload Bukti (jpg/png/pdf)</label></td>
+    <td>
+      <input type="file" name="bukti" accept=".jpg,.jpeg,.png,.pdf" required>
+    </td>
+  </tr>
 
-            <button class="btn" type="submit">Kirim Bukti</button>
+  <tr>
+    <td></td>
+    <td>
+      <button class="btn" type="submit">Kirim Bukti</button>
+    </td>
+  </tr>
+</table>
           </form>
         </section>
 

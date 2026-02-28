@@ -602,3 +602,18 @@ a{ text-decoration:none; color:inherit; }
   object-fit:contain;
   pointer-events:none;
 }
+
+.form-table td {
+  vertical-align: middle;
+}
+
+.form-table label {
+  font-weight: 600;
+}
+
+.form-table input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
