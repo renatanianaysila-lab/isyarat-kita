@@ -223,46 +223,48 @@
         </div>
 
         <!-- FORM (requirement text + file) -->
-        <div class="section-head" style="margin-top:18px;">
-          <h3>Upload Bukti Pembayaran</h3>
-          <span class="badge">Form</span>
-        </div>
+<div class="section-head" style="margin-top:18px;">
+  <h3>Form Identitas Murid</h3>
+  <span class="badge">Form</span>
+</div>
 
-        <section class="card">
-          <form class="pay-form" action="/upload-bukti" method="POST" enctype="multipart/form-data">
-            @csrf
+<section class="card">
+  <form action="/upload-identitas" method="POST" enctype="multipart/form-data">
+    @csrf
 
-            <table class="form-table" width="100%" cellpadding="10">
-  <tr>
-    <td><label>Nama Lengkap</label></td>
-    <td>
-      <input type="text" name="nama" placeholder="Masukkan nama lengkap" required>
-    </td>
-  </tr>
+    <table class="form-table" width="100%" cellpadding="10">
 
-  <tr>
-    <td><label>Nomor Transaksi</label></td>
-    <td>
-      <input type="text" name="transaksi" placeholder="Contoh: TRX-00123" required>
-    </td>
-  </tr>
+      <tr>
+        <td><label>Nama Lengkap</label></td>
+        <td>
+          <input type="text" name="nama" required>
+        </td>
+      </tr>
 
-  <tr>
-    <td><label>Upload Bukti (jpg/png/pdf)</label></td>
-    <td>
-      <input type="file" name="bukti" accept=".jpg,.jpeg,.png,.pdf" required>
-    </td>
-  </tr>
+      <tr>
+        <td><label>Tanggal Lahir</label></td>
+        <td>
+          <input type="date" name="tanggal_lahir" required>
+        </td>
+      </tr>
 
-  <tr>
-    <td></td>
-    <td>
-      <button class="btn" type="submit">Kirim Bukti</button>
-    </td>
-  </tr>
-</table>
-          </form>
-        </section>
+      <tr>
+        <td><label>Upload KTP / Kartu Pelajar</label></td>
+        <td>
+          <input type="file" name="ktp" accept=".jpg,.jpeg,.png,.pdf" required>
+        </td>
+      </tr>
+
+      <tr>
+        <td></td>
+        <td>
+          <button class="btn" type="submit">Simpan Data</button>
+        </td>
+      </tr>
+
+    </table>
+  </form>
+</section>
 
       </section>
     </main>

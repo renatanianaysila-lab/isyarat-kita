@@ -416,7 +416,7 @@ a{ text-decoration:none; color:inherit; }
   opacity:.95;
 }
 
-/* ====== FORM ====== */
+/*  FORM  */
 .pay-form{
   margin-top:4px;
 }
@@ -450,7 +450,7 @@ a{ text-decoration:none; color:inherit; }
   box-shadow:0 0 0 3px rgba(30,90,188,.12);
 }
 
-/* ====== RESPONSIVE ====== */
+/*  RESPONSIVE  */
 @media (max-width: 1000px){
   .app{ grid-template-columns: 1fr; }
   .sidebar{ position:sticky; top:0; z-index:2; }
@@ -616,4 +616,47 @@ a{ text-decoration:none; color:inherit; }
   padding: 8px;
   border-radius: 6px;
   border: 1px solid #ccc;
+}
+
+/* FORM TABLE STYLE */
+
+.form-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.form-table td {
+  padding: 12px 10px;
+  vertical-align: middle;
+}
+
+.form-table td:first-child {
+  width: 30%;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-table input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-family: 'Poppins', sans-serif;
+  transition: 0.3s ease;
+}
+
+.form-table input:focus {
+  border-color: #6C63FF; /* warna ungu dashboard */
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.1);
+}
+
+.form-table input[type="file"] {
+  padding: 6px;
+  background: #f9f9f9;
+  cursor: pointer;
+}
+
+.form-table button {
+  margin-top: 10px;
 }
