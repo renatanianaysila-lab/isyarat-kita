@@ -1,4 +1,4 @@
-﻿v<?php
+<?php
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -29,7 +29,6 @@ Route::get('/register', function () {
 // DASHBOARD MURID
 Route::get('/dashboard-murid', function () {
     return view('dashboard-murid');
-});
 
 // DASHBOARD GURU
 Route::get('/dashboard-guru', function () {
