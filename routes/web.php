@@ -1,4 +1,4 @@
-﻿v<?php
+﻿<?php
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -34,4 +34,9 @@ Route::get('/dashboard-murid', function () {
 // DASHBOARD GURU
 Route::get('/dashboard-guru', function () {
     return view('dashboard-guru');
+});
+
+// PAKET BELAJAR (Halaman Pilih Paket)
+Route::get('/paket', function () {
+    return view('paket');
 });
