@@ -182,7 +182,8 @@
           <a class="link" href="#">Lihat Semua Materi</a>
         </div>
 
-        <div class="grid-3">
+        <!-- Materi lanjutan & history -->
+        <div class="grid-2 rekomendasi-materi">
           <section class="card materi-card">
             <div class="materi-tag">Materi Terakhir</div>
             <div class="materi-body">
@@ -196,7 +197,7 @@
           </section>
 
           <section class="card materi-card">
-            <div class="materi-tag">Materi Selanjutnya (Isi Paket Dasar)</div>
+            <div class="materi-tag">Materi Selanjutnya</div>
             <div class="materi-body">
               <div class="thumb"></div>
               <div class="materi-info">
@@ -205,19 +206,6 @@
               </div>
             </div>
             <button class="btn full">Lanjutkan Belajar</button>
-          </section>
-
-          <section class="card materi-card locked">
-            <div class="materi-tag">Coba Paket Profesional!</div>
-            <div class="materi-body">
-              <div class="thumb lock"></div>
-              <div class="materi-info">
-                <div class="materi-title">Thumbshul Video</div>
-                <div class="materi-time">⏱ 8 Menit</div>
-              </div>
-            </div>
-            <!-- Tombol Lihat Paket Profesional mengarah ke halaman paket -->
-            <button class="btn full outline" onclick="window.location.href='{{ url('/paket') }}'">Lihat Paket Profesional</button>
           </section>
         </div>
 
