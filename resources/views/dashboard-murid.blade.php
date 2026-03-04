@@ -150,7 +150,7 @@
 
             <div class="paket-grid">
               <div class="paket-card">
-                <div class="paket-title">Paket Gratis</div>
+                <div class="paket-title">Paket Dasar</div>
                 <div class="paket-sub">200 hari tersisa</div>
                 <ul class="paket-list">
                   <li>Preview thumbnail</li>
