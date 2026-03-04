@@ -34,7 +34,8 @@
   Dashboard
 </a>
 
-<a class="menu-item" href="#">
+<!-- Link Katalog Paket mengarah ke halaman paket -->
+<a class="menu-item" href="{{ url('/paket') }}">
   <img class="menu-icon" src="{{ asset('img/katalog.png') }}" alt="">
   Katalog Paket
 </a>
@@ -151,7 +152,7 @@
             <div class="paket-grid">
               <div class="paket-card">
                 <div class="paket-title">Paket Dasar</div>
-                <div class="paket-sub">200 hari tersisa</div>
+                <div class="paket-sub">60 hari tersisa</div>
                 <ul class="paket-list">
                   <li>Preview thumbnail</li>
                   <li>judul paket, deskripsi singkat paket</li>
@@ -161,7 +162,7 @@
               </div>
 
               <div class="paket-card">
-                <div class="paket-title">Paket Profesional</div>
+                <div class="paket-title">Paket Premium</div>
                 <div class="paket-sub">240 hari tersisa</div>
                 <ul class="paket-list">
                   <li>Preview thumbnail</li>
@@ -172,8 +173,9 @@
               </div>
             </div>
 
+            <!-- Link Lihat Semua Paket mengarah ke halaman paket -->
             <div class="card-foot">
-              <a class="link" href="#">Lihat Semua Paket ›</a>
+              <a class="link" href="{{ url('/paket') }}">Lihat Semua Paket ›</a>
             </div>
           </section>
         </div>
@@ -184,7 +186,8 @@
           <a class="link" href="#">Lihat Semua Materi</a>
         </div>
 
-        <div class="grid-3">
+        <div class="grid-2">
+          <!-- Materi Terakhir -->
           <section class="card materi-card">
             <div class="materi-tag">Materi Terakhir</div>
             <div class="materi-body">
@@ -197,6 +200,7 @@
             <button class="btn full">Lanjutkan Belajar</button>
           </section>
 
+          <!-- Materi Selanjutnya -->
           <section class="card materi-card">
             <div class="materi-tag">Materi Selanjutnya (Isi Paket Dasar)</div>
             <div class="materi-body">
@@ -207,18 +211,6 @@
               </div>
             </div>
             <button class="btn full">Lanjutkan Belajar</button>
-          </section>
-
-          <section class="card materi-card locked">
-            <div class="materi-tag">Coba Paket Profesional!</div>
-            <div class="materi-body">
-              <div class="thumb lock"></div>
-              <div class="materi-info">
-                <div class="materi-title">Thumbshul Video</div>
-                <div class="materi-time">⏱ 8 Menit</div>
-              </div>
-            </div>
-            <button class="btn full outline">Lihat Paket Profesional</button>
           </section>
         </div>
 

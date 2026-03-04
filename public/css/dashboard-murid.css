@@ -646,7 +646,7 @@ a{ text-decoration:none; color:inherit; }
 }
 
 .form-table input:focus {
-  border-color: #6C63FF; /* warna ungu dashboard */
+  border-color: #6C63FF;
   outline: none;
   box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.1);
 }
@@ -659,4 +659,33 @@ a{ text-decoration:none; color:inherit; }
 
 .form-table button {
   margin-top: 10px;
+}
+
+.grid-2.rekomendasi-materi {
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+/* Responsive untuk tablet dan mobile */
+@media (max-width: 768px) {
+  .grid-2.rekomendasi-materi {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Memastikan card materi tetap rapi */
+.rekomendasi-materi .materi-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.rekomendasi-materi .materi-body {
+  flex: 1;
+}
+
+/* Menyesuaikan margin bottom */
+.rekomendasi-materi .btn.full {
+  margin-top: auto;
 }
