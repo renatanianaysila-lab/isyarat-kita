@@ -16,22 +16,21 @@ Route::post('/login', function (Request $request) {
         'email' => 'required|email',
         'password' => 'required',
     ]);
-
     return redirect('/dashboard-murid');
 });
 
 Route::get('/register', function () {
     return view('register');
-});
+})->name('register');
 
 Route::get('/dashboard-murid', function () {
     return view('dashboard-murid');
-});
+})->name('dashboard.murid');
 
 Route::get('/dashboard-guru', function () {
     return view('dashboard-guru');
-});
+})->name('dashboard.guru');
 
 Route::get('/paket', function () {
     return view('paket');
-});
+})->name('paket');

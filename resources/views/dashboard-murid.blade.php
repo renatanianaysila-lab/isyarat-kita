@@ -20,60 +20,55 @@
     <!-- SIDEBAR -->
     <aside class="sidebar">
       <div class="brand">
-    <img class="logo-img" src="{{ asset('img/HANYA LOGO - Salin.png') }}" alt="Logo">
-    
-    <div class="brand-text">
-        <div class="brand-name">IsyaratKita</div>
-        <div class="brand-sub">Dashboard Murid</div>
-    </div>
-</div>
+        <img class="logo-img" src="{{ asset('img/HANYA LOGO - Salin.png') }}" alt="Logo">
+        
+        <div class="brand-text">
+          <div class="brand-name">IsyaratKita</div>
+          <div class="brand-sub">Dashboard Murid</div>
+        </div>
+      </div>
 
       <nav class="menu">
         <a class="menu-item active" href="{{ url('/dashboard-murid') }}">
-  <img class="menu-icon" src="{{ asset('img/dashboard-square-01.png') }}" alt="">
-  Dashboard
-</a>
+          <img class="menu-icon" src="{{ asset('img/dashboard-square-01.png') }}" alt="">
+          Dashboard
+        </a>
 
-<!-- Link Katalog Paket mengarah ke halaman paket -->
-<a class="menu-item" href="{{ url('/paket') }}">
-  <img class="menu-icon" src="{{ asset('img/katalog.png') }}" alt="">
-  Katalog Paket
-</a>
+        <a class="menu-item" href="{{ url('/paket') }}">
+          <img class="menu-icon" src="{{ asset('img/katalog.png') }}" alt="">
+          Katalog Paket
+        </a>
 
-<a class="menu-item" href="#">
-  <img class="menu-icon" src="{{ asset('img/materi.png') }}" alt="">
-  Materi Saya
-</a>
+        <a class="menu-item" href="#">
+          <img class="menu-icon" src="{{ asset('img/materi.png') }}" alt="">
+          Materi Saya
+        </a>
 
-<a class="menu-item" href="#">
-  <img class="menu-icon" src="{{ asset('img/kuis.png') }}" alt="">
-  Kuis
-</a>
+        <a class="menu-item" href="#">
+          <img class="menu-icon" src="{{ asset('img/kuis.png') }}" alt="">
+          Kuis
+        </a>
 
-<a class="menu-item" href="#">
-  <img class="menu-icon" src="{{ asset('img/transaction-history.png') }}" alt="">
-  History
-</a>
+        <a class="menu-item" href="#">
+          <img class="menu-icon" src="{{ asset('img/transaction-history.png') }}" alt="">
+          History
+        </a>
 
-<a class="menu-item" href="#">
-  <img class="menu-icon" src="{{ asset('img/feedback.png') }}" alt="">
-  Feedback
-</a>
+        <a class="menu-item" href="#">
+          <img class="menu-icon" src="{{ asset('img/feedback.png') }}" alt="">
+          Feedback
+        </a>
 
-<a class="menu-item" href="#">
-  <img class="menu-icon" src="{{ asset('img/user.png') }}" alt="">
-  Profil
-</a>
+        <a class="menu-item" href="#">
+          <img class="menu-icon" src="{{ asset('img/user.png') }}" alt="">
+          Profil
+        </a>
 
-<a class="menu-item danger" href="/login">
-  <img class="menu-icon" src="{{ asset('img/logout-04.png') }}" alt="">
-  Logout
-</a>
+        <a class="menu-item danger" href="/login">
+          <img class="menu-icon" src="{{ asset('img/logout-04.png') }}" alt="">
+          Logout
+        </a>
       </nav>
-
-      <div class="sidebar-footer">
-        <a class="menu-item danger" href="/login">↩ Logout</a>
-      </div>
     </aside>
 
     <!-- MAIN -->
@@ -81,30 +76,31 @@
 
       <!-- TOPBAR -->
       <header class="topbar">
-  <div class="search">
-    <input type="text" placeholder="Search..." />
-    <img class="search-img" src="{{ asset('img/search-visual.png') }}" alt="Search">
-</div>
+        <div class="search">
+          <input type="text" placeholder="Search..." />
+          <img class="search-img" src="{{ asset('img/search-visual.png') }}" alt="Search">
+        </div>
 
-  <div class="top-actions">
+        <div class="top-actions">
+          <!-- Notifikasi -->
+          <button class="icon-btn" title="Notifikasi">
+            <img class="top-icon" src="{{ asset('img/notification-01.png') }}" alt="">
+          </button>
 
-    <!-- Notifikasi -->
-    <button class="icon-btn" title="Notifikasi">
-      <img class="top-icon" src="{{ asset('img/notification-01.png') }}" alt="">
-    </button>
+          <!-- Help -->
+          <button class="icon-btn" title="Bantuan">
+            <img class="top-icon" src="{{ asset('img/help-circle.png') }}" alt="">
+          </button>
 
-    <!-- Help -->
-    <button class="icon-btn" title="Bantuan">
-      <img class="top-icon" src="{{ asset('img/help-circle.png') }}" alt="">
-    </button>
+          <!-- Profile -->
+          <div class="profile-mini">
+            <img class="avatar-img" src="{{ asset('img/user.png') }}" alt="">
+          </div>
+        </div>
+      </header>
 
-    <!-- Profile -->
-    <div class="profile-mini">
-      <img class="avatar-img" src="{{ asset('img/user.png') }}" alt="">
-    </div>
-
-  </div>
-</header>
+      <!-- CONTENT WRAPPER -->
+      <div class="content-wrapper">
         <!-- Greeting -->
         <div class="greet">
           <h1>Halo, <span class="name">[Nama Murid]</span> 👋</h1>
@@ -186,8 +182,7 @@
           <a class="link" href="#">Lihat Semua Materi</a>
         </div>
 
-        <div class="grid-2">
-          <!-- Materi Terakhir -->
+        <div class="grid-3">
           <section class="card materi-card">
             <div class="materi-tag">Materi Terakhir</div>
             <div class="materi-body">
@@ -200,7 +195,6 @@
             <button class="btn full">Lanjutkan Belajar</button>
           </section>
 
-          <!-- Materi Selanjutnya -->
           <section class="card materi-card">
             <div class="materi-tag">Materi Selanjutnya (Isi Paket Dasar)</div>
             <div class="materi-body">
@@ -212,54 +206,64 @@
             </div>
             <button class="btn full">Lanjutkan Belajar</button>
           </section>
+
+          <section class="card materi-card locked">
+            <div class="materi-tag">Coba Paket Profesional!</div>
+            <div class="materi-body">
+              <div class="thumb lock"></div>
+              <div class="materi-info">
+                <div class="materi-title">Thumbshul Video</div>
+                <div class="materi-time">⏱ 8 Menit</div>
+              </div>
+            </div>
+            <!-- Tombol Lihat Paket Profesional mengarah ke halaman paket -->
+            <button class="btn full outline" onclick="window.location.href='{{ url('/paket') }}'">Lihat Paket Profesional</button>
+          </section>
         </div>
 
         <!-- FORM (requirement text + file) -->
-<div class="section-head" style="margin-top:18px;">
-  <h3>Form Identitas Murid</h3>
-  <span class="badge">Form</span>
-</div>
+        <div class="section-head" style="margin-top:18px;">
+          <h3>Form Identitas Murid</h3>
+          <span class="badge">Form</span>
+        </div>
 
-<section class="card">
-  <form action="/upload-identitas" method="POST" enctype="multipart/form-data">
-    @csrf
+        <section class="card">
+          <form action="/upload-identitas" method="POST" enctype="multipart/form-data">
+            @csrf
 
-    <table class="form-table" width="100%" cellpadding="10">
+            <table class="form-table" width="100%" cellpadding="10">
+              <tr>
+                <td><label>Nama Lengkap</label></td>
+                <td>
+                  <input type="text" name="nama" required>
+                </td>
+              </tr>
 
-      <tr>
-        <td><label>Nama Lengkap</label></td>
-        <td>
-          <input type="text" name="nama" required>
-        </td>
-      </tr>
+              <tr>
+                <td><label>Tanggal Lahir</label></td>
+                <td>
+                  <input type="date" name="tanggal_lahir" required>
+                </td>
+              </tr>
 
-      <tr>
-        <td><label>Tanggal Lahir</label></td>
-        <td>
-          <input type="date" name="tanggal_lahir" required>
-        </td>
-      </tr>
+              <tr>
+                <td><label>Upload KTP / Kartu Pelajar</label></td>
+                <td>
+                  <input type="file" name="ktp" accept=".jpg,.jpeg,.png,.pdf" required>
+                </td>
+              </tr>
 
-      <tr>
-        <td><label>Upload KTP / Kartu Pelajar</label></td>
-        <td>
-          <input type="file" name="ktp" accept=".jpg,.jpeg,.png,.pdf" required>
-        </td>
-      </tr>
-
-      <tr>
-        <td></td>
-        <td>
-          <button class="btn" type="submit">Simpan Data</button>
-        </td>
-      </tr>
-
-    </table>
-  </form>
-</section>
-
-      </section>
+              <tr>
+                <td></td>
+                <td>
+                  <button class="btn" type="submit">Simpan Data</button>
+                </td>
+              </tr>
+            </table>
+          </form>
+        </section>
+      </div> {{-- Tutup content-wrapper --}}
     </main>
-  </div>
+  </div> {{-- Tutup app --}}
 </body>
 </html>
