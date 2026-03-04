@@ -10,9 +10,11 @@
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
+        <!-- Header dengan Logo -->
         <div class="header">
-            <div class="logo">Isyarat<span>Kita</span></div>
+            <div class="logo-container">
+                <img src="{{ asset('img/LOGO.png') }}" alt="IsyaratKita Logo" class="logo-img">
+            </div>
             <h1 class="title">Pilih Paket Belajar</h1>
             <p class="subtitle">Mulai dari dasar hingga komunikasi profesional</p>
             <div class="lihat-paket-dasar">Lihat Paket Dasar →</div>
