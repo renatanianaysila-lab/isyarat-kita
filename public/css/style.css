@@ -862,17 +862,17 @@ a{
 /* ===== FIX HOME PAGE: REENGGANGIN TULISAN ===== */
 .HOME-PAGE .text-wrapper-7 {
   letter-spacing: 6px !important;  /* nambah jarak antar huruf */
-  margin-top: 23px !important;      /* turunin dikit */
+  margin-top: 19px !important;      /* turunin dikit */
 }
 
 .HOME-PAGE .DESKIPSI-SINGKAT {
   line-height: 2 !important;      /* nambah jarak antar baris */
   letter-spacing: 0.5px !important; /* jarak antar huruf */
-  max-width: 600px !important;      /* biar lebih luas */
+  max-width: 400px !important;      /* biar lebih luas */
 }
 
 .HOME-PAGE .DAFTAR {
-  margin-right: 23px !important;    /* kasih jarak kanan */
+  margin-right: 19px !important;    /* kasih jarak kanan */
 }
 
 .HOME-PAGE .KENALI {
