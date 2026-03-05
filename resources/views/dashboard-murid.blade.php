@@ -328,3 +328,12 @@
   </div> {{-- Tutup app --}}
 </body>
 </html>
+
+<a class="menu-item" href="{{ url('/materi-saya') }}">
+    <img class="menu-icon" src="{{ asset('img/materi.png') }}" alt="">
+    Materi Saya
+</a>
+
+<a href="{{ url('/materi-saya?paket=dasar') }}" class="btn">
+    Lihat Materi →
+</a>
