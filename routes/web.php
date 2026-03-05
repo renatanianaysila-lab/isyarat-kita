@@ -5,38 +5,32 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
-// LOGIN
 Route::get('/login', function () {
     return view('login');
 })->name('login');
 
 Route::post('/login', function (Request $request) {
     $request->validate([
-        'email' => 'required',
+        'email' => 'required|email',
         'password' => 'required',
     ]);
-
     return redirect('/dashboard-murid');
 });
 
-// REGISTER
 Route::get('/register', function () {
     return view('register');
-});
+})->name('register');
 
-// DASHBOARD MURID
 Route::get('/dashboard-murid', function () {
     return view('dashboard-murid');
-});
+})->name('dashboard.murid');
 
-// DASHBOARD GURU
 Route::get('/dashboard-guru', function () {
     return view('dashboard-guru');
-});
+})->name('dashboard.guru');
 
-// PAKET BELAJAR (Halaman Pilih Paket)
 Route::get('/paket', function () {
     return view('paket');
-});
+})->name('paket');

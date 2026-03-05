@@ -1,10 +1,10 @@
-<?php
+﻿<?php
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/login');
 });
 
 // LOGIN
@@ -29,8 +29,14 @@ Route::get('/register', function () {
 // DASHBOARD MURID
 Route::get('/dashboard-murid', function () {
     return view('dashboard-murid');
+});
 
 // DASHBOARD GURU
 Route::get('/dashboard-guru', function () {
     return view('dashboard-guru');
+});
+
+// PAKET BELAJAR (Halaman Pilih Paket)
+Route::get('/paket', function () {
+    return view('paket');
 });
