@@ -286,23 +286,6 @@
                 </div>
             </div>
         </div>
-        
-        <!-- Grafik Progress -->
-        <div class="graph" style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #e9ecef;">
-            <div class="graph-title" style="font-size: 0.9rem; color: #64748b; margin-bottom: 12px;">Grafik Progress 7 Hari Terakhir</div>
-            <div class="graph-box" style="height: 100px; background: #f8fafc; border-radius: 12px; display: flex; align-items: flex-end; padding: 12px 8px; gap: 8px;">
-                <div style="height: 40px; width: 12%; background: #4CAF50; border-radius: 6px 6px 0 0;"></div>
-                <div style="height: 65px; width: 12%; background: #4CAF50; border-radius: 6px 6px 0 0;"></div>
-                <div style="height: 30px; width: 12%; background: #4CAF50; border-radius: 6px 6px 0 0;"></div>
-                <div style="height: 70px; width: 12%; background: #4CAF50; border-radius: 6px 6px 0 0;"></div>
-                <div style="height: 55px; width: 12%; background: #4CAF50; border-radius: 6px 6px 0 0;"></div>
-                <div style="height: 45px; width: 12%; background: #4CAF50; border-radius: 6px 6px 0 0;"></div>
-                <div style="height: 80px; width: 12%; background: #4CAF50; border-radius: 6px 6px 0 0;"></div>
-            </div>
-            <div style="display: flex; justify-content: space-between; margin-top: 8px; font-size: 0.7rem; color: #94a3b8;">
-                <span>Sen</span><span>Sel</span><span>Rab</span><span>Kam</span><span>Jum</span><span>Sab</span><span>Min</span>
-            </div>
-        </div>
     </section>
 
     <!-- Paket yang Dimiliki -->
