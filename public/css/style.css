@@ -876,38 +876,3 @@ a{
 .HOME-PAGE .KENALI {
   left: 640px !important;  /* kasih jarak dari tombol Daftar */
 }
-
-/* ===== KECILIN TAMPILAN TAPI NAVBAR TETAP ===== */
-
-/* Konten utama dikecilin lebarnya */
-.HOME-PAGE,
-.ABOUT-US-VISI-MISI,
-.FITUR-HARGA-PAKET,
-.PAKET-PAKET,
-.lastt {
-  max-width: 1200px !important;  /* batasi lebar */
-  margin: 0 auto !important;      /* tengahin */
-  width: 100% !important;
-  min-width: auto !important;     /* hapus min-width 1440px */
-}
-
-/* Navbar tetap full width dan fixed */
-.HOME-PAGE .rectangle,
-.HOME-PAGE .logo-wrapper,
-.HOME-PAGE .text-wrapper-2,
-.HOME-PAGE .text-wrapper-3,
-.HOME-PAGE .text-wrapper-4,
-.HOME-PAGE .text-wrapper-5,
-.HOME-PAGE .rectangle-2,
-.HOME-PAGE .text-wrapper-6 {
-  position: fixed !important;
-  width: auto !important;
-  /* posisi tetap seperti semula */
-}
-
-/* Background hero tetap ngikutin lebar konten */
-.HOME-PAGE .hero-bg {
-  width: 90% !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-}
