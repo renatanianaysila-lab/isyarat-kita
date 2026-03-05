@@ -35,6 +35,3 @@ Route::get('/paket', function () {
     return view('paket');
 })->name('paket');
 
-Route::get('/materi-saya', function () {
-    return view('materi-saya');
-})->name('materi.saya');
