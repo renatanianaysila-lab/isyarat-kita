@@ -29,46 +29,60 @@
       </div>
 
       <nav class="menu">
-        <a class="menu-item active" href="{{ url('/dashboard-murid') }}">
-          <img class="menu-icon" src="{{ asset('img/dashboard-square-01.png') }}" alt="">
-          Dashboard
-        </a>
+    <!-- Dashboard -->
+    <a class="menu-item {{ request()->get('menu') == 'dashboard' || !request()->get('menu') ? 'active' : '' }}" 
+       href="?menu=dashboard">
+        <img class="menu-icon" src="{{ asset('img/dashboard-square-01.png') }}" alt="">
+        Dashboard
+    </a>
 
-        <a class="menu-item" href="{{ url('/paket') }}">
-          <img class="menu-icon" src="{{ asset('img/katalog.png') }}" alt="">
-          Katalog Paket
-        </a>
+    <!-- Katalog Paket (tetap ke halaman terpisah) -->
+    <a class="menu-item" href="{{ url('/paket') }}">
+        <img class="menu-icon" src="{{ asset('img/katalog.png') }}" alt="">
+        Katalog Paket
+    </a>
 
-        <a class="menu-item" href="#">
-          <img class="menu-icon" src="{{ asset('img/materi.png') }}" alt="">
-          Materi Saya
-        </a>
+    <!-- Materi Saya -->
+    <a class="menu-item {{ request()->get('menu') == 'materi' ? 'active' : '' }}" 
+       href="?menu=materi">
+        <img class="menu-icon" src="{{ asset('img/materi.png') }}" alt="">
+        Materi Saya
+    </a>
 
-        <a class="menu-item" href="#">
-          <img class="menu-icon" src="{{ asset('img/kuis.png') }}" alt="">
-          Kuis
-        </a>
+    <!-- Kuis -->
+    <a class="menu-item {{ request()->get('menu') == 'kuis' ? 'active' : '' }}" 
+       href="?menu=kuis">
+        <img class="menu-icon" src="{{ asset('img/kuis.png') }}" alt="">
+        Kuis
+    </a>
 
-        <a class="menu-item" href="#">
-          <img class="menu-icon" src="{{ asset('img/transaction-history.png') }}" alt="">
-          History
-        </a>
+    <!-- History -->
+    <a class="menu-item {{ request()->get('menu') == 'history' ? 'active' : '' }}" 
+       href="?menu=history">
+        <img class="menu-icon" src="{{ asset('img/transaction-history.png') }}" alt="">
+        History
+    </a>
 
-        <a class="menu-item" href="#">
-          <img class="menu-icon" src="{{ asset('img/feedback.png') }}" alt="">
-          Feedback
-        </a>
+    <!-- Feedback -->
+    <a class="menu-item {{ request()->get('menu') == 'feedback' ? 'active' : '' }}" 
+       href="?menu=feedback">
+        <img class="menu-icon" src="{{ asset('img/feedback.png') }}" alt="">
+        Feedback
+    </a>
 
-        <a class="menu-item" href="#">
-          <img class="menu-icon" src="{{ asset('img/user.png') }}" alt="">
-          Profil
-        </a>
+    <!-- Profil -->
+    <a class="menu-item {{ request()->get('menu') == 'profil' ? 'active' : '' }}" 
+       href="?menu=profil">
+        <img class="menu-icon" src="{{ asset('img/user.png') }}" alt="">
+        Profil
+    </a>
 
-        <a class="menu-item danger" href="/login">
-          <img class="menu-icon" src="{{ asset('img/logout-04.png') }}" alt="">
-          Logout
-        </a>
-      </nav>
+    <!-- Logout (tetap) -->
+    <a class="menu-item danger" href="/login">
+        <img class="menu-icon" src="{{ asset('img/logout-04.png') }}" alt="">
+        Logout
+    </a>
+</nav>
     </aside>
 
     <!-- MAIN -->
@@ -337,3 +351,72 @@
 <a href="{{ url('/materi-saya?paket=dasar') }}" class="btn">
     Lihat Materi →
 </a>
+
+<!-- CONTENT WRAPPER -->
+<div class="content-wrapper">
+    
+    <!-- Cek menu aktif -->
+    @php
+        $activeMenu = request()->get('menu', 'dashboard'); // default dashboard
+    @endphp
+    
+    <!-- DASHBOARD VIEW -->
+    @if($activeMenu == 'dashboard')
+        <!-- Greeting -->
+        <div class="greet">
+            <h1>Halo, <span class="name">[Nama Murid]</span> 👋</h1>
+            <p>Yuk, lanjutkan belajar bahasa isyaratmu! ⭐</p>
+        </div>
+
+        <!-- Row: Progress + Paket -->
+        <div class="grid-2">
+            <!-- PROGRESS SECTION -->
+            <section class="card progress-card-custom">
+                ... (isi progress) ...
+            </section>
+
+            <!-- PAKET SECTION -->
+            <section class="card">
+                ... (isi paket) ...
+            </section>
+        </div>
+
+        <!-- Rekomendasi -->
+        <div class="section-head">
+            <h3>Rekomendasi Materi...</h3>
+        </div>
+
+        <!-- Form Identitas -->
+        <section class="card">
+            ... (form identitas) ...
+        </section>
+    @endif
+    
+    <!-- MATERI SAYA VIEW -->
+    @if($activeMenu == 'materi')
+        <div class="materi-saya-container">
+            <h1>Materi Saya</h1>
+            <!-- Daftar materi disini -->
+            <div class="materi-grid">
+                ... (isi card materi) ...
+            </div>
+        </div>
+    @endif
+    
+    <!-- KUIS VIEW -->
+    @if($activeMenu == 'kuis')
+        <div class="kuis-container">
+            <h1>Kuis Saya</h1>
+            <!-- Daftar kuis disini -->
+        </div>
+    @endif
+    
+    <!-- HISTORY VIEW -->
+    @if($activeMenu == 'history')
+        <div class="history-container">
+            <h1>History Belajar</h1>
+            <!-- History belajar disini -->
+        </div>
+    @endif
+    
+</div>
