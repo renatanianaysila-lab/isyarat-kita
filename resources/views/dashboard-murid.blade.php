@@ -206,35 +206,51 @@
     </div>
   </section>
 
-  <!-- Paket yang Dimiliki (tetap sama) -->
+  <!-- Row: Progress + Paket -->
+<div class="grid-2">
+
+  <!-- PROGRESS SECTION - DESAIN BARU -->
+  <section class="card progress-card-custom">
+    ... (isi progress yang panjang tadi) ...
+  </section>
+
+  <!-- Paket yang Dimiliki - PAKET ASLI -->
   <section class="card">
-    ... (bagian paket tidak berubah) ...
+    <div class="card-head">
+      <h2>Paket yang Dimiliki</h2>
+    </div>
+
+    <div class="paket-grid">
+      <!-- Paket Dasar -->
+      <div class="paket-card">
+        <div class="paket-title">Paket Dasar</div>
+        <div class="paket-sub">60 hari tersisa</div>
+        <ul class="paket-list">
+          <li>Preview thumbnail</li>
+          <li>judul paket, deskripsi singkat paket</li>
+          <li><b>Aktif</b></li>
+        </ul>
+        <button class="btn">Lanjut Belajar</button>
+      </div>
+
+      <!-- Paket Premium -->
+      <div class="paket-card">
+        <div class="paket-title">Paket Premium</div>
+        <div class="paket-sub">240 hari tersisa</div>
+        <ul class="paket-list">
+          <li>Preview thumbnail</li>
+          <li>judul paket, deskripsi singkat paket</li>
+          <li><b>Aktif</b></li>
+        </ul>
+        <button class="btn">Lanjut Belajar</button>
+      </div>
+    </div>
+
+    <div class="card-foot">
+      <a class="link" href="<?php echo e(url('/paket')); ?>">Lihat Semua Paket ›</a>
+    </div>
   </section>
 </div>
-
-            <div class="paket-grid">
-              <div class="paket-card">
-                <div class="paket-title">Paket Dasar</div>
-                <div class="paket-sub">60 hari tersisa</div>
-                <ul class="paket-list">
-                  <li>Preview thumbnail</li>
-                  <li>judul paket, deskripsi singkat paket</li>
-                  <li><b>Aktif</b></li>
-                </ul>
-                <button class="btn">Lanjut Belajar</button>
-              </div>
-
-              <div class="paket-card">
-                <div class="paket-title">Paket Premium</div>
-                <div class="paket-sub">240 hari tersisa</div>
-                <ul class="paket-list">
-                  <li>Preview thumbnail</li>
-                  <li>judul paket, deskripsi singkat paket</li>
-                  <li><b>Aktif</b></li>
-                </ul>
-                <button class="btn">Lanjut Belajar</button>
-              </div>
-            </div>
 
             <!-- Link Lihat Semua Paket mengarah ke halaman paket -->
             <div class="card-foot">
