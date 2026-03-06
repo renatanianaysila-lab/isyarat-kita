@@ -1,17 +1,14 @@
 /* =========================
-   LOGIN PAGE (scoped)
-   supaya tidak tabrakan dgn CSS lain
+   LOGIN PAGE - STICKY NAVBAR
 ========================= */
 
-.LOGIN, .LOGIN * {
-  box-sizing: border-box;
+.LOGIN {
+  position: relative;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, sans-serif;
 }
 
-body {
-  margin: 0;
-}
-
-/* Container */
+/* Background */
 .LOGIN .BACKGROUND {
   position: absolute;
   top: 115px;
@@ -24,198 +21,252 @@ body {
   z-index: 0;
 }
 
-/* Top Bar */
-.LOGIN .rectangle {
-  position: absolute;
-  top: 5px;
+/* Navbar - STICKY */
+.LOGIN .navbar {
+  position: sticky;
+  top: 0;
   left: 0;
-  width: 1440px;
-  height: 110px;
-  background-color: #ffffff;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 44px;
+  background: white;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  box-sizing: border-box;
 }
 
-/* Logo */
-.LOGIN .group {
-  position: absolute;
-  top: 31px;
-  left: 44px;
-  width: 56px;
-  height: 48px;
+.LOGIN .logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
-.LOGIN .ellipse {
+.LOGIN .logo-circle {
   width: 48px;
   height: 48px;
-  background-color: #2e5aa7;
+  background: #2e5aa7;
   border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.LOGIN .text-wrapper {
-  position: absolute;
-  top: 9px;
-  left: 14px;
-  font-weight: 400;
-  color: #ffffff;
+.LOGIN .logo-text {
+  color: white;
   font-size: 20px;
+  font-weight: bold;
 }
 
-/* Brand */
-.LOGIN .brand {
-  position: absolute;
-  top: 40px;
-  left: 103px;
+.LOGIN .brand-name {
+  font-size: 24px;
   font-weight: 700;
   color: #1e293b;
-  font-size: 24px;
 }
 
-/* Menu (link) */
-.LOGIN .menu {
-  position: absolute;
-  top: 46px;
-  font-size: 24px;
-  color: #000;
+.LOGIN .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.LOGIN .nav-link {
   text-decoration: none;
+  color: #000;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s;
 }
 
-.LOGIN .home { left: 766px; }
-.LOGIN .tentang { left: 880px; }
-.LOGIN .fitur { left: 997px; }
-.LOGIN .harga { left: 1109px; } /* aku samain seperti landing page biar rapi */
+.LOGIN .nav-link:hover {
+  color: #1e5abc;
+}
 
-.LOGIN .rectangle-2 {
-  position: absolute;
-  top: 34px;
-  left: 1257px;
-  width: 134px;
-  height: 61px;
-  background-color: #1e5abc;
+.LOGIN .btn-masuk {
+  background: #1e5abc;
+  color: white;
+  padding: 10px 30px;
   border-radius: 11px;
-}
-
-.LOGIN .menu.masuk {
-  position: absolute;
-  top: 44px;
-  left: 1243px;
-  width: 162px;
   font-weight: 700;
-  color: #ffffff;
-  text-align: center;
 }
 
-/* Welcome Text */
-.LOGIN .title {
-  position: absolute;
-  top: 186px;
-  left: 307px;
-  width: 829px;
+.LOGIN .btn-masuk:hover {
+  background: #154a9e;
+}
+
+/* Main Content */
+.LOGIN .main-content {
+  position: relative;
+  z-index: 10;
+  max-width: 893px;
+  margin: 0 auto;
   text-align: center;
+  padding: 20px;
+}
+
+.LOGIN .welcome-title {
   font-size: 60px;
   font-weight: 700;
+  margin: 70px 0 40px;
   color: #000;
 }
 
 /* Login Card */
-.LOGIN .rectangle-3 {
-  position: absolute;
-  top: 306px;
-  left: 288px;
-  width: 893px;
-  height: 523px;
-  background-color: #ffffff;
+.LOGIN .login-card {
+  background: white;
+  border-radius: 26px;
+  padding: 50px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-/* Title */
 .LOGIN .login-title {
-  position: absolute;
-  top: 353px;
-  left: 616px;
-  font-size: 64px;
+  font-size: 48px;
   font-weight: 700;
   color: #1e5abc;
+  margin-bottom: 40px;
 }
 
-.LOGIN .signup {
-  position: absolute;
-  top: 649px;
-  left: 395px;
-  font-style: italic;
-  color: #1e5abc;
-  font-size: 24px;
-  text-decoration: none;
+/* Form */
+.LOGIN .login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-bottom: 25px;
 }
 
-/* Input Fields wrapper */
-.LOGIN .group-2,
-.LOGIN .group-3 {
-  position: absolute;
-  left: 394px;
-  width: 650px;
-  height: 76px;
+.LOGIN .input-group {
+  width: 100%;
 }
 
-.LOGIN .group-2 { top: 460px; }
-.LOGIN .group-3 { top: 573px; }
-
-/* Kalau kamu pakai div placeholder */
-.LOGIN .input-box {
-  width: 648px;
-  height: 76px;
-  background-color: #ffffff;
-  border: 4px solid #1e5abc;
-}
-
-.LOGIN .input-label {
-  position: absolute;
-  top: 23px;
-  left: 36px;
-  font-size: 20px;
-  color: #989898;
-}
-
-/* Kalau kamu pakai <input> beneran (rekomendasi) */
-.LOGIN .input {
-  width: 648px;
+.LOGIN .form-input {
+  width: 100%;
   height: 76px;
   border: 4px solid #1e5abc;
-  background: #fff;
-  padding: 0 24px;
-  font-size: 20px;
+  border-radius: 8px;
+  padding: 0 25px;
+  font-size: 18px;
+  box-sizing: border-box;
+}
+
+.LOGIN .form-input:focus {
   outline: none;
+  border-color: #febd19;
 }
 
-/* Login Button (kalau masih div) */
-.LOGIN .button-login {
-  position: absolute;
-  top: 710px;
-  left: 616px;
+/* Submit Button */
+.LOGIN .submit-btn {
   width: 207px;
   height: 55px;
-  background-color: #febd19;
-  border-radius: 11px;
-}
-
-.LOGIN .button-text {
-  position: absolute;
-  top: 721px;
-  left: 669px;
-  font-size: 30px;
-  font-weight: 700;
-  color: #ffffff;
-}
-
-/* Login Button (kalau pakai <button>) */
-.LOGIN .btn-login {
-  position: absolute;
-  top: 710px;
-  left: 616px;
-  width: 207px;
-  height: 55px;
+  background: #febd19;
   border: none;
   border-radius: 11px;
-  background: #febd19;
-  color: #ffffff;
-  font-size: 30px;
+  color: white;
+  font-size: 24px;
   font-weight: 700;
   cursor: pointer;
+  margin: 10px auto 0;
+  transition: all 0.3s;
+}
+
+.LOGIN .submit-btn:hover {
+  background: #e5a800;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(254, 189, 25, 0.3);
+}
+
+/* Sign Up Link */
+.LOGIN .signup-text {
+  font-size: 18px;
+  color: #000;
+}
+
+.LOGIN .signup-link {
+  color: #1e5abc;
+  text-decoration: none;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.LOGIN .signup-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .LOGIN .navbar {
+    padding: 15px 20px;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .LOGIN .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .LOGIN .BACKGROUND {
+    top: 180px;
+  }
+  
+  .LOGIN .welcome-title {
+    font-size: 40px;
+    margin: 40px 0 30px;
+  }
+  
+  .LOGIN .login-card {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .LOGIN .navbar {
+    padding: 12px 15px;
+  }
+  
+  .LOGIN .brand-name {
+    font-size: 20px;
+  }
+  
+  .LOGIN .logo-circle {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .LOGIN .logo-text {
+    font-size: 18px;
+  }
+  
+  .LOGIN .nav-link {
+    font-size: 16px;
+  }
+  
+  .LOGIN .btn-masuk {
+    padding: 8px 20px;
+  }
+  
+  .LOGIN .BACKGROUND {
+    top: 200px;
+  }
+  
+  .LOGIN .welcome-title {
+    font-size: 32px;
+  }
+  
+  .LOGIN .login-title {
+    font-size: 32px;
+  }
+  
+  .LOGIN .form-input {
+    height: 60px;
+    font-size: 16px;
+  }
+  
+  .LOGIN .submit-btn {
+    width: 180px;
+    height: 50px;
+    font-size: 20px;
+  }
 }
