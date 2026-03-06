@@ -858,3 +858,30 @@ a{
 .HOME-PAGE .div{
   display: none;
 }
+
+/* ===== FIX HOME PAGE: REENGGANGIN TULISAN ===== */
+.HOME-PAGE .text-wrapper-7 {
+  letter-spacing: 8px !important;  /* nambah jarak antar huruf */
+  margin-top: 40px !important;      /* turunin dikit */
+}
+
+.HOME-PAGE .DESKIPSI-SINGKAT {
+  line-height: 2.2 !important;      /* nambah jarak antar baris */
+  letter-spacing: 0.5px !important; /* jarak antar huruf */
+  max-width: 800px !important;      /* biar lebih luas */
+}
+
+.HOME-PAGE .DAFTAR {
+  margin-right: 30px !important;    /* kasih jarak kanan */
+}
+
+.HOME-PAGE .KENALI {
+  margin-left: 20px !important;     /* kasih jarak kiri */
+}
+
+/* Jarak antara tombol Daftar dan Kenali */
+.HOME-PAGE .DAFTAR,
+.HOME-PAGE .KENALI {
+  display: inline-block !important;
+  margin-top: 20px !important;
+}
