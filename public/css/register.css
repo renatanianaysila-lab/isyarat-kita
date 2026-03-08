@@ -1,217 +1,342 @@
 /* =========================
-   REGISTER (scoped)
+   SIGNUP PAGE - FIXED VERSION WITH STICKY NAVBAR
 ========================= */
-.SIGN-UP, .SIGN-UP * {
-  box-sizing: border-box;
-}
 
-body { margin: 0; }
-
-.SIGN-UP {
-  background-color: #ffffff;
-  width: 100%;
-  min-width: 1440px;
-  min-height: 1024px;
+.SIGNUP {
   position: relative;
-  overflow: hidden;
-  font-family: "Poppins", Helvetica, Arial, sans-serif;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, 'Poppins', sans-serif;
+  background-color: #ffffff;
+  overflow-x: hidden;
 }
 
-/* background image */
-.SIGN-UP .BACKGROUND {
+/* Background */
+.SIGNUP .BACKGROUND {
   position: absolute;
-  top: 130px;
-  left: 35px;
-  width: 1369px;
+  top: 115px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1369px;
   height: 883px;
-  object-fit: cover;
   border-radius: 26px;
+  object-fit: cover;
   z-index: 0;
 }
 
-/* navbar top */
-.SIGN-UP .rectangle {
-  position: absolute;
-  top: 5px;
-  left: 0;
-  width: 1440px;
-  height: 110px;
-  background-color: #ffffff;
-  z-index: 2;
-}
-
-/* logo */
-.SIGN-UP .group {
-  position: absolute;
-  top: 31px;
-  left: 44px;
-  width: 56px;
-  height: 48px;
-  z-index: 3;
-}
-
-.SIGN-UP .ellipse {
-  position: absolute;
+/* Navbar - STICKY VERSION */
+.SIGNUP .navbar {
+  position: sticky;
   top: 0;
   left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 44px;
+  background: white;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.SIGNUP .logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.SIGNUP .logo-circle {
   width: 48px;
   height: 48px;
-  background-color: #2e5aa7;
-  border-radius: 24px;
+  background: #2e5aa7;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.SIGN-UP .text-wrapper {
-  position: absolute;
-  top: 9px;
-  left: 14px;
-  width: 40px;
-  font-weight: 400;
-  color: #ffffff;
+.SIGNUP .logo-text {
+  color: white;
   font-size: 20px;
-  line-height: normal;
+  font-weight: 400;
 }
 
-/* brand */
-.SIGN-UP .div {
-  position: absolute;
-  top: 40px;
-  left: 103px;
+.SIGNUP .brand-name {
+  font-size: 24px;
   font-weight: 700;
   color: #1e293b;
-  font-size: 24px;
-  z-index: 3;
 }
 
-/* menu */
-.SIGN-UP .text-wrapper-2,
-.SIGN-UP .text-wrapper-3,
-.SIGN-UP .text-wrapper-4,
-.SIGN-UP .text-wrapper-5 {
-  position: absolute;
-  top: 46px;
-  width: 162px;
-  font-weight: 400;
-  color: #000000;
-  font-size: 24px;
-  text-align: center;
-  white-space: nowrap;
+.SIGNUP .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.SIGNUP .nav-link {
   text-decoration: none;
-  z-index: 3;
+  color: #000;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s;
 }
 
-.SIGN-UP .text-wrapper-2 { left: 766px; }
-.SIGN-UP .text-wrapper-3 { left: 880px; }
-.SIGN-UP .text-wrapper-4 { left: 997px; }
-.SIGN-UP .text-wrapper-5 { left: 1109px; }
+.SIGNUP .nav-link:hover {
+  color: #1e5abc;
+}
 
-/* button masuk */
-.SIGN-UP .rectangle-2 {
-  position: absolute;
-  top: 34px;
-  left: 1257px;
-  width: 134px;
-  height: 61px;
-  background-color: #1e5abc;
+.SIGNUP .btn-masuk {
+  background: #1e5abc;
+  color: white;
+  padding: 10px 30px;
   border-radius: 11px;
-  z-index: 3;
-}
-
-.SIGN-UP .text-wrapper-6 {
-  position: absolute;
-  top: 44px;
-  left: 1243px;
-  width: 162px;
   font-weight: 700;
-  color: #ffffff;
-  font-size: 24px;
-  text-align: center;
   text-decoration: none;
-  z-index: 4;
+  font-size: 18px;
 }
 
-/* card putih */
-.SIGN-UP .rectangle-3 {
-  position: absolute;
-  top: 174px;
-  left: 288px;
-  width: 893px;
-  height: 781px;
-  background-color: #ffffff;
-  z-index: 1;
+.SIGNUP .btn-masuk:hover {
+  background: #154a9e;
 }
 
-/* title */
-.SIGN-UP .text-wrapper-7 {
-  position: absolute;
-  top: 210px;
-  left: 593px;
+/* Main Content */
+.SIGNUP .main-content {
+  position: relative;
+  z-index: 10;
+  max-width: 893px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.SIGNUP .welcome-title {
+  font-size: 60px;
+  font-weight: 700;
+  margin: 50px 0 30px;
+  color: #000;
+}
+
+/* Sign Up Card */
+.SIGNUP .signup-card {
+  background: white;
+  border-radius: 26px;
+  padding: 40px 50px 50px;  /* padding bottom ditambah */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 5;
+}
+
+.SIGNUP .signup-title {
+  font-size: 48px;
   font-weight: 700;
   color: #1e5abc;
-  font-size: 64px;
-  text-align: center;
-  z-index: 2;
+  margin-bottom: 40px;  /* ditambah */
 }
 
-/* input groups position (ikut figma) */
-.SIGN-UP .group-2 { position: absolute; top: 327px; left: 396px; width: 650px; height: 76px; z-index: 2; }
-.SIGN-UP .group-3 { position: absolute; top: 432px; left: 396px; width: 650px; height: 76px; z-index: 2; }
-.SIGN-UP .group-4 { position: absolute; top: 537px; left: 396px; width: 650px; height: 76px; z-index: 2; }
-.SIGN-UP .group-5 { position: absolute; top: 642px; left: 396px; width: 650px; height: 76px; z-index: 2; }
-
-/* border box (kayak rectangle-4) */
-.SIGN-UP .rectangle-4 {
-  position: absolute;
-  inset: 0;
-  background-color: #ffffff;
-  border: 4px solid;
-  border-color: #1e5abc;
+/* Form */
+.SIGNUP .signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;  /* ditambah dari 20px */
+  max-width: 650px;
+  margin: 0 auto;
 }
 
-/* input beneran */
-.SIGN-UP .input {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 648px;
+.SIGNUP .input-group {
+  width: 100%;
+}
+
+/* Name row - untuk 2 kolom */
+.SIGNUP .name-row {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+.SIGNUP .name-row .input-group {
+  flex: 1;
+}
+
+.SIGNUP .form-input {
+  width: 100%;
   height: 76px;
   border: 4px solid #1e5abc;
-  background: transparent;
+  border-radius: 8px;
   padding: 0 24px;
-  font-size: 20px;
+  font-size: 18px;
+  box-sizing: border-box;
+  background: white;
+  font-family: inherit;
+}
+
+.SIGNUP .form-input:focus {
   outline: none;
+  border-color: #febd19;
+  box-shadow: 0 0 0 3px rgba(254, 189, 25, 0.1);
 }
 
-/* button signup */
-.SIGN-UP .group-6 {
-  position: absolute;
-  top: 813px;
-  left: 615px;
-  width: 209px;
-  height: 55px;
-  z-index: 2;
+.SIGNUP .form-input::placeholder {
+  color: #989898;
+  font-size: 18px;
 }
 
-.SIGN-UP .btn-signup {
+/* Submit Button */
+.SIGNUP .submit-btn {
   width: 207px;
   height: 55px;
+  background: #febd19;
   border: none;
   border-radius: 11px;
-  background-color: #febd19;
-  color: #ffffff;
-  font-size: 30px;
+  color: white;
+  font-size: 24px;
   font-weight: 700;
   cursor: pointer;
+  margin: 30px auto 0;  /* ditambah dari 20px */
+  transition: all 0.3s;
 }
 
-/* link bawah */
-.SIGN-UP .text-wrapper-13 {
-  position: absolute;
-  top: 718px;
-  left: 396px;
+.SIGNUP .submit-btn:hover {
+  background: #e5a800;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(254, 189, 25, 0.3);
+}
+
+/* Login Link */
+.SIGNUP .login-text {
+  font-size: 18px;
+  color: #000;
+  margin-top: 30px;  /* ditambah dari 20px */
   font-style: italic;
-  font-weight: 400;
+}
+
+.SIGNUP .login-link {
   color: #1e5abc;
-  font-size: 24px;
   text-decoration: none;
-  z-index: 2;
+  font-weight: 600;
+  font-style: italic;
+  margin-left: 5px;
+}
+
+.SIGNUP .login-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .SIGNUP .navbar {
+    padding: 15px 20px;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .SIGNUP .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .SIGNUP .BACKGROUND {
+    top: 180px;
+  }
+  
+  .SIGNUP .welcome-title {
+    font-size: 40px;
+    margin: 40px 0 30px;
+  }
+  
+  .SIGNUP .signup-card {
+    padding: 30px 20px 40px;
+  }
+  
+  .SIGNUP .signup-title {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+  
+  .SIGNUP .signup-form {
+    gap: 20px;
+  }
+  
+  .SIGNUP .name-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .SIGNUP .form-input {
+    height: 60px;
+    font-size: 16px;
+  }
+  
+  .SIGNUP .submit-btn {
+    margin-top: 25px;
+  }
+  
+  .SIGNUP .login-text {
+    margin-top: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .SIGNUP .navbar {
+    padding: 12px 15px;
+  }
+  
+  .SIGNUP .brand-name {
+    font-size: 20px;
+  }
+  
+  .SIGNUP .logo-circle {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .SIGNUP .logo-text {
+    font-size: 18px;
+  }
+  
+  .SIGNUP .nav-link {
+    font-size: 16px;
+  }
+  
+  .SIGNUP .btn-masuk {
+    padding: 8px 20px;
+    font-size: 16px;
+  }
+  
+  .SIGNUP .BACKGROUND {
+    top: 200px;
+  }
+  
+  .SIGNUP .welcome-title {
+    font-size: 32px;
+  }
+  
+  .SIGNUP .signup-title {
+    font-size: 28px;
+    margin-bottom: 25px;
+  }
+  
+  .SIGNUP .signup-card {
+    padding: 20px 15px 30px;
+  }
+  
+  .SIGNUP .form-input {
+    height: 55px;
+    font-size: 15px;
+    padding: 0 15px;
+  }
+  
+  .SIGNUP .submit-btn {
+    width: 160px;
+    height: 45px;
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  
+  .SIGNUP .login-text {
+    font-size: 15px;
+    margin-top: 20px;
+  }
 }
