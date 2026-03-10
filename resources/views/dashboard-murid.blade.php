@@ -401,47 +401,93 @@
         
         <!-- ========== PROFIL VIEW ========== -->
         @if($activeMenu == 'profil')
-<div class="profil-container">
+    @php
+        $user = Auth::user();
+    @endphp
 
-    <h1 style="font-size:2rem; color:#1e293b; margin-bottom:25px;">
-        Profil Saya
-    </h1>
+    <div class="profil-container">
+        <h1 style="font-size: 2rem; color: #1e293b; margin-bottom: 25px;">Profil Saya</h1>
 
-    <section class="card">
-
-        <div class="section-head">
-            <h3>Data Identitas Murid</h3>
-        </div>
-
-        <form action="/upload-identitas" method="POST" enctype="multipart/form-data">
-            @csrf
-
-            <div style="display:grid; gap:18px; max-width:500px;">
-
-                <div>
-                    <label>Nama Lengkap</label>
-                    <input type="text" name="nama" required>
-                </div>
-
-                <div>
-                    <label>Tanggal Lahir</label>
-                    <input type="date" name="tanggal_lahir" required>
-                </div>
-
-                <div>
-                    <label>Upload KTP / Kartu Pelajar</label>
-                    <input type="file" name="ktp" accept=".jpg,.jpeg,.png,.pdf" required>
-                </div>
-
-                <button class="btn" type="submit">
-                    Simpan Data
-                </button>
-
+        <section class="card" style="padding: 24px;">
+            <div class="section-head" style="margin-bottom: 20px;">
+                <h3>Data Profil Murid</h3>
             </div>
 
-        </form>
+            @if(session('success'))
+                <div style="margin-bottom: 16px; padding: 12px 16px; background: #dcfce7; color: #166534; border-radius: 10px;">
+                    {{ session('success') }}
+                </div>
+            @endif
 
-    </section>
+            <form action="{{ route('profil.update') }}" method="POST">
+                @csrf
+                @method('PUT')
 
-</div>
+                <div style="display: grid; gap: 18px; max-width: 600px;">
+
+                    <div>
+                        <label style="display:block; margin-bottom:8px; font-weight:600;">Nama Lengkap</label>
+                        <input
+                            type="text"
+                            name="nama_lengkap"
+                            value="{{ old('nama_lengkap', $user?->nama_lengkap ?? $user?->name ?? '') }}"
+                            required
+                            style="width:100%; padding:12px 14px; border:1px solid #d1d5db; border-radius:10px; outline:none;"
+                        >
+                    </div>
+
+                    <div>
+                        <label style="display:block; margin-bottom:8px; font-weight:600;">Tanggal Lahir</label>
+                        <input
+                            type="date"
+                            name="tanggal_lahir"
+                            value="{{ old('tanggal_lahir', $user?->tanggal_lahir ?? '') }}"
+                            required
+                            style="width:100%; padding:12px 14px; border:1px solid #d1d5db; border-radius:10px; outline:none;"
+                        >
+                    </div>
+
+                    <div>
+                        <label style="display:block; margin-bottom:8px; font-weight:600;">Jenis Kelamin</label>
+                        <select
+                            name="jenis_kelamin"
+                            required
+                            style="width:100%; padding:12px 14px; border:1px solid #d1d5db; border-radius:10px; outline:none; background:white;"
+                        >
+                            <option value="">Pilih Jenis Kelamin</option>
+                            <option value="Laki-laki" {{ old('jenis_kelamin', $user?->jenis_kelamin ?? '') == 'Laki-laki' ? 'selected' : '' }}>Laki-laki</option>
+                            <option value="Perempuan" {{ old('jenis_kelamin', $user?->jenis_kelamin ?? '') == 'Perempuan' ? 'selected' : '' }}>Perempuan</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label style="display:block; margin-bottom:8px; font-weight:600;">Nomor Telepon</label>
+                        <input
+                            type="text"
+                            name="nomor_telepon"
+                            value="{{ old('nomor_telepon', $user?->nomor_telepon ?? '') }}"
+                            required
+                            placeholder="08xxxxxxxxxx"
+                            style="width:100%; padding:12px 14px; border:1px solid #d1d5db; border-radius:10px; outline:none;"
+                        >
+                    </div>
+
+                    <div>
+                        <label style="display:block; margin-bottom:8px; font-weight:600;">Email</label>
+                        <input
+                            type="email"
+                            name="email"
+                            value="{{ old('email', $user?->email ?? '') }}"
+                            required
+                            style="width:100%; padding:12px 14px; border:1px solid #d1d5db; border-radius:10px; outline:none;"
+                        >
+                    </div>
+
+                    <div style="margin-top: 10px;">
+                        <button class="btn" type="submit">Simpan Data</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </div>
 @endif

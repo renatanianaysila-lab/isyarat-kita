@@ -35,3 +35,14 @@ Route::get('/paket', function () {
     return view('paket');
 })->name('paket');
 
+use App\Http\Controllers\ProfilController;
+
+Route::put('/profil/update', [ProfilController::class, 'update'])->name('profil.update');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/dashboard-murid', function () {
+        return view('dashboard-murid');
+    });
+
+    Route::put('/profil/update', [ProfilController::class, 'update'])->name('profil.update');
+});
