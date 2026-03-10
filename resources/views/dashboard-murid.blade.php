@@ -29,60 +29,60 @@
       </div>
 
       <nav class="menu">
-        <!-- Dashboard -->
-        <a class="menu-item {{ request()->get('menu') == 'dashboard' || !request()->get('menu') ? 'active' : '' }}" 
-           href="?menu=dashboard">
-            <img class="menu-icon" src="{{ asset('img/dashboard-square-01.png') }}" alt="">
-            Dashboard
-        </a>
+    <!-- Dashboard -->
+    <a class="menu-item {{ request()->get('menu') == 'dashboard' || !request()->get('menu') ? 'active' : '' }}" 
+       href="?menu=dashboard">
+        <img class="menu-icon" src="{{ asset('img/dashboard-square-01.png') }}" alt="">
+        Dashboard
+    </a>
 
-        <!-- Katalog Paket -->
-        <a class="menu-item" href="{{ url('/paket') }}">
-            <img class="menu-icon" src="{{ asset('img/katalog.png') }}" alt="">
-            Katalog Paket
-        </a>
+    <!-- Profil -->
+    <a class="menu-item {{ request()->get('menu') == 'profil' ? 'active' : '' }}" 
+       href="?menu=profil">
+        <img class="menu-icon" src="{{ asset('img/user.png') }}" alt="">
+        Profil
+    </a>
 
-        <!-- Materi Saya -->
-        <a class="menu-item {{ request()->get('menu') == 'materi' ? 'active' : '' }}" 
-           href="?menu=materi">
-            <img class="menu-icon" src="{{ asset('img/materi.png') }}" alt="">
-            Materi Saya
-        </a>
+    <!-- Materi Saya -->
+    <a class="menu-item {{ request()->get('menu') == 'materi' ? 'active' : '' }}" 
+       href="?menu=materi">
+        <img class="menu-icon" src="{{ asset('img/materi.png') }}" alt="">
+        Materi Saya
+    </a>
 
-        <!-- Kuis -->
-        <a class="menu-item {{ request()->get('menu') == 'kuis' ? 'active' : '' }}" 
-           href="?menu=kuis">
-            <img class="menu-icon" src="{{ asset('img/kuis.png') }}" alt="">
-            Kuis
-        </a>
+    <!-- Kuis -->
+    <a class="menu-item {{ request()->get('menu') == 'kuis' ? 'active' : '' }}" 
+       href="?menu=kuis">
+        <img class="menu-icon" src="{{ asset('img/kuis.png') }}" alt="">
+        Kuis
+    </a>
 
-        <!-- History -->
-        <a class="menu-item {{ request()->get('menu') == 'history' ? 'active' : '' }}" 
-           href="?menu=history">
-            <img class="menu-icon" src="{{ asset('img/transaction-history.png') }}" alt="">
-            History
-        </a>
+    <!-- History -->
+    <a class="menu-item {{ request()->get('menu') == 'history' ? 'active' : '' }}" 
+       href="?menu=history">
+        <img class="menu-icon" src="{{ asset('img/transaction-history.png') }}" alt="">
+        History
+    </a>
 
-        <!-- Feedback -->
-        <a class="menu-item {{ request()->get('menu') == 'feedback' ? 'active' : '' }}" 
-           href="?menu=feedback">
-            <img class="menu-icon" src="{{ asset('img/feedback.png') }}" alt="">
-            Feedback
-        </a>
+    <!-- Feedback -->
+    <a class="menu-item {{ request()->get('menu') == 'feedback' ? 'active' : '' }}" 
+       href="?menu=feedback">
+        <img class="menu-icon" src="{{ asset('img/feedback.png') }}" alt="">
+        Feedback
+    </a>
 
-        <!-- Profil -->
-        <a class="menu-item {{ request()->get('menu') == 'profil' ? 'active' : '' }}" 
-           href="?menu=profil">
-            <img class="menu-icon" src="{{ asset('img/user.png') }}" alt="">
-            Profil
-        </a>
+    <!-- Katalog Paket -->
+    <a class="menu-item" href="{{ url('/paket') }}">
+        <img class="menu-icon" src="{{ asset('img/katalog.png') }}" alt="">
+        Katalog Paket
+    </a>
 
-        <!-- Logout -->
-        <a class="menu-item danger" href="/login">
-            <img class="menu-icon" src="{{ asset('img/logout-04.png') }}" alt="">
-            Logout
-        </a>
-      </nav>
+    <!-- Logout -->
+    <a class="menu-item danger" href="/login">
+        <img class="menu-icon" src="{{ asset('img/logout-04.png') }}" alt="">
+        Logout
+    </a>
+</nav>
     </aside>
 
     <!-- MAIN -->

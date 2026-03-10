@@ -6,19 +6,7 @@ use Illuminate\Http\Request;
 
 class ProfilController extends Controller
 {
-    //
-}
-
-<?php
-
-namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-
-class ProfilController extends Controller
-{
-    public function update(Request $request)
+   public function update(Request $request)
     {
         $request->validate([
             'nama_lengkap'   => 'required|string|max:255',
@@ -39,8 +27,10 @@ class ProfilController extends Controller
         $user->save();
 
         return back()->with('success', 'Profil berhasil diperbarui.');
-    }
+    } //
 }
+
+
 
 
 
