@@ -287,35 +287,6 @@
                 </section>
             </div>
 
-            <!-- Form Identitas -->
-            <div class="section-head" style="margin-top:18px;">
-                <h3>Form Identitas Murid</h3>
-                <span class="badge">Form</span>
-            </div>
-
-            <section class="card">
-                <form action="/upload-identitas" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    <table class="form-table" width="100%" cellpadding="10">
-                        <tr>
-                            <td><label>Nama Lengkap</label></td>
-                            <td><input type="text" name="nama" required></td>
-                        </tr>
-                        <tr>
-                            <td><label>Tanggal Lahir</label></td>
-                            <td><input type="date" name="tanggal_lahir" required></td>
-                        </tr>
-                        <tr>
-                            <td><label>Upload KTP / Kartu Pelajar</label></td>
-                            <td><input type="file" name="ktp" accept=".jpg,.jpeg,.png,.pdf" required></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td><button class="btn" type="submit">Simpan Data</button></td>
-                        </tr>
-                    </table>
-                </form>
-            </section>
         @endif
         
         <!-- ========== MATERI SAYA VIEW ========== -->
@@ -430,15 +401,47 @@
         
         <!-- ========== PROFIL VIEW ========== -->
         @if($activeMenu == 'profil')
-            <div style="text-align: center; padding: 50px;">
-                <h1 style="font-size: 2rem; color: #1e293b;">Profil Saya</h1>
-                <p style="color: #64748b; margin: 20px 0;">Sedang dalam pengembangan</p>
-                <a href="?menu=dashboard" style="color: #4CAF50;">Kembali ke Dashboard</a>
+<div class="profil-container">
+
+    <h1 style="font-size:2rem; color:#1e293b; margin-bottom:25px;">
+        Profil Saya
+    </h1>
+
+    <section class="card">
+
+        <div class="section-head">
+            <h3>Data Identitas Murid</h3>
+        </div>
+
+        <form action="/upload-identitas" method="POST" enctype="multipart/form-data">
+            @csrf
+
+            <div style="display:grid; gap:18px; max-width:500px;">
+
+                <div>
+                    <label>Nama Lengkap</label>
+                    <input type="text" name="nama" required>
+                </div>
+
+                <div>
+                    <label>Tanggal Lahir</label>
+                    <input type="date" name="tanggal_lahir" required>
+                </div>
+
+                <div>
+                    <label>Upload KTP / Kartu Pelajar</label>
+                    <input type="file" name="ktp" accept=".jpg,.jpeg,.png,.pdf" required>
+                </div>
+
+                <button class="btn" type="submit">
+                    Simpan Data
+                </button>
+
             </div>
-        @endif
-        
-      </div> {{-- Tutup content-wrapper --}}
-    </main>
-  </div> {{-- Tutup app --}}
-</body>
-</html>
+
+        </form>
+
+    </section>
+
+</div>
+@endif
