@@ -72,10 +72,11 @@
     </a>
 
     <!-- Katalog Paket -->
-    <a class="menu-item" href="{{ url('/paket') }}">
-        <img class="menu-icon" src="{{ asset('img/katalog.png') }}" alt="">
-        Katalog Paket
-    </a>
+    <a class="menu-item {{ request()->get('menu') == 'katalog' ? 'active' : '' }}" 
+   href="?menu=katalog">
+    <img class="menu-icon" src="{{ asset('img/katalog.png') }}" alt="">
+    Katalog Paket
+</a>
 
     <!-- Logout -->
     <a class="menu-item danger" href="/login">
@@ -250,7 +251,7 @@
                     </div>
 
                     <div class="card-foot">
-                        <a class="link" href="{{ url('/paket') }}">Lihat Semua Paket ›</a>
+                        <a class="link" href="?menu=katalog">Lihat Semua Paket ›</a>
                     </div>
                 </section>
             </div>
