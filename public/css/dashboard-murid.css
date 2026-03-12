@@ -719,3 +719,215 @@ a{ text-decoration:none; color:inherit; }
         align-items: center;
     }
 }
+
+/* ===== KATALOG PAKET DI DALAM DASHBOARD ===== */
+.katalog-wrapper{
+  padding: 8px 0 20px;
+}
+
+.katalog-header{
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.katalog-title{
+  font-size: 36px;
+  font-weight: 700;
+  color: #1a2b3c;
+  margin-bottom: 8px;
+}
+
+.katalog-subtitle{
+  font-size: 18px;
+  color: #5e6f7d;
+}
+
+.katalog-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.katalog-card{
+  background: #fff;
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  position: relative;
+  border: 1px solid rgba(0,0,0,.06);
+}
+
+.katalog-badge{
+  position: absolute;
+  top: -12px;
+  left: 24px;
+  background: #4a90e2;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  box-shadow: 0 4px 10px rgba(74, 144, 226, 0.25);
+}
+
+.katalog-badge.rekomendasi{
+  background: #ff9800;
+  left: auto;
+  right: 24px;
+  box-shadow: 0 4px 10px rgba(255, 152, 0, 0.25);
+}
+
+.katalog-card-head{
+  margin-top: 10px;
+  margin-bottom: 24px;
+}
+
+.katalog-card-head h3{
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a2b3c;
+  margin-bottom: 4px;
+}
+
+.katalog-card-head h2{
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a2b3c;
+  margin-bottom: 10px;
+}
+
+.katalog-card-head p{
+  color: #5e6f7d;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* Paket dasar */
+.fitur-grid-dashboard{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin: 28px 0;
+}
+
+.fitur-grid-item-dashboard{
+  text-align: center;
+}
+
+.icon-circle-dashboard{
+  width: 54px;
+  height: 54px;
+  background: #eef5ff;
+  color: #4a90e2;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.fitur-grid-item-dashboard span{
+  display: block;
+  font-size: 14px;
+  color: #2d3e50;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* Paket premium */
+.fitur-list-dashboard{
+  margin: 28px 0;
+}
+
+.fitur-item-dashboard{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  color: #2d3e50;
+  font-size: 16px;
+}
+
+.icon-dashboard{
+  width: 22px;
+  height: 22px;
+  background: #4a90e2;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.icon-dashboard.star{
+  background: #ffc107;
+  color: #fff;
+}
+
+.harga-dashboard{
+  font-size: 34px;
+  font-weight: 700;
+  color: #1a2b3c;
+  margin: 22px 0;
+}
+
+.harga-dashboard small{
+  font-size: 16px;
+  font-weight: 400;
+  color: #8a9aa8;
+}
+
+.katalog-btn-outline{
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: transparent;
+  border: 2px solid #4a90e2;
+  color: #4a90e2;
+  border-radius: 16px;
+  padding: 14px;
+  font-weight: 600;
+}
+
+.katalog-btn-outline:hover{
+  background: #eef5ff;
+}
+
+.katalog-btn-primary{
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: #4a90e2;
+  color: #fff;
+  border-radius: 16px;
+  padding: 14px;
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(74, 144, 226, 0.25);
+}
+
+.katalog-btn-primary:hover{
+  background: #3a7bcb;
+}
+
+@media (max-width: 992px){
+  .katalog-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .katalog-title{
+    font-size: 28px;
+  }
+
+  .katalog-subtitle{
+    font-size: 16px;
+  }
+}
+
+.content-wrapper{
+  padding: 30px 32px;
+}
