@@ -84,7 +84,7 @@
                     </div>
                 </div>
 
-                <div class="harga">Rp. 30.000 <small>/bulan</small></div>
+                <div class="harga">Rp. 30.000 <small>/6 bulan</small></div>
                 
                 <a href="{{ url('/pembayaran?paket=premium&harga=30000') }}" class="btn btn-primary">Upgrade Sekarang →</a>
 
