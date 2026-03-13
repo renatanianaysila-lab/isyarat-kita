@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IsyaratKita - Pembayaran</title>
     
+    <!-- Google Fonts untuk Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <!-- CSS Pembayaran -->
     <link rel="stylesheet" href="{{ asset('css/pembayaran.css') }}">
 </head>
@@ -20,93 +23,102 @@
             <!-- Step Indicator -->
             <div class="step-indicator">
                 <div class="step-line"></div>
-    
-            <!-- Step 1: Detail Pesanan (link ke halaman paket) -->
-            <a href="{{ url('/paket') }}" class="step-item active" style="text-decoration: none; color: inherit;">
-                <div class="step-circle">1</div>
-                <span>Detail Pesanan</span>
-            </a>
-    
-            <!-- Step 2: Metode Pembayaran -->
-            <div class="step-item active">
-                <div class="step-circle">2</div>
-                <span>Metode Pembayaran</span>
+                
+                <!-- Step 1: Detail Pesanan (link ke halaman paket) -->
+                <a href="{{ url('/paket') }}" class="step-item active">
+                    <div class="step-circle">1</div>
+                    <span>Detail Pesanan</span>
+                </a>
+                
+                <!-- Step 2: Metode Pembayaran -->
+                <div class="step-item active">
+                    <div class="step-circle">2</div>
+                    <span>Metode Pembayaran</span>
+                </div>
+                
+                <!-- Step 3: Konfirmasi -->
+                <div class="step-item">
+                    <div class="step-circle">3</div>
+                    <span>Konfirmasi</span>
+                </div>
             </div>
-    
-            <!-- Step 3: Konfirmasi -->
-            <div class="step-item">
-                <div class="step-circle">3</div>
-                <span>Konfirmasi</span>
-            </div>
-        </div>
-            <!-- Logo Kecil -->
+
+            <!-- Payment Header dengan Logo -->
             <div class="payment-header">
-                <img src="{{ asset('img/LOGO.png') }}" alt="IsyaratKita" class="payment-logo">
                 <h1 class="section-title">Metode Pembayaran</h1>
+                <img src="{{ asset('img/LOGO.png') }}" alt="IsyaratKita" class="payment-logo">
             </div>
             
-            <!-- Metode Pembayaran -->
-            <div class="method-grid">
-                <div class="method-option" id="method-qris" onclick="pilihMetode('qris')">
-                    <div class="method-icon">📱</div>
-                    <div class="method-label">QRIS</div>
-                <div class="method-desc">Scan QRIS langsung</div>
-            </div>
-    
-            <div class="method-option" id="method-va" onclick="pilihMetode('va')">
-                <div class="method-icon">🏦</div>
-                <div class="method-label">Virtual Account</div>
-                <div class="method-desc">BCA, Mandiri, BRI, BNI</div>
-            </div>
-        </div>
+            <!-- Two Column Layout -->
+            <div class="payment-row">
+                <!-- Left Column: Metode Pembayaran & Info -->
+                <div class="payment-col">
+                    <!-- Metode Pembayaran -->
+                    <div class="method-grid">
+                        <div class="method-option" id="method-qris" onclick="pilihMetode('qris')">
+                            <div class="method-icon">📱</div>
+                            <div class="method-label">QRIS</div>
+                            <div class="method-desc">Scan QRIS langsung</div>
+                        </div>
+                        
+                        <div class="method-option" id="method-va" onclick="pilihMetode('va')">
+                            <div class="method-icon">🏦</div>
+                            <div class="method-label">Virtual Account</div>
+                            <div class="method-desc">BCA, Mandiri, BRI, BNI</div>
+                        </div>
+                    </div>
 
-            <!-- Ringkasan Pesanan -->
-            <div class="ringkasan-box">
-                <h2 class="ringkasan-title">Ringkasan Pesanan</h2>
-                
-                <div class="order-detail">
-                    <span>Paket:</span>
-                    <span class="order-value" id="packageName">
-                        {{ request('paket') == 'premium' ? 'Paket Premium' : 'Paket Premium' }}
-                    </span>
-                </div>
-                
-                <div class="order-detail">
-                    <span>Durasi:</span>
-                    <span class="order-value">6 Bulan</span>
-                </div>
-
-                <div class="order-detail">
-                    <span>Akses:</span>
-                    <span class="order-value">Video Unlimited + Materi Eksklusif</span>
+                    <!-- Informasi Tambahan -->
+                    <div class="info-section">
+                        <div class="info-item">
+                            <span class="info-icon">✓</span>
+                            <span>Akses langsung setelah pembayaran</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">✓</span>
+                            <span>Bukti pembayaran dikirim ke email</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">✓</span>
+                            <span>Batas pembayaran 24 jam</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="order-detail">
-                    <span>Konsultasi:</span>
-                    <span class="order-value">Konsultasi Singkat</span>
-                </div>
-                
-                <div class="order-detail total">
-                    <span>Total Tagihan:</span>
-                    <span class="total-value" id="totalPrice">
-                        Rp {{ number_format(request('harga', 30000), 0, ',', '.') }}
-                    </span>
-                </div>
-            </div>
+                <!-- Right Column: Ringkasan Pesanan -->
+                <div class="payment-col">
+                    <div class="ringkasan-box">
+                        <h2 class="ringkasan-title">Ringkasan Pesanan</h2>
+                        
+                        <div class="order-detail">
+                            <span>Paket:</span>
+                            <span class="order-value" id="packageName">
+                                {{ request('paket') == 'premium' ? 'Paket Premium' : 'Paket Premium' }}
+                            </span>
+                        </div>
+                        
+                        <div class="order-detail">
+                            <span>Durasi:</span>
+                            <span class="order-value">6 Bulan</span>
+                        </div>
 
-            <!-- Informasi Tambahan -->
-            <div class="info-section">
-                <div class="info-item">
-                    <span class="info-icon">✓</span>
-                    <span>Akses langsung setelah pembayaran</span>
-                </div>
-                <div class="info-item">
-                    <span class="info-icon">✓</span>
-                    <span>Bukti pembayaran dikirim ke email</span>
-                </div>
-                <div class="info-item">
-                    <span class="info-icon">✓</span>
-                    <span>Batas pembayaran 24 jam</span>
+                        <div class="order-detail">
+                            <span>Akses:</span>
+                            <span class="order-value">Video Unlimited + Materi Eksklusif</span>
+                        </div>
+
+                        <div class="order-detail">
+                            <span>Konsultasi:</span>
+                            <span class="order-value">Konsultasi Singkat</span>
+                        </div>
+                        
+                        <div class="order-detail total">
+                            <span>Total Tagihan:</span>
+                            <span class="total-value" id="totalPrice">
+                                Rp {{ number_format(request('harga', 30000), 0, ',', '.') }}
+                            </span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -115,7 +127,8 @@
                 @csrf
                 <input type="hidden" name="paket" value="{{ request('paket', 'premium') }}">
                 <input type="hidden" name="harga" value="{{ request('harga', 30000) }}">
-                <button type="button" class="btn btn-primary btn-large" onclick="prosesPembayaran()">
+                <input type="hidden" name="metode" id="selectedMethod" value="">
+                <button type="button" class="btn btn-primary btn-large confirm-btn" onclick="prosesPembayaran()">
                     Konfirmasi & Bayar
                 </button>
             </form>
@@ -138,13 +151,13 @@
 
     <!-- Modal Konfirmasi -->
     <div id="confirmModal" class="modal">
-        <div class="modal-content" style="max-width: 350px;">
+        <div class="modal-content" style="max-width: 400px;">
             <div class="modal-icon">🔔</div>
             <h3>Konfirmasi Pembayaran</h3>
             <p>Anda akan melakukan pembayaran untuk:</p>
-            <p style="font-weight: 600; color: #1a2b3c; margin: 10px 0;" id="confirmPackage">Paket Premium</p>
-            <p style="font-size: 20px; font-weight: 700; color: #4a90e2; margin-bottom: 20px;" id="confirmPrice">Rp 30.000</p>
-            <div style="display: flex; gap: 10px;">
+            <p style="font-weight: 700; color: #1e293b; margin: 15px 0; font-size: 22px;" id="confirmPackage">Paket Premium</p>
+            <p style="font-size: 28px; font-weight: 800; color: #1e5abc; margin-bottom: 25px;" id="confirmPrice">Rp 30.000</p>
+            <div style="display: flex; gap: 15px;">
                 <button class="btn" style="flex: 1; background: #e1e8ed; color: #5e6f7d;" onclick="tutupConfirmModal()">Batal</button>
                 <button class="btn btn-primary" style="flex: 1;" onclick="lanjutkanPembayaran()">Lanjutkan</button>
             </div>
@@ -156,13 +169,35 @@
         const paket = "{{ request('paket', 'premium') }}";
         const harga = "{{ request('harga', 30000) }}";
         
+        // Variabel untuk menyimpan metode yang dipilih
+        let selectedMethod = null;
+
         // Format harga
         function formatRupiah(angka) {
-            return 'Rp ' + angka.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+            return 'Rp ' + parseInt(angka).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
         }
 
-        window.onload = function() {
-            // Update tampilan berdasarkan paket
+        // Fungsi untuk memilih metode pembayaran
+        function pilihMetode(metode) {
+            // Hapus class selected dari kedua metode
+            document.getElementById('method-qris').classList.remove('selected');
+            document.getElementById('method-va').classList.remove('selected');
+            
+            // Tambahkan class selected ke metode yang dipilih
+            if (metode === 'qris') {
+                document.getElementById('method-qris').classList.add('selected');
+                selectedMethod = 'qris';
+            } else if (metode === 'va') {
+                document.getElementById('method-va').classList.add('selected');
+                selectedMethod = 'va';
+            }
+            
+            // Set value ke hidden input
+            document.getElementById('selectedMethod').value = selectedMethod;
+        }
+
+        window.onload = function() {    
+
             if (paket === 'premium') {
                 document.getElementById('packageName').textContent = 'Paket Premium';
                 document.getElementById('totalPrice').textContent = formatRupiah(harga);
@@ -171,9 +206,14 @@
 
         // Fungsi untuk memproses pembayaran
         function prosesPembayaran() {
+            // Cek apakah metode pembayaran sudah dipilih
+            if (!selectedMethod) {
+                alert('Silakan pilih metode pembayaran terlebih dahulu');
+                return;
+            }
+            
             // Tampilkan modal konfirmasi dulu
-            document.getElementById('confirmPackage').textContent = 
-                paket === 'premium' ? 'Paket Premium' : 'Paket Premium';
+            document.getElementById('confirmPackage').textContent = 'Paket Premium';
             document.getElementById('confirmPrice').textContent = formatRupiah(harga);
             document.getElementById('confirmModal').style.display = 'flex';
         }
@@ -189,7 +229,6 @@
             setTimeout(function() {
                 window.location.href = "{{ url('/paket') }}";
             }, 3000);
-
         }
 
         function tutupConfirmModal() {
