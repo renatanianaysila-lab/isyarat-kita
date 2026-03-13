@@ -17,10 +17,7 @@
     <!-- Navbar -->
     <nav class="navbar">
       <div class="logo-container">
-        <div class="logo-circle">
-          <span class="logo-text">IK</span>
-        </div>
-        <span class="brand-name">IsyaratKita</span>
+        <img src="{{ asset('img/logo.png') }}" alt="IsyaratKita Logo" class="logo-img">
       </div>
 
       <div class="nav-links">
@@ -32,55 +29,51 @@
       </div>
     </nav>
 
-    <!-- Main Content Sign Up -->
-    <main class="main-content">
-      <h1 class="welcome-title">Selamat Datang!</h1>
+<!-- Main Content Sign Up -->
+<main class="main-content">
+  
+  <div class="signup-card">
+    <h2 class="signup-title">SIGN UP</h2>
+    
+    <form class="signup-form" method="POST" action="/register">
+      @csrf
       
-      <div class="signup-card">
-        <h2 class="signup-title">SIGN UP</h2>
-        
-        <form class="signup-form" method="POST" action="/register">
-          @csrf
-          
-          <!-- Name Row (2 kolom) -->
-          <div class="name-row">
-            <div class="input-group">
-              <input class="form-input" type="text" name="nama_depan" placeholder="Nama Depan" required>
-            </div>
-            <div class="input-group">
-              <input class="form-input" type="text" name="nama_belakang" placeholder="Nama Belakang" required>
-            </div>
-          </div>
-
-          <!-- Username -->
-          <div class="input-group">
-            <input class="form-input" type="text" name="username" placeholder="Nama Pengguna" required>
-          </div>
-
-          <!-- Email -->
-          <div class="input-group">
-            <input class="form-input" type="email" name="email" placeholder="Email" required>
-          </div>
-
-          <!-- Password -->
-          <div class="input-group">
-            <input class="form-input" type="password" name="password" placeholder="Password" required>
-          </div>
-
-          <!-- Confirm Password -->
-          <div class="input-group">
-            <input class="form-input" type="password" name="password_confirmation" placeholder="Konfirmasi Password" required>
-          </div>
-
-          <button type="submit" class="submit-btn">SIGN UP</button>
-        </form>
-        
-        <p class="login-text">
-          Sudah punya akun? 
-          <a href="/login" class="login-link">Log In</a>
-        </p>
+      <!-- Name Row  -->
+      <div class="name-row">
+        <div class="input-group">
+          <input class="form-input" type="text" name="nama_depan" placeholder="Nama Depan" required>
+        </div>
+        <div class="input-group">
+          <input class="form-input" type="text" name="nama_belakang" placeholder="Nama Belakang" required>
+        </div>
       </div>
-    </main>
+
+      <!-- Username -->
+      <div class="input-group">
+        <input class="form-input" type="text" name="username" placeholder="Nama Pengguna" required>
+      </div>
+
+      <!-- Email -->
+      <div class="input-group">
+        <input class="form-input" type="email" name="email" placeholder="Email" required>
+      </div>
+
+      <!-- Password -->
+      <div class="input-group">
+        <input class="form-input" type="password" name="password" placeholder="Password" required>
+      </div>
+
+      <!-- Confirm Password -->
+      <div class="input-group">
+        <input class="form-input" type="password" name="password_confirmation" placeholder="Konfirmasi Password" required>
+      </div>
+
+      <button type="submit" class="submit-btn">SIGN UP</button>
+    </form>
+    
+    <p class="login-text">
+      Sudah punya akun? 
+      <a href="/login" class="login-link">Log In</a>
+    </p>
   </div>
-</body>
-</html>
+</main> 

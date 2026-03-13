@@ -73,7 +73,7 @@
                 
                 <div class="order-detail">
                     <span>Durasi:</span>
-                    <span class="order-value">1 Bulan</span>
+                    <span class="order-value">6 Bulan</span>
                 </div>
 
                 <div class="order-detail">
