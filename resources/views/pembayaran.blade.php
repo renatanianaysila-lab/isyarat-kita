@@ -78,7 +78,7 @@
 
                 <div class="order-detail">
                     <span>Konsultasi:</span>
-                    <span class="order-value">1x Konsultasi Singkat</span>
+                    <span class="order-value">Konsultasi Singkat</span>
                 </div>
                 
                 <div class="order-detail total">
