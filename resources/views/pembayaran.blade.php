@@ -18,7 +18,6 @@
         <!-- Card Pembayaran -->
         <div class="payment-card">
             <!-- Step Indicator -->
-            <!-- Step Indicator -->
             <div class="step-indicator">
                 <div class="step-line"></div>
     
