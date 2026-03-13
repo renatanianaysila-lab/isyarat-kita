@@ -18,22 +18,28 @@
         <!-- Card Pembayaran -->
         <div class="payment-card">
             <!-- Step Indicator -->
+            <!-- Step Indicator -->
             <div class="step-indicator">
                 <div class="step-line"></div>
-                <div class="step-item active">
-                    <div class="step-circle">1</div>
-                    <span>Detail Pesanan</span>
-                </div>
-                <div class="step-item active">
-                    <div class="step-circle">2</div>
-                    <span>Metode Pembayaran</span>
-                </div>
-                <div class="step-item">
-                    <div class="step-circle">3</div>
-                    <span>Konfirmasi</span>
-                </div>
+    
+            <!-- Step 1: Detail Pesanan (link ke halaman paket) -->
+            <a href="{{ url('/paket') }}" class="step-item active" style="text-decoration: none; color: inherit;">
+                <div class="step-circle">1</div>
+                <span>Detail Pesanan</span>
+            </a>
+    
+            <!-- Step 2: Metode Pembayaran -->
+            <div class="step-item active">
+                <div class="step-circle">2</div>
+                <span>Metode Pembayaran</span>
             </div>
-
+    
+            <!-- Step 3: Konfirmasi -->
+            <div class="step-item">
+                <div class="step-circle">3</div>
+                <span>Konfirmasi</span>
+            </div>
+        </div>
             <!-- Logo Kecil -->
             <div class="payment-header">
                 <img src="{{ asset('img/LOGO.png') }}" alt="IsyaratKita" class="payment-logo">
