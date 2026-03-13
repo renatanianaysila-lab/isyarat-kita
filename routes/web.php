@@ -62,3 +62,14 @@ Route::get('/dashboard-guru', function () {
 Route::get('/paket', function () {
     return view('paket');
 })->name('paket');
+
+Route::get('/pembayaran', function () {
+    return view('pembayaran');
+})->name('pembayaran');
+
+// TAMBAHKAN INI - Route untuk proses pembayaran
+Route::post('/proses-pembayaran', function () {
+    // Logika sementara untuk pembayaran
+    // Nanti bisa diganti dengan controller yang sebenarnya
+    return redirect()->route('paket')->with('success', 'Pembayaran berhasil diproses!');
+})->name('proses.pembayaran');
