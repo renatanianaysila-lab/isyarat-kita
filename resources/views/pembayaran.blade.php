@@ -145,7 +145,7 @@
             <h3>Pembayaran Berhasil!</h3>
             <p>Selamat! Paket Premium Anda telah aktif.</p>
             <p class="modal-detail">Silahkan cek email untuk detail akses.</p>
-            <a href="{{ url('/paket') }}" class="btn btn-primary modal-btn">Kembali ke Beranda</a>
+            <a href="{{ url('/login') }}" class="btn btn-primary modal-btn">Kembali ke Login</a>
         </div>
     </div>
 
