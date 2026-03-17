@@ -346,7 +346,8 @@
                   Rp. 30.000 <small>/bulan</small>
                 </div>
 
-                <a href="#" class="btn katalog-btn-primary">Upgrade Sekarang →</a>
+                <a href="{{ url('/pembayaran?paket=premium&harga=30000') }}" class="btn katalog-btn-primary">
+                Upgrade Sekarang →</a>
               </section>
             </div>
           </div>
