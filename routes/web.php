@@ -67,9 +67,10 @@ Route::get('/pembayaran', function () {
     return view('pembayaran');
 })->name('pembayaran');
 
-// TAMBAHKAN INI - Route untuk proses pembayaran
 Route::post('/proses-pembayaran', function () {
-    // Logika sementara untuk pembayaran
-    // Nanti bisa diganti dengan controller yang sebenarnya
     return redirect()->route('paket')->with('success', 'Pembayaran berhasil diproses!');
 })->name('proses.pembayaran');
+
+Route::get('/video-player', function () {
+    return view('video-player');
+});
