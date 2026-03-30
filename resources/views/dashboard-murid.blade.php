@@ -1202,7 +1202,7 @@
               <span class="history-badge badge-green">✓ Berhasil Dibeli</span>
             </div>
           </div>
-          <div class="history-duration">Rp99.000</div>
+          <div class="history-duration">Rp30.000</div>
         </div>
 
         <div class="history-card">
@@ -1214,7 +1214,7 @@
               <span class="history-badge badge-green">✓ Berhasil Dibeli</span>
             </div>
           </div>
-          <div class="history-duration">Rp149.000</div>
+          <div class="history-duration">Rp30.000</div>
         </div>
       </div>
     @endif
