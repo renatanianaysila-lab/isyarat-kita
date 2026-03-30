@@ -41,10 +41,10 @@
           Materi Saya
         </a>
 
-        <a href="{{ route('dashboard.kuis') }}" class="menu-item active">
-    <span class="menu-icon">📝</span>
-    <span>Kuis</span>
-</a>
+        <a class="menu-item {{ request()->get('menu') == 'kuis' ? 'active' : '' }}" href="?menu=kuis">
+          <img class="menu-icon" src="{{ asset('img/kuis.png') }}" alt="">
+          Kuis
+        </a>
 
         <a class="menu-item {{ request()->get('menu') == 'history' ? 'active' : '' }}" href="?menu=history">
           <img class="menu-icon" src="{{ asset('img/transaction-history.png') }}" alt="">
@@ -456,6 +456,445 @@
           </div>
         @endif
 
+        {{-- ===================== KUIS ===================== --}}
+@if($activeMenu == 'kuis')
+  <style>
+    .quiz-page {
+      padding: 10px 0 30px;
+    }
+
+    .quiz-banner {
+      background: linear-gradient(90deg, #3d7bf0, #2e62d9);
+      border-radius: 14px 14px 0 0;
+      color: #fff;
+      padding: 18px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      margin-top: 8px;
+    }
+
+    .quiz-banner h2 {
+      font-size: 24px;
+      font-weight: 800;
+      margin: 0 0 8px;
+      color: #fff;
+    }
+
+    .quiz-banner p {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.88);
+      margin: 0;
+    }
+
+    .quiz-stats {
+      display: flex;
+      gap: 10px;
+    }
+
+    .quiz-stat-box {
+      background: rgba(255, 255, 255, 0.14);
+      border-radius: 8px;
+      padding: 10px 14px;
+      min-width: 82px;
+    }
+
+    .quiz-stat-box span {
+      display: block;
+      font-size: 11px;
+      margin-bottom: 4px;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .quiz-stat-box strong {
+      font-size: 22px;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .quiz-wrapper {
+      border: 3px solid #2196f3;
+      border-top: none;
+      padding: 14px 0 0;
+      background: transparent;
+    }
+
+    .quiz-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .quiz-card {
+      background: #fff;
+      border: 1px solid #eef1f5;
+      border-radius: 14px;
+      padding: 16px;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+    }
+
+    .quiz-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .quiz-icon-box {
+      width: 32px;
+      height: 32px;
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .quiz-icon-red {
+      background: #ffe2e2;
+      color: #ef4444;
+    }
+
+    .quiz-icon-blue {
+      background: #e0ebff;
+      color: #3b82f6;
+    }
+
+    .quiz-icon-green {
+      background: #dcfce7;
+      color: #22c55e;
+    }
+
+    .quiz-icon-yellow {
+      background: #fef3c7;
+      color: #eab308;
+    }
+
+    .quiz-count {
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .quiz-count-red { color: #ef4444; }
+    .quiz-count-blue { color: #3b82f6; }
+    .quiz-count-green { color: #22c55e; }
+    .quiz-count-yellow { color: #f59e0b; }
+
+    .quiz-card h3 {
+      font-size: 18px;
+      font-weight: 800;
+      color: #1f2937;
+      margin: 0 0 8px;
+    }
+
+    .quiz-desc {
+      font-size: 12px;
+      line-height: 1.6;
+      color: #6b7280;
+      min-height: 54px;
+      margin-bottom: 12px;
+    }
+
+    .quiz-progress-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: #6b7280;
+      margin-bottom: 6px;
+    }
+
+    .quiz-progress-bar {
+      width: 100%;
+      height: 6px;
+      background: #e5e7eb;
+      border-radius: 999px;
+      overflow: hidden;
+      margin-bottom: 14px;
+    }
+
+    .quiz-progress-fill {
+      height: 100%;
+      border-radius: 999px;
+    }
+
+    .fill-red { background: #ef4444; }
+    .fill-blue { background: #3b82f6; }
+    .fill-green { background: #22c55e; }
+    .fill-yellow { background: #f59e0b; }
+
+    .quiz-card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .quiz-duration {
+      font-size: 11px;
+      color: #9ca3af;
+    }
+
+    .quiz-btn {
+      border: none;
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .quiz-btn-red { background: #ef4444; }
+    .quiz-btn-blue { background: #3b82f6; }
+    .quiz-btn-green { background: #22c55e; }
+    .quiz-btn-yellow { background: #eab308; }
+
+    .quiz-activity {
+      margin-top: 8px;
+    }
+
+    .quiz-activity h3 {
+      font-size: 16px;
+      font-weight: 800;
+      color: #1f2937;
+      margin: 8px 0 12px;
+    }
+
+    .quiz-activity-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .quiz-activity-item {
+      background: #fff;
+      border-radius: 12px;
+      padding: 12px 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid #eef1f5;
+    }
+
+    .quiz-activity-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .quiz-activity-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .quiz-activity-item h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #1f2937;
+      margin: 0 0 2px;
+    }
+
+    .quiz-activity-item p {
+      font-size: 12px;
+      color: #6b7280;
+      margin: 0;
+    }
+
+    .quiz-check {
+      color: #16a34a;
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    @media (max-width: 992px) {
+      .quiz-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .quiz-banner {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .quiz-stats {
+        width: 100%;
+      }
+
+      .quiz-stat-box {
+        flex: 1;
+      }
+
+      .quiz-card-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+    }
+  </style>
+
+  <div class="quiz-page">
+    <div class="quiz-banner">
+      <div>
+        <h2>Selamat Datang di Kuis IsyaratKita! 👋</h2>
+        <p>Uji pemahaman Anda terhadap bahasa isyarat melalui kuis interaktif kami</p>
+      </div>
+
+      <div class="quiz-stats">
+        <div class="quiz-stat-box">
+          <span>Total Kuis</span>
+          <strong>4</strong>
+        </div>
+        <div class="quiz-stat-box">
+          <span>Diselesaikan</span>
+          <strong>2</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="quiz-wrapper">
+      <div class="quiz-grid">
+
+        <div class="quiz-card">
+          <div class="quiz-card-top">
+            <div class="quiz-icon-box quiz-icon-red">🧮</div>
+            <span class="quiz-count quiz-count-red">10 Kuis</span>
+          </div>
+
+          <h3>Angka 1-10</h3>
+          <div class="quiz-desc">
+            Pelajari dan uji kemampuan Anda dalam mengenali bahasa isyarat untuk angka dasar 1 hingga 10
+          </div>
+
+          <div class="quiz-progress-head">
+            <span>Progres</span>
+            <span>3/10</span>
+          </div>
+          <div class="quiz-progress-bar">
+            <div class="quiz-progress-fill fill-red" style="width: 30%;"></div>
+          </div>
+
+          <div class="quiz-card-footer">
+            <span class="quiz-duration">◉ ~15 menit</span>
+            <button class="quiz-btn quiz-btn-red">Lanjutkan</button>
+          </div>
+        </div>
+
+        <div class="quiz-card">
+          <div class="quiz-card-top">
+            <div class="quiz-icon-box quiz-icon-blue">A</div>
+            <span class="quiz-count quiz-count-blue">26 Kuis</span>
+          </div>
+
+          <h3>Huruf A-Z</h3>
+          <div class="quiz-desc">
+            Kuasai alfabet bahasa isyarat dari A hingga Z dengan video demonstrasi yang mudah dipahami
+          </div>
+
+          <div class="quiz-progress-head">
+            <span>Progres</span>
+            <span>5/26</span>
+          </div>
+          <div class="quiz-progress-bar">
+            <div class="quiz-progress-fill fill-blue" style="width: 19%;"></div>
+          </div>
+
+          <div class="quiz-card-footer">
+            <span class="quiz-duration">◉ ~40 menit</span>
+            <button class="quiz-btn quiz-btn-blue">Lanjutkan</button>
+          </div>
+        </div>
+
+        <div class="quiz-card">
+          <div class="quiz-card-top">
+            <div class="quiz-icon-box quiz-icon-green">👥</div>
+            <span class="quiz-count quiz-count-green">15 Kuis</span>
+          </div>
+
+          <h3>Percakapan Dasar</h3>
+          <div class="quiz-desc">
+            Praktikkan komunikasi sehari-hari dengan salam, perkenalan, dan percakapan sederhana
+          </div>
+
+          <div class="quiz-progress-head">
+            <span>Progres</span>
+            <span>0/15</span>
+          </div>
+          <div class="quiz-progress-bar">
+            <div class="quiz-progress-fill fill-green" style="width: 0%;"></div>
+          </div>
+
+          <div class="quiz-card-footer">
+            <span class="quiz-duration">◉ ~25 menit</span>
+            <button class="quiz-btn quiz-btn-green">Mulai</button>
+          </div>
+        </div>
+
+        <div class="quiz-card">
+          <div class="quiz-card-top">
+            <div class="quiz-icon-box quiz-icon-yellow">🙂</div>
+            <span class="quiz-count quiz-count-yellow">12 Kuis</span>
+          </div>
+
+          <h3>Ekspresi Dasar</h3>
+          <div class="quiz-desc">
+            Pelajari ungkapan penting seperti terima kasih, maaf, tolong, ya, dan tidak dalam bahasa isyarat
+          </div>
+
+          <div class="quiz-progress-head">
+            <span>Progres</span>
+            <span>0/12</span>
+          </div>
+          <div class="quiz-progress-bar">
+            <div class="quiz-progress-fill fill-yellow" style="width: 0%;"></div>
+          </div>
+
+          <div class="quiz-card-footer">
+            <span class="quiz-duration">◉ ~20 menit</span>
+            <button class="quiz-btn quiz-btn-yellow">Mulai</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="quiz-activity">
+      <h3>Aktivitas Terakhir</h3>
+
+      <div class="quiz-activity-list">
+        <div class="quiz-activity-item">
+          <div class="quiz-activity-left">
+            <div class="quiz-activity-icon quiz-icon-red">🧮</div>
+            <div>
+              <h4>Menyelesaikan Kuis Angka 3</h4>
+              <p>Skor: 90% • 2 jam yang lalu</p>
+            </div>
+          </div>
+          <div class="quiz-check">✔</div>
+        </div>
+
+        <div class="quiz-activity-item">
+          <div class="quiz-activity-left">
+            <div class="quiz-activity-icon quiz-icon-blue">A</div>
+            <div>
+              <h4>Menyelesaikan Kuis Huruf E</h4>
+              <p>Skor: 85% • 1 hari yang lalu</p>
+            </div>
+          </div>
+          <div class="quiz-check">✔</div>
+        </div>
+      </div>
+    </div>
+  </div>
+@endif
 
         {{-- ===================== HISTORY ===================== --}}
         @if($activeMenu == 'history')
