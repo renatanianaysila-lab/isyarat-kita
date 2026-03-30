@@ -476,51 +476,99 @@
                 </div>
               @endif
 
-              <form action="{{ route('profil.update') }}" method="POST">
-                @csrf
-                @method('PUT')
+              <form action="{{ route('profil.update') }}" method="POST" enctype="multipart/form-data">
+  @csrf
+  @method('PUT')
 
-                <div style="display: grid; gap: 18px; max-width: 600px;">
+  <div class="profil-layout">
 
-                  <div>
-                    <label style="display:block; margin-bottom:8px; font-weight:600;">Nama Lengkap</label>
-                    <input type="text" name="nama_lengkap" value="{{ old('nama_lengkap', $user?->nama_lengkap ?? $user?->name ?? '') }}" required
-                      style="width:100%; padding:12px 14px; border:1px solid #d1d5db; border-radius:10px; outline:none;">
-                  </div>
+    {{-- KIRI: FORM --}}
+    <div class="profil-form-wrap">
+      <div style="display: grid; gap: 18px;">
 
-                  <div>
-                    <label style="display:block; margin-bottom:8px; font-weight:600;">Tanggal Lahir</label>
-                    <input type="date" name="tanggal_lahir" value="{{ old('tanggal_lahir', $user?->tanggal_lahir ?? '') }}" required
-                      style="width:100%; padding:12px 14px; border:1px solid #d1d5db; border-radius:10px; outline:none;">
-                  </div>
+        <div>
+          <label style="display:block; margin-bottom:8px; font-weight:600;">Nama Lengkap</label>
+          <input type="text" name="nama_lengkap" value="{{ old('nama_lengkap', $user?->nama_lengkap ?? $user?->name ?? '') }}" required
+            style="width:100%; padding:12px 14px; border:1px solid #d1d5db; border-radius:10px; outline:none;">
+        </div>
 
-                  <div>
-                    <label style="display:block; margin-bottom:8px; font-weight:600;">Jenis Kelamin</label>
-                    <select name="jenis_kelamin" required
-                      style="width:100%; padding:12px 14px; border:1px solid #d1d5db; border-radius:10px; outline:none; background:white;">
-                      <option value="">Pilih Jenis Kelamin</option>
-                      <option value="Laki-laki" {{ old('jenis_kelamin', $user?->jenis_kelamin ?? '') == 'Laki-laki' ? 'selected' : '' }}>Laki-laki</option>
-                      <option value="Perempuan" {{ old('jenis_kelamin', $user?->jenis_kelamin ?? '') == 'Perempuan' ? 'selected' : '' }}>Perempuan</option>
-                    </select>
-                  </div>
+        <div>
+          <label style="display:block; margin-bottom:8px; font-weight:600;">Tanggal Lahir</label>
+          <input type="date" name="tanggal_lahir" value="{{ old('tanggal_lahir', $user?->tanggal_lahir ?? '') }}" required
+            style="width:100%; padding:12px 14px; border:1px solid #d1d5db; border-radius:10px; outline:none;">
+        </div>
 
-                  <div>
-                    <label style="display:block; margin-bottom:8px; font-weight:600;">Nomor Telepon</label>
-                    <input type="text" name="nomor_telepon" value="{{ old('nomor_telepon', $user?->nomor_telepon ?? '') }}" required placeholder="08xxxxxxxxxx"
-                      style="width:100%; padding:12px 14px; border:1px solid #d1d5db; border-radius:10px; outline:none;">
-                  </div>
+        <div>
+          <label style="display:block; margin-bottom:8px; font-weight:600;">Jenis Kelamin</label>
+          <select name="jenis_kelamin" required
+            style="width:100%; padding:12px 14px; border:1px solid #d1d5db; border-radius:10px; outline:none; background:white;">
+            <option value="">Pilih Jenis Kelamin</option>
+            <option value="Laki-laki" {{ old('jenis_kelamin', $user?->jenis_kelamin ?? '') == 'Laki-laki' ? 'selected' : '' }}>Laki-laki</option>
+            <option value="Perempuan" {{ old('jenis_kelamin', $user?->jenis_kelamin ?? '') == 'Perempuan' ? 'selected' : '' }}>Perempuan</option>
+          </select>
+        </div>
 
-                  <div>
-                    <label style="display:block; margin-bottom:8px; font-weight:600;">Email</label>
-                    <input type="email" name="email" value="{{ old('email', $user?->email ?? '') }}" required
-                      style="width:100%; padding:12px 14px; border:1px solid #d1d5db; border-radius:10px; outline:none;">
-                  </div>
+        <div>
+          <label style="display:block; margin-bottom:8px; font-weight:600;">Nomor Telepon</label>
+          <input type="text" name="nomor_telepon" value="{{ old('nomor_telepon', $user?->nomor_telepon ?? '') }}" required placeholder="08xxxxxxxxxx"
+            style="width:100%; padding:12px 14px; border:1px solid #d1d5db; border-radius:10px; outline:none;">
+        </div>
 
-                  <div style="margin-top: 10px;">
-                    <button class="btn" type="submit">Simpan Data</button>
-                  </div>
-                </div>
-              </form>
+        <div>
+          <label style="display:block; margin-bottom:8px; font-weight:600;">Email</label>
+          <input type="email" name="email" value="{{ old('email', $user?->email ?? '') }}" required
+            style="width:100%; padding:12px 14px; border:1px solid #d1d5db; border-radius:10px; outline:none;">
+        </div>
+
+        <div style="margin-top: 10px;">
+          <button class="btn" type="submit">Simpan Data</button>
+        </div>
+      </div>
+    </div>
+
+    {{-- KANAN: FOTO PROFIL --}}
+    <div class="profil-photo-card">
+      <h4 class="profil-photo-title">Foto Profil</h4>
+
+      <div class="profil-photo-preview-wrap">
+        @if(!empty($user?->foto_profil))
+          <img
+            id="previewFoto"
+            src="{{ asset('storage/' . $user->foto_profil) }}"
+            alt="Foto Profil"
+            class="profil-photo-preview">
+        @else
+          <img
+            id="previewFoto"
+            src="https://ui-avatars.com/api/?name={{ urlencode($user?->nama_lengkap ?? $user?->name ?? 'User') }}&background=2e5aa7&color=ffffff&size=220"
+            alt="Foto Profil"
+            class="profil-photo-preview">
+        @endif
+      </div>
+
+      <p class="profil-photo-name">
+        {{ $user?->nama_lengkap ?? $user?->name ?? 'Murid' }}
+      </p>
+
+      <p class="profil-photo-subtext">Upload foto diri untuk profil akun</p>
+
+      <label for="foto_profil" class="profil-upload-btn">Pilih Foto</label>
+      <input
+        type="file"
+        name="foto_profil"
+        id="foto_profil"
+        accept="image/*"
+        onchange="previewImage(event)"
+        hidden>
+
+      <p class="profil-photo-note">
+        Format: JPG, JPEG, PNG<br>
+        Maksimal 2MB
+      </p>
+    </div>
+
+  </div>
+</form>
             </section>
           </div>
         @endif
