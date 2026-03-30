@@ -56,7 +56,7 @@
 
                 <div class="harga">Rp. 0</div>
                 
-                <button class="btn btn-outline">Mulai Belajar →</button>
+                <a href="{{ url('/pembayaran?paket=dasar&harga=0') }}" class="btn btn-outline">Mulai Belajar →</a>
             </div>
 
             <!-- Paket Premium -->
@@ -84,9 +84,9 @@
                     </div>
                 </div>
 
-                <div class="harga">Rp. 30.000 <small>/bulan</small></div>
+                <div class="harga">Rp. 30.000 <small>/6 bulan</small></div>
                 
-                <button class="btn btn-primary">Upgrade Sekarang →</button>
+                <a href="{{ url('/pembayaran?paket=premium&harga=30000') }}" class="btn btn-primary">Upgrade Sekarang →</a>
 
                 <div class="premium-footer">
                     Akses semua materi premium

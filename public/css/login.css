@@ -1,14 +1,39 @@
 /* =========================
-   LOGIN PAGE - STICKY NAVBAR
+   LOGIN PAGE 
 ========================= */
 
+/* ---------- VARIABLES ---------- */
+:root {
+  --primary-blue: #1e5abc;
+  --primary-dark-blue: #154a9e;
+  --primary-yellow: #febd19;
+  --primary-dark-yellow: #e5a800;
+  --text-dark: #1e293b;
+  --text-light: #000;
+  --text-muted: #989898;
+  --bg-white: #ffffff;
+  --bg-light: #f8fafc;
+  --border-color: #e1e8ed;
+  --shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 6px 15px rgba(254, 189, 25, 0.3);
+  --border-radius-sm: 8px;
+  --border-radius-md: 11px;
+  --border-radius-lg: 26px;
+  --font-family: system-ui, -apple-system, 'Poppins', sans-serif;
+  --navbar-height: 88px;
+}
+
+/* ---------- RESET & BASE ---------- */
 .LOGIN {
   position: relative;
   min-height: 100vh;
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: var(--font-family);
+  background-color: var(--bg-white);
+  overflow-x: hidden;
 }
 
-/* Background */
+/* ---------- BACKGROUND ---------- */
 .LOGIN .BACKGROUND {
   position: absolute;
   top: 115px;
@@ -16,12 +41,12 @@
   transform: translateX(-50%);
   width: 90%;
   height: 883px;
-  border-radius: 26px;
+  border-radius: var(--border-radius-lg);
   object-fit: cover;
   z-index: 0;
 }
 
-/* Navbar - STICKY */
+/* ---------- NAVBAR ---------- */
 .LOGIN .navbar {
   position: sticky;
   top: 0;
@@ -31,9 +56,9 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px 44px;
-  background: white;
+  background: var(--bg-white);
   z-index: 1000;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow-sm);
   transition: all 0.3s ease;
   box-sizing: border-box;
 }
@@ -41,29 +66,12 @@
 .LOGIN .logo-container {
   display: flex;
   align-items: center;
-  gap: 15px;
 }
 
-.LOGIN .logo-circle {
-  width: 48px;
+.LOGIN .logo-img {
   height: 48px;
-  background: #2e5aa7;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.LOGIN .logo-text {
-  color: white;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.LOGIN .brand-name {
-  font-size: 24px;
-  font-weight: 700;
-  color: #1e293b;
+  width: auto;
+  object-fit: contain;
 }
 
 .LOGIN .nav-links {
@@ -74,61 +82,62 @@
 
 .LOGIN .nav-link {
   text-decoration: none;
-  color: #000;
+  color: var(--text-light);
   font-size: 18px;
   font-weight: 500;
   transition: color 0.3s;
 }
 
 .LOGIN .nav-link:hover {
-  color: #1e5abc;
+  color: var(--primary-blue);
 }
 
 .LOGIN .btn-masuk {
-  background: #1e5abc;
-  color: white;
+  background: var(--primary-blue);
+  color: var(--bg-white);
   padding: 10px 30px;
-  border-radius: 11px;
+  border-radius: var(--border-radius-md);
   font-weight: 700;
+  text-decoration: none;
 }
 
 .LOGIN .btn-masuk:hover {
-  background: #154a9e;
+  background: var(--primary-dark-blue);
 }
 
-/* Main Content */
+/* ---------- MAIN CONTENT ---------- */
 .LOGIN .main-content {
   position: relative;
   z-index: 10;
   max-width: 893px;
   margin: 0 auto;
   text-align: center;
-  padding: 20px;
+  padding: calc(var(--navbar-height) + 20px) 20px 20px;
 }
 
 .LOGIN .welcome-title {
   font-size: 60px;
   font-weight: 700;
-  margin: 70px 0 40px;
-  color: #000;
+  margin: 0 0 40px;
+  color: var(--text-light);
 }
 
-/* Login Card */
+/* ---------- LOGIN CARD ---------- */
 .LOGIN .login-card {
-  background: white;
-  border-radius: 26px;
+  background: var(--bg-white);
+  border-radius: var(--border-radius-lg);
   padding: 50px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  box-shadow: var(--shadow-md);
 }
 
 .LOGIN .login-title {
   font-size: 48px;
   font-weight: 700;
-  color: #1e5abc;
+  color: var(--primary-blue);
   margin-bottom: 40px;
 }
 
-/* Form */
+/* ---------- FORM ---------- */
 .LOGIN .login-form {
   display: flex;
   flex-direction: column;
@@ -143,26 +152,33 @@
 .LOGIN .form-input {
   width: 100%;
   height: 76px;
-  border: 4px solid #1e5abc;
-  border-radius: 8px;
+  border: 4px solid var(--primary-blue);
+  border-radius: var(--border-radius-sm);
   padding: 0 25px;
   font-size: 18px;
   box-sizing: border-box;
+  font-family: inherit;
 }
 
 .LOGIN .form-input:focus {
   outline: none;
-  border-color: #febd19;
+  border-color: var(--primary-yellow);
+  box-shadow: 0 0 0 3px rgba(254, 189, 25, 0.1);
 }
 
-/* Submit Button */
+.LOGIN .form-input::placeholder {
+  color: var(--text-muted);
+  font-size: 18px;
+}
+
+/* ---------- SUBMIT BUTTON ---------- */
 .LOGIN .submit-btn {
   width: 207px;
   height: 55px;
-  background: #febd19;
+  background: var(--primary-yellow);
   border: none;
-  border-radius: 11px;
-  color: white;
+  border-radius: var(--border-radius-md);
+  color: var(--bg-white);
   font-size: 24px;
   font-weight: 700;
   cursor: pointer;
@@ -171,29 +187,35 @@
 }
 
 .LOGIN .submit-btn:hover {
-  background: #e5a800;
+  background: var(--primary-dark-yellow);
   transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(254, 189, 25, 0.3);
+  box-shadow: var(--shadow-lg);
 }
 
-/* Sign Up Link */
+/* ---------- SIGN UP LINK ---------- */
 .LOGIN .signup-text {
   font-size: 18px;
-  color: #000;
+  color: var(--text-light);
+  font-style: italic;
 }
 
 .LOGIN .signup-link {
-  color: #1e5abc;
+  color: var(--primary-blue);
   text-decoration: none;
   font-weight: 600;
   font-style: italic;
+  margin-left: 5px;
 }
 
 .LOGIN .signup-link:hover {
   text-decoration: underline;
 }
 
-/* Responsive */
+/* =========================
+   RESPONSIVE
+========================= */
+
+/* Tablet (max-width: 768px) */
 @media (max-width: 768px) {
   .LOGIN .navbar {
     padding: 15px 20px;
@@ -213,30 +235,32 @@
   
   .LOGIN .welcome-title {
     font-size: 40px;
-    margin: 40px 0 30px;
+    margin: 0 0 30px;
   }
   
   .LOGIN .login-card {
     padding: 30px 20px;
   }
+  
+  .LOGIN .login-title {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+  
+  .LOGIN .form-input {
+    height: 60px;
+    font-size: 16px;
+  }
+  
+  .LOGIN .logo-img {
+    height: 40px;
+  }
 }
 
+/* Mobile (max-width: 480px) */
 @media (max-width: 480px) {
   .LOGIN .navbar {
     padding: 12px 15px;
-  }
-  
-  .LOGIN .brand-name {
-    font-size: 20px;
-  }
-  
-  .LOGIN .logo-circle {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .LOGIN .logo-text {
-    font-size: 18px;
   }
   
   .LOGIN .nav-link {
@@ -245,6 +269,7 @@
   
   .LOGIN .btn-masuk {
     padding: 8px 20px;
+    font-size: 16px;
   }
   
   .LOGIN .BACKGROUND {
@@ -253,20 +278,31 @@
   
   .LOGIN .welcome-title {
     font-size: 32px;
+    margin: 0 0 25px;
   }
   
   .LOGIN .login-title {
     font-size: 32px;
+    margin-bottom: 25px;
   }
   
   .LOGIN .form-input {
     height: 60px;
     font-size: 16px;
+    padding: 0 15px;
   }
   
   .LOGIN .submit-btn {
     width: 180px;
     height: 50px;
     font-size: 20px;
+  }
+  
+  .LOGIN .signup-text {
+    font-size: 15px;
+  }
+  
+  .LOGIN .logo-img {
+    height: 35px;
   }
 }

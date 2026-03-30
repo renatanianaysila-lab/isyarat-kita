@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="{{ asset('css/login.css') }}">
 </head>
 <body>
-  <!-- HALAMAN LOGIN (HANYA 1) -->
+  <!-- HALAMAN LOGIN -->
   <div class="LOGIN">
     <!-- Background -->
     <img class="BACKGROUND" src="{{ asset('img/BACKGROUND.png') }}" alt="background">
@@ -17,10 +17,7 @@
     <!-- Navbar -->
     <nav class="navbar">
       <div class="logo-container">
-        <div class="logo-circle">
-          <span class="logo-text">IK</span>
-        </div>
-        <span class="brand-name">IsyaratKita</span>
+        <img src="{{ asset('img/logo.png') }}" alt="IsyaratKita Logo" class="logo-img">
       </div>
 
       <div class="nav-links">
@@ -34,7 +31,7 @@
 
     <!-- Main Content Login -->
     <main class="main-content">
-      <h1 class="welcome-title">Selamat Datang!</h1>
+      <h1 class="welcome-title">Selamat Datang Kembali!</h1>
       
       <div class="login-card">
         <h2 class="login-title">LOG IN</h2>
