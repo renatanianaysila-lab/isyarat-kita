@@ -68,34 +68,39 @@
       </nav>
     </aside>
 
+    <!-- CONTENT -->
+      <div class="content-wrapper">
+        @php
+          $activeMenu = request()->get('menu', 'dashboard');
+        @endphp
+
     <!-- MAIN -->
     <main class="main">
 
       <!-- TOPBAR -->
       <header class="topbar">
-        <div class="search">
-          <input type="text" placeholder="Search..." />
-          <img class="search-img" src="{{ asset('img/search-visual.png') }}" alt="Search">
-        </div>
+  <div>
+    @if($activeMenu == 'materi')
+      <div class="search">
+        <input type="text" placeholder="Search..." />
+        <img class="search-img" src="{{ asset('img/search-visual.png') }}" alt="Search">
+      </div>
+    @endif
+  </div>
 
-        <div class="top-actions">
-          <button class="icon-btn" title="Notifikasi">
-            <img class="top-icon" src="{{ asset('img/notification-01.png') }}" alt="">
-          </button>
-          <button class="icon-btn" title="Bantuan">
-            <img class="top-icon" src="{{ asset('img/help-circle.png') }}" alt="">
-          </button>
-          <div class="profile-mini">
-            <img class="avatar-img" src="{{ asset('img/user.png') }}" alt="">
-          </div>
-        </div>
-      </header>
+  <div class="top-actions">
+    <button class="icon-btn" title="Notifikasi">
+      <img class="top-icon" src="{{ asset('img/notification-01.png') }}" alt="">
+    </button>
+    <button class="icon-btn" title="Bantuan">
+      <img class="top-icon" src="{{ asset('img/help-circle.png') }}" alt="">
+    </button>
+    <div class="profile-mini">
+      <img class="avatar-img" src="{{ asset('img/user.png') }}" alt="">
+    </div>
+  </div>
+</header>
 
-      <!-- CONTENT -->
-      <div class="content-wrapper">
-        @php
-          $activeMenu = request()->get('menu', 'dashboard');
-        @endphp
 
         {{-- ===================== DASHBOARD ===================== --}}
         @if($activeMenu == 'dashboard')
