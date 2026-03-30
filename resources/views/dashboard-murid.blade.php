@@ -41,10 +41,10 @@
           Materi Saya
         </a>
 
-        <a class="menu-item {{ request()->get('menu') == 'kuis' ? 'active' : '' }}" href="?menu=kuis">
-          <img class="menu-icon" src="{{ asset('img/kuis.png') }}" alt="">
-          Kuis
-        </a>
+        <a href="{{ route('dashboard.kuis') }}" class="menu-item active">
+    <span class="menu-icon">📝</span>
+    <span>Kuis</span>
+</a>
 
         <a class="menu-item {{ request()->get('menu') == 'history' ? 'active' : '' }}" href="?menu=history">
           <img class="menu-icon" src="{{ asset('img/transaction-history.png') }}" alt="">
@@ -456,14 +456,6 @@
           </div>
         @endif
 
-        {{-- ===================== KUIS ===================== --}}
-        @if($activeMenu == 'kuis')
-          <div style="text-align: center; padding: 50px;">
-            <h1 style="font-size: 2rem; color: #1e293b;">Halaman Kuis</h1>
-            <p style="color: #64748b; margin: 20px 0;">Sedang dalam pengembangan</p>
-            <a href="?menu=dashboard" style="color: #4CAF50;">Kembali ke Dashboard</a>
-          </div>
-        @endif
 
         {{-- ===================== HISTORY ===================== --}}
         @if($activeMenu == 'history')
