@@ -1222,13 +1222,459 @@
 @endif
 
         {{-- ===================== FEEDBACK ===================== --}}
-        @if($activeMenu == 'feedback')
-          <div style="text-align: center; padding: 50px;">
-            <h1 style="font-size: 2rem; color: #1e293b;">Feedback</h1>
-            <p style="color: #64748b; margin: 20px 0;">Sedang dalam pengembangan</p>
-            <a href="?menu=dashboard" style="color: #4CAF50;">Kembali ke Dashboard</a>
+@if($activeMenu == 'feedback')
+  <style>
+    .feedback-page {
+      background: #ffffff;
+      padding: 6px 0 30px;
+      min-height: 100%;
+    }
+
+    .feedback-shell {
+      border: 2px solid #2ea0ff;
+      padding: 0;
+      background: #ffffff;
+    }
+
+    .feedback-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 12px 18px 10px;
+      border-bottom: 1px solid #eef2f7;
+      background: #ffffff;
+    }
+
+    .feedback-header h2 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 800;
+      color: #1f2937;
+    }
+
+    .feedback-header p {
+      margin: 4px 0 0;
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    .feedback-header-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .feedback-bell {
+      font-size: 14px;
+      color: #6b7280;
+    }
+
+    .feedback-avatar {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #d6bfa7, #8c5a3c);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .feedback-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 18px 10px;
+      flex-wrap: wrap;
+    }
+
+    .feedback-filters {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .feedback-select {
+      min-width: 150px;
+      padding: 10px 12px;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      background: #ffffff;
+      font-size: 12px;
+      color: #4b5563;
+      outline: none;
+    }
+
+    .feedback-info {
+      font-size: 11px;
+      color: #6b7280;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .feedback-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      padding: 0 18px 18px;
+      align-items: start;
+    }
+
+    .feedback-card {
+      background: #ffffff;
+      border: 1px solid #edf2f7;
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+    }
+
+    .feedback-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+
+    .feedback-card-title {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 700;
+      color: #1f2937;
+      line-height: 1.5;
+    }
+
+    .feedback-status {
+      font-size: 11px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .status-pending {
+      color: #ea580c;
+    }
+
+    .status-done {
+      color: #16a34a;
+    }
+
+    .feedback-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      font-size: 11px;
+      color: #6b7280;
+    }
+
+    .feedback-category {
+      color: #2563eb;
+      font-weight: 500;
+    }
+
+    .feedback-form-group {
+      margin-bottom: 14px;
+    }
+
+    .feedback-form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #374151;
+    }
+
+    .feedback-stars {
+      display: flex;
+      gap: 4px;
+      font-size: 22px;
+      color: #d1d5db;
+      line-height: 1;
+    }
+
+    .feedback-stars .active {
+      color: #fbbf24;
+    }
+
+    .feedback-radio-group {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      font-size: 12px;
+      color: #4b5563;
+    }
+
+    .feedback-radio-group label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin: 0;
+      font-weight: 400;
+    }
+
+    .feedback-textarea {
+      width: 100%;
+      min-height: 84px;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 12px;
+      font-size: 12px;
+      color: #374151;
+      resize: none;
+      outline: none;
+      background: #ffffff;
+    }
+
+    .feedback-submit {
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      padding: 12px;
+      background: #2563eb;
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .feedback-submit:hover {
+      background: #1d4ed8;
+    }
+
+    .feedback-review-box {
+      background: #f8fafc;
+      border-radius: 8px;
+      padding: 12px;
+      margin-top: 8px;
+    }
+
+    .feedback-review-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+      font-size: 11px;
+      color: #6b7280;
+    }
+
+    .feedback-review-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .feedback-review-label {
+      font-size: 12px;
+      color: #374151;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .feedback-rating {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: #4b5563;
+      margin-bottom: 8px;
+    }
+
+    .feedback-rating-stars {
+      color: #fbbf24;
+      letter-spacing: 1px;
+    }
+
+    .feedback-review-text {
+      font-size: 12px;
+      color: #4b5563;
+      line-height: 1.6;
+      margin-top: 4px;
+    }
+
+    .feedback-edit-btn {
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 12px;
+      background: #f3f4f6;
+      color: #374151;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 12px;
+    }
+
+    .feedback-edit-btn:hover {
+      background: #e5e7eb;
+    }
+
+    .feedback-space-top {
+      margin-top: 8px;
+    }
+
+    @media (max-width: 992px) {
+      .feedback-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <div class="feedback-page">
+    <div class="feedback-shell">
+      <div class="feedback-header">
+        <div>
+          <h2>Feedback Pembelajaran</h2>
+          <p>Berikan penilaian terhadap materi yang telah Anda pelajari</p>
+        </div>
+
+        <div class="feedback-header-right">
+          <div class="feedback-bell">🔔</div>
+          <div class="feedback-avatar">A</div>
+        </div>
+      </div>
+
+      <div class="feedback-toolbar">
+        <div class="feedback-filters">
+          <select class="feedback-select">
+            <option>Semua Kategori</option>
+            <option>Alfabet</option>
+            <option>Angka</option>
+            <option>Kalimat</option>
+          </select>
+
+          <select class="feedback-select">
+            <option>Status Feedback</option>
+            <option>Belum Dinilai</option>
+            <option>Sudah Dinilai</option>
+          </select>
+        </div>
+
+        <div class="feedback-info">ⓘ 12 materi tersedia untuk feedback</div>
+      </div>
+
+      <div class="feedback-grid">
+        {{-- CARD FORM FEEDBACK --}}
+        <div class="feedback-card">
+          <div class="feedback-card-header">
+            <div>
+              <h3 class="feedback-card-title">Alfabet A-Z dalam Bahasa Isyarat</h3>
+            </div>
+            <div class="feedback-status status-pending">Belum Dinilai</div>
           </div>
-        @endif
+
+          <div class="feedback-meta">
+            <span class="feedback-category">Alfabet</span>
+            <span>🕒 15 menit</span>
+          </div>
+
+          <div class="feedback-form-group">
+            <label>Tingkat Kejelasan Materi</label>
+            <div class="feedback-stars">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+          </div>
+
+          <div class="feedback-form-group">
+            <label>Tingkat Kesulitan</label>
+            <div class="feedback-radio-group">
+              <label><input type="radio" name="kesulitan"> Mudah</label>
+              <label><input type="radio" name="kesulitan"> Sedang</label>
+              <label><input type="radio" name="kesulitan"> Sulit</label>
+            </div>
+          </div>
+
+          <div class="feedback-form-group">
+            <label>Komentar &amp; Saran</label>
+            <textarea class="feedback-textarea" placeholder="Berikan komentar atau saran untuk perbaikan materi..."></textarea>
+          </div>
+
+          <button class="feedback-submit">✈ Kirim Feedback</button>
+        </div>
+
+        {{-- CARD HASIL FEEDBACK 1 --}}
+        <div class="feedback-card">
+          <div class="feedback-card-header">
+            <div>
+              <h3 class="feedback-card-title">Angka 1-10 dalam Bahasa Isyarat</h3>
+            </div>
+            <div class="feedback-status status-done">Sudah Dinilai</div>
+          </div>
+
+          <div class="feedback-meta">
+            <span class="feedback-category" style="color:#16a34a;">Angka</span>
+            <span>🕒 10 menit</span>
+          </div>
+
+          <div class="feedback-review-box">
+            <div class="feedback-review-row">
+              <div>
+                <div class="feedback-review-label">Penilaian Anda:</div>
+                <div class="feedback-rating">
+                  <span class="feedback-rating-stars">★★★★☆</span>
+                  <span>4/5</span>
+                </div>
+              </div>
+              <div>2 hari yang lalu</div>
+            </div>
+
+            <div class="feedback-review-row" style="display:block;">
+              <div class="feedback-review-label">Kesulitan: <span style="font-weight:500;">Sedang</span></div>
+              <div class="feedback-review-text">
+                “Materi sangat jelas dan mudah diikuti. Video berkualitas bagus dan instruktur menjelaskan dengan detail.”
+              </div>
+            </div>
+          </div>
+
+          <button class="feedback-edit-btn">✎ Edit Feedback</button>
+        </div>
+
+        {{-- CARD HASIL FEEDBACK 2 --}}
+        <div class="feedback-card feedback-space-top" style="grid-column: 2 / 3;">
+          <div class="feedback-card-header">
+            <div>
+              <h3 class="feedback-card-title">Membuat Kalimat Sederhana</h3>
+            </div>
+            <div class="feedback-status status-done">Sudah Dinilai</div>
+          </div>
+
+          <div class="feedback-meta">
+            <span class="feedback-category" style="color:#ef4444;">Kalimat</span>
+            <span>🕒 20 menit</span>
+          </div>
+
+          <div class="feedback-review-box">
+            <div class="feedback-review-row">
+              <div>
+                <div class="feedback-review-label">Penilaian Anda:</div>
+                <div class="feedback-rating">
+                  <span class="feedback-rating-stars">★★★★★</span>
+                  <span>5/5</span>
+                </div>
+              </div>
+              <div>1 minggu yang lalu</div>
+            </div>
+
+            <div class="feedback-review-row" style="display:block;">
+              <div class="feedback-review-label">Kesulitan: <span style="font-weight:500;">Mudah</span></div>
+              <div class="feedback-review-text">
+                “Materi sangat bagus! Penjelasan step by step membuat saya mudah memahami isi pembelajaran.”
+              </div>
+            </div>
+          </div>
+
+          <button class="feedback-edit-btn">✎ Edit Feedback</button>
+        </div>
+      </div>
+    </div>
+  </div>
+@endif
 
         {{-- ===================== PROFIL ===================== --}}
 @if($activeMenu == 'profil')
