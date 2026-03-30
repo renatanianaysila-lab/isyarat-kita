@@ -1135,3 +1135,24 @@ a{ text-decoration:none; color:inherit; }
     max-width:320px;
   }
 }
+
+.topbar-left{
+  display:flex;
+  align-items:center;
+  min-width:0;
+}
+
+.page-heading h2{
+  margin:0;
+  font-size:22px;
+  font-weight:700;
+  color:#1e293b;
+  line-height:1.2;
+}
+
+.page-heading p{
+  margin:4px 0 0;
+  font-size:13px;
+  color:#64748b;
+  font-weight:500;
+}

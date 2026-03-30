@@ -77,13 +77,34 @@
     <!-- MAIN -->
     <main class="main">
 
-      <!-- TOPBAR -->
       <header class="topbar">
-  <div>
+  <div class="topbar-left">
     @if($activeMenu == 'materi')
       <div class="search">
         <input type="text" placeholder="Search..." />
         <img class="search-img" src="{{ asset('img/search-visual.png') }}" alt="Search">
+      </div>
+    @else
+      <div class="page-heading">
+        @if($activeMenu == 'dashboard')
+          <h2>Dashboard Murid</h2>
+          <p>Pantau progres belajar dan lanjutkan materi kamu</p>
+        @elseif($activeMenu == 'profil')
+          <h2>Profil Saya</h2>
+          <p>Kelola data diri dan foto profil</p>
+        @elseif($activeMenu == 'kuis')
+          <h2>Kuis</h2>
+          <p>Uji pemahaman bahasa isyaratmu</p>
+        @elseif($activeMenu == 'history')
+          <h2>Riwayat Belajar</h2>
+          <p>Lihat aktivitas dan progres yang sudah dicapai</p>
+        @elseif($activeMenu == 'feedback')
+          <h2>Feedback</h2>
+          <p>Sampaikan masukan dan pengalaman belajarmu</p>
+        @elseif($activeMenu == 'katalog')
+          <h2>Katalog Paket</h2>
+          <p>Pilih paket belajar yang sesuai kebutuhanmu</p>
+        @endif
       </div>
     @endif
   </div>
