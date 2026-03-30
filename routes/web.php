@@ -67,9 +67,16 @@ Route::get('/pembayaran', function () {
     return view('pembayaran');
 })->name('pembayaran');
 
-// TAMBAHKAN INI - Route untuk proses pembayaran
+// Route untuk proses pembayaran
 Route::post('/proses-pembayaran', function () {
-    // Logika sementara untuk pembayaran
-    // Nanti bisa diganti dengan controller yang sebenarnya
     return redirect()->route('paket')->with('success', 'Pembayaran berhasil diproses!');
 })->name('proses.pembayaran');
+
+// Route dashboard kuis
+Route::get('/dashboard-kuis', function () {
+    if (!session('dummy_login')) {
+        return redirect('/login');
+    }
+
+    return view('dashboard-kuis');
+})->name('dashboard.kuis');
