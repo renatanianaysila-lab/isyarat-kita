@@ -897,13 +897,329 @@
 @endif
 
         {{-- ===================== HISTORY ===================== --}}
-        @if($activeMenu == 'history')
-          <div style="text-align: center; padding: 50px;">
-            <h1 style="font-size: 2rem; color: #1e293b;">History Belajar</h1>
-            <p style="color: #64748b; margin: 20px 0;">Sedang dalam pengembangan</p>
-            <a href="?menu=dashboard" style="color: #4CAF50;">Kembali ke Dashboard</a>
+@if($activeMenu == 'history')
+  <style>
+    .history-page {
+      background: #ffffff;
+      min-height: 100%;
+      padding: 8px 0 24px;
+    }
+
+    .history-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .history-back {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 1px solid #e5e7eb;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #475569;
+      font-size: 14px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    }
+
+    .history-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: #1e293b;
+      margin: 0;
+    }
+
+    .history-tabs {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      background: #f8fafc;
+      border: 1px solid #edf2f7;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 18px;
+    }
+
+    .history-tab {
+      text-align: center;
+      padding: 9px 12px;
+      font-size: 12px;
+      color: #64748b;
+      text-decoration: none;
+      background: transparent;
+      transition: 0.2s ease;
+    }
+
+    .history-tab.active {
+      background: #3b82f6;
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .history-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .history-card {
+      background: #ffffff;
+      border: 1px solid #edf2f7;
+      border-radius: 14px;
+      padding: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 10px rgba(15, 23, 42, 0.03);
+    }
+
+    .history-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .history-thumb {
+      width: 76px;
+      height: 56px;
+      border-radius: 8px;
+      background: #d1d5db;
+      flex-shrink: 0;
+    }
+
+    .history-quiz-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 6px;
+      background: #333333;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .history-info h4 {
+      margin: 0 0 4px;
+      font-size: 18px;
+      font-weight: 700;
+      color: #1f2937;
+    }
+
+    .history-info p {
+      margin: 0 0 8px;
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    .history-duration {
+      font-size: 12px;
+      color: #6b7280;
+      white-space: nowrap;
+      margin-left: 16px;
+    }
+
+    .history-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+
+    .badge-blue {
+      background: #dbeafe;
+      color: #2563eb;
+    }
+
+    .badge-green {
+      background: #dcfce7;
+      color: #16a34a;
+    }
+
+    .badge-yellow {
+      background: #fef3c7;
+      color: #b45309;
+    }
+
+    .badge-red {
+      background: #fee2e2;
+      color: #dc2626;
+    }
+
+    .history-meta-icon {
+      font-size: 11px;
+    }
+
+    .history-link-back {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    @media (max-width: 768px) {
+      .history-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .history-duration {
+        margin-left: 0;
+      }
+
+      .history-info h4 {
+        font-size: 16px;
+      }
+    }
+  </style>
+
+  @php
+    $historyTab = request('tab', 'video');
+  @endphp
+
+  <div class="history-page">
+    <div class="history-header">
+      <a href="?menu=dashboard" class="history-link-back">
+        <div class="history-back">←</div>
+      </a>
+      <h2 class="history-title">Riwayat Belajar</h2>
+    </div>
+
+    <div class="history-tabs">
+      <a href="?menu=history&tab=video" class="history-tab {{ $historyTab == 'video' ? 'active' : '' }}">Video</a>
+      <a href="?menu=history&tab=kuis" class="history-tab {{ $historyTab == 'kuis' ? 'active' : '' }}">Kuis</a>
+      <a href="?menu=history&tab=pembelian" class="history-tab {{ $historyTab == 'pembelian' ? 'active' : '' }}">Pembelian</a>
+    </div>
+
+    {{-- TAB VIDEO --}}
+    @if($historyTab == 'video')
+      <div class="history-list">
+        <div class="history-card">
+          <div class="history-left">
+            <div class="history-thumb"></div>
+            <div class="history-info">
+              <h4>Angka 1-10</h4>
+              <p>15 Desember 2025 • 07:10</p>
+              <span class="history-badge badge-blue">▶ Sedang Ditonton</span>
+            </div>
           </div>
-        @endif
+          <div class="history-duration">⏱ 12 menit</div>
+        </div>
+
+        <div class="history-card">
+          <div class="history-left">
+            <div class="history-thumb"></div>
+            <div class="history-info">
+              <h4>Huruf A-Z</h4>
+              <p>14 Desember 2025 • 05:45</p>
+              <span class="history-badge badge-green">✓ Selesai</span>
+            </div>
+          </div>
+          <div class="history-duration">⏱ 18 menit</div>
+        </div>
+
+        <div class="history-card">
+          <div class="history-left">
+            <div class="history-thumb"></div>
+            <div class="history-info">
+              <h4>Percakapan Dasar</h4>
+              <p>12 Desember 2025 • 11:15</p>
+              <span class="history-badge badge-green">✓ Selesai</span>
+            </div>
+          </div>
+          <div class="history-duration">⏱ 25 menit</div>
+        </div>
+
+        <div class="history-card">
+          <div class="history-left">
+            <div class="history-thumb"></div>
+            <div class="history-info">
+              <h4>Ekspresi Dasar</h4>
+              <p>11 Desember 2024 • 14:50</p>
+              <span class="history-badge badge-yellow">⏸ Terhenti</span>
+            </div>
+          </div>
+          <div class="history-duration">⏱ 20 menit</div>
+        </div>
+      </div>
+    @endif
+
+    {{-- TAB KUIS --}}
+    @if($historyTab == 'kuis')
+      <div class="history-list">
+        <div class="history-card">
+          <div class="history-left">
+            <div class="history-quiz-icon">☰</div>
+            <div class="history-info">
+              <h4>Angka 1-10</h4>
+              <p>15 Desember 2025</p>
+              <span class="history-badge badge-green">● Lulus</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="history-card">
+          <div class="history-left">
+            <div class="history-quiz-icon">☰</div>
+            <div class="history-info">
+              <h4>Abjad A-Z</h4>
+              <p>15 Desember 2025</p>
+              <span class="history-badge badge-green">● Lulus</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="history-card">
+          <div class="history-left">
+            <div class="history-quiz-icon">☰</div>
+            <div class="history-info">
+              <h4>Percakapan dasar</h4>
+              <p>15 Desember 2025</p>
+              <span class="history-badge badge-red">● Terhenti</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    @endif
+
+    {{-- TAB PEMBELIAN --}}
+    @if($historyTab == 'pembelian')
+      <div class="history-list">
+        <div class="history-card">
+          <div class="history-left">
+            <div class="history-thumb"></div>
+            <div class="history-info">
+              <h4>Paket Belajar Dasar</h4>
+              <p>10 Desember 2025 • 09:20</p>
+              <span class="history-badge badge-green">✓ Berhasil Dibeli</span>
+            </div>
+          </div>
+          <div class="history-duration">Rp99.000</div>
+        </div>
+
+        <div class="history-card">
+          <div class="history-left">
+            <div class="history-thumb"></div>
+            <div class="history-info">
+              <h4>Paket Kuis Lengkap</h4>
+              <p>05 Desember 2025 • 15:00</p>
+              <span class="history-badge badge-green">✓ Berhasil Dibeli</span>
+            </div>
+          </div>
+          <div class="history-duration">Rp149.000</div>
+        </div>
+      </div>
+    @endif
+  </div>
+@endif
 
         {{-- ===================== FEEDBACK ===================== --}}
         @if($activeMenu == 'feedback')
