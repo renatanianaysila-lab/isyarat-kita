@@ -1,6 +1,3 @@
-/* =========================
-   RESET / BASIC
-========================= */
 * { box-sizing: border-box; }
 
 html { scroll-behavior: smooth; }
@@ -11,10 +8,126 @@ body{
   font-family: "Poppins", sans-serif;
 }
 
-/* Link ga ada underline + ikut warna parent */
 a{
   text-decoration: none;
   color: inherit;
+}
+
+/* =========================
+   GLOBAL NAVBAR
+========================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 44px;
+  background: #ffffff;
+  z-index: 9999;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #000;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #1e5abc;
+}
+
+.btn-masuk {
+  background: #1e5abc;
+  color: #ffffff;
+  padding: 10px 30px;
+  border-radius: 11px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  transition: background 0.3s;
+  letter-spacing: normal;
+}
+
+.btn-masuk:hover {
+  background: #154a9e;
+}
+
+/* =========================
+   RESPONSIVE NAVBAR
+========================= */
+
+/* Tablet (max-width: 768px) */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 20px;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .logo-img {
+    height: 40px;
+  }
+  
+  .nav-link {
+    font-size: 16px;
+  }
+  
+  .btn-masuk {
+    padding: 8px 24px;
+    font-size: 16px;
+  }
+}
+
+/* Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 12px 15px;
+  }
+  
+  .nav-link {
+    font-size: 14px;
+  }
+  
+  .btn-masuk {
+    padding: 6px 18px;
+    font-size: 14px;
+  }
+  
+  .logo-img {
+    height: 32px;
+  }
 }
 
 /* =========================
@@ -29,90 +142,10 @@ a{
   overflow:hidden;
 }
 
-/* navbar putih atas */
-.HOME-PAGE .rectangle{
-  position:absolute;
-  top:5px; left:0;
-  width:100%;
-  height:110px;
-  background:#fff;
-  z-index:5;
-}
-
-/* logo bundar */
-.HOME-PAGE .group{
-  position:absolute;
-  top:31px; left:44px;
-  width:56px; height:48px;
-  z-index:6;
-}
-.HOME-PAGE .ellipse{
-  position:absolute;
-  top:0; left:0;
-  width:48px; height:48px;
-  background:#2e5aa7;
-  border-radius:50%;
-}
-.HOME-PAGE .text-wrapper{
-  position:absolute;
-  top:9px; left:14px;
-  width:40px;
-  color:#fff;
-  font-size:20px;
-}
-
-/* brand */
-.HOME-PAGE .div{
-  position:absolute;
-  top:40px; left:103px;
-  font-weight:700;
-  color:#1e293b;
-  font-size:24px;
-  z-index:6;
-}
-
-/* menu */
-.HOME-PAGE .text-wrapper-2,
-.HOME-PAGE .text-wrapper-3,
-.HOME-PAGE .text-wrapper-4,
-.HOME-PAGE .text-wrapper-5{
-  position:absolute;
-  top:46px;
-  width:162px;
-  font-size:24px;
-  text-align:center;
-  color:#000;
-  z-index:6;
-}
-.HOME-PAGE .text-wrapper-2{ left:766px; }
-.HOME-PAGE .text-wrapper-3{ left:880px; }
-.HOME-PAGE .text-wrapper-4{ left:997px; }
-.HOME-PAGE .text-wrapper-5{ left:1109px; }
-
-/* tombol masuk */
-.HOME-PAGE .rectangle-2{
-  position:absolute;
-  top:34px; left:1257px;
-  width:134px; height:61px;
-  background:#1e5abc;
-  border-radius:11px;
-  z-index:6;
-}
-.HOME-PAGE .text-wrapper-6{
-  position:absolute;
-  top:44px; left:1243px;
-  width:162px;
-  font-weight:700;
-  font-size:24px;
-  text-align:center;
-  color:#fff;
-  z-index:7;
-}
-
 /* judul besar */
 .HOME-PAGE .text-wrapper-7{
   position:absolute;
-  top:180px;
+  top:260px;
   left:50%;
   transform:translateX(-50%);
   width:966px;
@@ -131,7 +164,7 @@ a{
 /* deskripsi */
 .HOME-PAGE .DESKIPSI-SINGKAT{
   position:absolute;
-  top:404px;
+  top:484px;
   left:50%;
   transform:translateX(-50%);
   width:766px;
@@ -144,7 +177,7 @@ a{
 /* tombol daftar */
 .HOME-PAGE .DAFTAR{
   position:absolute;
-  top:553px; left:408px;
+  top:633px; left:408px;
   width:223px; height:71px;
   z-index:4;
 }
@@ -167,7 +200,7 @@ a{
 /* tombol kenali */
 .HOME-PAGE .KENALI{
   position:absolute;
-  top:553px; left:691px;
+  top:633px; left:691px;
   width:343px; height:71px;
   z-index:4;
 }
@@ -192,7 +225,7 @@ a{
 /* HERO GRADIENT */
 .HOME-PAGE .hero-bg{
   position:absolute;
-  top:115px;
+  top:195px;
   left:50%;
   transform:translateX(-50%);
   width:90%;
@@ -215,59 +248,10 @@ a{
   overflow:hidden;
 }
 
-/* navbar top */
-.ABOUT-US-VISI-MISI .rectangle{
-  position:absolute; top:5px; left:0;
-  width:100%;
-  height:110px;
-  background:#fff;
-}
-.ABOUT-US-VISI-MISI .group{
-  position:absolute; top:31px; left:44px;
-  width:56px; height:48px;
-}
-.ABOUT-US-VISI-MISI .ellipse{
-  position:absolute; top:0; left:0;
-  width:48px; height:48px;
-  background:#2e5aa7;
-  border-radius:50%;
-}
-.ABOUT-US-VISI-MISI .text-wrapper{
-  position:absolute; top:9px; left:14px;
-  width:40px; color:#fff; font-size:20px;
-}
-.ABOUT-US-VISI-MISI .div{
-  position:absolute; top:40px; left:103px;
-  font-weight:700; color:#1e293b; font-size:24px;
-}
-.ABOUT-US-VISI-MISI .text-wrapper-2,
-.ABOUT-US-VISI-MISI .text-wrapper-3,
-.ABOUT-US-VISI-MISI .text-wrapper-4,
-.ABOUT-US-VISI-MISI .text-wrapper-5{
-  position:absolute; top:46px;
-  width:162px;
-  font-size:24px; text-align:center; color:#000;
-}
-.ABOUT-US-VISI-MISI .text-wrapper-2{ left:766px; }
-.ABOUT-US-VISI-MISI .text-wrapper-3{ left:880px; }
-.ABOUT-US-VISI-MISI .text-wrapper-4{ left:997px; }
-.ABOUT-US-VISI-MISI .text-wrapper-5{ left:1109px; }
-
-.ABOUT-US-VISI-MISI .rectangle-2{
-  position:absolute; top:34px; left:1257px;
-  width:134px; height:61px;
-  background:#1e5abc; border-radius:11px;
-}
-.ABOUT-US-VISI-MISI .text-wrapper-6{
-  position:absolute; top:44px; left:1243px;
-  width:162px; font-weight:700; font-size:24px;
-  text-align:center; color:#fff;
-}
-
 /* card tentang */
 .ABOUT-US-VISI-MISI .ABT-US{
   position:absolute;
-  top:234px; left:44px;
+  top:314px; left:44px;
   width:726px; height:371px;
 }
 .ABOUT-US-VISI-MISI .BG-ABT-US{
@@ -298,7 +282,7 @@ a{
 /* visi misi */
 .ABOUT-US-VISI-MISI .VISI{
   position:absolute;
-  top:190px; left:813px;
+  top:270px; left:813px;
   width:582px;
 }
 .ABOUT-US-VISI-MISI .text-wrapper-8{
@@ -314,7 +298,7 @@ a{
 
 .ABOUT-US-VISI-MISI .MISI{
   position:absolute;
-  top:397px; left:813px;
+  top:477px; left:813px;
   width:582px;
 }
 .ABOUT-US-VISI-MISI .text-wrapper-9{
@@ -329,7 +313,7 @@ a{
 }
 .ABOUT-US-VISI-MISI .text-wrapper-10{
   position:absolute;
-  top:755px; left:381px;
+  top:835px; left:381px;
   font-weight:700;
   color:#1e5abc;
   font-size:50px;
@@ -350,21 +334,21 @@ a{
 
 /* kartu 1-3 */
 .FITUR-HARGA-PAKET .rectangle{
-  position:absolute; top:115px; left:58px;
+  position:absolute; top:195px; left:58px;
   width:387px; height:541px;
   background:#febd19;
   border-radius:40px;
   box-shadow:0 4px 4px rgba(0,0,0,.25);
 }
 .FITUR-HARGA-PAKET .div{
-  position:absolute; top:115px; left:526px;
+  position:absolute; top:195px; left:526px;
   width:387px; height:541px;
   background:#febd19;
   border-radius:40px;
   box-shadow:0 4px 4px rgba(0,0,0,.25);
 }
 .FITUR-HARGA-PAKET .rectangle-2{
-  position:absolute; top:115px; left:997px;
+  position:absolute; top:195px; left:997px;
   width:387px; height:541px;
   background:#febd19;
   border-radius:40px;
@@ -373,79 +357,39 @@ a{
 
 /* judul kartu */
 .FITUR-HARGA-PAKET .kelas-video{
-  position:absolute; top:360px; left:90px;
+  position:absolute; top:440px; left:90px;
   width:323px; height:90px;
   display:flex; align-items:center; justify-content:center;
   font-weight:700; color:#fff; font-size:30px; text-align:center;
 }
 .FITUR-HARGA-PAKET .kuis-evaluasi{
-  position:absolute; top:360px; left:559px;
+  position:absolute; top:440px; left:559px;
   width:323px; height:90px;
   display:flex; align-items:center; justify-content:center;
   font-weight:700; color:#fff; font-size:30px; text-align:center;
 }
 .FITUR-HARGA-PAKET .komunitas-dukungan{
-  position:absolute; top:360px; left:1028px;
+  position:absolute; top:440px; left:1028px;
   width:323px; height:90px;
   display:flex; align-items:center; justify-content:center;
   font-weight:700; color:#fff; font-size:30px; text-align:center;
 }
 
-/* navbar putih atas */
-.FITUR-HARGA-PAKET .rectangle-3{
-  position:absolute; top:5px; left:0;
-  width:100%; height:110px;
-  background:#fff;
-}
-.FITUR-HARGA-PAKET .LOGO{
-  position:absolute; top:31px; left:44px;
-  width:202px; height:48px;
-}
-.FITUR-HARGA-PAKET .LOGO .ellipse{
-  position:absolute; top:0; left:0;
-  width:48px; height:48px;
-  background:#2e5aa7; border-radius:50%;
-}
-.FITUR-HARGA-PAKET .LOGO .text-wrapper{
-  position:absolute; top:9px; left:14px;
-  width:40px; color:#fff; font-size:20px;
-}
-.FITUR-HARGA-PAKET .LOGO .text-wrapper-2{
-  position:absolute; top:9px; left:59px;
-  font-weight:700; color:#1e293b; font-size:24px;
-}
-
-/* tombol masuk */
-.FITUR-HARGA-PAKET .MASUK{
-  position:absolute; top:34px; left:1243px;
-  width:164px; height:61px;
-}
-.FITUR-HARGA-PAKET .rectangle-4{
-  position:absolute; top:0; left:14px;
-  width:134px; height:61px;
-  background:#1e5abc; border-radius:11px;
-}
-.FITUR-HARGA-PAKET .text-wrapper-7{
-  position:absolute; top:10px; left:0;
-  width:162px; font-weight:700; font-size:24px;
-  text-align:center; color:#fff;
-}
-
 /* deskripsi kartu */
 .FITUR-HARGA-PAKET .p{
-  position:absolute; top:460px; left:78px;
+  position:absolute; top:540px; left:78px;
   width:348px; height:120px;
   display:flex; align-items:center; justify-content:center;
   color:#fff; font-size:20px; text-align:center;
 }
 .FITUR-HARGA-PAKET .text-wrapper-8{
-  position:absolute; top:460px; left:547px;
+  position:absolute; top:540px; left:547px;
   width:348px; height:120px;
   display:flex; align-items:center; justify-content:center;
   color:#fff; font-size:20px; text-align:center;
 }
 .FITUR-HARGA-PAKET .text-wrapper-9{
-  position:absolute; top:468px; left:1015px;
+  position:absolute; top:548px; left:1015px;
   width:348px; height:150px;
   display:flex; align-items:center; justify-content:center;
   color:#fff; font-size:20px; text-align:center;
@@ -456,31 +400,13 @@ a{
 .quiz-icon,
 .community-icon{
   position: absolute;
-  width: 100px;   /* ubah sesuai selera */
+  width: 100px;
   height: auto;
 }
 
-.FITUR-HARGA-PAKET .video-icon{ left:185px; top:175px; }
-.FITUR-HARGA-PAKET .quiz-icon{ left:670px; top:170px; }
-.FITUR-HARGA-PAKET .community-icon{ left:1165px; top:175px; }
-
-/* FIX MENU PAGE 3 (ANTI TABRAKAN CLASS) */
-.FITUR-HARGA-PAKET .menu-home,
-.FITUR-HARGA-PAKET .menu-tentang,
-.FITUR-HARGA-PAKET .menu-fitur,
-.FITUR-HARGA-PAKET .menu-harga{
-  position:absolute;
-  top:46px;
-  width:162px;
-  font-size:24px;
-  text-align:center;
-  color:#000;
-  font-family: "Poppins", sans-serif; /* FIX: jangan Poppins-Regular */
-}
-.FITUR-HARGA-PAKET .menu-home{ left:766px; }
-.FITUR-HARGA-PAKET .menu-tentang{ left:880px; }
-.FITUR-HARGA-PAKET .menu-fitur{ left:997px; }
-.FITUR-HARGA-PAKET .menu-harga{ left:1109px; }
+.FITUR-HARGA-PAKET .video-icon{ left:185px; top:255px; }
+.FITUR-HARGA-PAKET .quiz-icon{ left:670px; top:250px; }
+.FITUR-HARGA-PAKET .community-icon{ left:1165px; top:255px; }
 
 /* =========================
    PAGE 4 - HARGA
@@ -496,7 +422,7 @@ a{
 
 /* header biru */
 .PAKET-PAKET .group{
-  position:absolute; top:115px; left:-28px;
+  position:absolute; top:195px; left:-28px;
   width:1498px; height:116px;
 }
 .PAKET-PAKET .group .rectangle{
@@ -511,62 +437,9 @@ a{
   font-weight:700; color:#1e5abc; font-size:60px;
 }
 
-/* navbar putih atas */
-.PAKET-PAKET .div{
-  position:absolute; top:5px; left:0;
-  width:100%; height:110px; background:#fff;
-}
-.PAKET-PAKET .LOGO{
-  position:absolute; top:31px; left:44px;
-  width:202px; height:48px;
-}
-.PAKET-PAKET .LOGO .ellipse{
-  position:absolute; top:0; left:0;
-  width:48px; height:48px;
-  background:#2e5aa7; border-radius:50%;
-}
-.PAKET-PAKET .LOGO .text-wrapper{
-  position:absolute; top:9px; left:14px;
-  width:40px; color:#fff; font-size:20px;
-}
-.PAKET-PAKET .LOGO .text-wrapper-2{
-  position:absolute; top:9px; left:59px;
-  font-weight:700; color:#1e293b; font-size:24px;
-}
-
-/* menu */
-.PAKET-PAKET .text-wrapper-3,
-.PAKET-PAKET .text-wrapper-4,
-.PAKET-PAKET .text-wrapper-5,
-.PAKET-PAKET .text-wrapper-6{
-  position:absolute; top:46px;
-  width:162px;
-  font-size:24px; text-align:center; color:#000;
-}
-.PAKET-PAKET .text-wrapper-3{ left:766px; }
-.PAKET-PAKET .text-wrapper-4{ left:880px; }
-.PAKET-PAKET .text-wrapper-5{ left:997px; }
-.PAKET-PAKET .text-wrapper-6{ left:1109px; }
-
-/* tombol masuk */
-.PAKET-PAKET .MASUK{
-  position:absolute; top:34px; left:1243px;
-  width:164px; height:61px;
-}
-.PAKET-PAKET .MASUK .rectangle-2{
-  position:absolute; top:0; left:14px;
-  width:134px; height:61px;
-  background:#1e5abc; border-radius:11px;
-}
-.PAKET-PAKET .MASUK .text-wrapper-7{
-  position:absolute; top:10px; left:0;
-  width:162px; font-weight:700; font-size:24px;
-  text-align:center; color:#fff;
-}
-
 /* card paket */
 .PAKET-PAKET .rectangle-3{
-  position:absolute; top:266px; left:193px;
+  position:absolute; top:346px; left:193px;
   width:436px; height:509px;
   background:#fff5b4;
   border-radius:23px;
@@ -574,7 +447,7 @@ a{
   box-shadow:0 4px 4px rgba(0,0,0,.25);
 }
 .PAKET-PAKET .rectangle-4{
-  position:absolute; top:266px; left:779px;
+  position:absolute; top:346px; left:779px;
   width:436px; height:509px;
   background:#fff5b4;
   border-radius:23px;
@@ -584,13 +457,13 @@ a{
 
 /* judul paket */
 .PAKET-PAKET .text-wrapper-8{
-  position:absolute; top:298px; left:213px;
+  position:absolute; top:378px; left:213px;
   width:396px; height:60px;
   display:flex; align-items:center; justify-content:center;
   font-weight:700; color:#1e5abc; font-size:40px;
 }
 .PAKET-PAKET .text-wrapper-9{
-  position:absolute; top:298px; left:799px;
+  position:absolute; top:378px; left:799px;
   width:396px; height:60px;
   display:flex; align-items:center; justify-content:center;
   font-weight:700; color:#1e5abc; font-size:40px;
@@ -598,13 +471,13 @@ a{
 
 /* harga */
 .PAKET-PAKET .text-wrapper-10{
-  position:absolute; top:358px; left:213px;
+  position:absolute; top:438px; left:213px;
   width:396px; height:53px;
   display:flex; align-items:center; justify-content:center;
   font-weight:700; color:#000; font-size:35px;
 }
 .PAKET-PAKET .text-wrapper-11{
-  position:absolute; top:358px; left:799px;
+  position:absolute; top:438px; left:799px;
   width:396px; height:53px;
   display:flex; align-items:center; justify-content:center;
   font-weight:700; color:#000; font-size:35px;
@@ -612,14 +485,14 @@ a{
 
 /* list paket */
 .PAKET-PAKET .akses-video{
-  position:absolute; top:422px; left:241px;
+  position:absolute; top:502px; left:241px;
   width:368px; height:180px;
   display:flex; align-items:center; justify-content:center;
   font-size:20px; color:#000;
   text-align:center;
 }
 .PAKET-PAKET .semua-benefit-paket{
-  position:absolute; top:422px; left:831px;
+  position:absolute; top:502px; left:831px;
   width:331px; height:300px;
   display:flex; align-items:center; justify-content:center;
   font-size:20px; color:#000;
@@ -638,67 +511,9 @@ a{
   overflow:hidden;
 }
 
-.lastt .rectangle-1{
-  background:#fff;
-  width:1440px; height:110px;
-  position:absolute; left:0; top:5px;
-  z-index:5;
-}
-.lastt .ellipse-1{
-  background:#2e5aa7;
-  width:48px; height:48px;
-  border-radius:50%;
-  position:absolute; left:44px; top:31px;
-  z-index:6;
-}
-.lastt .ik{
-  color:#fff;
-  font-size:20px;
-  position:absolute; left:58px; top:40px;
-  z-index:7;
-}
-.lastt .isyarat-kita{
-  color:#1e293b;
-  font-weight:700;
-  font-size:24px;
-  position:absolute; left:103px; top:40px;
-  z-index:7;
-}
-
-/* menu last */
-.lastt .home, .lastt .tentang, .lastt .fitur, .lastt .harga{
-  position:absolute; top:46px;
-  width:162px;
-  font-size:24px;
-  text-align:center;
-  color:#000;
-  z-index:7;
-}
-.lastt .home{ left:766px; }
-.lastt .tentang{ left:880px; }
-.lastt .fitur{ left:997px; }
-.lastt .harga{ left:1109px; }
-
-.lastt .rectangle-2{
-  background:#1e5abc;
-  border-radius:11px;
-  width:134px; height:61px;
-  position:absolute; left:1257px; top:34px;
-  z-index:7;
-}
-.lastt .masuk2{
-  color:#fff;
-  font-weight:700;
-  font-size:24px;
-  position:absolute; left:1243px; top:44px;
-  width:162px;
-  text-align:center;
-  z-index:8;
-}
-
 .lastt .hero-bg{
   position:absolute;
-  top:277px;
+  top:357px;
   left:50%;
   transform:translateX(-50%);
   width:90%;
@@ -711,7 +526,7 @@ a{
 
 .lastt .siap-mulai-belajar-bahasa-isyarat{
   position:absolute;
-  top:382px; left:50%;
+  top:462px; left:50%;
   transform:translateX(-50%);
   font-weight:700;
   font-size:40px;
@@ -722,7 +537,7 @@ a{
 }
 .lastt .bergabunglah-bersama-kami-dan-mulai-pahami-bahasa-isyarat-dengan-cara-yang-mudah-inklusif-dan-ramah-untuk-semua{
   position:absolute;
-  top:450px; left:50%;
+  top:530px; left:50%;
   transform:translateX(-50%);
   width:930px;
   font-size:24px;
@@ -736,143 +551,15 @@ a{
   width:344px; height:69px;
   position:absolute; left:50%;
   transform:translateX(-50%);
-  top:530px;
+  top:610px;
   z-index:3;
 }
 .lastt .gabung-sekarang{
   position:absolute;
-  top:544px; left:50%;
+  top:624px; left:50%;
   transform:translateX(-50%);
   font-weight:700;
   font-size:28px;
   color:#f5f6ce;
   z-index:4;
-}
-
-/* ===== HOME NAVBAR ===== */
-.HOME-PAGE .rectangle{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 110px;
-  z-index: 9999;
-}
-
-/* Semua isi navbar HOME ikut fixed */
-.HOME-PAGE .group,
-.HOME-PAGE .div,
-.HOME-PAGE .text-wrapper-2,
-.HOME-PAGE .text-wrapper-3,
-.HOME-PAGE .text-wrapper-4,
-.HOME-PAGE .text-wrapper-5,
-.HOME-PAGE .rectangle-2,
-.HOME-PAGE .text-wrapper-6{
-  position: fixed;
-  z-index: 10000;
-}
-
-/* Sesuaikan top agar tetap di posisi awal */
-.HOME-PAGE .group{ top:31px; left:44px; }
-.HOME-PAGE .div{ top:40px; left:103px; }
-
-.HOME-PAGE .text-wrapper-2{ top:46px; left:766px; }
-.HOME-PAGE .text-wrapper-3{ top:46px; left:880px; }
-.HOME-PAGE .text-wrapper-4{ top:46px; left:997px; }
-.HOME-PAGE .text-wrapper-5{ top:46px; left:1109px; }
-
-.HOME-PAGE .rectangle-2{ top:34px; left:1257px; }
-.HOME-PAGE .text-wrapper-6{ top:44px; left:1243px; }
-
-/* Supaya konten tidak ketiban navbar */
-.HOME-PAGE{
-  padding-top:110px;
-}
-
-/* PAGE 2 */
-.ABOUT-US-VISI-MISI .rectangle,
-.ABOUT-US-VISI-MISI .group,
-.ABOUT-US-VISI-MISI .div,
-.ABOUT-US-VISI-MISI .text-wrapper-2,
-.ABOUT-US-VISI-MISI .text-wrapper-3,
-.ABOUT-US-VISI-MISI .text-wrapper-4,
-.ABOUT-US-VISI-MISI .text-wrapper-5,
-.ABOUT-US-VISI-MISI .rectangle-2,
-.ABOUT-US-VISI-MISI .text-wrapper-6{
-  display: none !important;
-}
-
-/* PAGE 3 */
-.FITUR-HARGA-PAKET .rectangle-3,
-.FITUR-HARGA-PAKET .LOGO,
-.FITUR-HARGA-PAKET .menu-home,
-.FITUR-HARGA-PAKET .menu-tentang,
-.FITUR-HARGA-PAKET .menu-fitur,
-.FITUR-HARGA-PAKET .menu-harga,
-.FITUR-HARGA-PAKET .MASUK{
-  display: none !important;
-}
-
-/* PAGE 4 */
-.PAKET-PAKET .div,
-.PAKET-PAKET .LOGO,
-.PAKET-PAKET .text-wrapper-3,
-.PAKET-PAKET .text-wrapper-4,
-.PAKET-PAKET .text-wrapper-5,
-.PAKET-PAKET .text-wrapper-6,
-.PAKET-PAKET .MASUK{
-  display: none !important;
-}
-
-/* PAGE 5 */
-.lastt .rectangle-1,
-.lastt .ellipse-1,
-.lastt .ik,
-.lastt .isyarat-kita,
-.lastt .home,
-.lastt .tentang,
-.lastt .fitur,
-.lastt .harga,
-.lastt .rectangle-2,
-.lastt .masuk2{
-  display: none !important;
-}
-
-/* ===== LOGO PNG (NAVBAR FIXED) ===== */
-.logo-wrapper{
-  position: fixed;
-  top: 22px;      /* atur kalau mau naik/turun */
-  left: 44px;
-  z-index: 10000;
-  display: flex;
-  align-items: center;
-}
-
-.logo-img{
-  height: 70px;   /* ubah 50-70 sesuai selera */
-  width: auto;
-}
-
-/* matiin style logo lama (kalau masih ada di HTML lain) */
-.HOME-PAGE .group,
-.HOME-PAGE .div{
-  display: none;
-}
-
-/* ===== NAIKIN DAFTAR & KENALI ===== */
-.HOME-PAGE .DAFTAR {
-  top: 500px !important;  /* dari 553 jadi 500 (naik 53px) */
-}
-
-.HOME-PAGE .KENALI {
-  top: 500px !important;  /* dari 553 jadi 500 (naik 53px) */
-}
-
-/* Atur jarak antar tombol juga */
-.HOME-PAGE .DAFTAR {
-  left: 380px !important;
-}
-
-.HOME-PAGE .KENALI {
-  left: 640px !important;  /* kasih jarak dari tombol Daftar */
 }

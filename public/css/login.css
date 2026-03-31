@@ -25,6 +25,16 @@
 }
 
 /* ---------- RESET & BASE ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
 .LOGIN {
   position: relative;
   min-height: 100vh;
@@ -47,9 +57,6 @@
   z-index: 1;
 }
 
-body {
-  font-family: var(--font-family);
-}
 /* ---------- NAVBAR ---------- */
 .navbar {
   position: fixed;
@@ -62,7 +69,7 @@ body {
   padding: 20px 44px;
   background: var(--bg-white);
   z-index: 9999;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
   box-sizing: border-box;
 }
@@ -88,7 +95,8 @@ body {
   text-decoration: none;
   color: var(--text-light);
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
   transition: color 0.3s;
 }
 
@@ -100,9 +108,12 @@ body {
   background: var(--primary-blue);
   color: var(--bg-white);
   padding: 10px 30px;
-  border-radius: var(--border-radius-md);
-  font-weight: 700;
+  border-radius: 11px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
   text-decoration: none;
+  transition: background 0.3s;
+  letter-spacing: normal;
 }
 
 .btn-masuk:hover {
@@ -124,6 +135,7 @@ body {
   font-weight: 700;
   margin: 0 0 40px;
   color: var(--text-light);
+  font-family: 'Poppins', sans-serif;
 }
 
 /* ---------- LOGIN CARD ---------- */
@@ -139,6 +151,7 @@ body {
   font-weight: 700;
   color: var(--primary-blue);
   margin-bottom: 40px;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* ---------- FORM ---------- */
@@ -161,7 +174,7 @@ body {
   padding: 0 25px;
   font-size: 18px;
   box-sizing: border-box;
-  font-family: inherit;
+  font-family: 'Poppins', sans-serif;
 }
 
 .LOGIN .form-input:focus {
@@ -173,6 +186,7 @@ body {
 .LOGIN .form-input::placeholder {
   color: var(--text-muted);
   font-size: 18px;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* ---------- SUBMIT BUTTON ---------- */
@@ -185,6 +199,7 @@ body {
   color: var(--bg-white);
   font-size: 24px;
   font-weight: 700;
+  font-family: 'Poppins', sans-serif;
   cursor: pointer;
   margin: 10px auto 0;
   transition: all 0.3s;
@@ -201,6 +216,7 @@ body {
   font-size: 18px;
   color: var(--text-light);
   font-style: italic;
+  font-family: 'Poppins', sans-serif;
 }
 
 .LOGIN .signup-link {
@@ -209,6 +225,7 @@ body {
   font-weight: 600;
   font-style: italic;
   margin-left: 5px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .LOGIN .signup-link:hover {
@@ -221,13 +238,13 @@ body {
 
 /* Tablet (max-width: 768px) */
 @media (max-width: 768px) {
-  .LOGIN .navbar {
+  .navbar {
     padding: 15px 20px;
     flex-direction: column;
     gap: 15px;
   }
   
-  .LOGIN .nav-links {
+  .nav-links {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
@@ -256,24 +273,33 @@ body {
     font-size: 16px;
   }
   
-  .LOGIN .logo-img {
+  .logo-img {
     height: 40px;
+  }
+  
+  .nav-link {
+    font-size: 16px;
+  }
+  
+  .btn-masuk {
+    padding: 8px 24px;
+    font-size: 16px;
   }
 }
 
 /* Mobile (max-width: 480px) */
 @media (max-width: 480px) {
-  .LOGIN .navbar {
+  .navbar {
     padding: 12px 15px;
   }
   
-  .LOGIN .nav-link {
-    font-size: 16px;
+  .nav-link {
+    font-size: 14px;
   }
   
-  .LOGIN .btn-masuk {
-    padding: 8px 20px;
-    font-size: 16px;
+  .btn-masuk {
+    padding: 6px 18px;
+    font-size: 14px;
   }
   
   .LOGIN .BACKGROUND {
@@ -281,32 +307,40 @@ body {
   }
   
   .LOGIN .welcome-title {
-    font-size: 32px;
-    margin: 0 0 25px;
+    font-size: 28px;
+    margin: 0 0 20px;
+  }
+  
+  .LOGIN .login-card {
+    padding: 25px 15px;
   }
   
   .LOGIN .login-title {
-    font-size: 32px;
+    font-size: 28px;
     margin-bottom: 25px;
   }
   
   .LOGIN .form-input {
-    height: 60px;
-    font-size: 16px;
+    height: 50px;
+    font-size: 14px;
     padding: 0 15px;
   }
   
+  .LOGIN .form-input::placeholder {
+    font-size: 14px;
+  }
+  
   .LOGIN .submit-btn {
-    width: 180px;
-    height: 50px;
-    font-size: 20px;
+    width: 160px;
+    height: 45px;
+    font-size: 18px;
   }
   
   .LOGIN .signup-text {
-    font-size: 15px;
+    font-size: 14px;
   }
   
-  .LOGIN .logo-img {
-    height: 35px;
+  .logo-img {
+    height: 32px;
   }
 }

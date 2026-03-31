@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
     rel="stylesheet"
   >
 
@@ -20,22 +20,12 @@
 
 <body>
 
-  <!-- PAGE 1 -->
+  <!-- NAVBAR GLOBAL -->
+  @include('navigation-bar')
+
+  <!-- PAGE 1 - HOME -->
   <div class="HOME-PAGE" id="home">
     <div class="hero-bg"></div>
-
-    <div class="rectangle"></div>
-    <a href="#home" class="logo-wrapper">
-  <img src="img/LOGO.png" alt="IsyaratKita" class="logo-img">
-</a>
-
-    <a class="text-wrapper-2" href="#home">HOME</a>
-    <a class="text-wrapper-3" href="#tentang">TENTANG</a>
-    <a class="text-wrapper-4" href="#fitur">FITUR</a>
-    <a class="text-wrapper-5" href="#harga">HARGA</a>
-
-    <div class="rectangle-2"></div>
-    <a class="text-wrapper-6" href="/login">MASUK</a>
 
     <div class="text-wrapper-7">IsyaratKita</div>
 
@@ -55,23 +45,8 @@
     </div>
   </div>
 
-  <!-- PAGE 2 -->
+  <!-- PAGE 2 - ABOUT -->
   <div class="ABOUT-US-VISI-MISI" id="tentang">
-    <div class="rectangle"></div>
-    <div class="group">
-      <div class="ellipse"></div>
-      <div class="text-wrapper">IK</div>
-    </div>
-    <div class="div">IsyaratKita</div>
-
-    <a class="text-wrapper-2" href="#home">HOME</a>
-    <a class="text-wrapper-3" href="#tentang">TENTANG</a>
-    <a class="text-wrapper-4" href="#fitur">FITUR</a>
-    <a class="text-wrapper-5" href="#harga">HARGA</a>
-
-    <div class="rectangle-2"></div>
-    <a class="text-wrapper-6" href="/login">MASUK</a>
-
     <div class="ABT-US">
       <div class="BG-ABT-US"></div>
       <div class="text-wrapper-7">Tentang IsyaratKita</div>
@@ -104,35 +79,16 @@
     <div class="text-wrapper-10">IsyaratKita Menyediakan :</div>
   </div>
 
-  <!-- PAGE 3 -->
+  <!-- PAGE 3 - FITUR -->
   <div class="FITUR-HARGA-PAKET" id="fitur">
     <div class="rectangle"></div>
-    <div class="kelas-video">Kelas&nbsp;&nbsp;Video Interaktif</div>
+    <div class="kelas-video">Kelas Video Interaktif</div>
 
     <div class="div"></div>
-    <div class="kuis-evaluasi">Kuis &amp; Evaluasi Pemahaman</div>
+    <div class="kuis-evaluasi">Kuis & Evaluasi Pemahaman</div>
 
     <div class="rectangle-2"></div>
-    <div class="komunitas-dukungan">Komunitas &amp; Dukungan Belajar</div>
-
-    <div class="rectangle-3"></div>
-
-    <div class="LOGO">
-      <div class="ellipse"></div>
-      <div class="text-wrapper">IK</div>
-      <div class="text-wrapper-2">IsyaratKita</div>
-    </div>
-
-    <!-- MENU KHUSUS PAGE 3 (ANTI TABRAKAN) -->
-    <a class="menu-home" href="#home">HOME</a>
-    <a class="menu-tentang" href="#tentang">TENTANG</a>
-    <a class="menu-fitur" href="#fitur">FITUR</a>
-    <a class="menu-harga" href="#harga">HARGA</a>
-
-    <div class="MASUK">
-      <div class="rectangle-4"></div>
-      <a class="text-wrapper-7" href="/login">MASUK</a>
-    </div>
+    <div class="komunitas-dukungan">Komunitas & Dukungan Belajar</div>
 
     <p class="p">
       Materi bahasa isyarat dari tingkat dasar hingga lanjutan, disajikan melalui video interaktif yang mudah dipahami.
@@ -147,33 +103,15 @@
     </p>
 
     <img src="{{ asset('img/video.png') }}" class="video-icon" alt="Video">
-<img src="{{ asset('img/quiz.png') }}" class="quiz-icon" alt="Quiz">
-<img src="{{ asset('img/social-justice.png') }}" class="community-icon" alt="Community">
+    <img src="{{ asset('img/quiz.png') }}" class="quiz-icon" alt="Quiz">
+    <img src="{{ asset('img/social-justice.png') }}" class="community-icon" alt="Community">
   </div>
 
-  <!-- PAGE 4 -->
+  <!-- PAGE 4 - HARGA -->
   <div class="PAKET-PAKET" id="harga">
     <div class="group">
       <div class="rectangle"></div>
-      <div class="paket-harga">Paket &amp; Harga</div>
-    </div>
-
-    <div class="div"></div>
-
-    <div class="LOGO">
-      <div class="ellipse"></div>
-      <div class="text-wrapper">IK</div>
-      <div class="text-wrapper-2">IsyaratKita</div>
-    </div>
-
-    <a class="text-wrapper-3" href="#home">HOME</a>
-    <a class="text-wrapper-4" href="#tentang">TENTANG</a>
-    <a class="text-wrapper-5" href="#fitur">FITUR</a>
-    <a class="text-wrapper-6" href="#harga">HARGA</a>
-
-    <div class="MASUK">
-      <div class="rectangle-2"></div>
-      <a class="text-wrapper-7" href="/login">MASUK</a>
+      <div class="paket-harga">Paket & Harga</div>
     </div>
 
     <div class="rectangle-3"></div>
@@ -188,36 +126,23 @@
     <p class="akses-video">
       Akses video pembelajaran dasar Bahasa Isyarat<br />
       Materi alfabet (A–Z) dan angka<br />
-      Pengenalan kata &amp; gerakan sehari-hari<br />
+      Pengenalan kata & gerakan sehari-hari<br />
       Akses gratis 2 bulan
     </p>
 
     <p class="semua-benefit-paket">
       Semua benefit Paket Gratis<br />
-      Akses video lanjutan &amp; percakapan lengkap<br />
+      Akses video lanjutan & percakapan lengkap<br />
       Materi kalimat, ekspresi, dan konteks nyata<br />
-      Latihan interaktif &amp; kuis<br />
+      Latihan interaktif & kuis<br />
       Akses komunitas / mentor<br />
       Update materi eksklusif Premium<br />
       Akses selama 6 bulan
     </p>
   </div>
 
-  <!-- PAGE 5 -->
+  <!-- PAGE 5 - LAST -->
   <div class="lastt" id="last">
-    <div class="rectangle-1"></div>
-    <div class="ellipse-1"></div>
-    <div class="ik">IK</div>
-    <div class="isyarat-kita">IsyaratKita</div>
-
-    <a class="home" href="#home">HOME</a>
-    <a class="tentang" href="#tentang">TENTANG</a>
-    <a class="fitur" href="#fitur">FITUR</a>
-    <a class="harga" href="#harga">HARGA</a>
-
-    <div class="rectangle-2"></div>
-    <a class="masuk2" href="/login">MASUK</a>
-
     <div class="hero-bg"></div>
 
     <div class="siap-mulai-belajar-bahasa-isyarat">
@@ -234,4 +159,4 @@
   </div>
 
 </body>
-</html> 
+</html>
