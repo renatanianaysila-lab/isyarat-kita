@@ -20,7 +20,7 @@
   --border-radius-sm: 8px;
   --border-radius-md: 11px;
   --border-radius-lg: 26px;
-  --font-family: system-ui, -apple-system, 'Poppins', sans-serif;
+  --font-family: 'Poppins', sans-serif;
   --navbar-height: 88px;
 }
 
@@ -31,6 +31,7 @@
   font-family: var(--font-family);
   background-color: var(--bg-white);
   overflow-x: hidden;
+  padding-top: 100px;
 }
 
 /* ---------- BACKGROUND ---------- */
@@ -43,12 +44,15 @@
   height: 883px;
   border-radius: var(--border-radius-lg);
   object-fit: cover;
-  z-index: 0;
+  z-index: 1;
 }
 
+body {
+  font-family: var(--font-family);
+}
 /* ---------- NAVBAR ---------- */
-.LOGIN .navbar {
-  position: sticky;
+.navbar {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -57,30 +61,30 @@
   align-items: center;
   padding: 20px 44px;
   background: var(--bg-white);
-  z-index: 1000;
+  z-index: 9999;
   box-shadow: var(--shadow-sm);
   transition: all 0.3s ease;
   box-sizing: border-box;
 }
 
-.LOGIN .logo-container {
+.logo-container {
   display: flex;
   align-items: center;
 }
 
-.LOGIN .logo-img {
+.logo-img {
   height: 48px;
   width: auto;
   object-fit: contain;
 }
 
-.LOGIN .nav-links {
+.nav-links {
   display: flex;
   align-items: center;
   gap: 40px;
 }
 
-.LOGIN .nav-link {
+.nav-link {
   text-decoration: none;
   color: var(--text-light);
   font-size: 18px;
@@ -88,11 +92,11 @@
   transition: color 0.3s;
 }
 
-.LOGIN .nav-link:hover {
+.nav-link:hover {
   color: var(--primary-blue);
 }
 
-.LOGIN .btn-masuk {
+.btn-masuk {
   background: var(--primary-blue);
   color: var(--bg-white);
   padding: 10px 30px;
@@ -101,7 +105,7 @@
   text-decoration: none;
 }
 
-.LOGIN .btn-masuk:hover {
+.btn-masuk:hover {
   background: var(--primary-dark-blue);
 }
 
