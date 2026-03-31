@@ -74,3 +74,11 @@ Route::post('/proses-pembayaran', function () {
 Route::get('/video-player', function () {
     return view('video-player');
 });
+
+Route::get('/dashboard-kuis', function () {
+    if (!session('dummy_login')) {
+        return redirect('/login');
+    }
+
+    return view('dashboard-kuis');
+})->name('dashboard.kuis');
