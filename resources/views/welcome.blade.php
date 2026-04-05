@@ -89,17 +89,17 @@
           
         </div>
       </div>
-
-      <!-- ISYARATKITA MENYEDIAKAN (di bawah) -->
-      <div class="menyediakan-wrapper">
-        <div class="menyediakan-title">IsyaratKita Menyediakan :</div>
-      </div>
       
     </div>
   </div>
 
   <!-- PAGE 3 - FITUR -->
-  <div class="FITUR-HARGA-PAKET" id="fitur">
+<div class="FITUR-HARGA-PAKET" id="fitur">
+  <div class="fitur-header">
+    <h2 class="fitur-title">IsyaratKita Menyediakan :</h2>
+  </div>
+  
+  <div class="fitur-container">
     <div class="fitur-card">
       <img src="{{ asset('img/video.png') }}" alt="Video">
       <div class="kelas-video">Kelas Video Interaktif</div>
@@ -118,6 +118,7 @@
       <p>Ruang diskusi untuk berbagi pengalaman dan membangun komunikasi inklusif bersama sesama pembelajar dan pengajar.</p>
     </div>
   </div>
+</div>
 
   <!-- PAGE 4 - HARGA -->
   <div class="PAKET-PAKET" id="harga">

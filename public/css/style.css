@@ -304,7 +304,7 @@ a{
 }
 
 /* =========================
-   PAGE 2 - ABOUT (2 Kolom: Kiri Tentang, Kanan Visi Misi)
+   PAGE 2 - ABOUT 
 ========================= */
 .ABOUT-US-VISI-MISI {
   background: #fff;
@@ -315,7 +315,7 @@ a{
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 100px 40px;
+  padding: 60px 40px 40px 40px;
 }
 
 .ABOUT-US-VISI-MISI .about-container {
@@ -329,7 +329,7 @@ a{
   display: flex;
   flex-wrap: wrap;
   gap: 50px;
-  margin-bottom: 60px;
+  margin-bottom: 0;
   align-items: center;
 }
 
@@ -465,38 +465,10 @@ a{
   margin-bottom: 0;
 }
 
-.ABOUT-US-VISI-MISI .menyediakan-wrapper {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.ABOUT-US-VISI-MISI .menyediakan-title {
-  font-weight: 700;
-  color: #1e5abc;
-  font-size: clamp(24px, 4vw, 38px);
-  text-align: center;
-  letter-spacing: 1px;
-  position: relative;
-  display: inline-block;
-  padding-bottom: 10px;
-}
-
-.ABOUT-US-VISI-MISI .menyediakan-title::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 3px;
-  background: #febd19;
-  border-radius: 2px;
-}
-
-/* Responsif Tablet (max-width: 900px) */
+/* Responsif Tablet */
 @media (max-width: 900px) {
   .ABOUT-US-VISI-MISI {
-    padding: 80px 30px;
+    padding: 60px 30px;
   }
   
   .ABOUT-US-VISI-MISI .about-two-columns {
@@ -517,10 +489,10 @@ a{
   }
 }
 
-/* Responsif Mobile (max-width: 768px) - JADI 1 KOLOM */
+/* Responsif Mobile - Jadi 1 Kolom */
 @media (max-width: 768px) {
   .ABOUT-US-VISI-MISI {
-    padding: 60px 20px;
+    padding: 50px 20px;
   }
   
   .ABOUT-US-VISI-MISI .about-two-columns {
@@ -555,16 +527,12 @@ a{
   .ABOUT-US-VISI-MISI .misi-card:hover {
     transform: translateX(0) translateY(-3px);
   }
-  
-  .ABOUT-US-VISI-MISI .menyediakan-title::after {
-    width: 50px;
-  }
 }
 
-/* Mobile kecil (max-width: 480px) */
+/* Mobile Kecil */
 @media (max-width: 480px) {
   .ABOUT-US-VISI-MISI {
-    padding: 50px 15px;
+    padding: 40px 15px;
   }
   
   .ABOUT-US-VISI-MISI .about-card {
@@ -584,56 +552,139 @@ a{
 /* =========================
    PAGE 3 - FITUR
 ========================= */
-.FITUR-HARGA-PAKET{
-  background:#fff;
-  width:100%;
-  min-height:100vh;
-  position:relative;
-  overflow:hidden;
+.FITUR-HARGA-PAKET {
+  background: #fff;
+  width: 100%;
+  min-height: auto;
+  position: relative;
+  overflow: hidden;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 40px 40px 80px 40px;
+}
+
+/* JUDUL FITUR */
+.FITUR-HARGA-PAKET .fitur-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.FITUR-HARGA-PAKET .fitur-title {
+  font-weight: 700;
+  color: #1e5abc;
+  font-size: clamp(28px, 5vw, 48px);
+  text-align: center;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 12px;
+  margin: 0;
+}
+
+.FITUR-HARGA-PAKET .fitur-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 3px;
+  background: #febd19;
+  border-radius: 2px;
+}
+
+/* CONTAINER CARD */
+.FITUR-HARGA-PAKET .fitur-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
-  padding: 80px 40px;
+  width: 100%;
+  max-width: 1200px;
 }
 
 .FITUR-HARGA-PAKET .fitur-card {
-  width: 100%;
-  max-width: 387px;
-  background:#febd19;
-  border-radius:40px;
-  box-shadow:0 4px 4px rgba(0,0,0,.25);
-  padding: 30px 20px;
+  background: #febd19;
+  border-radius: 40px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 30px 20px 25px 20px;
   text-align: center;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 360px;
 }
 
 .FITUR-HARGA-PAKET .fitur-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
 
 .fitur-card img {
-  width: 80px;
+  width: 70px;
   height: auto;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .fitur-card .kelas-video,
 .fitur-card .kuis-evaluasi,
 .fitur-card .komunitas-dukungan {
-  font-weight:700;
-  color:#fff;
-  font-size: clamp(20px, 4vw, 30px);
-  text-align:center;
-  margin-bottom: 20px;
+  font-weight: 700;
+  color: #fff;
+  font-size: clamp(20px, 3.5vw, 24px);
+  text-align: center;
+  margin-bottom: 12px;
+  line-height: 1.3;
 }
 
 .fitur-card p {
-  color:#fff;
-  font-size: clamp(14px, 3vw, 20px);
-  text-align:center;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
   line-height: 1.5;
+  margin-top: 0;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Responsif Tablet */
+@media (max-width: 768px) {
+  .FITUR-HARGA-PAKET {
+    padding: 30px 20px 60px 20px;
+  }
+  
+  .FITUR-HARGA-PAKET .fitur-header {
+    margin-bottom: 35px;
+  }
+  
+  .FITUR-HARGA-PAKET .fitur-card {
+    max-width: 320px;
+    padding: 25px 20px;
+  }
+}
+
+/* Responsif Mobile */
+@media (max-width: 480px) {
+  .FITUR-HARGA-PAKET {
+    padding: 20px 15px 50px 15px;
+  }
+  
+  .FITUR-HARGA-PAKET .fitur-header {
+    margin-bottom: 25px;
+  }
+  
+  .FITUR-HARGA-PAKET .fitur-card {
+    max-width: 100%;
+    padding: 25px 20px;
+  }
+  
+  .fitur-card img {
+    width: 60px;
+  }
 }
 
 /* =========================
