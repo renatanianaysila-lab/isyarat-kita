@@ -339,6 +339,36 @@ a{
   width: fit-content;
   max-width: 45%;
   align-self: center;
+  opacity: 0;
+  transform: translateX(-80px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* KOLOM KANAN - VISI & MISI */
+.ABOUT-US-VISI-MISI .about-right {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  opacity: 0;
+  transform: translateX(80px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Saat animasi aktif */
+.ABOUT-US-VISI-MISI.animated .about-left {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.ABOUT-US-VISI-MISI.animated .about-right {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.ABOUT-US-VISI-MISI.animated .about-right {
+  transition-delay: 0.15s;
 }
 
 .ABOUT-US-VISI-MISI .about-card {
@@ -372,15 +402,6 @@ a{
   line-height: 1.7;
   text-align: justify;
   max-width: 450px;
-}
-
-/* KOLOM KANAN - VISI & MISI */
-.ABOUT-US-VISI-MISI .about-right {
-  flex: 1;
-  min-width: 280px;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
 }
 
 /* Card Visi */
@@ -503,6 +524,13 @@ a{
   .ABOUT-US-VISI-MISI .about-left {
     max-width: 100%;
     width: 100%;
+    transform: translateX(0);
+    opacity: 1;
+  }
+  
+  .ABOUT-US-VISI-MISI .about-right {
+    transform: translateX(0);
+    opacity: 1;
   }
   
   .ABOUT-US-VISI-MISI .about-card {
