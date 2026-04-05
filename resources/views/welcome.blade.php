@@ -31,10 +31,11 @@
       sistematis, interaktif, dan mudah diakses oleh berbagai kalangan.
     </p>
 
-    <div class="KENALI" id="kenaliBtn">
-  <div class="KENALI-2"></div>
-  <div class="text-wrapper-8">Kenali IsyaratKita</div>
-</div>
+    <div class="button-group">
+      <div class="KENALI">
+        <div class="KENALI-2"></div>
+        <div class="text-wrapper-8">Kenali IsyaratKita</div>
+      </div>
 
       <div class="DAFTAR">
         <div class="BG-DAFTAR"></div>
@@ -171,22 +172,4 @@
     </div>
   </div>
   
-   <script>
-    alert("JS jalan!");
-  </script>
-
-  <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const kenaliBtn = document.getElementById("kenaliBtn");
-
-    if (kenaliBtn) {
-      kenaliBtn.addEventListener("click", function () {
-        document.getElementById("tentang").scrollIntoView({
-          behavior: "smooth"
-        });
-      });
-    }
-  });
-</script>
-</body>
-</html>
+  
