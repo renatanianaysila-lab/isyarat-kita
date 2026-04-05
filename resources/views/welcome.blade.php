@@ -172,9 +172,8 @@
     </div>
   </div>
   
+   <script>
+    alert("JS jalan!");
+  </script>
 </body>
 </html>
-
-<script>
-  alert("JS jalan!");
-</script>
