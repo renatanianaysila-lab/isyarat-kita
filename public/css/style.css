@@ -82,7 +82,6 @@ a{
    RESPONSIVE NAVBAR
 ========================= */
 
-/* Tablet (max-width: 768px) */
 @media (max-width: 768px) {
   .navbar {
     padding: 15px 20px;
@@ -110,7 +109,6 @@ a{
   }
 }
 
-/* Mobile (max-width: 480px) */
 @media (max-width: 480px) {
   .navbar {
     padding: 12px 15px;
@@ -131,18 +129,29 @@ a{
 }
 
 /* =========================
-   PAGE 1 - HOME
+   PAGE 1 - HOME (seperti halaman login)
 ========================= */
 .HOME-PAGE{
-  background:#fff;
+  position: relative;
   width:100%;
   min-width:1440px;
   min-height:1024px;
-  position:relative;
   overflow:hidden;
+  padding-top: 100px;
 }
 
-/* judul besar */
+.HOME-PAGE .BACKGROUND {
+  position: absolute;
+  top: 115px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 883px;
+  border-radius: 26px;
+  object-fit: cover;
+  z-index: 1;
+}
+
 .HOME-PAGE .text-wrapper-7{
   position:absolute;
   top:260px;
@@ -161,7 +170,6 @@ a{
   z-index:4;
 }
 
-/* deskripsi */
 .HOME-PAGE .DESKIPSI-SINGKAT{
   position:absolute;
   top:484px;
@@ -174,12 +182,12 @@ a{
   z-index:4;
 }
 
-/* tombol daftar */
 .HOME-PAGE .DAFTAR{
   position:absolute;
   top:633px; left:408px;
   width:223px; height:71px;
   z-index:4;
+  cursor:pointer;
 }
 .HOME-PAGE .BG-DAFTAR{
   position:absolute;
@@ -195,14 +203,15 @@ a{
   font-weight:700;
   color:#fff;
   font-size:28px;
+  white-space:nowrap;
 }
 
-/* tombol kenali */
 .HOME-PAGE .KENALI{
   position:absolute;
   top:633px; left:691px;
   width:343px; height:71px;
   z-index:4;
+  cursor:pointer;
 }
 .HOME-PAGE .KENALI-2{
   position:absolute;
@@ -222,20 +231,6 @@ a{
   text-align:center;
 }
 
-/* HERO GRADIENT */
-.HOME-PAGE .hero-bg{
-  position:absolute;
-  top:195px;
-  left:50%;
-  transform:translateX(-50%);
-  width:90%;
-  height:883px;
-  border-radius:26px;
-  background: linear-gradient(120deg,#c7d2fe 0%,#93c5fd 40%,#fde68a 100%);
-  box-shadow:0 10px 30px rgba(0,0,0,.12);
-  z-index:1;
-}
-
 /* =========================
    PAGE 2 - ABOUT
 ========================= */
@@ -248,7 +243,6 @@ a{
   overflow:hidden;
 }
 
-/* card tentang */
 .ABOUT-US-VISI-MISI .ABT-US{
   position:absolute;
   top:314px; left:44px;
@@ -279,7 +273,6 @@ a{
   text-align:center;
 }
 
-/* visi misi */
 .ABOUT-US-VISI-MISI .VISI{
   position:absolute;
   top:270px; left:813px;
@@ -332,7 +325,6 @@ a{
   overflow:hidden;
 }
 
-/* kartu 1-3 */
 .FITUR-HARGA-PAKET .rectangle{
   position:absolute; top:195px; left:58px;
   width:387px; height:541px;
@@ -355,7 +347,6 @@ a{
   box-shadow:0 4px 4px rgba(0,0,0,.25);
 }
 
-/* judul kartu */
 .FITUR-HARGA-PAKET .kelas-video{
   position:absolute; top:440px; left:90px;
   width:323px; height:90px;
@@ -375,7 +366,6 @@ a{
   font-weight:700; color:#fff; font-size:30px; text-align:center;
 }
 
-/* deskripsi kartu */
 .FITUR-HARGA-PAKET .p{
   position:absolute; top:540px; left:78px;
   width:348px; height:120px;
@@ -395,7 +385,6 @@ a{
   color:#fff; font-size:20px; text-align:center;
 }
 
-/* icon emoji */
 .video-icon,
 .quiz-icon,
 .community-icon{
@@ -420,7 +409,6 @@ a{
   position:relative;
 }
 
-/* header biru */
 .PAKET-PAKET .group{
   position:absolute; top:195px; left:-28px;
   width:1498px; height:116px;
@@ -437,7 +425,6 @@ a{
   font-weight:700; color:#1e5abc; font-size:60px;
 }
 
-/* card paket */
 .PAKET-PAKET .rectangle-3{
   position:absolute; top:346px; left:193px;
   width:436px; height:509px;
@@ -455,7 +442,6 @@ a{
   box-shadow:0 4px 4px rgba(0,0,0,.25);
 }
 
-/* judul paket */
 .PAKET-PAKET .text-wrapper-8{
   position:absolute; top:378px; left:213px;
   width:396px; height:60px;
@@ -469,7 +455,6 @@ a{
   font-weight:700; color:#1e5abc; font-size:40px;
 }
 
-/* harga */
 .PAKET-PAKET .text-wrapper-10{
   position:absolute; top:438px; left:213px;
   width:396px; height:53px;
@@ -483,7 +468,6 @@ a{
   font-weight:700; color:#000; font-size:35px;
 }
 
-/* list paket */
 .PAKET-PAKET .akses-video{
   position:absolute; top:502px; left:241px;
   width:368px; height:180px;
@@ -500,28 +484,27 @@ a{
 }
 
 /* =========================
-   PAGE 5 - LAST
+   PAGE 5 - LAST (seperti halaman login)
 ========================= */
 .lastt{
-  background:#fff;
+  position: relative;
   width:100%;
   min-width:1440px;
   min-height:1024px;
-  position:relative;
   overflow:hidden;
+  padding-top: 100px;
 }
 
-.lastt .hero-bg{
-  position:absolute;
-  top:357px;
-  left:50%;
-  transform:translateX(-50%);
-  width:90%;
-  height:470px;
-  border-radius:26px;
-  background: linear-gradient(120deg,#c7d2fe 0%,#93c5fd 40%,#fde68a 100%);
-  box-shadow:0 10px 30px rgba(0,0,0,.12);
-  z-index:1;
+.lastt .BACKGROUND {
+  position: absolute;
+  top: 115px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 883px;
+  border-radius: 26px;
+  object-fit: cover;
+  z-index: 1;
 }
 
 .lastt .siap-mulai-belajar-bahasa-isyarat{
@@ -531,7 +514,7 @@ a{
   font-weight:700;
   font-size:40px;
   color:#000;
-  z-index:3;
+  z-index:4;
   text-align:center;
   width:100%;
 }
@@ -542,7 +525,7 @@ a{
   width:930px;
   font-size:24px;
   color:#000;
-  z-index:3;
+  z-index:4;
   text-align:center;
 }
 .lastt .rectangle-9{
@@ -552,7 +535,8 @@ a{
   position:absolute; left:50%;
   transform:translateX(-50%);
   top:610px;
-  z-index:3;
+  z-index:4;
+  cursor:pointer;
 }
 .lastt .gabung-sekarang{
   position:absolute;
@@ -562,4 +546,5 @@ a{
   font-size:28px;
   color:#f5f6ce;
   z-index:4;
+  white-space:nowrap;
 }

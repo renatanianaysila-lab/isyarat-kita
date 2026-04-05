@@ -5,7 +5,6 @@
   <meta charset="utf-8" />
   <title>IsyaratKita</title>
 
-  <!-- GOOGLE FONT: POPPINS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -13,20 +12,18 @@
     rel="stylesheet"
   >
 
-  <!-- CSS -->
   <link rel="stylesheet" href="css/globals.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-  <!-- NAVBAR GLOBAL -->
   @include('navigation-bar')
 
   <!-- PAGE 1 - HOME -->
   <div class="HOME-PAGE" id="home">
-    <div class="hero-bg"></div>
-
+    <img class="BACKGROUND" src="{{ asset('img/BACKGROUND.png') }}" alt="background">
+    
     <div class="text-wrapper-7">IsyaratKita</div>
 
     <p class="DESKIPSI-SINGKAT">
@@ -143,7 +140,7 @@
 
   <!-- PAGE 5 - LAST -->
   <div class="lastt" id="last">
-    <div class="hero-bg"></div>
+    <img class="BACKGROUND" src="{{ asset('img/BACKGROUND.png') }}" alt="background">
 
     <div class="siap-mulai-belajar-bahasa-isyarat">
       Siap Mulai Belajar Bahasa Isyarat?
