@@ -46,35 +46,56 @@
 
   <!-- PAGE 2 - ABOUT -->
   <div class="ABOUT-US-VISI-MISI" id="tentang">
-    <div class="ABT-US">
-      <div class="BG-ABT-US"></div>
-      <div class="text-wrapper-7">Tentang IsyaratKita</div>
-      <p class="DESKIPSI-SINGKAT">
-        IsyaratKita adalah platform edukasi berbasis website yang menyediakan pembelajaran bahasa isyarat secara
-        sistematis dan interaktif. Platform ini mendukung komunikasi inklusif melalui materi bertahap serta kuis untuk
-        membantu evaluasi pemahaman pengguna.
-      </p>
-    </div>
+    <div class="about-container">
+      
+      <!-- 2 KOLOM: KIRI (TENTANG) + KANAN (VISI & MISI) -->
+      <div class="about-two-columns">
+        
+        <!-- KOLOM KIRI - TENTANG -->
+        <div class="about-left">
+          <div class="about-card">
+            <div class="about-card-bg"></div>
+            <h2 class="about-title">Tentang IsyaratKita</h2>
+            <p class="about-description">
+              IsyaratKita adalah platform edukasi berbasis website yang menyediakan pembelajaran bahasa isyarat secara
+              sistematis dan interaktif. Platform ini mendukung komunikasi inklusif melalui materi bertahap serta kuis untuk
+              membantu evaluasi pemahaman pengguna.
+            </p>
+          </div>
+        </div>
 
-    <div class="VISI">
-      <div class="text-wrapper-8">Visi</div>
-      <p class="menjadi-platform">
-        Menjadi platform pembelajaran bahasa isyarat terdepan yang mendorong terciptanya komunikasi inklusif dan
-        kesetaraan bagi penyandang tunarungu dan masyarakat luas
-      </p>
-    </div>
+        <!-- KOLOM KANAN - VISI & MISI -->
+        <div class="about-right">
+          
+          <!-- VISI -->
+          <div class="visi-card">
+            <h3 class="visi-title">Visi</h3>
+            <p class="visi-text">
+              Menjadi platform pembelajaran bahasa isyarat terdepan yang mendorong terciptanya komunikasi inklusif dan 
+              kesetaraan bagi penyandang tunarungu dan masyarakat luas.
+            </p>
+          </div>
 
-    <div class="MISI">
-      <div class="text-wrapper-9">Misi</div>
-      <p class="menyediakan-materi">
-        Menyediakan materi bahasa isyarat yang terstruktur dan interaktif<br />
-        Mendukung kesetaraan komukasi bagi penyandang tunarungu dan masyarakat luas<br />
-        Menghadirkan sistem pembelajaran berbasis video dan kuis yang interaktif<br />
-        Menyediakan layanan pembelajaran online yang fleksibel dan terjangkau
-      </p>
-    </div>
+          <!-- MISI -->
+          <div class="misi-card">
+            <h3 class="misi-title">Misi</h3>
+            <ul class="misi-list">
+              <li>Menyediakan materi bahasa isyarat yang terstruktur dan interaktif</li>
+              <li>Mendukung kesetaraan komunikasi bagi penyandang tunarungu dan masyarakat luas</li>
+              <li>Menghadirkan sistem pembelajaran berbasis video dan kuis yang interaktif</li>
+              <li>Menyediakan layanan pembelajaran online yang fleksibel dan terjangkau</li>
+            </ul>
+          </div>
+          
+        </div>
+      </div>
 
-    <div class="text-wrapper-10">IsyaratKita Menyediakan :</div>
+      <!-- ISYARATKITA MENYEDIAKAN (di bawah) -->
+      <div class="menyediakan-wrapper">
+        <div class="menyediakan-title">IsyaratKita Menyediakan :</div>
+      </div>
+      
+    </div>
   </div>
 
   <!-- PAGE 3 - FITUR -->

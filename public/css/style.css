@@ -191,7 +191,6 @@ a{
 }
 
 /* Tombol KENALI */
-/* Tombol KENALI */
 .HOME-PAGE .KENALI {
   position: relative;           
   width: 280px;
@@ -205,7 +204,7 @@ a{
 }
 
 .HOME-PAGE .KENALI:active {
-  transform: translateY(0px);  /* saat diklik kembali ke posisi */
+  transform: translateY(0px);  
 }
 
 .HOME-PAGE .KENALI-2 {
@@ -225,7 +224,7 @@ a{
   border-color: #1e5abc;
 }
 
-/* EFEK KLIK (ACTIVE) - BACKGROUND KUNING */
+/* EFEK KLIK */
 .HOME-PAGE .KENALI:active .KENALI-2 {
   background: #febd19;
   border-color: #febd19;
@@ -249,7 +248,6 @@ a{
   color: #1e5abc;
 }
 
-/* Saat diklik, teks jadi putih */
 .HOME-PAGE .KENALI:active .text-wrapper-8 {
   color: #ffffff;
 }
@@ -306,88 +304,281 @@ a{
 }
 
 /* =========================
-   PAGE 2 - ABOUT
+   PAGE 2 - ABOUT (2 Kolom: Kiri Tentang, Kanan Visi Misi)
 ========================= */
-.ABOUT-US-VISI-MISI{
-  background:#fff;
-  width:100%;
-  min-height:100vh;
-  position:relative;
-  overflow:hidden;
+.ABOUT-US-VISI-MISI {
+  background: #fff;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 80px 40px;
+  padding: 100px 40px;
 }
 
-.ABOUT-US-VISI-MISI .ABT-US{
+.ABOUT-US-VISI-MISI .about-container {
+  max-width: 1200px;
   width: 100%;
-  max-width: 726px;
-  margin-bottom: 40px;
-  position: relative;
-}
-
-.ABOUT-US-VISI-MISI .BG-ABT-US{
-  position: absolute;
-  inset: 0;
-  background:#febd19;
-  border-radius:15px;
-  box-shadow:0 4px 4px rgba(0,0,0,.25);
-  z-index: 0;
-}
-
-.ABOUT-US-VISI-MISI .text-wrapper-7{
-  position: relative;
-  font-weight:700;
-  color:#fff;
-  font-size: clamp(28px, 6vw, 48px);
-  text-align:center;
-  padding: 40px 20px 0;
-  z-index: 1;
-}
-
-.ABOUT-US-VISI-MISI .DESKIPSI-SINGKAT{
-  position: relative;
-  width: 90%;
-  max-width: 642px;
   margin: 0 auto;
-  color:#fff;
-  font-size: clamp(14px, 3vw, 20px);
-  text-align:center;
-  padding: 20px;
-  z-index: 1;
 }
 
-.ABOUT-US-VISI-MISI .VISI,
-.ABOUT-US-VISI-MISI .MISI {
-  width: 100%;
-  max-width: 582px;
+/* LAYOUT 2 KOLOM */
+.ABOUT-US-VISI-MISI .about-two-columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  margin-bottom: 60px;
+  align-items: center;
+}
+
+/* KOLOM KIRI - TENTANG */
+.ABOUT-US-VISI-MISI .about-left {
+  flex: 0 0 auto;
+  width: fit-content;
+  max-width: 45%;
+  align-self: center;
+}
+
+.ABOUT-US-VISI-MISI .about-card {
+  position: relative;
+  background: #febd19;
+  border-radius: 24px;
+  padding: 35px 45px;
+  height: auto;
+  width: fit-content;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ABOUT-US-VISI-MISI .about-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.ABOUT-US-VISI-MISI .about-title {
+  font-weight: 700;
+  color: #fff;
+  font-size: clamp(28px, 4vw, 36px);
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  text-align: left;
+}
+
+.ABOUT-US-VISI-MISI .about-description {
+  color: #fff;
+  font-size: clamp(15px, 2.5vw, 17px);
+  line-height: 1.7;
+  text-align: justify;
+  max-width: 450px;
+}
+
+/* KOLOM KANAN - VISI & MISI */
+.ABOUT-US-VISI-MISI .about-right {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Card Visi */
+.ABOUT-US-VISI-MISI .visi-card {
+  background: #f8fafc;
+  border-radius: 20px;
+  padding: 28px 32px;
+  border-left: 5px solid #1e5abc;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ABOUT-US-VISI-MISI .visi-card:hover {
+  transform: translateX(5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.ABOUT-US-VISI-MISI .visi-title {
+  font-weight: 700;
+  color: #1e5abc;
+  font-size: clamp(24px, 3.5vw, 28px);
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.ABOUT-US-VISI-MISI .visi-text {
+  font-size: clamp(14px, 2.5vw, 16px);
+  color: #334155;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+/* Card Misi */
+.ABOUT-US-VISI-MISI .misi-card {
+  background: #f8fafc;
+  border-radius: 20px;
+  padding: 28px 32px;
+  border-left: 5px solid #febd19;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ABOUT-US-VISI-MISI .misi-card:hover {
+  transform: translateX(5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.ABOUT-US-VISI-MISI .misi-title {
+  font-weight: 700;
+  color: #1e5abc;
+  font-size: clamp(24px, 3.5vw, 28px);
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.ABOUT-US-VISI-MISI .misi-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ABOUT-US-VISI-MISI .misi-list li {
+  font-size: clamp(14px, 2.5vw, 16px);
+  color: #334155;
+  line-height: 1.7;
+  margin-bottom: 12px;
+  padding-left: 24px;
+  position: relative;
+  text-align: left;
+}
+
+.ABOUT-US-VISI-MISI .misi-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #febd19;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.ABOUT-US-VISI-MISI .misi-list li:last-child {
+  margin-bottom: 0;
+}
+
+.ABOUT-US-VISI-MISI .menyediakan-wrapper {
   text-align: center;
-  margin: 20px auto;
+  margin-top: 20px;
 }
 
-.ABOUT-US-VISI-MISI .text-wrapper-8,
-.ABOUT-US-VISI-MISI .text-wrapper-9 {
-  font-weight:700;
-  color:#1e5abc;
-  font-size: clamp(24px, 5vw, 35px);
+.ABOUT-US-VISI-MISI .menyediakan-title {
+  font-weight: 700;
+  color: #1e5abc;
+  font-size: clamp(24px, 4vw, 38px);
+  text-align: center;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
 }
 
-.ABOUT-US-VISI-MISI .menjadi-platform,
-.ABOUT-US-VISI-MISI .menyediakan-materi {
-  margin-top:10px;
-  font-size: clamp(14px, 3vw, 20px);
-  color:#000;
-  line-height: 1.6;
+.ABOUT-US-VISI-MISI .menyediakan-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: #febd19;
+  border-radius: 2px;
 }
 
-.ABOUT-US-VISI-MISI .text-wrapper-10 {
-  font-weight:700;
-  color:#1e5abc;
-  font-size: clamp(24px, 5vw, 50px);
-  text-align:center;
-  margin-top: 40px;
+/* Responsif Tablet (max-width: 900px) */
+@media (max-width: 900px) {
+  .ABOUT-US-VISI-MISI {
+    padding: 80px 30px;
+  }
+  
+  .ABOUT-US-VISI-MISI .about-two-columns {
+    gap: 35px;
+  }
+  
+  .ABOUT-US-VISI-MISI .about-card {
+    padding: 30px 35px;
+  }
+  
+  .ABOUT-US-VISI-MISI .about-description {
+    max-width: 380px;
+  }
+  
+  .ABOUT-US-VISI-MISI .visi-card,
+  .ABOUT-US-VISI-MISI .misi-card {
+    padding: 25px 25px;
+  }
+}
+
+/* Responsif Mobile (max-width: 768px) - JADI 1 KOLOM */
+@media (max-width: 768px) {
+  .ABOUT-US-VISI-MISI {
+    padding: 60px 20px;
+  }
+  
+  .ABOUT-US-VISI-MISI .about-two-columns {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .ABOUT-US-VISI-MISI .about-left {
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .ABOUT-US-VISI-MISI .about-card {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .ABOUT-US-VISI-MISI .about-title {
+    text-align: center;
+  }
+  
+  .ABOUT-US-VISI-MISI .about-description {
+    text-align: center;
+    max-width: 100%;
+  }
+  
+  .ABOUT-US-VISI-MISI .about-right {
+    min-width: auto;
+  }
+  
+  .ABOUT-US-VISI-MISI .visi-card:hover,
+  .ABOUT-US-VISI-MISI .misi-card:hover {
+    transform: translateX(0) translateY(-3px);
+  }
+  
+  .ABOUT-US-VISI-MISI .menyediakan-title::after {
+    width: 50px;
+  }
+}
+
+/* Mobile kecil (max-width: 480px) */
+@media (max-width: 480px) {
+  .ABOUT-US-VISI-MISI {
+    padding: 50px 15px;
+  }
+  
+  .ABOUT-US-VISI-MISI .about-card {
+    padding: 25px 20px;
+  }
+  
+  .ABOUT-US-VISI-MISI .visi-card,
+  .ABOUT-US-VISI-MISI .misi-card {
+    padding: 20px 18px;
+  }
+  
+  .ABOUT-US-VISI-MISI .misi-list li {
+    padding-left: 20px;
+  }
 }
 
 /* =========================
