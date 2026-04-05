@@ -155,7 +155,7 @@
   </div>
 </div>
 
-  <!-- PAGE 5 - LAST -->
+   <!-- PAGE 5 - LAST -->
   <div class="lastt" id="last">
     <img class="BACKGROUND" src="{{ asset('img/BACKGROUND.png') }}" alt="background">
 
@@ -168,20 +168,23 @@
     </div>
 
     <div class="rectangle-9" id="gabungBtn">
-  <div class="gabung-sekarang">Gabung Sekarang</div>
-</div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const gabungBtn = document.getElementById("gabungBtn");
-
-    if (gabungBtn) {
-      gabungBtn.addEventListener("click", function () {
-        window.location.href = "/register";
-      });
-    }
-  });
-</script>
+      <div class="gabung-sekarang">Gabung Sekarang</div>
+    </div>
   </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const gabungBtn = document.getElementById("gabungBtn");
+
+      if (gabungBtn) {
+        gabungBtn.addEventListener("click", function () {
+          window.location.href = "/register";
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
   
   
