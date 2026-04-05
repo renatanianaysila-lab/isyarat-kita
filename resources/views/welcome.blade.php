@@ -174,3 +174,7 @@
   
 </body>
 </html>
+
+<script>
+  alert("JS jalan!");
+</script>
