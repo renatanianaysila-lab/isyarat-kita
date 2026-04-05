@@ -332,30 +332,26 @@ a{
   margin-bottom: 0;
   align-items: center;
 }
-
-/* KOLOM KIRI - TENTANG */
 .ABOUT-US-VISI-MISI .about-left {
   flex: 0 0 auto;
   width: fit-content;
   max-width: 45%;
   align-self: center;
-  opacity: 0;
-  transform: translateX(-80px);
+  opacity: 1;
+  transform: translateX(0);
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* KOLOM KANAN - VISI & MISI */
 .ABOUT-US-VISI-MISI .about-right {
   flex: 1;
   min-width: 280px;
   display: flex;
   flex-direction: column;
   gap: 30px;
-  opacity: 0;
-  transform: translateX(80px);
+  opacity: 1;
+  transform: translateX(0);
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 /* Saat animasi aktif */
 .ABOUT-US-VISI-MISI.animated .about-left {
   opacity: 1;
@@ -997,26 +993,3 @@ a{
   white-space: nowrap;
 }
 
-.about-two-columns {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-.about-left,
-.about-right {
-  flex: 1;
-  min-width: 300px;
-}
-
-.visi-card,
-.misi-card,
-.about-card {
-  background: white;
-  padding: 20px;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  margin-bottom: 20px;
-}
