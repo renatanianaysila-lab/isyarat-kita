@@ -120,39 +120,40 @@
   </div>
 </div>
 
-  <!-- PAGE 4 - HARGA -->
-  <div class="PAKET-PAKET" id="harga">
-    <div class="group">
-      <div class="paket-harga">Paket & Harga</div>
+<!-- PAGE 4 - HARGA -->
+<div class="PAKET-PAKET" id="harga">
+  <div class="group">
+    <div class="paket-harga-bg"></div>
+    <div class="paket-harga">Paket & Harga</div>
+  </div>
+
+  <div class="paket-container">
+    <div class="paket-card">
+      <div class="paket-title">PAKET GRATIS</div>
+      <div class="paket-price">RP0</div>
+      <div class="paket-list">
+        <span>Akses video pembelajaran dasar Bahasa Isyarat</span>
+        <span>Materi alfabet (A–Z) dan angka</span>
+        <span>Pengenalan kata & gerakan sehari-hari</span>
+        <span>Akses gratis 2 bulan</span>
+      </div>
     </div>
 
-    <div class="paket-container">
-      <div class="paket-card">
-        <div class="paket-title">PAKET GRATIS</div>
-        <div class="paket-price">RP0</div>
-        <div class="paket-list">
-          Akses video pembelajaran dasar Bahasa Isyarat<br />
-          Materi alfabet (A–Z) dan angka<br />
-          Pengenalan kata & gerakan sehari-hari<br />
-          Akses gratis 2 bulan
-        </div>
-      </div>
-
-      <div class="paket-card">
-        <div class="paket-title">PAKET PREMIUM</div>
-        <div class="paket-price">RP30.000</div>
-        <div class="paket-list">
-          Semua benefit Paket Gratis<br />
-          Akses video lanjutan & percakapan lengkap<br />
-          Materi kalimat, ekspresi, dan konteks nyata<br />
-          Latihan interaktif & kuis<br />
-          Akses komunitas / mentor<br />
-          Update materi eksklusif Premium<br />
-          Akses selama 6 bulan
-        </div>
+    <div class="paket-card">
+      <div class="paket-title">PAKET PREMIUM</div>
+      <div class="paket-price">RP30.000</div>
+      <div class="paket-list">
+        <span>Semua benefit Paket Gratis</span>
+        <span>Akses video lanjutan & percakapan lengkap</span>
+        <span>Materi kalimat, ekspresi, dan konteks nyata</span>
+        <span>Latihan interaktif & kuis</span>
+        <span>Akses komunitas / mentor</span>
+        <span>Update materi eksklusif Premium</span>
+        <span>Akses selama 6 bulan</span>
       </div>
     </div>
   </div>
+</div>
 
   <!-- PAGE 5 - LAST -->
   <div class="lastt" id="last">

@@ -690,68 +690,201 @@ a{
 /* =========================
    PAGE 4 - HARGA
 ========================= */
-.PAKET-PAKET{
-  background:#fff;
-  width:100%;
-  min-height:100vh;
-  position:relative;
-  overflow:hidden;
+.PAKET-PAKET {
+  background: #fff;
+  width: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 80px 40px;
+  padding: 80px 0;
 }
 
+/* SHAPE BIRU FULL WIDTH */
 .PAKET-PAKET .group {
-  width: 100%;
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
+  position: relative;
+  width: 100%;
+}
+
+.PAKET-PAKET .paket-harga-bg {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 90px;
+  background: linear-gradient(90deg, #c7e4ff 0%, #d4ecff 50%, #c7e4ff 100%);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  z-index: 0;
 }
 
 .PAKET-PAKET .paket-harga {
-  font-weight:700;
-  color:#1e5abc;
-  font-size: clamp(32px, 6vw, 60px);
+  font-weight: 700;
+  color: #1e5abc;
+  font-size: clamp(32px, 6vw, 56px);
+  position: relative;
+  display: inline-block;
+  padding: 18px 0;
+  z-index: 1;
+  text-align: center;
+  width: 100%;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
+/* CONTAINER CARD */
 .PAKET-PAKET .paket-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 50px;
   justify-content: center;
+  max-width: 1400px;
+  width: 85%;
+  margin: 0 auto;
 }
 
+/* CARD */
 .PAKET-PAKET .paket-card {
-  width: 100%;
-  max-width: 436px;
-  background:#fff5b4;
-  border-radius:23px;
-  border:7px solid #febd19;
-  box-shadow:0 4px 4px rgba(0,0,0,.25);
-  padding: 30px 20px;
+  flex: 1;
+  min-width: 340px;
+  max-width: 500px;
+  background: #fff5b4;
+  border-radius: 28px;
+  border: 8px solid #febd19;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 45px 35px;
   text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.paket-card .paket-title {
-  font-weight:700;
-  color:#1e5abc;
-  font-size: clamp(28px, 5vw, 40px);
-  margin-bottom: 10px;
+.PAKET-PAKET .paket-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
 }
 
-.paket-card .paket-price {
-  font-weight:700;
-  color:#000;
-  font-size: clamp(24px, 4vw, 35px);
+/* JUDUL CARD - DIPERBESAR */
+.PAKET-PAKET .paket-title {
+  font-weight: 700;
+  color: #1e5abc;
+  font-size: clamp(28px, 5vw, 38px);
   margin-bottom: 20px;
+  letter-spacing: 1px;
 }
 
-.paket-card .paket-list {
-  font-size: clamp(14px, 3vw, 20px);
-  color:#000;
-  text-align:center;
-  line-height: 1.8;
+/* HARGA - DIPERBESAR */
+.PAKET-PAKET .paket-price {
+  font-weight: 800;
+  color: #1e293b;
+  font-size: clamp(38px, 6vw, 52px);
+  margin-bottom: 30px;
+  letter-spacing: -0.5px;
+}
+
+/* LIST - DIPERBESAR */
+.PAKET-PAKET .paket-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.PAKET-PAKET .paket-list span {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  color: #334155;
+  text-align: left;
+  line-height: 1.5;
+}
+
+.PAKET-PAKET .paket-list span::before {
+  content: "✓";
+  color: #febd19;
+  font-weight: bold;
+  font-size: 18px;
+  width: 24px;
+  flex-shrink: 0;
+}
+
+/* RESPONSIF */
+@media (max-width: 1024px) {
+  .PAKET-PAKET .paket-container {
+    width: 90%;
+    gap: 40px;
+  }
+  
+  .PAKET-PAKET .paket-card {
+    min-width: 300px;
+    max-width: 450px;
+    padding: 35px 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .PAKET-PAKET {
+    padding: 50px 0;
+  }
+  
+  .PAKET-PAKET .paket-container {
+    width: 85%;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .PAKET-PAKET .paket-card {
+    max-width: 100%;
+    width: 100%;
+    padding: 35px 25px;
+  }
+  
+  .PAKET-PAKET .paket-list span {
+    justify-content: flex-start;
+    font-size: 15px;
+  }
+  
+  .PAKET-PAKET .paket-harga-bg {
+    height: 75px;
+  }
+  
+  .PAKET-PAKET .paket-harga {
+    font-size: clamp(28px, 5vw, 42px);
+  }
+}
+
+@media (max-width: 480px) {
+  .PAKET-PAKET {
+    padding: 40px 0;
+  }
+  
+  .PAKET-PAKET .group {
+    margin-bottom: 40px;
+  }
+  
+  .PAKET-PAKET .paket-container {
+    width: 90%;
+  }
+  
+  .PAKET-PAKET .paket-card {
+    padding: 28px 20px;
+  }
+  
+  .PAKET-PAKET .paket-title {
+    font-size: clamp(24px, 4vw, 32px);
+  }
+  
+  .PAKET-PAKET .paket-price {
+    font-size: clamp(32px, 5vw, 44px);
+  }
+  
+  .PAKET-PAKET .paket-list span {
+    font-size: 14px;
+  }
+  
+  .PAKET-PAKET .paket-harga-bg {
+    height: 65px;
+  }
 }
 
 /* =========================
