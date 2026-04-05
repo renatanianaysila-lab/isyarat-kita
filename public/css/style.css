@@ -191,67 +191,112 @@ a{
 }
 
 /* Tombol KENALI */
+/* Tombol KENALI */
 .HOME-PAGE .KENALI {
   position: relative;           
   width: 280px;
   height: 60px;
   cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.HOME-PAGE .KENALI:hover {
+  transform: translateY(-3px);
+}
+
+.HOME-PAGE .KENALI:active {
+  transform: translateY(0px);  /* saat diklik kembali ke posisi */
 }
 
 .HOME-PAGE .KENALI-2 {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;                 /* mengikuti parent */
+  width: 100%;
   height: 100%;
   background: transparent;
   border: 2px solid #2e5aa7;
   border-radius: 31px;
+  transition: all 0.2s ease;
+}
+
+.HOME-PAGE .KENALI:hover .KENALI-2 {
+  background: #f5f6cd;
+  border-color: #1e5abc;
+}
+
+/* EFEK KLIK (ACTIVE) - BACKGROUND KUNING */
+.HOME-PAGE .KENALI:active .KENALI-2 {
+  background: #febd19;
+  border-color: #febd19;
+  transform: scale(0.97);
 }
 
 .HOME-PAGE .text-wrapper-8 {
   position: absolute;
   top: 50%;                    
   left: 50%;                   
-  transform: translate(-50%, -50%);  /* perfect center */
+  transform: translate(-50%, -50%);  
   font-weight: 700;
   color: #2e5aa7;
   font-size: clamp(16px, 4vw, 22px);
   white-space: nowrap;
+  z-index: 2;
+  transition: color 0.2s ease;
 }
 
+.HOME-PAGE .KENALI:hover .text-wrapper-8 {
+  color: #1e5abc;
+}
+
+/* Saat diklik, teks jadi putih */
+.HOME-PAGE .KENALI:active .text-wrapper-8 {
+  color: #ffffff;
+}
+
+/* Tombol DAFTAR */
 .HOME-PAGE .DAFTAR {
-  position: relative;        /* ← baru, jadi parent */
+  position: relative;
   width: 180px;
   height: 60px;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: transform 0.2s ease;
 }
 
 .HOME-PAGE .DAFTAR:hover {
   transform: translateY(-3px);
 }
 
+.HOME-PAGE .DAFTAR:active {
+  transform: translateY(0px);
+}
+
 .HOME-PAGE .BG-DAFTAR {
-  position: absolute;        /* ← baru, shape absolute di dalam parent */
+  position: absolute;        
   top: 0;
   left: 0;
-  width: 100%;               /* ← mengikuti parent */
-  height: 100%;              /* ← mengikuti parent */
+  width: 100%;              
+  height: 100%;              
   background: #1e5abc;
   border-radius: 31px;
-  transition: background 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .HOME-PAGE .DAFTAR:hover .BG-DAFTAR {
   background: #154a9e;
 }
 
+/* Efek klik untuk DAFTAR */
+.HOME-PAGE .DAFTAR:active .BG-DAFTAR {
+  background: #0e3d7a;
+  transform: scale(0.97);
+}
+
 .HOME-PAGE .text-wrapper-9 {
-  position: absolute;        /* ← baru, teks juga absolute */
-  top: 50%;                  /* ← center vertical */
-  left: 50%;                 /* ← center horizontal */
-  transform: translate(-50%, -50%);  /* ← perfect center */
+  position: absolute;        
+  top: 50%;                  
+  left: 50%;                 
+  transform: translate(-50%, -50%);  
   font-weight: 700;
   color: #fff;
   font-size: clamp(16px, 4vw, 22px);
