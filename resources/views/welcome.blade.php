@@ -14,8 +14,8 @@
 
   <link rel="stylesheet" href="css/globals.css">
   <link rel="stylesheet" href="css/style.css">
-  
 </head>
+
 <body>
 
   @include('navigation-bar')
@@ -171,8 +171,9 @@
       <div class="gabung-sekarang">Gabung Sekarang</div>
     </div>
   </div>
-
-  <script src="{{ asset('js/Main.js') }}"></script>
-
+  
+   <script>
+    alert("JS jalan!");
+  </script>
 </body>
 </html>
