@@ -167,9 +167,21 @@
       Bergabunglah bersama kami dan mulai pahami Bahasa Isyarat dengan cara yang mudah, inklusif, dan ramah untuk semua.
     </div>
 
-    <div class="rectangle-9">
-      <div class="gabung-sekarang">Gabung Sekarang</div>
-    </div>
+    <div class="rectangle-9" id="gabungBtn">
+  <div class="gabung-sekarang">Gabung Sekarang</div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const gabungBtn = document.getElementById("gabungBtn");
+
+    if (gabungBtn) {
+      gabungBtn.addEventListener("click", function () {
+        window.location.href = "/register";
+      });
+    }
+  });
+</script>
   </div>
   
   
