@@ -31,14 +31,16 @@
       sistematis, interaktif, dan mudah diakses oleh berbagai kalangan.
     </p>
 
-    <div class="KENALI">
-      <div class="KENALI-2"></div>
-      <div class="text-wrapper-8">Kenali IsyaratKita</div>
-    </div>
+    <div class="button-group">
+      <div class="KENALI">
+        <div class="KENALI-2"></div>
+        <div class="text-wrapper-8">Kenali IsyaratKita</div>
+      </div>
 
-    <div class="DAFTAR">
-      <div class="BG-DAFTAR"></div>
-      <div class="text-wrapper-9">Daftar!</div>
+      <div class="DAFTAR">
+        <div class="BG-DAFTAR"></div>
+        <div class="text-wrapper-9">Daftar!</div>
+      </div>
     </div>
   </div>
 
@@ -57,8 +59,7 @@
     <div class="VISI">
       <div class="text-wrapper-8">Visi</div>
       <p class="menjadi-platform">
-        Menjadi platform pembelajaran bahasa isyarat terdepan<br />
-        yang mendorong terciptanya komunikasi inklusif dan
+        Menjadi platform pembelajaran bahasa isyarat terdepan yang mendorong terciptanya komunikasi inklusif dan
         kesetaraan bagi penyandang tunarungu dan masyarakat luas
       </p>
     </div>
@@ -78,64 +79,57 @@
 
   <!-- PAGE 3 - FITUR -->
   <div class="FITUR-HARGA-PAKET" id="fitur">
-    <div class="rectangle"></div>
-    <div class="kelas-video">Kelas Video Interaktif</div>
+    <div class="fitur-card">
+      <img src="{{ asset('img/video.png') }}" alt="Video">
+      <div class="kelas-video">Kelas Video Interaktif</div>
+      <p>Materi bahasa isyarat dari tingkat dasar hingga lanjutan, disajikan melalui video interaktif yang mudah dipahami.</p>
+    </div>
 
-    <div class="div"></div>
-    <div class="kuis-evaluasi">Kuis & Evaluasi Pemahaman</div>
+    <div class="fitur-card">
+      <img src="{{ asset('img/quiz.png') }}" alt="Quiz">
+      <div class="kuis-evaluasi">Kuis & Evaluasi Pemahaman</div>
+      <p>Latihan dan kuis interaktif untuk menguji pemahaman serta memantau progres belajar secara sistematis.</p>
+    </div>
 
-    <div class="rectangle-2"></div>
-    <div class="komunitas-dukungan">Komunitas & Dukungan Belajar</div>
-
-    <p class="p">
-      Materi bahasa isyarat dari tingkat dasar hingga lanjutan, disajikan melalui video interaktif yang mudah dipahami.
-    </p>
-
-    <p class="text-wrapper-8">
-      Latihan dan kuis interaktif untuk menguji pemahaman serta memantau progres belajar secara sistematis.
-    </p>
-
-    <p class="text-wrapper-9">
-      Ruang diskusi untuk berbagi pengalaman dan membangun komunikasi inklusif bersama sesama pembelajar dan pengajar.
-    </p>
-
-    <img src="{{ asset('img/video.png') }}" class="video-icon" alt="Video">
-    <img src="{{ asset('img/quiz.png') }}" class="quiz-icon" alt="Quiz">
-    <img src="{{ asset('img/social-justice.png') }}" class="community-icon" alt="Community">
+    <div class="fitur-card">
+      <img src="{{ asset('img/social-justice.png') }}" alt="Community">
+      <div class="komunitas-dukungan">Komunitas & Dukungan Belajar</div>
+      <p>Ruang diskusi untuk berbagi pengalaman dan membangun komunikasi inklusif bersama sesama pembelajar dan pengajar.</p>
+    </div>
   </div>
 
   <!-- PAGE 4 - HARGA -->
   <div class="PAKET-PAKET" id="harga">
     <div class="group">
-      <div class="rectangle"></div>
       <div class="paket-harga">Paket & Harga</div>
     </div>
 
-    <div class="rectangle-3"></div>
-    <div class="rectangle-4"></div>
+    <div class="paket-container">
+      <div class="paket-card">
+        <div class="paket-title">PAKET GRATIS</div>
+        <div class="paket-price">RP0</div>
+        <div class="paket-list">
+          Akses video pembelajaran dasar Bahasa Isyarat<br />
+          Materi alfabet (A–Z) dan angka<br />
+          Pengenalan kata & gerakan sehari-hari<br />
+          Akses gratis 2 bulan
+        </div>
+      </div>
 
-    <div class="text-wrapper-8">PAKET GRATIS</div>
-    <div class="text-wrapper-9">PAKET PREMIUM</div>
-
-    <div class="text-wrapper-10">RP0</div>
-    <div class="text-wrapper-11">RP30.000</div>
-
-    <p class="akses-video">
-      Akses video pembelajaran dasar Bahasa Isyarat<br />
-      Materi alfabet (A–Z) dan angka<br />
-      Pengenalan kata & gerakan sehari-hari<br />
-      Akses gratis 2 bulan
-    </p>
-
-    <p class="semua-benefit-paket">
-      Semua benefit Paket Gratis<br />
-      Akses video lanjutan & percakapan lengkap<br />
-      Materi kalimat, ekspresi, dan konteks nyata<br />
-      Latihan interaktif & kuis<br />
-      Akses komunitas / mentor<br />
-      Update materi eksklusif Premium<br />
-      Akses selama 6 bulan
-    </p>
+      <div class="paket-card">
+        <div class="paket-title">PAKET PREMIUM</div>
+        <div class="paket-price">RP30.000</div>
+        <div class="paket-list">
+          Semua benefit Paket Gratis<br />
+          Akses video lanjutan & percakapan lengkap<br />
+          Materi kalimat, ekspresi, dan konteks nyata<br />
+          Latihan interaktif & kuis<br />
+          Akses komunitas / mentor<br />
+          Update materi eksklusif Premium<br />
+          Akses selama 6 bulan
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- PAGE 5 - LAST -->
@@ -147,13 +141,13 @@
     </div>
 
     <div class="bergabunglah-bersama-kami-dan-mulai-pahami-bahasa-isyarat-dengan-cara-yang-mudah-inklusif-dan-ramah-untuk-semua">
-      Bergabunglah bersama kami dan mulai pahami Bahasa Isyarat dengan cara yang
-      mudah, inklusif, dan ramah untuk semua.
+      Bergabunglah bersama kami dan mulai pahami Bahasa Isyarat dengan cara yang mudah, inklusif, dan ramah untuk semua.
     </div>
 
-    <div class="rectangle-9"></div>
-    <div class="gabung-sekarang">Gabung Sekarang</div>
+    <div class="rectangle-9">
+      <div class="gabung-sekarang">Gabung Sekarang</div>
+    </div>
   </div>
-
+  
 </body>
 </html>
