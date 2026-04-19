@@ -1,0 +1,274 @@
+/* ========================================
+   MATERI SAYA CONTENT
+   ======================================== */
+
+.materi-saya-container {
+    width: 100%;
+}
+
+.materi-saya-container h1 {
+    font-size: 2rem;
+    color: #1e293b;
+    margin-bottom: 25px;
+}
+
+/* ===== FILTER BUTTONS ===== */
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 8px 20px;
+    border-radius: 30px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    cursor: pointer;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    transition: all 0.2s ease;
+}
+
+.filter-btn.active {
+    background: #fff5b4;
+    color: #1e293b;
+    border: 1px solid #febd19;
+}
+
+.filter-btn:hover {
+    background: #febd19;
+    color: #1e293b;
+    border: 1px solid #febd19;
+}
+
+/* ===== MATERI GRID ===== */
+.materi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* ===== MATERI CARD ===== */
+.materi-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.materi-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== THUMBNAIL ===== */
+.materi-thumbnail {
+    height: 140px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+}
+
+/* BADGE DASAR - pojok kiri atas */
+.badge-dasar {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #e9ecef;
+    color: #495057;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    z-index: 2;
+}
+
+/* BADGE PREMIUM - pojok kiri atas */
+.badge-premium {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #e9ecef;
+    color: #1e293b;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    z-index: 2;
+}
+
+/* DURATION - pojok kanan bawah */
+.duration {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    z-index: 2;
+}
+
+/* ===== CARD CONTENT ===== */
+.materi-card-content {
+    padding: 15px;
+}
+
+.materi-card-content h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #1e293b;
+}
+
+.materi-card-content p {
+    font-size: 0.8rem;
+    color: #64748b;
+    margin-bottom: 10px;
+}
+
+/* ===== PROGRESS ===== */
+.progress-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 6px;
+    background: #e9ecef;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #fff5b4;
+    border-radius: 10px;
+    border: 1px solid #febd19;
+}
+
+.progress-text {
+    font-size: 0.7rem;
+    color: #64748b;
+}
+
+.completed {
+    color: #282bec;
+    display: block;
+    margin-bottom: 10px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* ===== BUTTONS ===== */
+.btn-mulai,
+.btn-lanjut,
+.btn-ulang {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.btn-mulai {
+    background: #fff5b4;
+    color: #1e293b;
+    border: 1px solid #febd19;
+}
+
+.btn-mulai:hover {
+    background: #febd19;
+    color: #1e293b;
+}
+
+.btn-mulai:active {
+    background: #e5a800;
+    transform: scale(0.98);
+}
+
+.btn-lanjut {
+    background: #2196F3;
+    color: white;
+}
+
+.btn-lanjut:hover {
+    background: #1e88e5;
+}
+
+.btn-lanjut:active {
+    background: #0b5e9e;
+    transform: scale(0.98);
+}
+
+.btn-ulang {
+    background: #f1f5f9;
+    color: #1e293b;
+}
+
+.btn-ulang:hover {
+    background: #fff5b4;
+    border: 1px solid #febd19;
+}
+
+.btn-ulang:active {
+    background: #febd19;
+    transform: scale(0.98);
+}
+
+/* ===== BACK LINK ===== */
+.back-link {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.back-link a {
+    color: #1934fe;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+    color: #e5a800;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .materi-saya-container h1 {
+        font-size: 1.5rem;
+    }
+
+    .filter-buttons {
+        gap: 8px;
+    }
+
+    .filter-btn {
+        padding: 6px 16px;
+        font-size: 0.8rem;
+    }
+
+    .materi-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .materi-card-content h3 {
+        font-size: 1rem;
+    }
+
+    .materi-card-content p {
+        font-size: 0.75rem;
+    }
+}

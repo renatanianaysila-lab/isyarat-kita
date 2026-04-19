@@ -1,0 +1,162 @@
+/* ========================================
+   PROFIL CONTENT
+   ======================================== */
+
+.profil-container {
+    width: 100%;
+}
+
+.profil-container h1 {
+    font-size: 2rem;
+    color: #1e293b;
+    margin-bottom: 25px;
+}
+
+/* ====== PROFIL WRAPPER ====== */
+.profil-wrapper {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 32px;
+    align-items: start;
+}
+
+/* ====== FORM KIRI ====== */
+.profil-form {
+    min-width: 0;
+}
+
+.profil-form-grid {
+    display: grid;
+    gap: 18px;
+}
+
+.profil-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.profil-input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    outline: none;
+    font-family: "Poppins", sans-serif;
+    background: #fff;
+}
+
+.profil-input:focus {
+    border-color: rgba(30, 90, 188, 0.5);
+    box-shadow: 0 0 0 3px rgba(30, 90, 188, 0.12);
+}
+
+/* ====== FOTO KANAN ====== */
+.profil-photo-side {
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: #f8fafc;
+    padding: 20px;
+    text-align: center;
+}
+
+.profil-photo-title {
+    margin: 0 0 16px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.profil-photo-img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 16px;
+    display: block;
+    margin: 0 auto 16px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    background: #e2e8f0;
+}
+
+.profil-photo-name {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.profil-photo-desc {
+    margin: 6px 0 16px;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.profil-upload-btn {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 10px;
+    background: #1e5abc;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.profil-upload-btn:hover {
+    background: #2e5aa7;
+}
+
+.profil-photo-note {
+    margin: 14px 0 0;
+    color: #64748b;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* ====== BUTTON ====== */
+.btn {
+    background: #d1d5db;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn:hover {
+    filter: brightness(1.02);
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 900px) {
+    .profil-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .profil-photo-side {
+        max-width: 320px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .profil-container h1 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .profil-photo-img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .profil-form-grid {
+        gap: 12px;
+    }
+
+    .profil-input {
+        padding: 10px 12px;
+    }
+}

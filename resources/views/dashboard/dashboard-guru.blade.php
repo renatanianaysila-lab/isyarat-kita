@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   {{-- CSS dari public/css --}}
-  <link rel="stylesheet" href="{{ asset('css/dashboard-guru.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/dashboard/dashboard-guru.css') }}">
   
   {{-- Tambahan CSS untuk tabel --}}
   <style>

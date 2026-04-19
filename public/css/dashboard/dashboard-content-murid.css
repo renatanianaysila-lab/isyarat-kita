@@ -1,0 +1,219 @@
+/* ====== CONTENT ====== */
+.content{
+  padding:40px 60px;
+  max-width:1200px;
+  margin:0 auto;
+}
+
+.greet h1{
+  margin:4px 0 0;
+  font-size:26px;
+}
+.greet p{
+  margin:6px 0 0;
+  color:var(--muted);
+  font-weight:500;
+}
+
+.name{ font-weight:700; }
+
+.grid-2{
+  display:grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap:14px;
+  margin-top:14px;
+}
+
+/* ====== CARD ====== */
+.card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow: var(--shadow);
+  padding:14px;
+}
+
+.card-head{
+  background:#f3f4f6;
+  border-radius:12px;
+  padding:10px 12px;
+  border:1px solid rgba(0,0,0,.08);
+  margin-bottom:12px;
+}
+
+.card-head h2{
+  margin:0;
+  font-size:14px;
+  font-weight:700;
+  color:#334155;
+}
+
+.card-foot{
+  margin-top:10px;
+  text-align:right;
+}
+
+.link{
+  color:var(--blue2);
+  font-weight:600;
+}
+
+/* ====== PROGRESS CARD CUSTOM ====== */
+.progress-card-custom .card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.progress-card-custom .tanggal {
+    font-size: 0.8rem;
+    color: #64748b;
+    background: #f1f5f9;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: normal;
+}
+
+.progress-main-row {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .progress-main-row {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* ====== PAKET ====== */
+.paket-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:12px;
+}
+
+.paket-card{
+  border:1px solid rgba(0,0,0,.10);
+  border-radius:12px;
+  padding:12px;
+  background:#fff;
+}
+
+.paket-title{
+  font-weight:700;
+  color:#334155;
+}
+.paket-sub{
+  font-size:12px;
+  color:var(--muted);
+  margin-top:4px;
+}
+
+.paket-list{
+  margin:10px 0 12px;
+  padding-left:16px;
+  color:#475569;
+  font-size:12px;
+}
+
+/* ====== BUTTON ====== */
+.btn{
+  background:#d1d5db;
+  border:1px solid rgba(0,0,0,.12);
+  border-radius:10px;
+  padding:10px 12px;
+  font-family:"Poppins", sans-serif;
+  font-weight:600;
+  cursor:pointer;
+}
+.btn:hover{ filter:brightness(1.02); }
+
+.btn.full{ width:100%; }
+.btn.outline{
+  background:#fff;
+}
+
+/* ====== SECTION HEAD ====== */
+.section-head{
+  margin-top:16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+}
+.section-head h3{
+  margin:0;
+  font-size:14px;
+  font-weight:700;
+  color:#334155;
+}
+
+/* ====== MATERI ====== */
+.materi-card{
+  padding:12px;
+}
+
+.materi-tag{
+  font-size:12px;
+  font-weight:700;
+  color:#334155;
+  margin-bottom:10px;
+}
+
+.materi-body{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  margin-bottom:10px;
+}
+
+.thumb{
+  width:80px; height:54px;
+  border-radius:10px;
+  border:1px solid rgba(0,0,0,.10);
+  background:#e5e7eb;
+}
+
+.materi-title{
+  font-weight:700;
+  font-size:12px;
+  color:#334155;
+}
+.materi-time{
+  font-size:12px;
+  color:var(--muted);
+  margin-top:6px;
+}
+
+/* ====== GRID REKOMENDASI MATERI ====== */
+.grid-2.rekomendasi-materi {
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+/* Responsive untuk tablet dan mobile */
+@media (max-width: 768px) {
+  .grid-2.rekomendasi-materi {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Memastikan card materi tetap rapi */
+.rekomendasi-materi .materi-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.rekomendasi-materi .materi-body {
+  flex: 1;
+}
+
+/* Menyesuaikan margin bottom */
+.rekomendasi-materi .btn.full {
+  margin-top: auto;
+}

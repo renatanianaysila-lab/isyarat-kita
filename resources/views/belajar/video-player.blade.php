@@ -718,8 +718,7 @@ function changeVideo(videoId, element) {
     alert('Video ini masih terkunci. Selesaikan video sebelumnya terlebih dahulu.');
     return;
   }
-  
-  // Hapus class active dari semua lesson-item
+
   document.querySelectorAll('.lesson-item').forEach(item => {
     item.classList.remove('active');
   });

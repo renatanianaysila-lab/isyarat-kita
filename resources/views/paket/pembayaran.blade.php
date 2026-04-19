@@ -9,12 +9,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- CSS Pembayaran -->
-    <link rel="stylesheet" href="{{ asset('css/pembayaran.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/paket/pembayaran.css') }}">
 </head>
 <body>
     <div class="payment-container">
         <!-- Tombol Kembali -->
-        <a href="{{ url('/paket') }}" class="back-button">
+        <a href="{{ url('/dashboard-murid?menu=katalog') }}" class="back-button">
             <span class="back-icon">←</span> Kembali ke Paket
         </a>
 
