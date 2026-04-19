@@ -33,6 +33,23 @@ document.addEventListener('DOMContentLoaded', function() {
         fiturObserver.observe(fiturSection);
     }
     
+    // ========== ANIMASI UNTUK PAGE 4 - HARGA ==========
+    const hargaSection = document.querySelector('.PAKET-PAKET');
+    
+    if (hargaSection) {
+        const hargaObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                } else {
+                    entry.target.classList.remove('animated');
+                }
+            });
+        }, { threshold: 0.3 });
+        
+        hargaObserver.observe(hargaSection);
+    }
+    
     // ========== SMOOTH SCROLL KE PAGE 2 ==========
     const tentangSection = document.getElementById('tentang');
     
