@@ -171,18 +171,7 @@
       <div class="gabung-sekarang">Gabung Sekarang</div>
     </div>
   </div>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const gabungBtn = document.getElementById("gabungBtn");
-
-      if (gabungBtn) {
-        gabungBtn.addEventListener("click", function () {
-          window.location.href = "/register";
-        });
-      }
-    });
-  </script>
+  <script src="{{ asset('js/Main.js') }}"></script>
 
 </body>
 </html>
