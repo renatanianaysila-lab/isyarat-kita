@@ -568,7 +568,7 @@ a{
 }
 
 /* =========================
-   PAGE 3 - FITUR
+   PAGE 3 - FITUR (DENGAN ANIMASI)
 ========================= */
 .FITUR-HARGA-PAKET {
   background: #fff;
@@ -587,6 +587,14 @@ a{
 .FITUR-HARGA-PAKET .fitur-header {
   text-align: center;
   margin-bottom: 50px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease-out;
+}
+
+.FITUR-HARGA-PAKET.animated .fitur-header {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .FITUR-HARGA-PAKET .fitur-title {
@@ -620,6 +628,45 @@ a{
   gap: 30px;
   width: 100%;
   max-width: 1200px;
+}
+
+/* CARD 1 - KELAS VIDEO INTERAKTIF */
+.FITUR-HARGA-PAKET .fitur-card:nth-child(1) {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease-out;
+  transition-delay: 0.2s;
+}
+
+.FITUR-HARGA-PAKET.animated .fitur-card:nth-child(1) {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* CARD 2 - KUIS & EVALUASI  */
+.FITUR-HARGA-PAKET .fitur-card:nth-child(2) {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease-out;
+  transition-delay: 0.4s;
+}
+
+.FITUR-HARGA-PAKET.animated .fitur-card:nth-child(2) {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* CARD 3 - KOMUNITAS */
+.FITUR-HARGA-PAKET .fitur-card:nth-child(3) {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease-out;
+  transition-delay: 0.6s;
+}
+
+.FITUR-HARGA-PAKET.animated .fitur-card:nth-child(3) {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .FITUR-HARGA-PAKET .fitur-card {
@@ -679,8 +726,13 @@ a{
     margin-bottom: 35px;
   }
   
+  .FITUR-HARGA-PAKET .fitur-container {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
   .FITUR-HARGA-PAKET .fitur-card {
-    max-width: 320px;
+    max-width: 100%;
     padding: 25px 20px;
   }
 }

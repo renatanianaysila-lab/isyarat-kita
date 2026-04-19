@@ -32,12 +32,13 @@
     </p>
 
     <div class="button-group">
-      <div class="KENALI">
+      <div class="KENALI" onclick="document.getElementById('tentang').scrollIntoView({ behavior: 'smooth' });">
         <div class="KENALI-2"></div>
         <div class="text-wrapper-8">Kenali IsyaratKita</div>
       </div>
 
-      <div class="DAFTAR">
+      <!-- TOMBOL DAFTAR - LANGSUNG KE REGISTER -->
+      <div class="DAFTAR" onclick="window.location.href='{{ url('/register') }}'">
         <div class="BG-DAFTAR"></div>
         <div class="text-wrapper-9">Daftar!</div>
       </div>
@@ -89,7 +90,6 @@
           
         </div>
       </div>
-      
     </div>
   </div>
 
@@ -175,5 +175,3 @@
 
 </body>
 </html>
-  
-  
