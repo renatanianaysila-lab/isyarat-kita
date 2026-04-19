@@ -115,29 +115,32 @@
   padding: calc(var(--navbar-height) + 20px) 20px 20px;
 }
 
-/* ---------- SIGN UP CARD ---------- */
+/* ---------- SIGN UP CARD (DIPERKECIL DAN DI-CENTER) ---------- */
 .SIGNUP .signup-card {
   background: var(--bg-white);
   border-radius: var(--border-radius-lg);
-  padding: 40px 50px 50px;
+  padding: 30px 40px 40px;
   box-shadow: var(--shadow-md);
   position: relative;
   z-index: 5;
+  max-width: 550px;
+  width: 100%;
+  margin: 80px auto 0 auto;
 }
 
 .SIGNUP .signup-title {
-  font-size: 48px;
+  font-size: 42px;
   font-weight: 700;
   color: var(--primary-blue);
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 /* ---------- FORM ---------- */
 .SIGNUP .signup-form {
   display: flex;
   flex-direction: column;
-  gap: 25px;
-  max-width: 650px;
+  gap: 20px; 
+  max-width: 100%;  
   margin: 0 auto;
 }
 
@@ -148,7 +151,7 @@
 /* Name row - untuk 2 kolom */
 .SIGNUP .name-row {
   display: flex;
-  gap: 20px;
+  gap: 15px;  
   width: 100%;
 }
 
@@ -158,11 +161,11 @@
 
 .SIGNUP .form-input {
   width: 100%;
-  height: 76px;
-  border: 4px solid var(--primary-blue);
+  height: 60px;  
+  border: 3px solid var(--primary-blue);  
   border-radius: var(--border-radius-sm);
-  padding: 0 24px;
-  font-size: 18px;
+  padding: 0 20px;  
+  font-size: 16px;  
   box-sizing: border-box;
   background: var(--bg-white);
   font-family: inherit;
@@ -176,21 +179,21 @@
 
 .SIGNUP .form-input::placeholder {
   color: var(--text-muted);
-  font-size: 18px;
+  font-size: 16px;  
 }
 
 /* ---------- SUBMIT BUTTON ---------- */
 .SIGNUP .submit-btn {
-  width: 207px;
-  height: 55px;
+  width: 180px;  
+  height: 48px;  
   background: var(--primary-yellow);
   border: none;
   border-radius: var(--border-radius-md);
   color: var(--bg-white);
-  font-size: 24px;
+  font-size: 20px;  
   font-weight: 700;
   cursor: pointer;
-  margin: 30px auto 0;
+  margin: 20px auto 0;  
   transition: all 0.3s;
 }
 
@@ -202,9 +205,9 @@
 
 /* ---------- LOGIN LINK ---------- */
 .SIGNUP .login-text {
-  font-size: 18px;
+  font-size: 16px;  
   color: var(--text-light);
-  margin-top: 30px;
+  margin-top: 25px; 
   font-style: italic;
 }
 
@@ -243,34 +246,35 @@
   }
   
   .SIGNUP .signup-card {
-    padding: 30px 20px 40px;
+    padding: 25px 20px 30px;
+    max-width: 450px;
   }
   
   .SIGNUP .signup-title {
-    font-size: 36px;
-    margin-bottom: 30px;
+    font-size: 32px;
+    margin-bottom: 25px;
   }
   
   .SIGNUP .signup-form {
-    gap: 20px;
+    gap: 18px;
   }
   
   .SIGNUP .name-row {
     flex-direction: column;
-    gap: 20px;
+    gap: 18px;
   }
   
   .SIGNUP .form-input {
-    height: 60px;
-    font-size: 16px;
+    height: 52px;
+    font-size: 15px;
   }
   
   .SIGNUP .submit-btn {
-    margin-top: 25px;
+    margin-top: 20px;
   }
   
   .SIGNUP .login-text {
-    margin-top: 25px;
+    margin-top: 20px;
   }
   
   .SIGNUP .logo-img {
@@ -285,12 +289,12 @@
   }
   
   .SIGNUP .nav-link {
-    font-size: 16px;
+    font-size: 14px;
   }
   
   .SIGNUP .btn-masuk {
     padding: 8px 20px;
-    font-size: 16px;
+    font-size: 14px;
   }
   
   .SIGNUP .BACKGROUND {
@@ -298,30 +302,31 @@
   }
   
   .SIGNUP .signup-title {
-    font-size: 28px;
-    margin-bottom: 25px;
+    font-size: 26px;
+    margin-bottom: 20px;
   }
   
   .SIGNUP .signup-card {
-    padding: 20px 15px 30px;
+    padding: 20px 15px 25px;
+    max-width: 100%;
   }
   
   .SIGNUP .form-input {
-    height: 55px;
-    font-size: 15px;
-    padding: 0 15px;
+    height: 48px;
+    font-size: 14px;
+    padding: 0 12px;
   }
   
   .SIGNUP .submit-btn {
-    width: 160px;
-    height: 45px;
-    font-size: 20px;
-    margin-top: 20px;
+    width: 150px;
+    height: 42px;
+    font-size: 18px;
+    margin-top: 15px;
   }
   
   .SIGNUP .login-text {
-    font-size: 15px;
-    margin-top: 20px;
+    font-size: 14px;
+    margin-top: 15px;
   }
   
   .SIGNUP .logo-img {
