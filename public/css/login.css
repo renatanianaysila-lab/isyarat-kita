@@ -20,31 +20,20 @@
   --border-radius-sm: 8px;
   --border-radius-md: 11px;
   --border-radius-lg: 26px;
-  --font-family: 'Poppins', sans-serif;
+  --font-family: system-ui, -apple-system, 'Poppins', sans-serif;
   --navbar-height: 88px;
 }
 
-/* ---------- RESET & BASE ---------- */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
-}
-
+/* ---------- RESET & BASE (SAMA PERSIS DENGAN REGISTER) ---------- */
 .LOGIN {
   position: relative;
   min-height: 100vh;
   font-family: var(--font-family);
   background-color: var(--bg-white);
   overflow-x: hidden;
-  padding-top: 100px;
 }
 
-/* ---------- BACKGROUND ---------- */
+/* ---------- BACKGROUND (SAMA PERSIS DENGAN REGISTER) ---------- */
 .LOGIN .BACKGROUND {
   position: absolute;
   top: 115px;
@@ -54,11 +43,11 @@ body {
   height: 883px;
   border-radius: var(--border-radius-lg);
   object-fit: cover;
-  z-index: 1;
+  z-index: 0;
 }
 
-/* ---------- NAVBAR ---------- */
-.navbar {
+/* ---------- NAVBAR (SAMA PERSIS DENGAN REGISTER) ---------- */
+.LOGIN .navbar {
   position: fixed;
   top: 0;
   left: 0;
@@ -68,59 +57,55 @@ body {
   align-items: center;
   padding: 20px 44px;
   background: var(--bg-white);
-  z-index: 9999;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+  box-shadow: var(--shadow-sm);
   transition: all 0.3s ease;
   box-sizing: border-box;
 }
 
-.logo-container {
+.LOGIN .logo-container {
   display: flex;
   align-items: center;
 }
 
-.logo-img {
+.LOGIN .logo-img {
   height: 48px;
   width: auto;
   object-fit: contain;
 }
 
-.nav-links {
+.LOGIN .nav-links {
   display: flex;
   align-items: center;
   gap: 40px;
 }
 
-.nav-link {
+.LOGIN .nav-link {
   text-decoration: none;
   color: var(--text-light);
   font-size: 18px;
-  font-weight: 600;
-  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
   transition: color 0.3s;
 }
 
-.nav-link:hover {
+.LOGIN .nav-link:hover {
   color: var(--primary-blue);
 }
 
-.btn-masuk {
+.LOGIN .btn-masuk {
   background: var(--primary-blue);
   color: var(--bg-white);
   padding: 10px 30px;
-  border-radius: 11px;
-  font-weight: 600;
-  font-family: 'Poppins', sans-serif;
+  border-radius: var(--border-radius-md);
+  font-weight: 700;
   text-decoration: none;
-  transition: background 0.3s;
-  letter-spacing: normal;
 }
 
-.btn-masuk:hover {
+.LOGIN .btn-masuk:hover {
   background: var(--primary-dark-blue);
 }
 
-/* ---------- MAIN CONTENT ---------- */
+/* ---------- MAIN CONTENT (SAMA PERSIS DENGAN REGISTER) ---------- */
 .LOGIN .main-content {
   position: relative;
   z-index: 10;
@@ -130,36 +115,44 @@ body {
   padding: calc(var(--navbar-height) + 20px) 20px 20px;
 }
 
+/* ---------- WELCOME TITLE (TAMBAHAN UNTUK LOGIN) ---------- */
 .LOGIN .welcome-title {
-  font-size: 60px;
+  font-size: 48px;
   font-weight: 700;
-  margin: 0 0 40px;
   color: var(--text-light);
-  font-family: 'Poppins', sans-serif;
+  margin-bottom: 40px;
+  margin-top: 60px;  
+  text-align: center;
 }
 
 /* ---------- LOGIN CARD ---------- */
 .LOGIN .login-card {
   background: var(--bg-white);
   border-radius: var(--border-radius-lg);
-  padding: 50px;
+  padding: 30px 40px 40px;
   box-shadow: var(--shadow-md);
+  position: relative;
+  z-index: 5;
+  max-width: 550px;
+  width: 100%;
+  margin: 40px auto 0 auto;
 }
 
 .LOGIN .login-title {
-  font-size: 48px;
+  font-size: 42px;
   font-weight: 700;
   color: var(--primary-blue);
-  margin-bottom: 40px;
-  font-family: 'Poppins', sans-serif;
+  margin-bottom: 30px;
+  text-align: center;
 }
 
 /* ---------- FORM ---------- */
 .LOGIN .login-form {
   display: flex;
   flex-direction: column;
-  gap: 25px;
-  margin-bottom: 25px;
+  gap: 20px;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 .LOGIN .input-group {
@@ -168,13 +161,14 @@ body {
 
 .LOGIN .form-input {
   width: 100%;
-  height: 76px;
-  border: 4px solid var(--primary-blue);
+  height: 60px;
+  border: 3px solid var(--primary-blue);
   border-radius: var(--border-radius-sm);
-  padding: 0 25px;
-  font-size: 18px;
+  padding: 0 20px;
+  font-size: 16px;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  background: var(--bg-white);
+  font-family: inherit;
 }
 
 .LOGIN .form-input:focus {
@@ -185,24 +179,23 @@ body {
 
 .LOGIN .form-input::placeholder {
   color: var(--text-muted);
-  font-size: 18px;
-  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
 }
 
 /* ---------- SUBMIT BUTTON ---------- */
 .LOGIN .submit-btn {
-  width: 207px;
-  height: 55px;
+  width: 180px;
+  height: 48px;
   background: var(--primary-yellow);
   border: none;
   border-radius: var(--border-radius-md);
   color: var(--bg-white);
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 700;
-  font-family: 'Poppins', sans-serif;
   cursor: pointer;
-  margin: 10px auto 0;
+  margin: 20px auto 0;
   transition: all 0.3s;
+  display: block;
 }
 
 .LOGIN .submit-btn:hover {
@@ -211,12 +204,13 @@ body {
   box-shadow: var(--shadow-lg);
 }
 
-/* ---------- SIGN UP LINK ---------- */
+/* ---------- SIGNUP LINK ---------- */
 .LOGIN .signup-text {
-  font-size: 18px;
+  font-size: 16px;
   color: var(--text-light);
+  margin-top: 25px;
   font-style: italic;
-  font-family: 'Poppins', sans-serif;
+  text-align: center;
 }
 
 .LOGIN .signup-link {
@@ -225,26 +219,21 @@ body {
   font-weight: 600;
   font-style: italic;
   margin-left: 5px;
-  font-family: 'Poppins', sans-serif;
 }
 
 .LOGIN .signup-link:hover {
   text-decoration: underline;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
-
 /* Tablet (max-width: 768px) */
 @media (max-width: 768px) {
-  .navbar {
+  .LOGIN .navbar {
     padding: 15px 20px;
     flex-direction: column;
     gap: 15px;
   }
   
-  .nav-links {
+  .LOGIN .nav-links {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
@@ -255,50 +244,63 @@ body {
   }
   
   .LOGIN .welcome-title {
-    font-size: 40px;
-    margin: 0 0 30px;
+    font-size: 28px;
+    margin-bottom: 25px;
   }
   
   .LOGIN .login-card {
-    padding: 30px 20px;
+    padding: 25px 20px 30px;
+    max-width: 450px;
   }
   
   .LOGIN .login-title {
-    font-size: 36px;
-    margin-bottom: 30px;
+    font-size: 32px;
+    margin-bottom: 25px;
+  }
+  
+  .LOGIN .login-form {
+    gap: 18px;
   }
   
   .LOGIN .form-input {
-    height: 60px;
-    font-size: 16px;
+    height: 52px;
+    font-size: 15px;
   }
   
-  .logo-img {
+  .LOGIN .submit-btn {
+    margin-top: 20px;
+  }
+  
+  .LOGIN .signup-text {
+    margin-top: 20px;
+  }
+  
+  .LOGIN .logo-img {
     height: 40px;
   }
   
-  .nav-link {
+  .LOGIN .nav-link {
     font-size: 16px;
   }
   
-  .btn-masuk {
+  .LOGIN .btn-masuk {
     padding: 8px 24px;
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 
 /* Mobile (max-width: 480px) */
 @media (max-width: 480px) {
-  .navbar {
+  .LOGIN .navbar {
     padding: 12px 15px;
   }
   
-  .nav-link {
+  .LOGIN .nav-link {
     font-size: 14px;
   }
   
-  .btn-masuk {
-    padding: 6px 18px;
+  .LOGIN .btn-masuk {
+    padding: 8px 20px;
     font-size: 14px;
   }
   
@@ -307,40 +309,39 @@ body {
   }
   
   .LOGIN .welcome-title {
-    font-size: 28px;
-    margin: 0 0 20px;
-  }
-  
-  .LOGIN .login-card {
-    padding: 25px 15px;
+    font-size: 22px;
+    margin-bottom: 20px;
   }
   
   .LOGIN .login-title {
-    font-size: 28px;
-    margin-bottom: 25px;
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+  
+  .LOGIN .login-card {
+    padding: 20px 15px 25px;
+    max-width: 100%;
   }
   
   .LOGIN .form-input {
-    height: 50px;
+    height: 48px;
     font-size: 14px;
-    padding: 0 15px;
-  }
-  
-  .LOGIN .form-input::placeholder {
-    font-size: 14px;
+    padding: 0 12px;
   }
   
   .LOGIN .submit-btn {
-    width: 160px;
-    height: 45px;
+    width: 150px;
+    height: 42px;
     font-size: 18px;
+    margin-top: 15px;
   }
   
   .LOGIN .signup-text {
     font-size: 14px;
+    margin-top: 15px;
   }
   
-  .logo-img {
-    height: 32px;
+  .LOGIN .logo-img {
+    height: 35px;
   }
 }
