@@ -9,7 +9,7 @@
     </div>
 
     <div class="materi-grid">
-        <!-- Card Materi 1 -->
+        <!-- Card Materi 1 - Abjad A-Z -->
         <div class="materi-card">
             <div class="materi-thumbnail">
                 <span class="badge-dasar">Dasar</span>
@@ -18,11 +18,11 @@
             <div class="materi-card-content">
                 <h3>Abjad A-Z</h3>
                 <p>Belajar huruf abjad dalam bahasa isyarat</p>
-                <a href="#" class="btn-mulai">Mulai Belajar</a>
+                <a href="{{ url('/video-player?video=abjad-az') }}" class="btn-mulai">Mulai Belajar</a>
             </div>
         </div>
 
-        <!-- Card Materi 2 -->
+        <!-- Card Materi 2 - Angka 1-100 -->
         <div class="materi-card">
             <div class="materi-thumbnail">
                 <span class="badge-dasar">Dasar</span>
@@ -37,11 +37,11 @@
                     </div>
                     <span class="progress-text">60%</span>
                 </div>
-                <a href="#" class="btn-lanjut">Lanjutkan</a>
+                <a href="{{ url('/video-player?video=angka-1-100') }}" class="btn-lanjut">Lanjutkan</a>
             </div>
         </div>
 
-        <!-- Card Materi 3 -->
+        <!-- Card Materi 3 - Percakapan Dokter (Premium) -->
         <div class="materi-card">
             <div class="materi-thumbnail">
                 <span class="badge-premium">Premium</span>
@@ -50,11 +50,11 @@
             <div class="materi-card-content">
                 <h3>Percakapan Dokter</h3>
                 <p>Komunikasi di lingkungan medis</p>
-                <a href="#" class="btn-mulai">Mulai Belajar</a>
+                <a href="#" class="btn-mulai" onclick="alert('Upgrade ke paket Premium untuk mengakses materi ini!')">Mulai Belajar</a>
             </div>
         </div>
 
-        <!-- Card Materi 4 -->
+        <!-- Card Materi 4 - Salam & Sapaan -->
         <div class="materi-card">
             <div class="materi-thumbnail">
                 <span class="badge-dasar">Dasar</span>
@@ -64,7 +64,7 @@
                 <h3>Salam & Sapaan</h3>
                 <p>Cara menyapa dalam bahasa isyarat</p>
                 <span class="completed">✓ Selesai</span>
-                <a href="#" class="btn-ulang">Ulangi</a>
+                <a href="{{ url('/video-player?video=salam-sapaan') }}" class="btn-ulang">Ulangi</a>
             </div>
         </div>
     </div>

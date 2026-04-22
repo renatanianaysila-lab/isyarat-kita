@@ -54,58 +54,82 @@ function changeVideo(videoId, element) {
         4: 'Percakapan sehari-hari'
     };
 
-    document.querySelector('.video-title-small').innerHTML = 
-        `<i class="fas fa-play-circle" style="color: #F9C80E;"></i> Sedang menonton: ${titles[videoId]}`;
+    const titleSmall = document.querySelector('.video-title-small');
+    if (titleSmall) {
+        titleSmall.innerHTML = `<i class="fas fa-play-circle" style="color: #F9C80E;"></i> Sedang menonton: ${titles[videoId]}`;
+    }
 
     // Update konten deskripsi
     const content = videoContents[videoId];
     if (content) {
-        document.getElementById('videoTitle').textContent = content.title;
-        document.getElementById('videoMeta').innerHTML = `<i class="far fa-clock"></i> ${content.meta}`;
-        document.getElementById('videoDesc').textContent = content.desc;
+        const videoTitle = document.getElementById('videoTitle');
+        if (videoTitle) videoTitle.textContent = content.title;
+        
+        const videoMeta = document.getElementById('videoMeta');
+        if (videoMeta) videoMeta.innerHTML = `<i class="far fa-clock"></i> ${content.meta}`;
+        
+        const videoDesc = document.getElementById('videoDesc');
+        if (videoDesc) videoDesc.textContent = content.desc;
 
         const objList = document.getElementById('objectivesList');
-        objList.innerHTML = content.objectives.map(obj => 
-            `<li><i class="fas fa-check-circle"></i> ${obj}</li>`
-        ).join('');
+        if (objList) {
+            objList.innerHTML = content.objectives.map(obj => 
+                `<li><i class="fas fa-check-circle"></i> ${obj}</li>`
+            ).join('');
+        }
     }
 
     // Update progress fill di video (simulasi)
-    const progress = videoId === 1 ? 100 : (videoId === 2 ? 60 : 0);
-    document.getElementById('progressFill').style.width = progress + '%';
+    const progressFill = document.getElementById('progressFill');
+    if (progressFill) {
+        const progress = videoId === 1 ? 100 : (videoId === 2 ? 60 : 0);
+        progressFill.style.width = progress + '%';
+    }
 }
 
 // Play/Pause toggle
-document.getElementById('playPauseBtn').addEventListener('click', function() {
-    const icon = this.querySelector('i');
-    if (icon.classList.contains('fa-play')) {
-        icon.classList.remove('fa-play');
-        icon.classList.add('fa-pause');
-    } else {
-        icon.classList.remove('fa-pause');
-        icon.classList.add('fa-play');
+function initPlayPause() {
+    const playBtn = document.getElementById('playPauseBtn');
+    if (playBtn) {
+        playBtn.addEventListener('click', function() {
+            const icon = this.querySelector('i');
+            if (icon.classList.contains('fa-play')) {
+                icon.classList.remove('fa-play');
+                icon.classList.add('fa-pause');
+            } else {
+                icon.classList.remove('fa-pause');
+                icon.classList.add('fa-play');
+            }
+        });
     }
-});
+}
 
 // Progress bar click
-document.getElementById('progressBar').addEventListener('click', function(e) {
-    const rect = this.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const width = rect.width;
-    const percent = Math.min(100, Math.max(0, (x / width) * 100));
-    document.getElementById('progressFill').style.width = percent + '%';
+function initProgressBar() {
+    const progressBar = document.getElementById('progressBar');
+    if (progressBar) {
+        progressBar.addEventListener('click', function(e) {
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const width = rect.width;
+            const percent = Math.min(100, Math.max(0, (x / width) * 100));
+            
+            const progressFill = document.getElementById('progressFill');
+            if (progressFill) progressFill.style.width = percent + '%';
 
-    // Update time display (simulasi)
-    const totalSeconds = 28 * 60 + 16; // 28:16
-    const currentSeconds = Math.floor((percent / 100) * totalSeconds);
-    const minutes = Math.floor(currentSeconds / 60);
-    const seconds = currentSeconds % 60;
-    const timeStr = `${minutes}:${seconds.toString().padStart(2, '0')} / 28:16`;
-    const timeSpan = document.querySelector('.control-left span');
-    if (timeSpan) {
-        timeSpan.textContent = timeStr;
+            // Update time display (simulasi)
+            const totalSeconds = 28 * 60 + 16; // 28:16
+            const currentSeconds = Math.floor((percent / 100) * totalSeconds);
+            const minutes = Math.floor(currentSeconds / 60);
+            const seconds = currentSeconds % 60;
+            const timeStr = `${minutes}:${seconds.toString().padStart(2, '0')} / 28:16`;
+            const timeSpan = document.querySelector('.control-left span');
+            if (timeSpan) {
+                timeSpan.textContent = timeStr;
+            }
+        });
     }
-});
+}
 
 // Inisialisasi
 document.addEventListener('DOMContentLoaded', function() {
@@ -114,4 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (timeSpan) {
         timeSpan.classList.add('time-display');
     }
+    
+    initPlayPause();
+    initProgressBar();
 });

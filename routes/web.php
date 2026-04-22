@@ -98,10 +98,13 @@ Route::get('/pembayaran', function () {
 })->name('pembayaran');
 
 Route::post('/proses-pembayaran', function () {
-    return redirect('dashboard-murid?menu=materi')->with('success', 'Pembayaran berhasil! Selamat belajar!');
+    return redirect('/dashboard-murid?menu=materi')->with('success', 'Pembayaran berhasil! Selamat belajar!');
 })->name('proses.pembayaran');
 
 // ===================== VIDEO PLAYER =====================
 Route::get('/video-player', function () {
     return view('belajar.video-player');
 })->name('video.player');
+Route::get('/video-player/{video}', function ($video) {
+    return view('belajar.video-player', ['video' => $video]);
+})->name('video.player.detail');
