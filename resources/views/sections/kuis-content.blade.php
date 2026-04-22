@@ -41,7 +41,7 @@
 
                 <div class="quiz-card-footer">
                     <span class="quiz-duration">◉ ~15 menit</span>
-                    <button class="quiz-btn quiz-btn-red">Lanjutkan</button>
+                    <a href="{{ url('/kuis-angka') }}" class="quiz-btn quiz-btn-red" style="text-decoration: none; display: inline-block; text-align: center;">Lanjutkan</a>
                 </div>
             </div>
 

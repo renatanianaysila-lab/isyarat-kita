@@ -113,3 +113,8 @@ Route::get('/video-player/{video}', function ($video) {
 Route::get('/kuis-abjad', function () {
     return view('belajar.kuis-abjad');
 })->name('kuis.abjad');
+
+// ===================== KUIS ANGKA =====================
+Route::get('/kuis-angka', function () {
+    return view('belajar.kuis-angka');
+})->name('kuis.angka');
