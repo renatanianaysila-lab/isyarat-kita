@@ -108,3 +108,8 @@ Route::get('/video-player', function () {
 Route::get('/video-player/{video}', function ($video) {
     return view('belajar.video-player', ['video' => $video]);
 })->name('video.player.detail');
+
+// ===================== KUIS ABJAD =====================
+Route::get('/kuis-abjad', function () {
+    return view('belajar.kuis-abjad');
+})->name('kuis.abjad');

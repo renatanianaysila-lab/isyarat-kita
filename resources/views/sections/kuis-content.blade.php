@@ -67,7 +67,7 @@
 
                 <div class="quiz-card-footer">
                     <span class="quiz-duration">◉ ~40 menit</span>
-                    <button class="quiz-btn quiz-btn-blue">Lanjutkan</button>
+                    <a href="{{ url('/kuis-abjad') }}" class="quiz-btn quiz-btn-blue" style="text-decoration: none; display: inline-block; text-align: center;">Lanjutkan</a>
                 </div>
             </div>
 
