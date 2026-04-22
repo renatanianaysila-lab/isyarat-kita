@@ -1,14 +1,24 @@
 <div class="history-page">
+    @php
+        $historyTab = request('tab', 'video');
+    @endphp
+
     <div class="history-header">
         <a href="?menu=dashboard" class="history-link-back">
             <div class="history-back">←</div>
         </a>
-        <h2 class="history-title">Riwayat Belajar</h2>
+        <h2 class="history-title">
+            @if($historyTab == 'video')
+                Riwayat Video
+            @elseif($historyTab == 'kuis')
+                Riwayat Kuis
+            @elseif($historyTab == 'pembelian')
+                Riwayat Pembelian
+            @else
+                Riwayat Belajar
+            @endif
+        </h2>
     </div>
-
-    @php
-        $historyTab = request('tab', 'video');
-    @endphp
 
     <div class="history-tabs">
         <a href="?menu=history&tab=video" class="history-tab {{ $historyTab == 'video' ? 'active' : '' }}">Video</a>
@@ -19,7 +29,7 @@
     {{-- TAB VIDEO --}}
     @if($historyTab == 'video')
         <div class="history-list">
-            <div class="history-card">
+            <a href="{{ url('/video-player?video=angka-1-10') }}" class="history-card">
                 <div class="history-left">
                     <div class="history-thumb"></div>
                     <div class="history-info">
@@ -29,9 +39,9 @@
                     </div>
                 </div>
                 <div class="history-duration">⏱ 12 menit</div>
-            </div>
+            </a>
 
-            <div class="history-card">
+            <a href="{{ url('/video-player?video=abjad-az') }}" class="history-card">
                 <div class="history-left">
                     <div class="history-thumb"></div>
                     <div class="history-info">
@@ -41,9 +51,9 @@
                     </div>
                 </div>
                 <div class="history-duration">⏱ 18 menit</div>
-            </div>
+            </a>
 
-            <div class="history-card">
+            <a href="{{ url('/video-player?video=percakapan-dasar') }}" class="history-card">
                 <div class="history-left">
                     <div class="history-thumb"></div>
                     <div class="history-info">
@@ -53,9 +63,9 @@
                     </div>
                 </div>
                 <div class="history-duration">⏱ 25 menit</div>
-            </div>
+            </a>
 
-            <div class="history-card">
+            <a href="{{ url('/video-player?video=ekspresi-dasar') }}" class="history-card">
                 <div class="history-left">
                     <div class="history-thumb"></div>
                     <div class="history-info">
@@ -65,7 +75,7 @@
                     </div>
                 </div>
                 <div class="history-duration">⏱ 20 menit</div>
-            </div>
+            </a>
         </div>
     @endif
 
@@ -136,3 +146,5 @@
         </div>
     @endif
 </div>
+
+<script src="{{ asset('js/sections/history-content.js') }}"></script>
