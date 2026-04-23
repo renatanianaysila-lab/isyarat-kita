@@ -5,22 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>IsyaratKita - Dashboard Guru</title>
 
-  {{-- Google Font (Poppins) --}}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  {{-- CSS dari public/css --}}
   <link rel="stylesheet" href="{{ asset('css/dashboard/dashboard-guru.css') }}">
-  
-  {{-- Tambahan CSS untuk tabel --}}
+<link rel="stylesheet" href="{{ asset('css/sections/kelola-video-guru.css') }}">
+
+  <link rel="stylesheet" href="{{ asset('css/dashboard/dashboard-guru.css') }}">
+
   <style>
     .data-table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 10px;
     }
-    
+
     .data-table th {
       text-align: left;
       padding: 12px 8px;
@@ -30,17 +29,17 @@
       font-size: 13px;
       border-radius: 8px 8px 0 0;
     }
-    
+
     .data-table td {
       padding: 12px 8px;
       border-bottom: 1px solid #EDF2F7;
       font-size: 14px;
     }
-    
+
     .data-table tr:hover {
       background: #F8F9FF;
     }
-    
+
     .data-table .badge-success {
       background: #E3FCEF;
       color: #0A7B4B;
@@ -49,7 +48,7 @@
       font-size: 12px;
       font-weight: 600;
     }
-    
+
     .data-table .badge-warning {
       background: #FFF3E0;
       color: #B45B0A;
@@ -58,7 +57,7 @@
       font-size: 12px;
       font-weight: 600;
     }
-    
+
     .progress-mini {
       width: 60px;
       height: 6px;
@@ -68,30 +67,30 @@
       display: inline-block;
       margin-right: 8px;
     }
-    
+
     .progress-mini-fill {
       height: 100%;
       background: #2D3C6A;
       border-radius: 10px;
     }
-    
+
     .flex-between {
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-    
+
     .table-title {
       font-weight: 600;
       color: #1A1F36;
       margin-bottom: 5px;
     }
-    
+
     .table-subtitle {
       font-size: 13px;
       color: #7A8BB7;
     }
-    
+
     .card-header-with-link {
       display: flex;
       justify-content: space-between;
@@ -102,6 +101,10 @@
 </head>
 
 <body>
+  @php
+    $menu = request('menu', 'dashboard');
+  @endphp
+
   <div class="app">
 
     <!-- SIDEBAR -->
@@ -115,38 +118,46 @@
       </div>
 
       <nav class="menu">
-        <a class="menu-item active" href="{{ url('/dashboard-guru') }}">
+        <a class="menu-item {{ $menu == 'dashboard' ? 'active' : '' }}" href="{{ url('/dashboard-guru?menu=dashboard') }}">
           <img class="menu-icon" src="{{ asset('img/dashboard-square-01.png') }}" alt="">
           Dashboard
         </a>
-        <a class="menu-item" href="#">
+
+        <a class="menu-item {{ $menu == 'paket' ? 'active' : '' }}" href="{{ url('/dashboard-guru?menu=paket') }}">
           <img class="menu-icon" src="{{ asset('img/katalog.png') }}" alt="">
           Kelola Paket
         </a>
-        <a class="menu-item" href="#">
-          <img class="menu-icon" src="{{ asset('img/materi.png') }}" alt="">
-          Kelola Video
-        </a>
+
+        <a class="menu-item {{ $menu == 'video' ? 'active' : '' }}" href="{{ url('/dashboard-guru?menu=video') }}">
+  <img class="menu-icon" src="{{ asset('img/materi.png') }}" alt="">
+  Kelola Video
+</a>
+
         <a class="menu-item" href="#">
           <img class="menu-icon" src="{{ asset('img/kuis.png') }}" alt="">
           Kelola Kuis
         </a>
+
         <a class="menu-item" href="#">
           <img class="menu-icon" src="{{ asset('img/user.png') }}" alt="">
           Monitoring Murid
         </a>
+
         <a class="menu-item" href="#">
           <img class="menu-icon" src="{{ asset('img/feedback.png') }}" alt="">
           Feedback & Rating
         </a>
+
         <a class="menu-item" href="#">
           <img class="menu-icon" src="{{ asset('img/transaction-history.png') }}" alt="">
           Transaksi
         </a>
+
         <a class="menu-item" href="#">
           <img class="menu-icon" src="{{ asset('img/user.png') }}" alt="">
           Profil Guru
         </a>
+
         <a class="menu-item danger" href="/login">
           <img class="menu-icon" src="{{ asset('img/logout-04.png') }}" alt="">
           Logout
@@ -177,13 +188,19 @@
         </div>
       </header>
 
+      @if($menu == 'paket')
+  @include('sections.kelola-paket-guru')
+@elseif($menu == 'video')
+  @include('sections.kelola-video-guru')
+@else
+
       <!-- Greeting -->
       <div class="greet">
         <h1>Halo, <span class="name">[Nama Guru]</span> 👋</h1>
         <p>Pantau aktivitas murid dan kelola materi pembelajaran bahasa isyaratmu! 📚</p>
       </div>
 
-      <!-- STATS CARDS (3 KOTAK) -->
+      <!-- STATS CARDS -->
       <div class="stats-row">
         <div class="stat-card">
           <div class="stat-icon">
@@ -219,7 +236,6 @@
       <!-- Row: Aktivitas Terbaru + Buat Materi -->
       <div class="grid-2">
 
-        <!-- Aktivitas Terbaru Murid -->
         <section class="card">
           <div class="card-head">
             <h2>Aktivitas Terbaru Murid</h2>
@@ -277,12 +293,11 @@
           </div>
         </section>
 
-        <!-- Buat Materi Baru -->
         <section class="card create-card">
           <div class="card-head">
             <h2>Buat Materi Baru</h2>
           </div>
-          
+
           <div class="create-content">
             <div class="create-icon">
               <img src="{{ asset('img/upload.png') }}" alt="">
@@ -316,8 +331,7 @@
 
       <!-- TABEL VIDEO TERPOPULER & RATING TERBARU -->
       <div class="grid-2" style="margin-top: 20px;">
-        
-        <!-- TABLE: Video Terpopuler -->
+
         <section class="card">
           <div class="card-head">
             <div class="card-header-with-link">
@@ -325,7 +339,7 @@
               <a class="link" href="#">Lihat Semua ›</a>
             </div>
           </div>
-          
+
           <table class="data-table">
             <thead>
               <tr>
@@ -418,13 +432,12 @@
               </tr>
             </tbody>
           </table>
-          
+
           <div class="card-foot" style="margin-top: 15px;">
             <span style="color:#7A8BB7; font-size:13px;">Total 12 video • Update 2 jam lalu</span>
           </div>
         </section>
 
-        <!-- TABLE: Rating Terbaru (dengan format tabel) -->
         <section class="card">
           <div class="card-head">
             <div class="card-header-with-link">
@@ -432,7 +445,7 @@
               <a class="link" href="#">Lihat Semua ›</a>
             </div>
           </div>
-          
+
           <table class="data-table">
             <thead>
               <tr>
@@ -517,13 +530,14 @@
               </tr>
             </tbody>
           </table>
-          
+
           <div class="card-foot" style="margin-top: 15px;">
             <span style="color:#7A8BB7; font-size:13px;">Rata-rata rating: 4.8 dari 128 ulasan</span>
           </div>
         </section>
       </div>
 
+      @endif
     </main>
   </div>
 </body>
