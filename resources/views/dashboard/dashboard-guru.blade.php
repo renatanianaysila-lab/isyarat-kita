@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ asset('css/dashboard/dashboard-guru.css') }}">
 <link rel="stylesheet" href="{{ asset('css/sections/kelola-video-guru.css') }}">
+<link rel="stylesheet" href="{{ asset('css/sections/kelola-kuis-guru.css') }}">
 
   <link rel="stylesheet" href="{{ asset('css/dashboard/dashboard-guru.css') }}">
 
@@ -133,10 +134,10 @@
   Kelola Video
 </a>
 
-        <a class="menu-item" href="#">
-          <img class="menu-icon" src="{{ asset('img/kuis.png') }}" alt="">
-          Kelola Kuis
-        </a>
+       <a class="menu-item {{ $menu == 'kuis' ? 'active' : '' }}" href="{{ url('/dashboard-guru?menu=kuis') }}">
+  <img class="menu-icon" src="{{ asset('img/kuis.png') }}" alt="">
+  Kelola Kuis
+</a>
 
         <a class="menu-item" href="#">
           <img class="menu-icon" src="{{ asset('img/user.png') }}" alt="">
@@ -188,10 +189,12 @@
         </div>
       </header>
 
-      @if($menu == 'paket')
+     @if($menu == 'paket')
   @include('sections.kelola-paket-guru')
 @elseif($menu == 'video')
   @include('sections.kelola-video-guru')
+@elseif($menu == 'kuis')
+  @include('sections.kelola-kuis-guru')
 @else
 
       <!-- Greeting -->
