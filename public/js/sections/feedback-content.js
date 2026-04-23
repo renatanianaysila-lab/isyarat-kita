@@ -1,8 +1,7 @@
-// ==================== FEEDBACK DUMMY (tanpa database) ====================
+// ==================== FEEDBACK DUMMY ====================
 
 let feedbacks = [];
 
-// Load data dari localStorage saat halaman dimuat
 function loadFeedbacksFromStorage() {
     const stored = localStorage.getItem('isyaratkita_feedbacks');
     if (stored) {
@@ -21,8 +20,8 @@ function loadFeedbacksFromStorage() {
             },
             {
                 id: 2,
-                materi: "Membuat Kalimat Sederhana",
-                kategori: "Kalimat",
+                materi: "Percakapan Sehari-hari",
+                kategori: "Percakapan Sehari-hari",
                 rating: 5,
                 kesulitan: "Mudah",
                 komentar: "Materi sangat bagus! Penjelasan step by step membuat saya mudah memahami isi pembelajaran.",
@@ -32,122 +31,66 @@ function loadFeedbacksFromStorage() {
         ];
         saveFeedbacksToStorage();
     }
-    renderFeedbacks();
+    renderSubmittedFeedbacks();
 }
 
 function saveFeedbacksToStorage() {
     localStorage.setItem('isyaratkita_feedbacks', JSON.stringify(feedbacks));
 }
 
-function renderFeedbacks() {
-    const grid = document.getElementById('feedbackGrid');
-    if (!grid) return;
+function renderSubmittedFeedbacks() {
+    const container = document.getElementById('submittedFeedbackContainer');
+    if (!container) return;
     
     const kategoriFilter = document.getElementById('filterKategori')?.value || 'all';
     const statusFilter = document.getElementById('filterStatus')?.value || 'all';
     
-    let filteredFeedbacks = [...feedbacks];
+    let filtered = [...feedbacks];
     
     if (kategoriFilter !== 'all') {
-        filteredFeedbacks = filteredFeedbacks.filter(f => f.kategori === kategoriFilter);
+        filtered = filtered.filter(f => f.kategori === kategoriFilter);
     }
-    
     if (statusFilter !== 'all') {
-        filteredFeedbacks = filteredFeedbacks.filter(f => f.status === statusFilter);
+        filtered = filtered.filter(f => f.status === statusFilter);
     }
     
-    const formHtml = `
-        <div class="feedback-card">
-            <div class="feedback-card-header">
-                <div>
-                    <h3 class="feedback-card-title">Alfabet A-Z dalam Bahasa Isyarat</h3>
-                </div>
-                <div class="feedback-status status-pending">Belum Dinilai</div>
-            </div>
-
-            <div class="feedback-meta">
-                <span class="feedback-category">Alfabet</span>
-                <span>🕒 15 menit</span>
-            </div>
-
-            <div class="feedback-form-group">
-                <label>Tingkat Kejelasan Materi</label>
-                <div class="feedback-stars" id="ratingStars">
-                    <span class="star" data-value="1">★</span>
-                    <span class="star" data-value="2">★</span>
-                    <span class="star" data-value="3">★</span>
-                    <span class="star" data-value="4">★</span>
-                    <span class="star" data-value="5">★</span>
-                </div>
-            </div>
-
-            <div class="feedback-form-group">
-                <label>Tingkat Kesulitan</label>
-                <div class="feedback-radio-group" id="kesulitanGroup">
-                    <label><input type="radio" name="kesulitan" value="Mudah"> Mudah</label>
-                    <label><input type="radio" name="kesulitan" value="Sedang"> Sedang</label>
-                    <label><input type="radio" name="kesulitan" value="Sulit"> Sulit</label>
-                </div>
-            </div>
-
-            <div class="feedback-form-group">
-                <label>Komentar &amp; Saran</label>
-                <textarea class="feedback-textarea" id="komentarBaru" placeholder="Berikan komentar atau saran..."></textarea>
-            </div>
-
-            <button class="feedback-submit" id="kirimFeedbackBtn">✈ Kirim Feedback</button>
-        </div>
-    `;
-    
-    let submittedHtml = '';
-    filteredFeedbacks.forEach(f => {
-        submittedHtml += `
-            <div class="feedback-card">
-                <div class="feedback-card-header">
-                    <div>
-                        <h3 class="feedback-card-title">${f.materi}</h3>
-                    </div>
-                    <div class="feedback-status status-done">Sudah Dinilai</div>
-                </div>
-
-                <div class="feedback-meta">
-                    <span class="feedback-category">${f.kategori}</span>
-                    <span>🕒 10 menit</span>
-                </div>
-
-                <div class="feedback-review-box" data-id="${f.id}">
-                    <div class="feedback-review-row">
-                        <div>
-                            <div class="feedback-review-label">Penilaian Anda:</div>
-                            <div class="feedback-rating">
-                                <span class="feedback-rating-stars">${'★'.repeat(f.rating)}${'☆'.repeat(5-f.rating)}</span>
-                                <span>${f.rating}/5</span>
-                            </div>
-                        </div>
-                        <div>${f.tanggal}</div>
-                    </div>
-
-                    <div class="feedback-review-row" style="display:block;">
-                        <div class="feedback-review-label">Kesulitan: <span style="font-weight:500;">${f.kesulitan}</span></div>
-                        <div class="feedback-review-text">“${f.komentar}”</div>
-                    </div>
-                </div>
-
-                <button class="feedback-edit-btn" data-id="${f.id}">✎ Edit Feedback</button>
-            </div>
-        `;
-    });
-    
-    if (filteredFeedbacks.length === 0 && (kategoriFilter !== 'all' || statusFilter !== 'all')) {
-        grid.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding:40px; color:#64748b;">Tidak ada feedback yang ditemukan</div>`;
+    if (filtered.length === 0) {
+        container.innerHTML = '<div style="grid-column:1/-1; text-align:center; padding:40px; color:#64748b;">📭 Belum ada feedback yang dikirim</div>';
         return;
     }
     
-    grid.innerHTML = formHtml + submittedHtml;
+    container.innerHTML = filtered.map(f => `
+        <div class="feedback-card">
+            <div class="feedback-card-header">
+                <div>
+                    <h3 class="feedback-card-title">${f.materi}</h3>
+                </div>
+                <div class="feedback-status status-done">Sudah Dinilai</div>
+            </div>
+            <div class="feedback-meta">
+                <span class="feedback-category">${f.kategori}</span>
+                <span>🕒 10 menit</span>
+            </div>
+            <div class="feedback-review-box" data-id="${f.id}">
+                <div class="feedback-review-row">
+                    <div>
+                        <div class="feedback-review-label">Penilaian Anda:</div>
+                        <div class="feedback-rating">
+                            <span class="feedback-rating-stars">${'★'.repeat(f.rating)}${'☆'.repeat(5-f.rating)}</span>
+                            <span>${f.rating}/5</span>
+                        </div>
+                    </div>
+                    <div>${f.tanggal}</div>
+                </div>
+                <div class="feedback-review-row" style="display:block;">
+                    <div class="feedback-review-label">Kesulitan: <span style="font-weight:500;">${f.kesulitan}</span></div>
+                    <div class="feedback-review-text">“${f.komentar}”</div>
+                </div>
+            </div>
+            <button class="feedback-edit-btn" data-id="${f.id}">✎ Edit Feedback</button>
+        </div>
+    `).join('');
     
-    initStarRating();
-    initRadioButtons();
-    document.getElementById('kirimFeedbackBtn')?.addEventListener('click', kirimFeedback);
     document.querySelectorAll('.feedback-edit-btn').forEach(btn => {
         btn.addEventListener('click', (e) => editFeedback(e.target.dataset.id));
     });
@@ -172,11 +115,7 @@ function initStarRating() {
         star.addEventListener('mouseenter', function() {
             const val = parseInt(this.dataset.value);
             stars.forEach((s, i) => {
-                if (i < val) {
-                    s.style.color = '#fbbf24';
-                } else {
-                    s.style.color = '#cbd5e1';
-                }
+                s.style.color = i < val ? '#fbbf24' : '#cbd5e1';
             });
         });
         
@@ -184,15 +123,6 @@ function initStarRating() {
             stars.forEach((s, i) => {
                 s.style.color = i < currentRating ? '#fbbf24' : '#cbd5e1';
             });
-        });
-    });
-}
-
-function initRadioButtons() {
-    const radios = document.querySelectorAll('#kesulitanGroup input[type="radio"]');
-    radios.forEach(radio => {
-        radio.addEventListener('change', function() {
-            console.log('Kesulitan dipilih:', this.value);
         });
     });
 }
@@ -208,7 +138,6 @@ function kirimFeedback() {
     
     const kesulitanRadio = document.querySelector('#kesulitanGroup input[type="radio"]:checked');
     const kesulitan = kesulitanRadio ? kesulitanRadio.value : '';
-    
     const komentar = document.getElementById('komentarBaru')?.value || '';
     
     if (rating === 0) {
@@ -239,7 +168,12 @@ function kirimFeedback() {
     
     feedbacks.push(newFeedback);
     saveFeedbacksToStorage();
-    renderFeedbacks();
+    renderSubmittedFeedbacks();
+    
+    stars.forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('#kesulitanGroup input[type="radio"]').forEach(r => r.checked = false);
+    document.getElementById('komentarBaru').value = '';
+    
     alert('✅ Feedback berhasil dikirim! Terima kasih atas masukannya.');
 }
 
@@ -264,7 +198,7 @@ function editFeedback(id) {
     
     feedback.tanggal = 'Baru saja diedit';
     saveFeedbacksToStorage();
-    renderFeedbacks();
+    renderSubmittedFeedbacks();
     alert('✅ Feedback berhasil diedit!');
 }
 
@@ -273,14 +207,16 @@ function initFilters() {
     const statusFilter = document.getElementById('filterStatus');
     
     if (kategoriFilter) {
-        kategoriFilter.addEventListener('change', () => renderFeedbacks());
+        kategoriFilter.addEventListener('change', () => renderSubmittedFeedbacks());
     }
     if (statusFilter) {
-        statusFilter.addEventListener('change', () => renderFeedbacks());
+        statusFilter.addEventListener('change', () => renderSubmittedFeedbacks());
     }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     loadFeedbacksFromStorage();
+    initStarRating();
     initFilters();
+    document.getElementById('kirimFeedbackBtn')?.addEventListener('click', kirimFeedback);
 });

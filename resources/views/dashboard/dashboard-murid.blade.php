@@ -49,7 +49,7 @@
                 <p>Lihat aktivitas dan progres yang sudah dicapai</p>
               @elseif($activeMenu == 'feedback')
                 <h2>Feedback</h2>
-                <p>Sampaikan masukan dan pengalaman belajarmu</p>
+                <p>Berikan penilaian terhadap materi yang telah Anda pelajari</p>
               @elseif($activeMenu == 'katalog')
                 <h2>Katalog Paket</h2>
                 <p>Pilih paket belajar yang sesuai kebutuhanmu</p>
