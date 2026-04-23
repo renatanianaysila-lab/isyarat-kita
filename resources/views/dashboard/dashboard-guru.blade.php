@@ -13,7 +13,8 @@
 <link rel="stylesheet" href="{{ asset('css/sections/kelola-kuis-guru.css') }}">
 <link rel="stylesheet" href="{{ asset('css/sections/monitoring-murid-guru.css') }}">
 <link rel="stylesheet" href="{{ asset('css/sections/feedback-rating-guru.css') }}">
-
+<link rel="stylesheet" href="{{ asset('css/sections/transaksi-guru.css') }}">
+<link rel="stylesheet" href="{{ asset('css/sections/profil-guru-section.css') }}">
   <link rel="stylesheet" href="{{ asset('css/dashboard/dashboard-guru.css') }}">
 
   <style>
@@ -151,15 +152,15 @@
   Feedback & Rating
 </a>
 
-        <a class="menu-item" href="#">
-          <img class="menu-icon" src="{{ asset('img/transaction-history.png') }}" alt="">
-          Transaksi
-        </a>
+       <a class="menu-item {{ $menu == 'transaksi' ? 'active' : '' }}" href="{{ url('/dashboard-guru?menu=transaksi') }}">
+  <img class="menu-icon" src="{{ asset('img/transaction-history.png') }}" alt="">
+  Transaksi
+</a>
 
-        <a class="menu-item" href="#">
-          <img class="menu-icon" src="{{ asset('img/user.png') }}" alt="">
-          Profil Guru
-        </a>
+       <a class="menu-item {{ $menu == 'profil' ? 'active' : '' }}" href="{{ url('/dashboard-guru?menu=profil') }}">
+  <img class="menu-icon" src="{{ asset('img/user.png') }}" alt="">
+  Profil Guru
+</a>
 
         <a class="menu-item danger" href="/login">
           <img class="menu-icon" src="{{ asset('img/logout-04.png') }}" alt="">
@@ -191,7 +192,7 @@
         </div>
       </header>
 
-    @if($menu == 'paket')
+  @if($menu == 'paket')
   @include('sections.kelola-paket-guru')
 @elseif($menu == 'video')
   @include('sections.kelola-video-guru')
@@ -201,6 +202,10 @@
   @include('sections.monitoring-murid-guru')
 @elseif($menu == 'feedback')
   @include('sections.feedback-rating-guru')
+@elseif($menu == 'transaksi')
+  @include('sections.transaksi-guru')
+@elseif($menu == 'profil')
+  @include('sections.profil-guru-section')
 @else
 
 
