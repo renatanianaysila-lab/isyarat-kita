@@ -55,10 +55,10 @@
       <div class="monitor-select-box">
         <select>
           <option>Semua Paket</option>
-          <option>Matematika Dasar</option>
-          <option>Fisika SMA</option>
-          <option>Bahasa Inggris</option>
-          <option>Sejarah Indonesia</option>
+          <option>Salam & Sapa</option>
+          <option>Mengenal Huruf A-Z</option>
+          <option>Angka 1-10</option>
+          <option>Kata Sehari-hari</option>
         </select>
       </div>
 
@@ -98,7 +98,7 @@
               </div>
             </div>
           </td>
-          <td>Matematika Dasar</td>
+          <td>Salam & Sapa</td>
           <td>
             <div class="monitor-progress-wrap">
               <span>75%</span>
@@ -122,7 +122,7 @@
               </div>
             </div>
           </td>
-          <td>Fisika SMA</td>
+          <td>Mengenal Huruf A-Z</td>
           <td>
             <div class="monitor-progress-wrap">
               <span>60%</span>
@@ -146,7 +146,7 @@
               </div>
             </div>
           </td>
-          <td>Bahasa Inggris</td>
+          <td>Angka 1-10</td>
           <td>
             <div class="monitor-progress-wrap">
               <span>45%</span>
@@ -170,7 +170,7 @@
               </div>
             </div>
           </td>
-          <td>Sejarah Indonesia</td>
+          <td>Kata Sehari-hari</td>
           <td>
             <div class="monitor-progress-wrap">
               <span>30%</span>
@@ -194,7 +194,7 @@
               </div>
             </div>
           </td>
-          <td>Matematika Dasar</td>
+          <td>Salam & Sapa</td>
           <td>
             <div class="monitor-progress-wrap">
               <span>20%</span>
@@ -218,7 +218,7 @@
               </div>
             </div>
           </td>
-          <td>Bahasa Inggris</td>
+          <td>Angka 1-10</td>
           <td>
             <div class="monitor-progress-wrap">
               <span>80%</span>
@@ -242,7 +242,7 @@
               </div>
             </div>
           </td>
-          <td>Fisika SMA</td>
+          <td>Mengenal Huruf A-Z</td>
           <td>
             <div class="monitor-progress-wrap">
               <span>55%</span>
@@ -266,7 +266,7 @@
               </div>
             </div>
           </td>
-          <td>Sejarah Indonesia</td>
+          <td>Kata Sehari-hari</td>
           <td>
             <div class="monitor-progress-wrap">
               <span>40%</span>
@@ -419,7 +419,7 @@
           <div class="monitor-activity-avatar avatar-yellow">A</div>
           <div>
             <div class="monitor-activity-title">Andi Saputra menyelesaikan kuis “Pecahan Dasar”</div>
-            <div class="monitor-activity-desc">Matematika Dasar</div>
+            <div class="monitor-activity-desc">Salam & Sapa</div>
           </div>
         </div>
         <div class="monitor-activity-time">1 jam yang lalu</div>
@@ -430,7 +430,7 @@
           <div class="monitor-activity-avatar avatar-pink">S</div>
           <div>
             <div class="monitor-activity-title">Siti Nurhaliza menonton video “Hukum Newton”</div>
-            <div class="monitor-activity-desc">Fisika SMA</div>
+            <div class="monitor-activity-desc">Mengenal Huruf A-Z</div>
           </div>
         </div>
         <div class="monitor-activity-time">2 jam yang lalu</div>
@@ -440,8 +440,8 @@
         <div class="monitor-activity-left">
           <div class="monitor-activity-avatar avatar-blue">B</div>
           <div>
-            <div class="monitor-activity-title">Budi Santoso mengerjakan kuis “Tenses Bahasa Inggris”</div>
-            <div class="monitor-activity-desc">Bahasa Inggris</div>
+            <div class="monitor-activity-title">Budi Santoso mengerjakan kuis “Angka 1-10”</div>
+            <div class="monitor-activity-desc">Angka 1-10</div>
           </div>
         </div>
         <div class="monitor-activity-time">3 jam yang lalu</div>
@@ -452,7 +452,7 @@
           <div class="monitor-activity-avatar avatar-pink">A</div>
           <div>
             <div class="monitor-activity-title">Aisyah Putri menyelesaikan video “Vocabulary Daily Activity”</div>
-            <div class="monitor-activity-desc">Bahasa Inggris</div>
+            <div class="monitor-activity-desc">Angka 1-10</div>
           </div>
         </div>
         <div class="monitor-activity-time">4 jam yang lalu</div>
@@ -463,7 +463,7 @@
           <div class="monitor-activity-avatar avatar-gray">D</div>
           <div>
             <div class="monitor-activity-title">Dewi Lestari login ke platform</div>
-            <div class="monitor-activity-desc">Sejarah Indonesia</div>
+            <div class="monitor-activity-desc">Kata Sehari-hari</div>
           </div>
         </div>
         <div class="monitor-activity-time">5 jam yang lalu</div>
