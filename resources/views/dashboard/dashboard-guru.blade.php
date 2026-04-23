@@ -8,6 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ asset('css/dashboard/dashboard-guru.css') }}">
+<link rel="stylesheet" href="{{ asset('css/sections/kelola-video-guru.css') }}">
 
   <link rel="stylesheet" href="{{ asset('css/dashboard/dashboard-guru.css') }}">
 
@@ -126,10 +128,10 @@
           Kelola Paket
         </a>
 
-        <a class="menu-item" href="#">
-          <img class="menu-icon" src="{{ asset('img/materi.png') }}" alt="">
-          Kelola Video
-        </a>
+        <a class="menu-item {{ $menu == 'video' ? 'active' : '' }}" href="{{ url('/dashboard-guru?menu=video') }}">
+  <img class="menu-icon" src="{{ asset('img/materi.png') }}" alt="">
+  Kelola Video
+</a>
 
         <a class="menu-item" href="#">
           <img class="menu-icon" src="{{ asset('img/kuis.png') }}" alt="">
@@ -187,8 +189,10 @@
       </header>
 
       @if($menu == 'paket')
-        @include('sections.kelola-paket-guru')
-      @else
+  @include('sections.kelola-paket-guru')
+@elseif($menu == 'video')
+  @include('sections.kelola-video-guru')
+@else
 
       <!-- Greeting -->
       <div class="greet">
