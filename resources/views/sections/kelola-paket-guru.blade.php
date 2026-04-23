@@ -426,7 +426,7 @@
         <div class="paket-activity-left">
           <div class="paket-activity-avatar">👦</div>
           <div>
-            <div class="paket-activity-title">Andi Saputra menyelesaikan kuis “Pecahan Dasar”</div>
+            <div class="paket-activity-title">Andi Saputra menyelesaikan kuis “Salam & Sapa”</div>
             <div class="paket-activity-desc">Salam & Sapa</div>
           </div>
         </div>
@@ -437,8 +437,8 @@
         <div class="paket-activity-left">
           <div class="paket-activity-avatar">👩</div>
           <div>
-            <div class="paket-activity-title">Siti Nurhaliza menonton video “Hukum Newton”</div>
-            <div class="paket-activity-desc">Mengenal Huruf</div>
+            <div class="paket-activity-title">Siti Nurhaliza menonton video “Mengenal Huruf A-Z”</div>
+            <div class="paket-activity-desc">Mengenal Huruf A-Z</div>
           </div>
         </div>
         <div class="paket-activity-time">2 jam yang lalu</div>
@@ -459,7 +459,7 @@
         <div class="paket-activity-left">
           <div class="paket-activity-avatar">👩</div>
           <div>
-            <div class="paket-activity-title">Aisyah Putri menyelesaikan video “Daily Activity”</div>
+            <div class="paket-activity-title">Aisyah Putri menyelesaikan video “Angka 1-10”</div>
             <div class="paket-activity-desc">Angka 1-10</div>
           </div>
         </div>
