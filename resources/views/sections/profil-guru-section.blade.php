@@ -12,7 +12,7 @@
           <h2>Sarah Johnson</h2>
           <span class="profile-badge">Guru Aktif</span>
         </div>
-        <div class="profile-role">Guru Matematika & Bahasa Isyarat</div>
+        <div class="profile-role">Bahasa Isyarat</div>
         <p class="profile-desc">
           Saya adalah pendidik yang berdedikasi untuk membantu siswa belajar dengan cara yang menyenangkan dan mudah dipahami.
         </p>
