@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="{{ asset('css/sections/kelola-video-guru.css') }}">
 <link rel="stylesheet" href="{{ asset('css/sections/kelola-kuis-guru.css') }}">
 <link rel="stylesheet" href="{{ asset('css/sections/monitoring-murid-guru.css') }}">
+<link rel="stylesheet" href="{{ asset('css/sections/feedback-rating-guru.css') }}">
 
   <link rel="stylesheet" href="{{ asset('css/dashboard/dashboard-guru.css') }}">
 
@@ -145,10 +146,10 @@
   Monitoring Murid
 </a>
 
-        <a class="menu-item" href="#">
-          <img class="menu-icon" src="{{ asset('img/feedback.png') }}" alt="">
-          Feedback & Rating
-        </a>
+        <a class="menu-item {{ $menu == 'feedback' ? 'active' : '' }}" href="{{ url('/dashboard-guru?menu=feedback') }}">
+  <img class="menu-icon" src="{{ asset('img/feedback.png') }}" alt="">
+  Feedback & Rating
+</a>
 
         <a class="menu-item" href="#">
           <img class="menu-icon" src="{{ asset('img/transaction-history.png') }}" alt="">
@@ -190,7 +191,7 @@
         </div>
       </header>
 
-     @if($menu == 'paket')
+    @if($menu == 'paket')
   @include('sections.kelola-paket-guru')
 @elseif($menu == 'video')
   @include('sections.kelola-video-guru')
@@ -198,7 +199,11 @@
   @include('sections.kelola-kuis-guru')
 @elseif($menu == 'monitoring')
   @include('sections.monitoring-murid-guru')
+@elseif($menu == 'feedback')
+  @include('sections.feedback-rating-guru')
 @else
+
+
       <!-- Greeting -->
       <div class="greet">
         <h1>Halo, <span class="name">[Nama Guru]</span> 👋</h1>
