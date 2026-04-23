@@ -427,7 +427,7 @@
           <div class="paket-activity-avatar">👦</div>
           <div>
             <div class="paket-activity-title">Andi Saputra menyelesaikan kuis “Pecahan Dasar”</div>
-            <div class="paket-activity-desc">Matematika Dasar</div>
+            <div class="paket-activity-desc">Salam & Sapa</div>
           </div>
         </div>
         <div class="paket-activity-time">1 jam yang lalu</div>
@@ -438,7 +438,7 @@
           <div class="paket-activity-avatar">👩</div>
           <div>
             <div class="paket-activity-title">Siti Nurhaliza menonton video “Hukum Newton”</div>
-            <div class="paket-activity-desc">Fisika SMA</div>
+            <div class="paket-activity-desc">Mengenal Huruf</div>
           </div>
         </div>
         <div class="paket-activity-time">2 jam yang lalu</div>
@@ -448,8 +448,8 @@
         <div class="paket-activity-left">
           <div class="paket-activity-avatar">👦</div>
           <div>
-            <div class="paket-activity-title">Budi Santoso mengerjakan kuis “Tenses Bahasa Inggris”</div>
-            <div class="paket-activity-desc">Bahasa Inggris</div>
+            <div class="paket-activity-title">Budi Santoso mengerjakan kuis “Angka 1-10"</div>
+            <div class="paket-activity-desc">Angka 1-10</div>
           </div>
         </div>
         <div class="paket-activity-time">3 jam yang lalu</div>
@@ -460,7 +460,7 @@
           <div class="paket-activity-avatar">👩</div>
           <div>
             <div class="paket-activity-title">Aisyah Putri menyelesaikan video “Daily Activity”</div>
-            <div class="paket-activity-desc">Bahasa Inggris</div>
+            <div class="paket-activity-desc">Angka 1-10</div>
           </div>
         </div>
         <div class="paket-activity-time">4 jam yang lalu</div>
@@ -471,7 +471,7 @@
           <div class="paket-activity-avatar">👩</div>
           <div>
             <div class="paket-activity-title">Dewi Lestari login ke platform</div>
-            <div class="paket-activity-desc">Sejarah Indonesia</div>
+            <div class="paket-activity-desc">Kata Sehari-hari</div>
           </div>
         </div>
         <div class="paket-activity-time">5 jam yang lalu</div>
