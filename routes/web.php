@@ -108,3 +108,7 @@ Route::get('/video-player', function () {
 Route::get('/video-player/{video}', function ($video) {
     return view('belajar.video-player', ['video' => $video]);
 })->name('video.player.detail');
+
+Route::get('/dashboard-guru', function () {
+    return view('dashboard.dashboard-guru');
+});
