@@ -102,7 +102,7 @@
         <tr>
           <td class="label">Bio</td>
           <td class="value">
-            Guru Matematika & Bahasa Isyarat dengan pengalaman mengajar lebih dari 5 tahun.
+            Bahasa Isyarat dengan pengalaman mengajar lebih dari 5 tahun.
             Berfokus pada metode pembelajaran interaktif dan inklusif.
           </td>
         </tr>
