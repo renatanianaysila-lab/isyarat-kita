@@ -1,10 +1,10 @@
 /* ========================================
-   FEEDBACK CONTENT 
+   FEEDBACK CONTENT - IsyaratKita Style
    ======================================== */
 
 .feedback-page {
     background: #ffffff;
-    padding: 8px 0 30px;
+    padding: 0;
     min-height: 100%;
 }
 
@@ -12,59 +12,6 @@
     background: #ffffff;
     border-radius: 20px;
     overflow: hidden;
-}
-
-/* ===== HEADER ===== */
-.feedback-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 20px 24px 16px;
-    border-bottom: 1px solid #eef2f6;
-    background: #ffffff;
-}
-
-.feedback-header h2 {
-    margin: 0;
-    font-size: 20px;
-    font-weight: 700;
-    color: #1e293b;
-}
-
-.feedback-header p {
-    margin: 4px 0 0;
-    font-size: 13px;
-    color: #64748b;
-}
-
-.feedback-header-right {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.feedback-bell {
-    font-size: 18px;
-    color: #64748b;
-    cursor: pointer;
-    transition: color 0.2s;
-}
-
-.feedback-bell:hover {
-    color: #1e5abc;
-}
-
-.feedback-avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #1e5abc, #2e5aa7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: 700;
 }
 
 /* ===== TOOLBAR ===== */
@@ -377,10 +324,6 @@
         padding: 20px;
     }
 
-    .feedback-header {
-        padding: 16px 20px;
-    }
-
     .feedback-toolbar {
         padding: 12px 20px;
         flex-direction: column;
@@ -407,15 +350,5 @@
 
     .feedback-card {
         padding: 16px;
-    }
-
-    .feedback-header h2 {
-        font-size: 18px;
-    }
-
-    .feedback-avatar {
-        width: 36px;
-        height: 36px;
-        font-size: 14px;
     }
 }
