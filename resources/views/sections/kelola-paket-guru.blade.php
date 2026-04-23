@@ -12,7 +12,7 @@
 
     </head>
 <body>
-    <div class="paket-page-title">
+   <div class="paket-page-title">
   <h1>Kelola Paket</h1>
   <p>Kelola dan atur paket pembelajaran Anda</p>
 </div>
@@ -20,7 +20,7 @@
 <div class="paket-stats-row">
   <div class="paket-stat-card">
     <div class="paket-stat-icon" style="background:#EDF3FF;">
-      <img src="{{ asset('img/katalog.png') }}" alt="">
+      <span style="color:#2F6BFF;font-weight:700;">📦</span>
     </div>
     <div>
       <div class="paket-stat-value">24</div>
@@ -30,7 +30,7 @@
 
   <div class="paket-stat-card">
     <div class="paket-stat-icon" style="background:#E8F9EF;">
-      <img src="{{ asset('img/check-circle.png') }}" alt="">
+      <span style="color:#22B35B;font-weight:700;">✓</span>
     </div>
     <div>
       <div class="paket-stat-value">18</div>
@@ -40,7 +40,7 @@
 
   <div class="paket-stat-card">
     <div class="paket-stat-icon" style="background:#FFF5DE;">
-      <img src="{{ asset('img/edit-02.png') }}" alt="">
+      <span style="color:#F0A500;font-weight:700;">✎</span>
     </div>
     <div>
       <div class="paket-stat-value">4</div>
@@ -50,7 +50,7 @@
 
   <div class="paket-stat-card">
     <div class="paket-stat-icon" style="background:#FFECEC;">
-      <img src="{{ asset('img/cancel-circle.png') }}" alt="">
+      <span style="color:#FF5959;font-weight:700;">✕</span>
     </div>
     <div>
       <div class="paket-stat-value">2</div>
@@ -67,7 +67,7 @@
 
     <div class="paket-filter-row">
       <div class="paket-search-box">
-        <img src="{{ asset('img/search-visual.png') }}" alt="" style="width:16px;height:16px;">
+        <span style="font-size:14px;">🔍</span>
         <input type="text" placeholder="Cari paket...">
       </div>
 
@@ -111,9 +111,9 @@
           <td><span class="paket-badge active">Aktif</span></td>
           <td>
             <div class="paket-actions">
-              <button class="paket-action-btn"><img src="{{ asset('img/view.png') }}" alt=""></button>
-              <button class="paket-action-btn"><img src="{{ asset('img/edit-02.png') }}" alt=""></button>
-              <button class="paket-action-btn"><img src="{{ asset('img/delete-02.png') }}" alt=""></button>
+              <button class="paket-action-btn">👁</button>
+              <button class="paket-action-btn">✏</button>
+              <button class="paket-action-btn">🗑</button>
             </div>
           </td>
         </tr>
@@ -134,9 +134,9 @@
           <td><span class="paket-badge active">Aktif</span></td>
           <td>
             <div class="paket-actions">
-              <button class="paket-action-btn"><img src="{{ asset('img/view.png') }}" alt=""></button>
-              <button class="paket-action-btn"><img src="{{ asset('img/edit-02.png') }}" alt=""></button>
-              <button class="paket-action-btn"><img src="{{ asset('img/delete-02.png') }}" alt=""></button>
+              <button class="paket-action-btn">👁</button>
+              <button class="paket-action-btn">✏</button>
+              <button class="paket-action-btn">🗑</button>
             </div>
           </td>
         </tr>
@@ -144,9 +144,7 @@
         <tr>
           <td>
             <div class="paket-info">
-              <div class="paket-thumb" style="background:#F3EDFF;">
-                <img src="{{ asset('img/love.png') }}" alt="">
-              </div>
+              <div class="paket-thumb" style="background:#F3EDFF;color:#7B61FF;">❤</div>
               <div>
                 <div class="paket-name">Salam & Sapaan</div>
                 <div class="paket-class">Kelas 1-2</div>
@@ -159,9 +157,9 @@
           <td><span class="paket-badge active">Aktif</span></td>
           <td>
             <div class="paket-actions">
-              <button class="paket-action-btn"><img src="{{ asset('img/view.png') }}" alt=""></button>
-              <button class="paket-action-btn"><img src="{{ asset('img/edit-02.png') }}" alt=""></button>
-              <button class="paket-action-btn"><img src="{{ asset('img/delete-02.png') }}" alt=""></button>
+              <button class="paket-action-btn">👁</button>
+              <button class="paket-action-btn">✏</button>
+              <button class="paket-action-btn">🗑</button>
             </div>
           </td>
         </tr>
@@ -169,9 +167,7 @@
         <tr>
           <td>
             <div class="paket-info">
-              <div class="paket-thumb" style="background:#FFF3E5;">
-                <img src="{{ asset('img/chatting.png') }}" alt="">
-              </div>
+              <div class="paket-thumb" style="background:#FFF3E5;color:#F2994A;">💬</div>
               <div>
                 <div class="paket-name">Kata Sehari-hari</div>
                 <div class="paket-class">Kelas 1-2</div>
@@ -184,9 +180,9 @@
           <td><span class="paket-badge active">Aktif</span></td>
           <td>
             <div class="paket-actions">
-              <button class="paket-action-btn"><img src="{{ asset('img/view.png') }}" alt=""></button>
-              <button class="paket-action-btn"><img src="{{ asset('img/edit-02.png') }}" alt=""></button>
-              <button class="paket-action-btn"><img src="{{ asset('img/delete-02.png') }}" alt=""></button>
+              <button class="paket-action-btn">👁</button>
+              <button class="paket-action-btn">✏</button>
+              <button class="paket-action-btn">🗑</button>
             </div>
           </td>
         </tr>
@@ -303,9 +299,7 @@
         <tr>
           <td>
             <div class="paket-info">
-              <div class="paket-thumb" style="background:#F3EDFF;">
-                <img src="{{ asset('img/love.png') }}" alt="">
-              </div>
+              <div class="paket-thumb" style="background:#F3EDFF;color:#7B61FF;">❤</div>
               <div>
                 <div class="paket-name">Salam & Sapaan</div>
                 <div class="paket-class">Kelas 1-2</div>
@@ -320,9 +314,7 @@
         <tr>
           <td>
             <div class="paket-info">
-              <div class="paket-thumb" style="background:#FFF3E5;">
-                <img src="{{ asset('img/chatting.png') }}" alt="">
-              </div>
+              <div class="paket-thumb" style="background:#FFF3E5;color:#F2994A;">💬</div>
               <div>
                 <div class="paket-name">Kata Sehari-hari</div>
                 <div class="paket-class">Kelas 1-2</div>
@@ -348,9 +340,7 @@
     <div class="paket-activity-list">
       <div class="paket-activity-item">
         <div class="paket-activity-left">
-          <div class="paket-activity-avatar">
-            <img src="{{ asset('img/user.png') }}" alt="">
-          </div>
+          <div class="paket-activity-avatar">👤</div>
           <div>
             <div class="paket-activity-title">Paket "Pengenalan Alfabet" diperbarui</div>
             <div class="paket-activity-desc">Menambahkan 2 video baru</div>
@@ -361,9 +351,7 @@
 
       <div class="paket-activity-item">
         <div class="paket-activity-left">
-          <div class="paket-activity-avatar">
-            <img src="{{ asset('img/user.png') }}" alt="">
-          </div>
+          <div class="paket-activity-avatar">👤</div>
           <div>
             <div class="paket-activity-title">Paket "Angka 1-10" dibuat</div>
             <div class="paket-activity-desc">Paket baru berhasil ditambahkan</div>
@@ -374,9 +362,7 @@
 
       <div class="paket-activity-item">
         <div class="paket-activity-left">
-          <div class="paket-activity-avatar">
-            <img src="{{ asset('img/user.png') }}" alt="">
-          </div>
+          <div class="paket-activity-avatar">👤</div>
           <div>
             <div class="paket-activity-title">Paket "Salam & Sapaan" diperbarui</div>
             <div class="paket-activity-desc">Update kuis dan materi pembelajaran</div>
@@ -387,9 +373,7 @@
 
       <div class="paket-activity-item">
         <div class="paket-activity-left">
-          <div class="paket-activity-avatar">
-            <img src="{{ asset('img/user.png') }}" alt="">
-          </div>
+          <div class="paket-activity-avatar">👤</div>
           <div>
             <div class="paket-activity-title">Paket "Kata Sehari-hari" diperbarui</div>
             <div class="paket-activity-desc">Menambahkan materi baru</div>
@@ -400,9 +384,7 @@
 
       <div class="paket-activity-item">
         <div class="paket-activity-left">
-          <div class="paket-activity-avatar">
-            <img src="{{ asset('img/user.png') }}" alt="">
-          </div>
+          <div class="paket-activity-avatar">👤</div>
           <div>
             <div class="paket-activity-title">Paket "Angka 1-10" diarsipkan</div>
             <div class="paket-activity-desc">Paket dipindahkan ke non aktif</div>
