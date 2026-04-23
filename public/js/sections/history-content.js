@@ -1,7 +1,3 @@
-/**
- * History Page JavaScript
- * Menangani interaksi pada halaman riwayat belajar
- */
 
 document.addEventListener('DOMContentLoaded', function() {
     
@@ -9,17 +5,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const cards = document.querySelectorAll('.history-card');
     
     cards.forEach(card => {
-        // Efek klik pada card (sudah otomatis karena <a>)
         card.addEventListener('click', function(e) {
-            // Jika card adalah link, biarkan default behavior
             const link = this.getAttribute('href');
             if (link && link !== '#') {
-                // Tidak perlu preventDefault, biarkan navigasi berjalan
                 console.log('Navigasi ke:', link);
             }
         });
         
-        // Efek tambahan saat card disentuh (mobile)
         card.addEventListener('touchstart', function() {
             this.style.transform = 'scale(0.98)';
         });

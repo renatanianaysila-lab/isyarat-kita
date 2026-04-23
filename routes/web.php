@@ -109,6 +109,12 @@ Route::get('/video-player/{video}', function ($video) {
     return view('belajar.video-player', ['video' => $video]);
 })->name('video.player.detail');
 
-Route::get('/dashboard-guru', function () {
-    return view('dashboard.dashboard-guru');
-});
+// ===================== KUIS ABJAD =====================
+Route::get('/kuis-abjad', function () {
+    return view('belajar.kuis-abjad');
+})->name('kuis.abjad');
+
+// ===================== KUIS ANGKA =====================
+Route::get('/kuis-angka', function () {
+    return view('belajar.kuis-angka');
+})->name('kuis.angka');
