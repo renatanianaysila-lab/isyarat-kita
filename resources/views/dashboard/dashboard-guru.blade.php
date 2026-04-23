@@ -127,6 +127,11 @@
           Dashboard
         </a>
 
+         <a class="menu-item {{ $menu == 'profil' ? 'active' : '' }}" href="{{ url('/dashboard-guru?menu=profil') }}">
+  <img class="menu-icon" src="{{ asset('img/user.png') }}" alt="">
+  Profil Guru
+</a>
+
         <a class="menu-item {{ $menu == 'paket' ? 'active' : '' }}" href="{{ url('/dashboard-guru?menu=paket') }}">
           <img class="menu-icon" src="{{ asset('img/katalog.png') }}" alt="">
           Kelola Paket
@@ -155,11 +160,6 @@
        <a class="menu-item {{ $menu == 'transaksi' ? 'active' : '' }}" href="{{ url('/dashboard-guru?menu=transaksi') }}">
   <img class="menu-icon" src="{{ asset('img/transaction-history.png') }}" alt="">
   Transaksi
-</a>
-
-       <a class="menu-item {{ $menu == 'profil' ? 'active' : '' }}" href="{{ url('/dashboard-guru?menu=profil') }}">
-  <img class="menu-icon" src="{{ asset('img/user.png') }}" alt="">
-  Profil Guru
 </a>
 
         <a class="menu-item danger" href="/login">
