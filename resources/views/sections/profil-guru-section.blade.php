@@ -60,30 +60,58 @@
   </div>
 </div>
 
-<div class="profile-middle-grid">
-  <section class="profile-card">
-    <div class="profile-tabs">
-      <span class="active">Informasi Pribadi</span>
-      <span>Informasi Akademik</span>
-      <span>Informasi Akun</span>
-      <span>Keamanan</span>
-    </div>
+<section class="profile-card">
+  <div class="profile-tabs">
+    <span class="active">Informasi Pribadi</span>
+    <span>Informasi Akademik</span>
+    <span>Informasi Akun</span>
+    <span>Keamanan</span>
+  </div>
 
-    <table class="profile-table">
+  <div class="profile-form-table-wrap">
+    <table class="profile-form-table">
       <tbody>
-        <tr><td>Nama Lengkap</td><td>Sarah Johnson</td></tr>
-        <tr><td>Nama Panggilan</td><td>Sarah</td></tr>
-        <tr><td>Email</td><td>sarah.johnson@guru.com</td></tr>
-        <tr><td>No. Telepon</td><td>+62 812-3456-7890</td></tr>
-        <tr><td>Alamat</td><td>Jl. Pendidikan No. 123, Jakarta Selatan, DKI Jakarta 12345</td></tr>
-        <tr><td>Tanggal Lahir</td><td>15 Maret 1990</td></tr>
-        <tr><td>Jenis Kelamin</td><td>Perempuan</td></tr>
-        <tr><td>Bio</td><td>Guru Matematika & Bahasa Isyarat dengan pengalaman mengajar lebih dari 5 tahun. Berfokus pada metode pembelajaran interaktif dan inklusif.</td></tr>
+        <tr>
+          <td class="label">Nama Lengkap</td>
+          <td class="value">Sarah Johnson</td>
+        </tr>
+        <tr>
+          <td class="label">Nama Panggilan</td>
+          <td class="value">Sarah</td>
+        </tr>
+        <tr>
+          <td class="label">Email</td>
+          <td class="value">sarah.johnson@guru.com</td>
+        </tr>
+        <tr>
+          <td class="label">No. Telepon</td>
+          <td class="value">+62 812-3456-7890</td>
+        </tr>
+        <tr>
+          <td class="label">Alamat</td>
+          <td class="value">Jl. Pendidikan No. 123, Jakarta Selatan, DKI Jakarta 12345</td>
+        </tr>
+        <tr>
+          <td class="label">Tanggal Lahir</td>
+          <td class="value">15 Maret 1990</td>
+        </tr>
+        <tr>
+          <td class="label">Jenis Kelamin</td>
+          <td class="value">Perempuan</td>
+        </tr>
+        <tr>
+          <td class="label">Bio</td>
+          <td class="value">
+            Guru Matematika & Bahasa Isyarat dengan pengalaman mengajar lebih dari 5 tahun.
+            Berfokus pada metode pembelajaran interaktif dan inklusif.
+          </td>
+        </tr>
       </tbody>
     </table>
 
-    <button class="profile-light-btn">Edit Informasi</button>
-  </section>
+    <button class="profile-form-btn">Edit Informasi</button>
+  </div>
+</section>
 
   <section class="profile-card">
     <div class="profile-card-head">
