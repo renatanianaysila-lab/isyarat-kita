@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="{{ asset('css/dashboard/dashboard-guru.css') }}">
 <link rel="stylesheet" href="{{ asset('css/sections/kelola-video-guru.css') }}">
 <link rel="stylesheet" href="{{ asset('css/sections/kelola-kuis-guru.css') }}">
+<link rel="stylesheet" href="{{ asset('css/sections/monitoring-murid-guru.css') }}">
 
   <link rel="stylesheet" href="{{ asset('css/dashboard/dashboard-guru.css') }}">
 
@@ -139,10 +140,10 @@
   Kelola Kuis
 </a>
 
-        <a class="menu-item" href="#">
-          <img class="menu-icon" src="{{ asset('img/user.png') }}" alt="">
-          Monitoring Murid
-        </a>
+        <a class="menu-item {{ $menu == 'monitoring' ? 'active' : '' }}" href="{{ url('/dashboard-guru?menu=monitoring') }}">
+  <img class="menu-icon" src="{{ asset('img/user.png') }}" alt="">
+  Monitoring Murid
+</a>
 
         <a class="menu-item" href="#">
           <img class="menu-icon" src="{{ asset('img/feedback.png') }}" alt="">
@@ -195,8 +196,9 @@
   @include('sections.kelola-video-guru')
 @elseif($menu == 'kuis')
   @include('sections.kelola-kuis-guru')
+@elseif($menu == 'monitoring')
+  @include('sections.monitoring-murid-guru')
 @else
-
       <!-- Greeting -->
       <div class="greet">
         <h1>Halo, <span class="name">[Nama Guru]</span> 👋</h1>
