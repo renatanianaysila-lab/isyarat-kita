@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IsyaratKita - Kelola Paket</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ asset('css/sections/kelola-paket-guru.css') }}">
+</head>
+<body>
+
 <div class="paket-page-title">
   <h1>Kelola Paket</h1>
   <p>Kelola dan atur paket pembelajaran Anda</p>
@@ -89,18 +100,18 @@
                 <div class="paket-class">andi.saputra@email.com</div>
               </div>
             </div>
-          </td>
-          <td>10</td>
-          <td>8</td>
-          <td>Rp30.000</td>
-          <td><span class="paket-badge active">Aktif</span></td>
+          </div></td>
+          <td>10</div></td>
+          <td>8</div></td>
+          <td>Rp30.000</div></td>
+          <td><span class="paket-badge active">Aktif</span></div></td>
           <td>
             <div class="paket-actions">
               <button class="paket-action-btn">👁</button>
               <button class="paket-action-btn">✏</button>
               <button class="paket-action-btn">🗑</button>
             </div>
-          </td>
+           </div></td>
         </tr>
 
         <tr>
@@ -112,18 +123,18 @@
                 <div class="paket-class">siti.nurhaliza@email.com</div>
               </div>
             </div>
-          </td>
-          <td>12</td>
-          <td>10</td>
-          <td>Rp30.000</td>
-          <td><span class="paket-badge active">Aktif</span></td>
+           </div></td>
+          <td>12</div></td>
+          <td>10</div></td>
+          <td>Rp30.000</div></td>
+          <td><span class="paket-badge active">Aktif</span></div></td>
           <td>
             <div class="paket-actions">
               <button class="paket-action-btn">👁</button>
               <button class="paket-action-btn">✏</button>
               <button class="paket-action-btn">🗑</button>
             </div>
-          </td>
+           </div></td>
         </tr>
 
         <tr>
@@ -135,18 +146,18 @@
                 <div class="paket-class">budi.santoso@email.com</div>
               </div>
             </div>
-          </td>
-          <td>8</td>
-          <td>6</td>
-          <td>Rp30.000</td>
-          <td><span class="paket-badge active">Aktif</span></td>
+           </div></td>
+          <td>8</div></td>
+          <td>6</div></td>
+          <td>Rp30.000</div></td>
+          <td><span class="paket-badge active">Aktif</span></div></td>
           <td>
             <div class="paket-actions">
               <button class="paket-action-btn">👁</button>
               <button class="paket-action-btn">✏</button>
               <button class="paket-action-btn">🗑</button>
             </div>
-          </td>
+           </div></td>
         </tr>
 
         <tr>
@@ -158,18 +169,18 @@
                 <div class="paket-class">dewi.lestari@email.com</div>
               </div>
             </div>
-          </td>
-          <td>12</td>
-          <td>10</td>
-          <td>Rp30.000</td>
-          <td><span class="paket-badge" style="background:#FFF3E0;color:#B45B0A;">Tidak Aktif</span></td>
+           </div></td>
+          <td>12</div></td>
+          <td>10</div></td>
+          <td>Rp30.000</div></td>
+          <td><span class="paket-badge" style="background:#FFF3E0;color:#B45B0A;">Tidak Aktif</span></div></td>
           <td>
             <div class="paket-actions">
               <button class="paket-action-btn">👁</button>
               <button class="paket-action-btn">✏</button>
               <button class="paket-action-btn">🗑</button>
             </div>
-          </td>
+           </div></td>
         </tr>
 
         <tr>
@@ -181,18 +192,18 @@
                 <div class="paket-class">rizky.pratama@email.com</div>
               </div>
             </div>
-          </td>
-          <td>9</td>
-          <td>7</td>
-          <td>Rp30.000</td>
-          <td><span class="paket-badge" style="background:#FFF3E0;color:#B45B0A;">Tidak Aktif</span></td>
+           </div></td>
+          <td>9</div></td>
+          <td>7</div></td>
+          <td>Rp30.000</div></td>
+          <td><span class="paket-badge" style="background:#FFF3E0;color:#B45B0A;">Tidak Aktif</span></div></td>
           <td>
             <div class="paket-actions">
               <button class="paket-action-btn">👁</button>
               <button class="paket-action-btn">✏</button>
               <button class="paket-action-btn">🗑</button>
             </div>
-          </td>
+           </div></td>
         </tr>
 
         <tr>
@@ -204,18 +215,18 @@
                 <div class="paket-class">aisyah.putri@email.com</div>
               </div>
             </div>
-          </td>
-          <td>11</td>
-          <td>9</td>
-          <td>Rp30.000</td>
-          <td><span class="paket-badge active">Aktif</span></td>
+           </div></td>
+          <td>11</div></td>
+          <td>9</div></td>
+          <td>Rp30.000</div></td>
+          <td><span class="paket-badge active">Aktif</span></div></td>
           <td>
             <div class="paket-actions">
               <button class="paket-action-btn">👁</button>
               <button class="paket-action-btn">✏</button>
               <button class="paket-action-btn">🗑</button>
             </div>
-          </td>
+           </div></td>
         </tr>
 
         <tr>
@@ -227,18 +238,18 @@
                 <div class="paket-class">fajar.romadhon@email.com</div>
               </div>
             </div>
-          </td>
-          <td>10</td>
-          <td>8</td>
-          <td>Rp30.000</td>
-          <td><span class="paket-badge active">Aktif</span></td>
+           </div></td>
+          <td>10</div></td>
+          <td>8</div></td>
+          <td>Rp30.000</div></td>
+          <td><span class="paket-badge active">Aktif</span></div></td>
           <td>
             <div class="paket-actions">
               <button class="paket-action-btn">👁</button>
               <button class="paket-action-btn">✏</button>
               <button class="paket-action-btn">🗑</button>
             </div>
-          </td>
+           </div></td>
         </tr>
 
         <tr>
@@ -250,18 +261,18 @@
                 <div class="paket-class">nadia.aulia@email.com</div>
               </div>
             </div>
-          </td>
-          <td>7</td>
-          <td>5</td>
-          <td>Rp30.000</td>
-          <td><span class="paket-badge" style="background:#FFF3E0;color:#B45B0A;">Tidak Aktif</span></td>
+           </div></td>
+          <td>7</div></td>
+          <td>5</div></td>
+          <td>Rp30.000</div></td>
+          <td><span class="paket-badge" style="background:#FFF3E0;color:#B45B0A;">Tidak Aktif</span></div></td>
           <td>
             <div class="paket-actions">
               <button class="paket-action-btn">👁</button>
               <button class="paket-action-btn">✏</button>
               <button class="paket-action-btn">🗑</button>
             </div>
-          </td>
+           </div></td>
         </tr>
       </tbody>
     </table>
@@ -280,13 +291,13 @@
   </section>
 
   <section class="paket-summary-card">
-    <h2>Ringkasan Pengguna</h2>
+    <h2>📚 Ringkasan Materi Bahasa Isyarat</h2>
 
     <div class="donut-wrap">
-      <div class="donut-chart" style="background: conic-gradient(#56D27A 0 85%, #F6B73C 85% 96%, #8B5CF6 96% 100%);">
+      <div class="donut-chart" style="background: conic-gradient(#2F6BFF 0 38%, #56D27A 38% 63%, #F6B73C 63% 78%, #8B5CF6 78% 91%, #FF5959 91% 100%);">
         <div class="donut-center">
-          <div class="big">1.248</div>
-          <div class="small">Total Pengguna</div>
+          <div class="big">32</div>
+          <div class="small">Total Video</div>
         </div>
       </div>
     </div>
@@ -294,130 +305,105 @@
     <div class="paket-summary-list">
       <div class="paket-summary-item">
         <div class="paket-summary-left">
-          <span class="paket-dot" style="background:#56D27A;"></span>
-          <span>Pengguna Aktif</span>
+          <span class="paket-dot" style="background:#2F6BFF;"></span>
+          <span>🖐️ Alfabet (A-Z)</span>
         </div>
-        <strong>1.056 (85%)</strong>
+        <strong>12 Video</strong>
+      </div>
+
+      <div class="paket-summary-item">
+        <div class="paket-summary-left">
+          <span class="paket-dot" style="background:#56D27A;"></span>
+          <span>🔢 Angka</span>
+        </div>
+        <strong>8 Video</strong>
       </div>
 
       <div class="paket-summary-item">
         <div class="paket-summary-left">
           <span class="paket-dot" style="background:#F6B73C;"></span>
-          <span>Pengguna Tidak Aktif</span>
+          <span>👋 Salam & Sapaan</span>
         </div>
-        <strong>142 (11%)</strong>
+        <strong>5 Video</strong>
       </div>
 
       <div class="paket-summary-item">
         <div class="paket-summary-left">
           <span class="paket-dot" style="background:#8B5CF6;"></span>
-          <span>Pengguna Baru</span>
+          <span>💬 Percakapan Sehari-hari</span>
         </div>
-        <strong>50 (4%)</strong>
+        <strong>4 Video</strong>
+      </div>
+
+      <div class="paket-summary-item">
+        <div class="paket-summary-left">
+          <span class="paket-dot" style="background:#FF5959;"></span>
+          <span>😊 Ekspresi & Emosi</span>
+        </div>
+        <strong>3 Video</strong>
       </div>
     </div>
 
     <div class="paket-divider"></div>
 
-    <div class="paket-income-label">Pendapatan Total</div>
-    <div class="paket-income-value">Rp 720.000</div>
-    <div class="paket-income-sub">Dari 24 Transaksi</div>
+    <div class="paket-income-label">🎯 Total Murid Terdaftar</div>
+    <div class="paket-income-value">1.248 Murid</div>
+    <div class="paket-income-sub">1.056 aktif belajar</div>
 
-    <button class="paket-report-btn">Lihat Laporan</button>
+    <button class="paket-report-btn">📈 Lihat Laporan</button>
   </section>
 </div>
 
 <div class="paket-bottom-grid">
   <section class="paket-card">
     <div class="paket-sub-head">
-      <h2>👤 Pengguna Teraktif</h2>
+      <h2>🔥 Materi Bahasa Isyarat Terpopuler</h2>
       <a class="paket-link" href="#">Lihat Semua ›</a>
     </div>
 
     <table class="paket-mini-table">
       <thead>
         <tr>
-          <th>Pengguna</th>
-          <th>Video Ditonton</th>
-          <th>Kuis Dikerjakan</th>
-          <th>Progres</th>
+          <th>Materi</th>
+          <th>Kategori</th>
+          <th>Jumlah Ditonton</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>Andi Saputra</td>
-          <td>24 Video</td>
-          <td>18 Kuis</td>
-          <td>
-            <div style="display:flex;align-items:center;gap:10px;">
-              <strong>75%</strong>
-              <div style="width:70px;height:6px;background:#E8EDF7;border-radius:999px;overflow:hidden;">
-                <span style="display:block;width:75%;height:100%;background:#2F6BFF;"></span>
-              </div>
-            </div>
-          </td>
+          <td><strong>Huruf A - Z</strong></td>
+          <td>Alfabet</div></td>
+          <td>856 ditonton</div></td>
         </tr>
         <tr>
-          <td>Aisyah Putri</td>
-          <td>28 Video</td>
-          <td>19 Kuis</td>
-          <td>
-            <div style="display:flex;align-items:center;gap:10px;">
-              <strong>80%</strong>
-              <div style="width:70px;height:6px;background:#E8EDF7;border-radius:999px;overflow:hidden;">
-                <span style="display:block;width:80%;height:100%;background:#2F6BFF;"></span>
-              </div>
-            </div>
-          </td>
+          <td><strong>Angka 1-10</strong></td>
+          <td>Angka</div></td>
+          <td>742 ditonton</div></td>
         </tr>
         <tr>
-          <td>Siti Nurhaliza</td>
-          <td>16 Video</td>
-          <td>12 Kuis</td>
-          <td>
-            <div style="display:flex;align-items:center;gap:10px;">
-              <strong>60%</strong>
-              <div style="width:70px;height:6px;background:#E8EDF7;border-radius:999px;overflow:hidden;">
-                <span style="display:block;width:60%;height:100%;background:#2F6BFF;"></span>
-              </div>
-            </div>
-          </td>
+          <td><strong>Salam & Sapaan</strong></td>
+          <td>Salam</div></td>
+          <td>634 ditonton</div></td>
         </tr>
         <tr>
-          <td>Fajar Romadhon</td>
-          <td>14 Video</td>
-          <td>10 Kuis</td>
-          <td>
-            <div style="display:flex;align-items:center;gap:10px;">
-              <strong>55%</strong>
-              <div style="width:70px;height:6px;background:#E8EDF7;border-radius:999px;overflow:hidden;">
-                <span style="display:block;width:55%;height:100%;background:#2F6BFF;"></span>
-              </div>
-            </div>
-          </td>
+          <td><strong>Percakapan Sehari-hari</strong></td>
+          <td>Percakapan</div></td>
+          <td>521 ditonton</div></td>
         </tr>
         <tr>
-          <td>Budi Santoso</td>
-          <td>10 Video</td>
-          <td>8 Kuis</td>
-          <td>
-            <div style="display:flex;align-items:center;gap:10px;">
-              <strong>45%</strong>
-              <div style="width:70px;height:6px;background:#E8EDF7;border-radius:999px;overflow:hidden;">
-                <span style="display:block;width:45%;height:100%;background:#2F6BFF;"></span>
-              </div>
-            </div>
-          </td>
+          <td><strong>Ekspresi & Emosi</strong></td>
+          <td>Ekspresi</div></td>
+          <td>478 ditonton</div></td>
         </tr>
       </tbody>
     </table>
 
-    <div class="paket-bottom-note">Total 5 pengguna teraktif</div>
+    <div class="paket-bottom-note">Total 5 materi terpopuler</div>
   </section>
 
   <section class="paket-card">
     <div class="paket-sub-head">
-      <h2>👥 Aktivitas Terbaru</h2>
+      <h2>🔄 Aktivitas Murid Terbaru</h2>
       <a class="paket-link" href="#">Lihat Semua ›</a>
     </div>
 
@@ -426,8 +412,8 @@
         <div class="paket-activity-left">
           <div class="paket-activity-avatar">👦</div>
           <div>
-            <div class="paket-activity-title">Andi Saputra menyelesaikan kuis “Pecahan Dasar”</div>
-            <div class="paket-activity-desc">Matematika Dasar</div>
+            <div class="paket-activity-title">Andi Saputra menyelesaikan materi "Huruf A - Z"</div>
+            <div class="paket-activity-desc">Alfabet Bahasa Isyarat</div>
           </div>
         </div>
         <div class="paket-activity-time">1 jam yang lalu</div>
@@ -437,8 +423,8 @@
         <div class="paket-activity-left">
           <div class="paket-activity-avatar">👩</div>
           <div>
-            <div class="paket-activity-title">Siti Nurhaliza menonton video “Hukum Newton”</div>
-            <div class="paket-activity-desc">Fisika SMA</div>
+            <div class="paket-activity-title">Siti Nurhaliza menonton "Angka 1-10"</div>
+            <div class="paket-activity-desc">Angka Bahasa Isyarat</div>
           </div>
         </div>
         <div class="paket-activity-time">2 jam yang lalu</div>
@@ -448,8 +434,8 @@
         <div class="paket-activity-left">
           <div class="paket-activity-avatar">👦</div>
           <div>
-            <div class="paket-activity-title">Budi Santoso mengerjakan kuis “Tenses Bahasa Inggris”</div>
-            <div class="paket-activity-desc">Bahasa Inggris</div>
+            <div class="paket-activity-title">Budi Santoso menyelesaikan "Salam & Sapaan"</div>
+            <div class="paket-activity-desc">Ungkapan salam bahasa isyarat</div>
           </div>
         </div>
         <div class="paket-activity-time">3 jam yang lalu</div>
@@ -459,8 +445,8 @@
         <div class="paket-activity-left">
           <div class="paket-activity-avatar">👩</div>
           <div>
-            <div class="paket-activity-title">Aisyah Putri menyelesaikan video “Daily Activity”</div>
-            <div class="paket-activity-desc">Bahasa Inggris</div>
+            <div class="paket-activity-title">Aisyah Putri memulai "Ekspresi & Emosi"</div>
+            <div class="paket-activity-desc">Belajar mengekspresikan emosi</div>
           </div>
         </div>
         <div class="paket-activity-time">4 jam yang lalu</div>
@@ -468,16 +454,21 @@
 
       <div class="paket-activity-item">
         <div class="paket-activity-left">
-          <div class="paket-activity-avatar">👩</div>
+          <div class="paket-activity-avatar">👨</div>
           <div>
-            <div class="paket-activity-title">Dewi Lestari login ke platform</div>
-            <div class="paket-activity-desc">Sejarah Indonesia</div>
+            <div class="paket-activity-title">Fajar Romadhon mengulang materi "Percakapan Sehari-hari"</div>
+            <div class="paket-activity-desc">Percakapan dasar bahasa isyarat</div>
           </div>
         </div>
         <div class="paket-activity-time">5 jam yang lalu</div>
       </div>
     </div>
 
-    <div class="paket-bottom-note">Total 5 aktivitas terbaru</div>
+    <div class="paket-bottom-note">Total 8 aktivitas hari ini</div>
   </section>
 </div>
+
+<script src="{{ asset('js/sections/kelola-paket-guru.js') }}"></script>
+
+</body>
+</html>
