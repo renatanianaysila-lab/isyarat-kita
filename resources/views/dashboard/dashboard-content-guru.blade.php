@@ -76,7 +76,7 @@
           </div>
           <div class="activity-details">
             <div class="activity-name">Ahmad Fauzi</div>
-            <div class="activity-action">Mengakses Paket Dasar • Video "Huruf A"</div>
+            <div class="activity-action">Mengakses Paket Gratis • Video "Huruf A-Z"</div>
             <div class="activity-time">1 hari yang lalu</div>
           </div>
         </div>
@@ -167,31 +167,31 @@
         <tbody>
           <tr>
             <td><div class="title-with-meta">Pengenalan Alfabet</div><div class="meta-small">Video 1 • 8 menit</div></td>
-            <td>Paket Dasar</div></td>
+            <td>Paket Gratis</div></td>
             <td><strong>156</strong> <span class="text-muted">murid</span></div></td>
             <td><div class="flex-between"><span>78%</span><div class="progress-bar-mini"><div class="progress-fill" style="width:78%"></div></div></div></div></td>
           </tr>
           <tr>
             <td><div class="title-with-meta">Angka 1-10</div><div class="meta-small">Video 3 • 10 menit</div></div></td>
-            <td>Paket Dasar</div></div></td>
+            <td>Paket Gratis</div></div></td>
             <td><strong>142</strong> <span class="text-muted">murid</span></div></div></td>
             <td><div class="flex-between"><span>82%</span><div class="progress-bar-mini"><div class="progress-fill" style="width:82%"></div></div></div></div></div></td>
           </tr>
           <tr>
             <td><div class="title-with-meta">Salam & Sapaan</div><div class="meta-small">Video 2 • 15 menit</div></div></div></td>
-            <td>Paket Profesional</div></div></div></td>
+            <td>Paket Premium</div></div></div></td>
             <td><strong>98</strong> <span class="text-muted">murid</span></div></div></div></td>
             <td><div class="flex-between"><span>65%</span><div class="progress-bar-mini"><div class="progress-fill" style="width:65%"></div></div></div></div></div></div></td>
           </tr>
           <tr>
             <td><div class="title-with-meta">Kata Sehari-hari</div><div class="meta-small">Video 5 • 12 menit</div></div></div></td>
-            <td>Paket Profesional</div></div></div></td>
+            <td>Paket Premium</div></div></div></td>
             <td><strong>87</strong> <span class="text-muted">murid</span></div></div></div></td>
             <td><div class="flex-between"><span>71%</span><div class="progress-bar-mini"><div class="progress-fill" style="width:71%"></div></div></div></div></div></div></td>
           </tr>
           <tr>
             <td><div class="title-with-meta">Warna & Bentuk</div><div class="meta-small">Video 4 • 7 menit</div></div></div></td>
-            <td>Paket Dasar</div></div></div></td>
+            <td>Paket Premium</div></div></div></td>
             <td><strong>76</strong> <span class="text-muted">murid</span></div></div></div></td>
             <td><div class="flex-between"><span>88%</span><div class="progress-bar-mini"><div class="progress-fill" style="width:88%"></div></div></div></div></div></div></td>
           </tr>
