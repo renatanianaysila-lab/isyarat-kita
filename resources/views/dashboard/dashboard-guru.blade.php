@@ -171,6 +171,11 @@
 
       <!-- TOPBAR -->
       <header class="topbar"
+      <div class="search">
+  <input type="text" placeholder="Cari materi, murid, atau kuis..." />
+  <img class="search-img" src="{{ asset('img/search-visual.png') }}" alt="Search">
+</div>
+
         <div class="top-actions">
           <button class="icon-btn" title="Notifikasi">
             <img class="top-icon" src="{{ asset('img/notification-01.png') }}" alt="">
