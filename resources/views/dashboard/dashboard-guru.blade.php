@@ -12,13 +12,12 @@
   <!-- CSS -->
   <link rel="stylesheet" href="{{ asset('css/layout/sidebar-guru.css') }}">
   <link rel="stylesheet" href="{{ asset('css/dashboard/dashboard-guru.css') }}">
-<link rel="stylesheet" href="{{ asset('css/sections/kelola-video-guru.css') }}">
-<link rel="stylesheet" href="{{ asset('css/sections/kelola-kuis-guru.css') }}">
-<link rel="stylesheet" href="{{ asset('css/sections/monitoring-murid-guru.css') }}">
-<link rel="stylesheet" href="{{ asset('css/sections/feedback-rating-guru.css') }}">
-<link rel="stylesheet" href="{{ asset('css/sections/transaksi-guru.css') }}">
-<link rel="stylesheet" href="{{ asset('css/sections/profil-guru-section.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/dashboard/dashboard-guru.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/sections/kelola-video-guru.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/sections/kelola-kuis-guru.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/sections/monitoring-murid-guru.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/sections/feedback-rating-guru.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/sections/transaksi-guru.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/sections/profil-guru-section.css') }}">
 
   <style>
     .data-table {
@@ -123,10 +122,10 @@
           Dashboard
         </a>
 
-         <a class="menu-item {{ $menu == 'profil' ? 'active' : '' }}" href="{{ url('/dashboard-guru?menu=profil') }}">
-  <img class="menu-icon" src="{{ asset('img/user.png') }}" alt="">
-  Profil Guru
-</a>
+        <a class="menu-item {{ $menu == 'profil' ? 'active' : '' }}" href="{{ url('/dashboard-guru?menu=profil') }}">
+          <img class="menu-icon" src="{{ asset('img/user.png') }}" alt="">
+          Profil Guru
+        </a>
 
         <a class="menu-item {{ $menu == 'paket' ? 'active' : '' }}" href="{{ url('/dashboard-guru?menu=paket') }}">
           <img class="menu-icon" src="{{ asset('img/katalog.png') }}" alt="">
@@ -134,29 +133,29 @@
         </a>
 
         <a class="menu-item {{ $menu == 'video' ? 'active' : '' }}" href="{{ url('/dashboard-guru?menu=video') }}">
-  <img class="menu-icon" src="{{ asset('img/materi.png') }}" alt="">
-  Kelola Video
-</a>
+          <img class="menu-icon" src="{{ asset('img/materi.png') }}" alt="">
+          Kelola Video
+        </a>
 
-       <a class="menu-item {{ $menu == 'kuis' ? 'active' : '' }}" href="{{ url('/dashboard-guru?menu=kuis') }}">
-  <img class="menu-icon" src="{{ asset('img/kuis.png') }}" alt="">
-  Kelola Kuis
-</a>
+        <a class="menu-item {{ $menu == 'kuis' ? 'active' : '' }}" href="{{ url('/dashboard-guru?menu=kuis') }}">
+          <img class="menu-icon" src="{{ asset('img/kuis.png') }}" alt="">
+          Kelola Kuis
+        </a>
 
         <a class="menu-item {{ $menu == 'monitoring' ? 'active' : '' }}" href="{{ url('/dashboard-guru?menu=monitoring') }}">
-  <img class="menu-icon" src="{{ asset('img/user.png') }}" alt="">
-  Monitoring Murid
-</a>
+          <img class="menu-icon" src="{{ asset('img/user.png') }}" alt="">
+          Monitoring Murid
+        </a>
 
         <a class="menu-item {{ $menu == 'feedback' ? 'active' : '' }}" href="{{ url('/dashboard-guru?menu=feedback') }}">
-  <img class="menu-icon" src="{{ asset('img/feedback.png') }}" alt="">
-  Feedback & Rating
-</a>
+          <img class="menu-icon" src="{{ asset('img/feedback.png') }}" alt="">
+          Feedback & Rating
+        </a>
 
-       <a class="menu-item {{ $menu == 'transaksi' ? 'active' : '' }}" href="{{ url('/dashboard-guru?menu=transaksi') }}">
-  <img class="menu-icon" src="{{ asset('img/transaction-history.png') }}" alt="">
-  Transaksi
-</a>
+        <a class="menu-item {{ $menu == 'transaksi' ? 'active' : '' }}" href="{{ url('/dashboard-guru?menu=transaksi') }}">
+          <img class="menu-icon" src="{{ asset('img/transaction-history.png') }}" alt="">
+          Transaksi
+        </a>
 
         <a class="menu-item danger" href="/login">
           <img class="menu-icon" src="{{ asset('img/logout-04.png') }}" alt="">
@@ -165,17 +164,11 @@
       </nav>
     </aside>
 
-    <!-- MAIN -->
     <!-- MAIN CONTENT -->
     <main class="main">
 
-      <!-- TOPBAR -->
-      <header class="topbar"
-      <div class="search">
-  <input type="text" placeholder="Cari materi, murid, atau kuis..." />
-  <img class="search-img" src="{{ asset('img/search-visual.png') }}" alt="Search">
-</div>
-
+      <!-- TOPBAR (search dihapus) -->
+      <header class="topbar">
         <div class="top-actions">
           <button class="icon-btn" title="Notifikasi">
             <img class="top-icon" src="{{ asset('img/notification-01.png') }}" alt="">
@@ -189,365 +182,356 @@
         </div>
       </header>
 
-  @if($menu == 'paket')
-  @include('sections.kelola-paket-guru')
-@elseif($menu == 'video')
-  @include('sections.kelola-video-guru')
-@elseif($menu == 'kuis')
-  @include('sections.kelola-kuis-guru')
-@elseif($menu == 'monitoring')
-  @include('sections.monitoring-murid-guru')
-@elseif($menu == 'feedback')
-  @include('sections.feedback-rating-guru')
-@elseif($menu == 'transaksi')
-  @include('sections.transaksi-guru')
-@elseif($menu == 'profil')
-  @include('sections.profil-guru-section')
-@else
+      @if($menu == 'paket')
+        @include('sections.kelola-paket-guru')
+      @elseif($menu == 'video')
+        @include('sections.kelola-video-guru')
+      @elseif($menu == 'kuis')
+        @include('sections.kelola-kuis-guru')
+      @elseif($menu == 'monitoring')
+        @include('sections.monitoring-murid-guru')
+      @elseif($menu == 'feedback')
+        @include('sections.feedback-rating-guru')
+      @elseif($menu == 'transaksi')
+        @include('sections.transaksi-guru')
+      @elseif($menu == 'profil')
+        @include('sections.profil-guru-section')
+      @else
 
+        <!-- Greeting -->
+        <div class="greet">
+          <h1>Halo, <span class="name">[Nama Guru]</span> 👋</h1>
+          <p>Pantau aktivitas murid dan kelola materi pembelajaran bahasa isyaratmu! 📚</p>
+        </div>
 
-      <!-- Greeting -->
-      <div class="greet">
-        <h1>Halo, <span class="name">[Nama Guru]</span> 👋</h1>
-        <p>Pantau aktivitas murid dan kelola materi pembelajaran bahasa isyaratmu! 📚</p>
-      </div>
-
-      <!-- STATS CARDS -->
-      <div class="stats-row">
-        <div class="stat-card">
-          <div class="stat-icon">
-            <img src="{{ asset('img/materi.png') }}" alt="">
+        <!-- STATS CARDS -->
+        <div class="stats-row">
+          <div class="stat-card">
+            <div class="stat-icon">
+              <img src="{{ asset('img/materi.png') }}" alt="">
+            </div>
+            <div class="stat-content">
+              <div class="stat-value">24</div>
+              <div class="stat-label">Total Video</div>
+            </div>
           </div>
-          <div class="stat-content">
-            <div class="stat-value">24</div>
-            <div class="stat-label">Total Video</div>
+
+          <div class="stat-card">
+            <div class="stat-icon">
+              <img src="{{ asset('img/user.png') }}" alt="">
+            </div>
+            <div class="stat-content">
+              <div class="stat-value">1.200</div>
+              <div class="stat-label">Total Murid</div>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon">
+              <img src="{{ asset('img/feedback.png') }}" alt="">
+            </div>
+            <div class="stat-content">
+              <div class="stat-value">4.8</div>
+              <div class="stat-label">Rata-rata Rating</div>
+            </div>
           </div>
         </div>
 
-        <div class="stat-card">
-          <div class="stat-icon">
-            <img src="{{ asset('img/user.png') }}" alt="">
-          </div>
-          <div class="stat-content">
-            <div class="stat-value">1.200</div>
-            <div class="stat-label">Total Murid</div>
-          </div>
+        <!-- Row: Aktivitas Terbaru + Buat Materi -->
+        <div class="grid-2">
+
+          <section class="card">
+            <div class="card-head">
+              <h2>Aktivitas Terbaru Murid</h2>
+              <span class="badge">Terbaru</span>
+            </div>
+
+            <div class="activity-list">
+              <div class="activity-item">
+                <div class="activity-avatar">
+                  <img src="{{ asset('img/user.png') }}" alt="">
+                </div>
+                <div class="activity-content">
+                  <div class="activity-name">[Nama Murid]</div>
+                  <div class="activity-desc">Mengakses Paket Dasar</div>
+                  <div class="activity-time">1 hari yang lalu</div>
+                </div>
+              </div>
+
+              <div class="activity-item">
+                <div class="activity-avatar">
+                  <img src="{{ asset('img/user.png') }}" alt="">
+                </div>
+                <div class="activity-content">
+                  <div class="activity-name">[Nama Murid]</div>
+                  <div class="activity-desc">Selesai Kuis [Judul Kuis], Skor: 90</div>
+                  <div class="activity-time">2 hari yang lalu</div>
+                </div>
+              </div>
+
+              <div class="activity-item">
+                <div class="activity-avatar">
+                  <img src="{{ asset('img/user.png') }}" alt="">
+                </div>
+                <div class="activity-content">
+                  <div class="activity-name">[Nama Murid]</div>
+                  <div class="activity-desc">Menyelesaikan Paket Dasar</div>
+                  <div class="activity-time">3 hari yang lalu</div>
+                </div>
+              </div>
+
+              <div class="activity-item">
+                <div class="activity-avatar">
+                  <img src="{{ asset('img/user.png') }}" alt="">
+                </div>
+                <div class="activity-content">
+                  <div class="activity-name">[Nama Murid]</div>
+                  <div class="activity-desc">Memberi rating 5 ⭐</div>
+                  <div class="activity-time">4 hari yang lalu</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-foot">
+              <a class="link" href="#">Lihat Semua Aktivitas ›</a>
+            </div>
+          </section>
+
+          <section class="card create-card">
+            <div class="card-head">
+              <h2>Buat Materi Baru</h2>
+            </div>
+
+            <div class="create-content">
+              <div class="create-icon">
+                <img src="{{ asset('img/upload.png') }}" alt="">
+              </div>
+              <div class="create-text">
+                Upload dan kelola video pembelajaran bahasa isyaratmu!
+              </div>
+              <button class="btn btn-large">+ Tambah Materi</button>
+            </div>
+
+            <div class="quick-stats">
+              <div class="quick-stat">
+                <div class="quick-value">5</div>
+                <div class="quick-label">Paket Dibuat</div>
+              </div>
+              <div class="quick-stat">
+                <div class="quick-value">24</div>
+                <div class="quick-label">Total Video</div>
+              </div>
+              <div class="quick-stat">
+                <div class="quick-value">1.2k</div>
+                <div class="quick-label">Total Murid</div>
+              </div>
+              <div class="quick-stat">
+                <div class="quick-value">4.8</div>
+                <div class="quick-label">Rating</div>
+              </div>
+            </div>
+          </section>
         </div>
 
-        <div class="stat-card">
-          <div class="stat-icon">
-            <img src="{{ asset('img/feedback.png') }}" alt="">
-          </div>
-          <div class="stat-content">
-            <div class="stat-value">4.8</div>
-            <div class="stat-label">Rata-rata Rating</div>
-          </div>
+        <!-- TABEL VIDEO TERPOPULER & RATING TERBARU -->
+        <div class="grid-2" style="margin-top: 20px;">
+
+          <section class="card">
+            <div class="card-head">
+              <div class="card-header-with-link">
+                <h2>🎥 Video Terpopuler</h2>
+                <a class="link" href="#">Lihat Semua ›</a>
+              </div>
+            </div>
+
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Judul Video</th>
+                  <th>Paket</th>
+                  <th>Penonton</th>
+                  <th>Selesai</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="table-title">Pengenalan Alfabet</div>
+                    <div class="table-subtitle">Video 1 • 8 menit</div>
+                  </td>
+                  <td>Paket Dasar</td>
+                  <td><strong>156</strong> <span style="color:#7A8BB7; font-size:12px;">murid</span></td>
+                  <td>
+                    <div class="flex-between">
+                      <span>78%</span>
+                      <div class="progress-mini">
+                        <div class="progress-mini-fill" style="width:78%"></div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="table-title">Angka 1-10</div>
+                    <div class="table-subtitle">Video 3 • 10 menit</div>
+                  </td>
+                  <td>Paket Dasar</td>
+                  <td><strong>142</strong> <span style="color:#7A8BB7; font-size:12px;">murid</span></td>
+                  <td>
+                    <div class="flex-between">
+                      <span>82%</span>
+                      <div class="progress-mini">
+                        <div class="progress-mini-fill" style="width:82%"></div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="table-title">Salam & Sapaan</div>
+                    <div class="table-subtitle">Video 2 • 15 menit</div>
+                  </td>
+                  <td>Paket Profesional</td>
+                  <td><strong>98</strong> <span style="color:#7A8BB7; font-size:12px;">murid</span></td>
+                  <td>
+                    <div class="flex-between">
+                      <span>65%</span>
+                      <div class="progress-mini">
+                        <div class="progress-mini-fill" style="width:65%"></div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="table-title">Kata Sehari-hari</div>
+                    <div class="table-subtitle">Video 5 • 12 menit</div>
+                  </td>
+                  <td>Paket Profesional</td>
+                  <td><strong>87</strong> <span style="color:#7A8BB7; font-size:12px;">murid</span></td>
+                  <td>
+                    <div class="flex-between">
+                      <span>71%</span>
+                      <div class="progress-mini">
+                        <div class="progress-mini-fill" style="width:71%"></div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="table-title">Warna & Bentuk</div>
+                    <div class="table-subtitle">Video 4 • 7 menit</div>
+                  </td>
+                  <td>Paket Dasar</td>
+                  <td><strong>76</strong> <span style="color:#7A8BB7; font-size:12px;">murid</span></td>
+                  <td>
+                    <div class="flex-between">
+                      <span>88%</span>
+                      <div class="progress-mini">
+                        <div class="progress-mini-fill" style="width:88%"></div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="card-foot" style="margin-top: 15px;">
+              <span style="color:#7A8BB7; font-size:13px;">Total 12 video • Update 2 jam lalu</span>
+            </div>
+          </section>
+
+          <section class="card">
+            <div class="card-head">
+              <div class="card-header-with-link">
+                <h2>⭐ Rating Terbaru</h2>
+                <a class="link" href="#">Lihat Semua ›</a>
+              </div>
+            </div>
+
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Murid</th>
+                  <th>Rating</th>
+                  <th>Ulasan</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="table-title">Andi Saputra</div>
+                    <div class="table-subtitle">2 hari lalu</div>
+                  </td>
+                  <td>
+                    <span style="color: #FFB800;">⭐⭐⭐⭐⭐</span>
+                    <span style="color:#2D3C6A; font-weight:600; margin-left:5px;">5.0</span>
+                  </td>
+                  <td>
+                    <div style="max-width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                      "Mantap banget penjelasannya!"
+                    </div>
+                  </td>
+                  <td><span class="badge-success">Baru</span></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="table-title">Siti Nurhaliza</div>
+                    <div class="table-subtitle">5 hari lalu</div>
+                  </td>
+                  <td>
+                    <span style="color: #FFB800;">⭐⭐⭐⭐</span>
+                    <span style="color:#2D3C6A; font-weight:600; margin-left:5px;">4.0</span>
+                  </td>
+                  <td>
+                    <div style="max-width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                      "Bagus, tapi kurang cepat"
+                    </div>
+                  </td>
+                  <td><span class="badge-warning">Perlu respon</span></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="table-title">Budi Santoso</div>
+                    <div class="table-subtitle">1 minggu lalu</div>
+                  </td>
+                  <td>
+                    <span style="color: #FFB800;">⭐⭐⭐⭐⭐</span>
+                    <span style="color:#2D3C6A; font-weight:600; margin-left:5px;">5.0</span>
+                  </td>
+                  <td>
+                    <div style="max-width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                      "Gurunya asik, mudah dipahami"
+                    </div>
+                  </td>
+                  <td><span style="color:#7A8BB7; font-size:12px;">-</span></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="table-title">Dewi Lestari</div>
+                    <div class="table-subtitle">1 minggu lalu</div>
+                  </td>
+                  <td>
+                    <span style="color: #FFB800;">⭐⭐⭐⭐</span>
+                    <span style="color:#2D3C6A; font-weight:600; margin-left:5px;">4.0</span>
+                  </td>
+                  <td>
+                    <div style="max-width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                      "Tolong tambahin materi isyarat daerah"
+                    </div>
+                  </td>
+                  <td><span style="color:#7A8BB7; font-size:12px;">-</span></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="card-foot" style="margin-top: 15px;">
+              <span style="color:#7A8BB7; font-size:13px;">Rata-rata rating: 4.8 dari 128 ulasan</span>
+            </div>
+          </section>
         </div>
-      </div>
-
-      <!-- Row: Aktivitas Terbaru + Buat Materi -->
-      <div class="grid-2">
-
-        <section class="card">
-          <div class="card-head">
-            <h2>Aktivitas Terbaru Murid</h2>
-            <span class="badge">Terbaru</span>
-          </div>
-
-          <div class="activity-list">
-            <div class="activity-item">
-              <div class="activity-avatar">
-                <img src="{{ asset('img/user.png') }}" alt="">
-              </div>
-              <div class="activity-content">
-                <div class="activity-name">[Nama Murid]</div>
-                <div class="activity-desc">Mengakses Paket Dasar</div>
-                <div class="activity-time">1 hari yang lalu</div>
-              </div>
-            </div>
-
-            <div class="activity-item">
-              <div class="activity-avatar">
-                <img src="{{ asset('img/user.png') }}" alt="">
-              </div>
-              <div class="activity-content">
-                <div class="activity-name">[Nama Murid]</div>
-                <div class="activity-desc">Selesai Kuis [Judul Kuis], Skor: 90</div>
-                <div class="activity-time">2 hari yang lalu</div>
-              </div>
-            </div>
-
-            <div class="activity-item">
-              <div class="activity-avatar">
-                <img src="{{ asset('img/user.png') }}" alt="">
-              </div>
-              <div class="activity-content">
-                <div class="activity-name">[Nama Murid]</div>
-                <div class="activity-desc">Menyelesaikan Paket Dasar</div>
-                <div class="activity-time">3 hari yang lalu</div>
-              </div>
-            </div>
-
-            <div class="activity-item">
-              <div class="activity-avatar">
-                <img src="{{ asset('img/user.png') }}" alt="">
-              </div>
-              <div class="activity-content">
-                <div class="activity-name">[Nama Murid]</div>
-                <div class="activity-desc">Memberi rating 5 ⭐</div>
-                <div class="activity-time">4 hari yang lalu</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="card-foot">
-            <a class="link" href="#">Lihat Semua Aktivitas ›</a>
-          </div>
-        </section>
-
-        <section class="card create-card">
-          <div class="card-head">
-            <h2>Buat Materi Baru</h2>
-          </div>
-
-          <div class="create-content">
-            <div class="create-icon">
-              <img src="{{ asset('img/upload.png') }}" alt="">
-            </div>
-            <div class="create-text">
-              Upload dan kelola video pembelajaran bahasa isyaratmu!
-            </div>
-            <button class="btn btn-large">+ Tambah Materi</button>
-          </div>
-
-          <div class="quick-stats">
-            <div class="quick-stat">
-              <div class="quick-value">5</div>
-              <div class="quick-label">Paket Dibuat</div>
-            </div>
-            <div class="quick-stat">
-              <div class="quick-value">24</div>
-              <div class="quick-label">Total Video</div>
-            </div>
-            <div class="quick-stat">
-              <div class="quick-value">1.2k</div>
-              <div class="quick-label">Total Murid</div>
-            </div>
-            <div class="quick-stat">
-              <div class="quick-value">4.8</div>
-              <div class="quick-label">Rating</div>
-            </div>
-          </div>
-        </section>
-      </div>
-
-      <!-- TABEL VIDEO TERPOPULER & RATING TERBARU -->
-      <div class="grid-2" style="margin-top: 20px;">
-
-        <section class="card">
-          <div class="card-head">
-            <div class="card-header-with-link">
-              <h2>🎥 Video Terpopuler</h2>
-              <a class="link" href="#">Lihat Semua ›</a>
-            </div>
-          </div>
-
-          <table class="data-table">
-            <thead>
-              <tr>
-                <th>Judul Video</th>
-                <th>Paket</th>
-                <th>Penonton</th>
-                <th>Selesai</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <div class="table-title">Pengenalan Alfabet</div>
-                  <div class="table-subtitle">Video 1 • 8 menit</div>
-                </td>
-                <td>Paket Dasar</td>
-                <td><strong>156</strong> <span style="color:#7A8BB7; font-size:12px;">murid</span></td>
-                <td>
-                  <div class="flex-between">
-                    <span>78%</span>
-                    <div class="progress-mini">
-                      <div class="progress-mini-fill" style="width:78%"></div>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="table-title">Angka 1-10</div>
-                  <div class="table-subtitle">Video 3 • 10 menit</div>
-                </td>
-                <td>Paket Dasar</td>
-                <td><strong>142</strong> <span style="color:#7A8BB7; font-size:12px;">murid</span></td>
-                <td>
-                  <div class="flex-between">
-                    <span>82%</span>
-                    <div class="progress-mini">
-                      <div class="progress-mini-fill" style="width:82%"></div>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="table-title">Salam & Sapaan</div>
-                  <div class="table-subtitle">Video 2 • 15 menit</div>
-                </td>
-                <td>Paket Profesional</td>
-                <td><strong>98</strong> <span style="color:#7A8BB7; font-size:12px;">murid</span></td>
-                <td>
-                  <div class="flex-between">
-                    <span>65%</span>
-                    <div class="progress-mini">
-                      <div class="progress-mini-fill" style="width:65%"></div>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="table-title">Kata Sehari-hari</div>
-                  <div class="table-subtitle">Video 5 • 12 menit</div>
-                </td>
-                <td>Paket Profesional</td>
-                <td><strong>87</strong> <span style="color:#7A8BB7; font-size:12px;">murid</span></td>
-                <td>
-                  <div class="flex-between">
-                    <span>71%</span>
-                    <div class="progress-mini">
-                      <div class="progress-mini-fill" style="width:71%"></div>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="table-title">Warna & Bentuk</div>
-                  <div class="table-subtitle">Video 4 • 7 menit</div>
-                </td>
-                <td>Paket Dasar</td>
-                <td><strong>76</strong> <span style="color:#7A8BB7; font-size:12px;">murid</span></td>
-                <td>
-                  <div class="flex-between">
-                    <span>88%</span>
-                    <div class="progress-mini">
-                      <div class="progress-mini-fill" style="width:88%"></div>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
-          <div class="card-foot" style="margin-top: 15px;">
-            <span style="color:#7A8BB7; font-size:13px;">Total 12 video • Update 2 jam lalu</span>
-          </div>
-        </section>
-
-        <section class="card">
-          <div class="card-head">
-            <div class="card-header-with-link">
-              <h2>⭐ Rating Terbaru</h2>
-              <a class="link" href="#">Lihat Semua ›</a>
-            </div>
-          </div>
-
-          <table class="data-table">
-            <thead>
-              <tr>
-                <th>Murid</th>
-                <th>Rating</th>
-                <th>Ulasan</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <div class="table-title">Andi Saputra</div>
-                  <div class="table-subtitle">2 hari lalu</div>
-                </td>
-                <td>
-                  <span style="color: #FFB800;">⭐⭐⭐⭐⭐</span>
-                  <span style="color:#2D3C6A; font-weight:600; margin-left:5px;">5.0</span>
-                </td>
-                <td>
-                  <div style="max-width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                    "Mantap banget penjelasannya!"
-                  </div>
-                </td>
-                <td>
-                  <span class="badge-success">Baru</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="table-title">Siti Nurhaliza</div>
-                  <div class="table-subtitle">5 hari lalu</div>
-                </td>
-                <td>
-                  <span style="color: #FFB800;">⭐⭐⭐⭐</span>
-                  <span style="color:#2D3C6A; font-weight:600; margin-left:5px;">4.0</span>
-                </td>
-                <td>
-                  <div style="max-width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                    "Bagus, tapi kurang cepat"
-                  </div>
-                </td>
-                <td>
-                  <span class="badge-warning">Perlu respon</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="table-title">Budi Santoso</div>
-                  <div class="table-subtitle">1 minggu lalu</div>
-                </td>
-                <td>
-                  <span style="color: #FFB800;">⭐⭐⭐⭐⭐</span>
-                  <span style="color:#2D3C6A; font-weight:600; margin-left:5px;">5.0</span>
-                </td>
-                <td>
-                  <div style="max-width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                    "Gurunya asik, mudah dipahami"
-                  </div>
-                </td>
-                <td>
-                  <span style="color:#7A8BB7; font-size:12px;">-</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="table-title">Dewi Lestari</div>
-                  <div class="table-subtitle">1 minggu lalu</div>
-                </td>
-                <td>
-                  <span style="color: #FFB800;">⭐⭐⭐⭐</span>
-                  <span style="color:#2D3C6A; font-weight:600; margin-left:5px;">4.0</span>
-                </td>
-                <td>
-                  <div style="max-width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                    "Tolong tambahin materi isyarat daerah"
-                  </div>
-                </td>
-                <td>
-                  <span style="color:#7A8BB7; font-size:12px;">-</span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
-          <div class="card-foot" style="margin-top: 15px;">
-            <span style="color:#7A8BB7; font-size:13px;">Rata-rata rating: 4.8 dari 128 ulasan</span>
-          </div>
-        </section>
-      </div>
 
       @endif
 
