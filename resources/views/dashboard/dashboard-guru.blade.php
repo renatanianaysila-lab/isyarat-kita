@@ -25,7 +25,6 @@
       border-collapse: collapse;
       margin-top: 10px;
     }
-
     .data-table th {
       text-align: left;
       padding: 12px 8px;
@@ -35,17 +34,14 @@
       font-size: 13px;
       border-radius: 8px 8px 0 0;
     }
-
     .data-table td {
       padding: 12px 8px;
       border-bottom: 1px solid #EDF2F7;
       font-size: 14px;
     }
-
     .data-table tr:hover {
       background: #F8F9FF;
     }
-
     .data-table .badge-success {
       background: #E3FCEF;
       color: #0A7B4B;
@@ -54,7 +50,6 @@
       font-size: 12px;
       font-weight: 600;
     }
-
     .data-table .badge-warning {
       background: #FFF3E0;
       color: #B45B0A;
@@ -63,7 +58,6 @@
       font-size: 12px;
       font-weight: 600;
     }
-
     .progress-mini {
       width: 60px;
       height: 6px;
@@ -73,30 +67,25 @@
       display: inline-block;
       margin-right: 8px;
     }
-
     .progress-mini-fill {
       height: 100%;
       background: #2D3C6A;
       border-radius: 10px;
     }
-
     .flex-between {
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-
     .table-title {
       font-weight: 600;
       color: #1A1F36;
       margin-bottom: 5px;
     }
-
     .table-subtitle {
       font-size: 13px;
       color: #7A8BB7;
     }
-
     .card-header-with-link {
       display: flex;
       justify-content: space-between;
@@ -116,58 +105,10 @@
     <!-- SIDEBAR -->
     @include('layouts.sidebar-guru')
 
-      <nav class="menu">
-        <a class="menu-item {{ $menu == 'dashboard' ? 'active' : '' }}" href="{{ url('/dashboard-guru?menu=dashboard') }}">
-          <img class="menu-icon" src="{{ asset('img/dashboard-square-01.png') }}" alt="">
-          Dashboard
-        </a>
-
-        <a class="menu-item {{ $menu == 'profil' ? 'active' : '' }}" href="{{ url('/dashboard-guru?menu=profil') }}">
-          <img class="menu-icon" src="{{ asset('img/user.png') }}" alt="">
-          Profil Guru
-        </a>
-
-        <a class="menu-item {{ $menu == 'paket' ? 'active' : '' }}" href="{{ url('/dashboard-guru?menu=paket') }}">
-          <img class="menu-icon" src="{{ asset('img/katalog.png') }}" alt="">
-          Kelola Paket
-        </a>
-
-        <a class="menu-item {{ $menu == 'video' ? 'active' : '' }}" href="{{ url('/dashboard-guru?menu=video') }}">
-          <img class="menu-icon" src="{{ asset('img/materi.png') }}" alt="">
-          Kelola Video
-        </a>
-
-        <a class="menu-item {{ $menu == 'kuis' ? 'active' : '' }}" href="{{ url('/dashboard-guru?menu=kuis') }}">
-          <img class="menu-icon" src="{{ asset('img/kuis.png') }}" alt="">
-          Kelola Kuis
-        </a>
-
-        <a class="menu-item {{ $menu == 'monitoring' ? 'active' : '' }}" href="{{ url('/dashboard-guru?menu=monitoring') }}">
-          <img class="menu-icon" src="{{ asset('img/user.png') }}" alt="">
-          Monitoring Murid
-        </a>
-
-        <a class="menu-item {{ $menu == 'feedback' ? 'active' : '' }}" href="{{ url('/dashboard-guru?menu=feedback') }}">
-          <img class="menu-icon" src="{{ asset('img/feedback.png') }}" alt="">
-          Feedback & Rating
-        </a>
-
-        <a class="menu-item {{ $menu == 'transaksi' ? 'active' : '' }}" href="{{ url('/dashboard-guru?menu=transaksi') }}">
-          <img class="menu-icon" src="{{ asset('img/transaction-history.png') }}" alt="">
-          Transaksi
-        </a>
-
-        <a class="menu-item danger" href="/login">
-          <img class="menu-icon" src="{{ asset('img/logout-04.png') }}" alt="">
-          Logout
-        </a>
-      </nav>
-    </aside>
-
     <!-- MAIN CONTENT -->
     <main class="main">
 
-      <!-- TOPBAR (search dihapus) -->
+      <!-- TOPBAR -->
       <header class="topbar">
         <div class="top-actions">
           <button class="icon-btn" title="Notifikasi">
@@ -215,7 +156,6 @@
               <div class="stat-label">Total Video</div>
             </div>
           </div>
-
           <div class="stat-card">
             <div class="stat-icon">
               <img src="{{ asset('img/user.png') }}" alt="">
@@ -225,7 +165,6 @@
               <div class="stat-label">Total Murid</div>
             </div>
           </div>
-
           <div class="stat-card">
             <div class="stat-icon">
               <img src="{{ asset('img/feedback.png') }}" alt="">
@@ -239,13 +178,11 @@
 
         <!-- Row: Aktivitas Terbaru + Buat Materi -->
         <div class="grid-2">
-
           <section class="card">
             <div class="card-head">
               <h2>Aktivitas Terbaru Murid</h2>
               <span class="badge">Terbaru</span>
             </div>
-
             <div class="activity-list">
               <div class="activity-item">
                 <div class="activity-avatar">
@@ -257,7 +194,6 @@
                   <div class="activity-time">1 hari yang lalu</div>
                 </div>
               </div>
-
               <div class="activity-item">
                 <div class="activity-avatar">
                   <img src="{{ asset('img/user.png') }}" alt="">
@@ -268,7 +204,6 @@
                   <div class="activity-time">2 hari yang lalu</div>
                 </div>
               </div>
-
               <div class="activity-item">
                 <div class="activity-avatar">
                   <img src="{{ asset('img/user.png') }}" alt="">
@@ -279,7 +214,6 @@
                   <div class="activity-time">3 hari yang lalu</div>
                 </div>
               </div>
-
               <div class="activity-item">
                 <div class="activity-avatar">
                   <img src="{{ asset('img/user.png') }}" alt="">
@@ -291,7 +225,6 @@
                 </div>
               </div>
             </div>
-
             <div class="card-foot">
               <a class="link" href="#">Lihat Semua Aktivitas ›</a>
             </div>
@@ -301,7 +234,6 @@
             <div class="card-head">
               <h2>Buat Materi Baru</h2>
             </div>
-
             <div class="create-content">
               <div class="create-icon">
                 <img src="{{ asset('img/upload.png') }}" alt="">
@@ -311,7 +243,6 @@
               </div>
               <button class="btn btn-large">+ Tambah Materi</button>
             </div>
-
             <div class="quick-stats">
               <div class="quick-stat">
                 <div class="quick-value">5</div>
@@ -335,7 +266,6 @@
 
         <!-- TABEL VIDEO TERPOPULER & RATING TERBARU -->
         <div class="grid-2" style="margin-top: 20px;">
-
           <section class="card">
             <div class="card-head">
               <div class="card-header-with-link">
@@ -343,7 +273,6 @@
                 <a class="link" href="#">Lihat Semua ›</a>
               </div>
             </div>
-
             <table class="data-table">
               <thead>
                 <tr>
@@ -436,7 +365,6 @@
                 </tr>
               </tbody>
             </table>
-
             <div class="card-foot" style="margin-top: 15px;">
               <span style="color:#7A8BB7; font-size:13px;">Total 12 video • Update 2 jam lalu</span>
             </div>
@@ -449,7 +377,6 @@
                 <a class="link" href="#">Lihat Semua ›</a>
               </div>
             </div>
-
             <table class="data-table">
               <thead>
                 <tr>
@@ -526,7 +453,6 @@
                 </tr>
               </tbody>
             </table>
-
             <div class="card-foot" style="margin-top: 15px;">
               <span style="color:#7A8BB7; font-size:13px;">Rata-rata rating: 4.8 dari 128 ulasan</span>
             </div>
