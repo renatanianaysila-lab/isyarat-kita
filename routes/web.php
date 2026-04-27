@@ -118,3 +118,18 @@ Route::get('/kuis-abjad', function () {
 Route::get('/kuis-angka', function () {
     return view('belajar.kuis-angka');
 })->name('kuis.angka');
+
+// ===================== PROFIL GURU (HALAMAN TERPISAH) =====================
+Route::get('/profil-guru', function () {
+    if (!session('dummy_login')) {
+        return redirect('/login');
+    }
+    return view('sections.guru-profile');
+})->name('profil.guru');
+
+Route::get('/profil-guru/edit', function () {
+    if (!session('dummy_login')) {
+        return redirect('/login');
+    }
+    return view('sections.edit-profile-guru');
+})->name('profil.guru.edit');

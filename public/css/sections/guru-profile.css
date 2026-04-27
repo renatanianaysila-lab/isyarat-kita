@@ -1,283 +1,238 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* ========================================
+   PROFIL GURU - VIEW STYLE (CLASS UNIK)
+   ======================================== */
 
-body {
-    font-family: 'Inter', 'Segoe UI', 'Poppins', system-ui, -apple-system, sans-serif;
-    background: linear-gradient(145deg, #667eea 0%, #764ba2 100%);
+.guru-profile-wrapper {
+    padding: 28px 32px;
+    background: #F8FAFC;
     min-height: 100vh;
-    padding: 2rem;
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
 }
 
-.profile-container {
-    max-width: 1200px;
+.guru-profile-main-card {
+    max-width: 1100px;
     margin: 0 auto;
+    background: #FFFFFF;
+    border-radius: 28px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid #E2E8F0;
+    overflow: hidden;
 }
 
-.profile-card {
-    background: rgba(255, 255, 255, 0.98);
-    border-radius: 2rem;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-    overflow: hidden;
+/* Header */
+.guru-profile-header {
+    padding: 24px 32px;
+    border-bottom: 1px solid #E2E8F0;
+    background: #FFFFFF;
+}
+
+.guru-profile-header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1E293B;
+    margin-bottom: 6px;
+}
+
+.guru-profile-header p {
+    font-size: 14px;
+    color: #64748B;
+}
+
+/* Content Layout */
+.guru-profile-body {
     display: flex;
     flex-wrap: wrap;
-    backdrop-filter: blur(10px);
+    padding: 32px;
+    gap: 40px;
 }
 
-/* Sidebar Profil */
-.profile-sidebar {
-    flex: 1;
-    min-width: 300px;
-    background: linear-gradient(145deg, #1e293b 0%, #0f172a 100%);
-    padding: 3rem 2rem;
+/* ========== LEFT SECTION ========== */
+.guru-profile-left {
+    flex: 0 0 280px;
     text-align: center;
-    color: white;
 }
 
-.photo-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.guru-profile-photo-wrapper {
+    margin-bottom: 24px;
 }
 
-.photo-container {
-    position: relative;
-    display: inline-block;
-    margin-bottom: 1rem;
-}
-
-.profile-avatar {
-    width: 200px;
-    height: 200px;
+.guru-profile-avatar {
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid rgba(255, 255, 255, 0.9);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
-    background: #cbd5e1;
+    border: 4px solid #FFFFFF;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background: #E2E8F0;
 }
 
-.camera-icon {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    border-radius: 50%;
-    width: 48px;
-    height: 48px;
+/* Stats */
+.guru-profile-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 16px;
+    padding: 16px;
+    background: #F8FAFC;
+    border-radius: 20px;
+}
+
+.guru-profile-stat-item {
+    text-align: center;
+}
+
+.guru-profile-stat-number {
+    font-size: 22px;
+    font-weight: 800;
+    color: #1E293B;
+}
+
+.guru-profile-stat-label {
+    font-size: 11px;
+    color: #64748B;
+    margin-top: 4px;
+}
+
+/* ========== RIGHT SECTION ========== */
+.guru-profile-right {
+    flex: 1;
+}
+
+.guru-profile-info h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1E293B;
+    margin-bottom: 12px;
+}
+
+.guru-profile-badge {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.guru-badge-active {
+    background: #E3FCEF;
+    color: #0A7B4B;
+    padding: 4px 14px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.guru-badge-subject {
+    background: #EFF6FF;
+    color: #2563EB;
+    padding: 4px 14px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.guru-profile-description {
+    background: #F8FAFC;
+    padding: 16px 20px;
+    border-radius: 16px;
+    color: #475569;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+/* Info List */
+.guru-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.guru-info-item {
     display: flex;
     align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid #F1F5F9;
+}
+
+.guru-info-icon {
+    font-size: 20px;
+    width: 32px;
+}
+
+.guru-info-label {
+    font-weight: 600;
+    color: #64748B;
+    width: 100px;
+    font-size: 13px;
+}
+
+.guru-info-value {
+    flex: 1;
+    color: #1E293B;
+    font-size: 14px;
+}
+
+/* Actions */
+.guru-profile-actions {
+    margin-top: 16px;
+}
+
+.guru-btn-edit {
+    display: inline-flex;
+    align-items: center;
     justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
-    font-size: 1.5rem;
-    border: 2px solid white;
-}
-
-.camera-icon:hover {
-    transform: scale(1.1);
-    background: linear-gradient(135deg, #5a67d8, #6b46a0);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
-}
-
-.file-input {
-    display: none;
-}
-
-.photo-info {
-    font-size: 0.75rem;
-    margin-top: 1rem;
-    opacity: 0.8;
-    line-height: 1.5;
-}
-
-.photo-info span {
-    font-size: 0.7rem;
-    opacity: 0.7;
-}
-
-.preview-container {
-    margin-top: 1rem;
-    display: none;
-    width: 100%;
-    max-width: 200px;
-}
-
-.preview-container img {
-    width: 100%;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
-}
-
-/* Form Wrapper */
-.profile-form-wrapper {
-    flex: 2;
-    min-width: 500px;
-    padding: 3rem;
-}
-
-.form-header {
-    margin-bottom: 2rem;
-}
-
-.form-title {
-    font-size: 1.875rem;
-    font-weight: 700;
-    color: #1e293b;
-    padding-bottom: 0.75rem;
-    border-bottom: 3px solid #667eea;
-    display: inline-block;
-}
-
-/* Notification */
-.notification {
-    padding: 1rem 1.25rem;
-    border-radius: 0.75rem;
-    margin-bottom: 1.5rem;
-    display: none;
-    animation: slideDown 0.3s ease;
-    font-weight: 500;
-}
-
-.notification-success {
-    background: #dcfce7;
-    color: #166534;
-    border-left: 4px solid #22c55e;
-}
-
-.notification-error {
-    background: #fee2e2;
-    color: #991b1b;
-    border-left: 4px solid #ef4444;
-}
-
-@keyframes slideDown {
-    from {
-        transform: translateY(-20px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-/* Form Elements */
-.input-group {
-    margin-bottom: 1.5rem;
-}
-
-.input-label {
-    display: block;
-    font-weight: 600;
-    color: #334155;
-    margin-bottom: 0.5rem;
-    font-size: 0.875rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.input-field,
-.textarea-field {
-    width: 100%;
-    padding: 0.75rem 1rem;
-    border: 2px solid #e2e8f0;
-    border-radius: 0.75rem;
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
-    font-family: inherit;
-    background: #f8fafc;
-}
-
-.input-field:focus,
-.textarea-field:focus {
-    outline: none;
-    border-color: #667eea;
-    background: white;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-}
-
-.textarea-field {
-    resize: vertical;
-    min-height: 100px;
-}
-
-.row-two-columns {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-}
-
-.save-button {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    gap: 8px;
+    background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
     color: white;
-    border: none;
-    padding: 1rem 2rem;
-    font-size: 1rem;
+    padding: 12px 28px;
+    border-radius: 40px;
+    font-size: 14px;
     font-weight: 600;
-    border-radius: 0.75rem;
+    text-decoration: none;
+    transition: all 0.3s;
+    border: none;
     cursor: pointer;
-    width: 100%;
-    transition: all 0.3s ease;
-    margin-top: 0.5rem;
-    letter-spacing: 0.5px;
 }
 
-.save-button:hover {
+.guru-btn-edit:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
-}
-
-.save-button:active {
-    transform: translateY(0);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-    body {
-        padding: 1rem;
+@media (max-width: 800px) {
+    .guru-profile-wrapper {
+        padding: 16px;
     }
     
-    .row-two-columns {
-        grid-template-columns: 1fr;
-        gap: 1rem;
+    .guru-profile-body {
+        flex-direction: column;
+        padding: 24px;
     }
     
-    .profile-form-wrapper {
-        min-width: auto;
-        padding: 1.5rem;
+    .guru-profile-left {
+        flex: auto;
+        max-width: 100%;
     }
     
-    .profile-sidebar {
-        min-width: auto;
-        padding: 2rem 1.5rem;
+    .guru-profile-avatar {
+        width: 140px;
+        height: 140px;
     }
     
-    .profile-avatar {
-        width: 150px;
-        height: 150px;
+    .guru-profile-stats {
+        max-width: 300px;
+        margin: 16px auto 0;
     }
     
-    .camera-icon {
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
+    .guru-info-item {
+        flex-wrap: wrap;
     }
     
-    .form-title {
-        font-size: 1.5rem;
+    .guru-info-label {
+        width: auto;
+        min-width: 100px;
     }
-}
-
-/* Loading state */
-.save-button.loading {
-    opacity: 0.7;
-    cursor: not-allowed;
-    transform: none;
-}
-
-.save-button.loading::before {
-    content: "⏳ ";
 }

@@ -15,7 +15,7 @@
 <div class="dashboard-container">
   <!-- GREETING -->
   <div class="greeting-section">
-    <h1>Halo, <span class="teacher-name">Naysila</span> 👋</h1>
+    <h1>Halo, <span class="teacher-name">Renata Nian Naysila</span> 👋</h1>
     <p>Pantau aktivitas murid dan kelola materi pembelajaran bahasa isyaratmu! 📚✨</p>
   </div>
 
@@ -75,7 +75,7 @@
             </svg>
           </div>
           <div class="activity-details">
-            <div class="activity-name">Ahmad Fauzi</div>
+            <div class="activity-name">Rina Safitri</div>
             <div class="activity-action">Mengakses Paket Gratis • Video "Huruf A-Z"</div>
             <div class="activity-time">1 hari yang lalu</div>
           </div>
@@ -88,7 +88,7 @@
             </svg>
           </div>
           <div class="activity-details">
-            <div class="activity-name">Siti Rahma</div>
+            <div class="activity-name">Budi Prasetyo</div>
             <div class="activity-action">Selesai Kuis [Alfabet Isyarat], Skor: 95</div>
             <div class="activity-time">2 hari yang lalu</div>
           </div>
@@ -101,7 +101,7 @@
             </svg>
           </div>
           <div class="activity-details">
-            <div class="activity-name">Dewi Lestari</div>
+            <div class="activity-name">Citra Amelia</div>
             <div class="activity-action">Menyelesaikan Paket Profesional • 100% tonton</div>
             <div class="activity-time">3 hari yang lalu</div>
           </div>
@@ -114,7 +114,7 @@
             </svg>
           </div>
           <div class="activity-details">
-            <div class="activity-name">Bagas Putra</div>
+            <div class="activity-name">Dian Nuraeni</div>
             <div class="activity-action">Memberi rating 5 ⭐ & ulasan positif</div>
             <div class="activity-time">4 hari yang lalu</div>
           </div>
@@ -184,7 +184,7 @@
             <td><div class="flex-between"><span>65%</span><div class="progress-bar-mini"><div class="progress-fill" style="width:65%"></div></div></div></div></div></div></td>
           </tr>
           <tr>
-            <td><div class="title-with-meta">Kata Sehari-hari</div><div class="meta-small">Video 5 • 12 menit</div></div></div></td>
+            <td><div class="title-with-meta">Percakapan Sehari-hari</div><div class="meta-small">Video 5 • 12 menit</div></div></div></td>
             <td>Paket Premium</div></div></div></td>
             <td><strong>87</strong> <span class="text-muted">murid</span></div></div></div></td>
             <td><div class="flex-between"><span>71%</span><div class="progress-bar-mini"><div class="progress-fill" style="width:71%"></div></div></div></div></div></div></td>
@@ -214,25 +214,25 @@
         </thead>
         <tbody>
           <tr>
-            <td><div class="title-with-meta">Andi Saputra</div><div class="meta-small">2 hari lalu</div></div></td>
+            <td><div class="title-with-meta">Eka Wijaya</div><div class="meta-small">2 hari lalu</div></div></td>
             <td><span class="rating-stars">★★★★★</span> <strong>5.0</strong></div></div></td>
             <td><span style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: inline-block; max-width: 160px;">"Mantap banget penjelasannya!"</span></div></div></td>
             <td><span class="badge-green">Baru</span></div></div></td>
           </tr>
           <tr>
-            <td><div class="title-with-meta">Siti Nurhaliza</div><div class="meta-small">5 hari lalu</div></div></div></td>
+            <td><div class="title-with-meta">Fitri Handayani</div><div class="meta-small">5 hari lalu</div></div></div></td>
             <td><span class="rating-stars">★★★★☆</span> <strong>4.0</strong></div></div></td>
             <td><span style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: inline-block; max-width: 160px;">"Bagus, tapi kurang cepat"</span></div></div></td>
             <td><span class="badge-amber">Perlu respon</span></div></div></td>
           </tr>
           <tr>
-            <td><div class="title-with-meta">Budi Santoso</div><div class="meta-small">1 minggu lalu</div></div></div></td>
+            <td><div class="title-with-meta">Gilang Ramadhan</div><div class="meta-small">1 minggu lalu</div></div></div></td>
             <td><span class="rating-stars">★★★★★</span> <strong>5.0</strong></div></div></td>
             <td><span style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: inline-block; max-width: 160px;">"Gurunya asik, mudah dipahami"</span></div></div></td>
             <td><span class="text-muted">-</span></div></div></td>
           </tr>
           <tr>
-            <td><div class="title-with-meta">Dewi Lestari</div><div class="meta-small">1 minggu lalu</div></div></div></td>
+            <td><div class="title-with-meta">Hani Safitri</div><div class="meta-small">1 minggu lalu</div></div></div></td>
             <td><span class="rating-stars">★★★★☆</span> <strong>4.0</strong></div></div></td>
             <td><span style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: inline-block; max-width: 160px;">"Tolong tambahin materi isyarat daerah"</span></div></div></td>
             <td><span class="text-muted">-</span></div></div></td>

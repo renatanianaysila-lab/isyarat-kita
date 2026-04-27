@@ -1,3 +1,7 @@
+@php
+    $menu = request('menu', 'dashboard');
+@endphp
+
 <!-- SIDEBAR GURU -->
 <aside class="sidebar">
   <div class="brand">
@@ -44,7 +48,7 @@
       <span>Transaksi</span>
     </a>
 
-    <a class="menu-item {{ $menu == 'profil' ? 'active' : '' }}" href="{{ url('/dashboard-guru?menu=profil') }}" data-menu="profil">
+    <a class="menu-item {{ $menu == 'profile' ? 'active' : '' }}" href="{{ url('/dashboard-guru?menu=profile') }}">
       <img class="menu-icon" src="{{ asset('img/user.png') }}" alt="">
       <span>Profil Guru</span>
     </a>
