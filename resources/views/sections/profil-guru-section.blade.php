@@ -63,9 +63,6 @@
 <section class="profile-card">
   <div class="profile-tabs">
     <span class="active">Informasi Pribadi</span>
-    <span>Informasi Akademik</span>
-    <span>Informasi Akun</span>
-    <span>Keamanan</span>
   </div>
 
   <div class="profile-form-table-wrap">
