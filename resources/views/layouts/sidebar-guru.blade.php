@@ -53,9 +53,10 @@
       <span>Profil Guru</span>
     </a>
 
-    <a class="menu-item danger" href="{{ url('/logout') }}" data-menu="logout">
-      <img class="menu-icon" src="{{ asset('img/logout-04.png') }}" alt="">
-      <span>Logout</span>
+    <!-- LOGOUT - PAKAI GET -->
+    <a class="menu-item danger" href="{{ url('/logout') }}">
+    <img class="menu-icon" src="{{ asset('img/logout-04.png') }}" alt="">
+    <span>Logout</span>
     </a>
   </nav>
 </aside>

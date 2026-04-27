@@ -55,7 +55,8 @@ Route::get('/register', function () {
     return view('auth.register');
 })->name('register');
 
-Route::post('/logout', function (Request $request) {
+// ===================== LOGOUT (POST METHOD) =====================
+Route::get('/logout', function (Request $request) {
     session()->forget('dummy_login');
     session()->forget('dummy_user');
     return redirect('/login');
