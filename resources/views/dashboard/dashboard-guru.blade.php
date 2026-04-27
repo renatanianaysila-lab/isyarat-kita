@@ -7,8 +7,12 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ asset('css/layout/sidebar-guru.css') }}">
   <link rel="stylesheet" href="{{ asset('css/dashboard/dashboard-guru.css') }}">
+<<<<<<< HEAD
 <link rel="stylesheet" href="{{ asset('css/sections/kelola-video-guru.css') }}">
 <link rel="stylesheet" href="{{ asset('css/sections/kelola-kuis-guru.css') }}">
 <link rel="stylesheet" href="{{ asset('css/sections/monitoring-murid-guru.css') }}">
@@ -102,6 +106,13 @@
       width: 100%;
     }
   </style>
+=======
+  <link rel="stylesheet" href="{{ asset('css/sections/kelola-paket-guru.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/sections/kelola-video-guru.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/sections/kelola-kuis-guru.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/sections/monitoring-murid-guru.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/sections/transaksi-guru.css') }}">
+>>>>>>> 6df4230955a64022ee5ccdb0a4d7614c9029b418
 </head>
 
 <body>
@@ -112,15 +123,9 @@
   <div class="app">
 
     <!-- SIDEBAR -->
-    <aside class="sidebar">
-      <div class="brand">
-        <img class="logo-img" src="{{ asset('img/HANYA LOGO - Salin.png') }}" alt="Logo">
-        <div class="brand-text">
-          <div class="brand-name">IsyaratKita</div>
-          <div class="brand-sub">Dashboard Guru</div>
-        </div>
-      </div>
+    @include('layouts.sidebar-guru')
 
+<<<<<<< HEAD
       <nav class="menu">
         <a class="menu-item {{ $menu == 'dashboard' ? 'active' : '' }}" href="{{ url('/dashboard-guru?menu=dashboard') }}">
           <img class="menu-icon" src="{{ asset('img/dashboard-square-01.png') }}" alt="">
@@ -170,12 +175,15 @@
     </aside>
 
     <!-- MAIN -->
+=======
+    <!-- MAIN CONTENT -->
+>>>>>>> 6df4230955a64022ee5ccdb0a4d7614c9029b418
     <main class="main">
 
       <!-- TOPBAR -->
       <header class="topbar">
         <div class="search">
-          <input type="text" placeholder="Search..." />
+          <input type="text" placeholder="Cari materi, murid, atau kuis..." />
           <img class="search-img" src="{{ asset('img/search-visual.png') }}" alt="Search">
         </div>
 
@@ -192,6 +200,7 @@
         </div>
       </header>
 
+<<<<<<< HEAD
   @if($menu == 'paket')
   @include('sections.kelola-paket-guru')
 @elseif($menu == 'video')
@@ -552,8 +561,31 @@
         </section>
       </div>
 
+=======
+          <!-- CONTENT -->
+      @if($menu == 'paket')
+        @include('sections.kelola-paket-guru')
+      @elseif($menu == 'video')
+        @include('sections.kelola-video-guru')
+      @elseif($menu == 'kuis')
+        @include('sections.kelola-kuis-guru')
+      @elseif($menu == 'monitoring')
+        @include('sections.monitoring-murid-guru')
+      @elseif($menu == 'transaksi')
+        @include('sections.transaksi-guru')
+      @else
+        @include('dashboard.dashboard-content-guru')
+>>>>>>> 6df4230955a64022ee5ccdb0a4d7614c9029b418
       @endif
+
     </main>
   </div>
+
+  <!-- JS -->
+<!-- JS -->
+<script src="{{ asset('js/layout/sidebar-guru.js') }}"></script>
+<script src="{{ asset('js/dashboard/dashboard-guru.js') }}"></script>
+<script src="{{ asset('js/sections/transaksi-guru.js') }}"></script>
+
 </body>
 </html>
