@@ -412,13 +412,8 @@
         <div class="paket-activity-left">
           <div class="paket-activity-avatar">👦</div>
           <div>
-<<<<<<< HEAD
             <div class="paket-activity-title">Andi Saputra menyelesaikan kuis “Salam & Sapa”</div>
             <div class="paket-activity-desc">Salam & Sapa</div>
-=======
-            <div class="paket-activity-title">Andi Saputra menyelesaikan materi "Huruf A - Z"</div>
-            <div class="paket-activity-desc">Alfabet Bahasa Isyarat</div>
->>>>>>> 6df4230955a64022ee5ccdb0a4d7614c9029b418
           </div>
         </div>
         <div class="paket-activity-time">1 jam yang lalu</div>
@@ -428,13 +423,8 @@
         <div class="paket-activity-left">
           <div class="paket-activity-avatar">👩</div>
           <div>
-<<<<<<< HEAD
             <div class="paket-activity-title">Siti Nurhaliza menonton video “Mengenal Huruf A-Z”</div>
             <div class="paket-activity-desc">Mengenal Huruf A-Z</div>
-=======
-            <div class="paket-activity-title">Siti Nurhaliza menonton "Angka 1-10"</div>
-            <div class="paket-activity-desc">Angka Bahasa Isyarat</div>
->>>>>>> 6df4230955a64022ee5ccdb0a4d7614c9029b418
           </div>
         </div>
         <div class="paket-activity-time">2 jam yang lalu</div>
@@ -444,13 +434,8 @@
         <div class="paket-activity-left">
           <div class="paket-activity-avatar">👦</div>
           <div>
-<<<<<<< HEAD
             <div class="paket-activity-title">Budi Santoso mengerjakan kuis “Angka 1-10"</div>
             <div class="paket-activity-desc">Angka 1-10</div>
-=======
-            <div class="paket-activity-title">Budi Santoso menyelesaikan "Salam & Sapaan"</div>
-            <div class="paket-activity-desc">Ungkapan salam bahasa isyarat</div>
->>>>>>> 6df4230955a64022ee5ccdb0a4d7614c9029b418
           </div>
         </div>
         <div class="paket-activity-time">3 jam yang lalu</div>
@@ -460,13 +445,8 @@
         <div class="paket-activity-left">
           <div class="paket-activity-avatar">👩</div>
           <div>
-<<<<<<< HEAD
             <div class="paket-activity-title">Aisyah Putri menyelesaikan video “Angka 1-10”</div>
             <div class="paket-activity-desc">Angka 1-10</div>
-=======
-            <div class="paket-activity-title">Aisyah Putri memulai "Ekspresi & Emosi"</div>
-            <div class="paket-activity-desc">Belajar mengekspresikan emosi</div>
->>>>>>> 6df4230955a64022ee5ccdb0a4d7614c9029b418
           </div>
         </div>
         <div class="paket-activity-time">4 jam yang lalu</div>
@@ -476,13 +456,8 @@
         <div class="paket-activity-left">
           <div class="paket-activity-avatar">👨</div>
           <div>
-<<<<<<< HEAD
             <div class="paket-activity-title">Dewi Lestari login ke platform</div>
             <div class="paket-activity-desc">Kata Sehari-hari</div>
-=======
-            <div class="paket-activity-title">Fajar Romadhon mengulang materi "Percakapan Sehari-hari"</div>
-            <div class="paket-activity-desc">Percakapan dasar bahasa isyarat</div>
->>>>>>> 6df4230955a64022ee5ccdb0a4d7614c9029b418
           </div>
         </div>
         <div class="paket-activity-time">5 jam yang lalu</div>

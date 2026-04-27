@@ -12,7 +12,6 @@
   <!-- CSS -->
   <link rel="stylesheet" href="{{ asset('css/layout/sidebar-guru.css') }}">
   <link rel="stylesheet" href="{{ asset('css/dashboard/dashboard-guru.css') }}">
-<<<<<<< HEAD
 <link rel="stylesheet" href="{{ asset('css/sections/kelola-video-guru.css') }}">
 <link rel="stylesheet" href="{{ asset('css/sections/kelola-kuis-guru.css') }}">
 <link rel="stylesheet" href="{{ asset('css/sections/monitoring-murid-guru.css') }}">
@@ -106,13 +105,6 @@
       width: 100%;
     }
   </style>
-=======
-  <link rel="stylesheet" href="{{ asset('css/sections/kelola-paket-guru.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/sections/kelola-video-guru.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/sections/kelola-kuis-guru.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/sections/monitoring-murid-guru.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/sections/transaksi-guru.css') }}">
->>>>>>> 6df4230955a64022ee5ccdb0a4d7614c9029b418
 </head>
 
 <body>
@@ -125,7 +117,6 @@
     <!-- SIDEBAR -->
     @include('layouts.sidebar-guru')
 
-<<<<<<< HEAD
       <nav class="menu">
         <a class="menu-item {{ $menu == 'dashboard' ? 'active' : '' }}" href="{{ url('/dashboard-guru?menu=dashboard') }}">
           <img class="menu-icon" src="{{ asset('img/dashboard-square-01.png') }}" alt="">
@@ -175,18 +166,11 @@
     </aside>
 
     <!-- MAIN -->
-=======
     <!-- MAIN CONTENT -->
->>>>>>> 6df4230955a64022ee5ccdb0a4d7614c9029b418
     <main class="main">
 
       <!-- TOPBAR -->
-      <header class="topbar">
-        <div class="search">
-          <input type="text" placeholder="Cari materi, murid, atau kuis..." />
-          <img class="search-img" src="{{ asset('img/search-visual.png') }}" alt="Search">
-        </div>
-
+      <header class="topbar"
         <div class="top-actions">
           <button class="icon-btn" title="Notifikasi">
             <img class="top-icon" src="{{ asset('img/notification-01.png') }}" alt="">
@@ -200,7 +184,6 @@
         </div>
       </header>
 
-<<<<<<< HEAD
   @if($menu == 'paket')
   @include('sections.kelola-paket-guru')
 @elseif($menu == 'video')
@@ -561,21 +544,6 @@
         </section>
       </div>
 
-=======
-          <!-- CONTENT -->
-      @if($menu == 'paket')
-        @include('sections.kelola-paket-guru')
-      @elseif($menu == 'video')
-        @include('sections.kelola-video-guru')
-      @elseif($menu == 'kuis')
-        @include('sections.kelola-kuis-guru')
-      @elseif($menu == 'monitoring')
-        @include('sections.monitoring-murid-guru')
-      @elseif($menu == 'transaksi')
-        @include('sections.transaksi-guru')
-      @else
-        @include('dashboard.dashboard-content-guru')
->>>>>>> 6df4230955a64022ee5ccdb0a4d7614c9029b418
       @endif
 
     </main>
