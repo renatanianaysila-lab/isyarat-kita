@@ -1,210 +1,379 @@
-document.addEventListener('DOMContentLoaded', function() {
+// ========================================
+// FEEDBACK & RATING GURU - JAVASCRIPT
+// MATERI BAHASA ISYARAT BISINDO
+// ========================================
+
+// DATA MATERI BAHASA ISYARAT
+const materiData = [
+    { id: 1, title: "Pengenalan Huruf A - Z", date: "10/12/2024", icon: "🔤", avgRating: 4.9, totalReviews: 8 },
+    { id: 2, title: "Angka 1 - 10", date: "11/12/2024", icon: "🔢", avgRating: 4.8, totalReviews: 6 },
+    { id: 3, title: "Salam & Sapaan", date: "12/12/2024", icon: "👋", avgRating: 4.9, totalReviews: 7 },
+    { id: 4, title: "Kata Sehari-hari", date: "15/12/2024", icon: "💬", avgRating: 4.7, totalReviews: 5 },
+    { id: 5, title: "Keluarga & Kerabat", date: "18/12/2024", icon: "👨‍👩‍👧", avgRating: 4.8, totalReviews: 6 },
+    { id: 6, title: "Warna & Bentuk", date: "20/12/2024", icon: "🎨", avgRating: 4.9, totalReviews: 5 },
+    { id: 7, title: "Perasaan & Emosi", date: "22/12/2024", icon: "😊", avgRating: 4.8, totalReviews: 4 },
+    { id: 8, title: "Arah & Lokasi", date: "25/12/2024", icon: "🧭", avgRating: 4.7, totalReviews: 4 }
+];
+
+// DATA REVIEWS PER MATERI
+const reviewsData = {
+    1: [ // Pengenalan Huruf A - Z
+        { id: 1, name: "Rina S.", avatar: "R", rating: 5, difficulty: "sedang", comment: "Materinya jelas dan mudah dipahami! Terima kasih", date: "2 hari lalu" },
+        { id: 2, name: "Budi A.", avatar: "B", rating: 5, difficulty: "mudah", comment: "Gampang diikuti, contohnya membantu banget!", date: "3 hari lalu" },
+        { id: 3, name: "Lusi M.", avatar: "L", rating: 4, difficulty: "sulit", comment: "Beberapa bagian perlu dijelaskan lagi ya guru", date: "5 hari lalu" },
+        { id: 4, name: "Dewi K.", avatar: "D", rating: 5, difficulty: "mudah", comment: "Sekarang aku bisa kenalin huruf A-Z pake isyarat!", date: "1 minggu lalu" },
+        { id: 5, name: "Andi P.", avatar: "A", rating: 5, difficulty: "sedang", comment: "Materi keren banget, lanjutkan!", date: "1 minggu lalu" },
+        { id: 6, name: "Citra L.", avatar: "C", rating: 5, difficulty: "mudah", comment: "Cara ngajarnya asik dan tidak membosankan", date: "2 minggu lalu" },
+        { id: 7, name: "Sari M.", avatar: "S", rating: 4, difficulty: "sedang", comment: "Video bagus, tapi durasi terlalu panjang", date: "2 minggu lalu" },
+        { id: 8, name: "Tono W.", avatar: "T", rating: 5, difficulty: "mudah", comment: "Rekomended buat pemula!", date: "3 minggu lalu" }
+    ],
+    2: [ // Angka 1 - 10
+        { id: 9, name: "Rizki F.", avatar: "R", rating: 5, difficulty: "mudah", comment: "Angka 1-10 mudah diikuti! Sekarang bisa berhitung pake isyarat", date: "1 hari lalu" },
+        { id: 10, name: "Nina T.", avatar: "N", rating: 4, difficulty: "sulit", comment: "Agak sulit di angka 6,7,8 karena mirip-mirip", date: "2 hari lalu" },
+        { id: 11, name: "Oscar R.", avatar: "O", rating: 5, difficulty: "sedang", comment: "Penjelasannya santai dan gampang diingat!", date: "4 hari lalu" },
+        { id: 12, name: "Putri M.", avatar: "P", rating: 5, difficulty: "mudah", comment: "Suka banget sama videonya!", date: "5 hari lalu" },
+        { id: 13, name: "Wulan S.", avatar: "W", rating: 4, difficulty: "sedang", comment: "Materi bagus, perlu latihan lebih banyak", date: "1 minggu lalu" },
+        { id: 14, name: "Yuni A.", avatar: "Y", rating: 5, difficulty: "mudah", comment: "Sekarang bisa hitung 1-10 pake tangan!", date: "1 minggu lalu" }
+    ],
+    3: [ // Salam & Sapaan
+        { id: 15, name: "Dini A.", avatar: "D", rating: 5, difficulty: "mudah", comment: "Salam, selamat pagi, terima kasih - semua dijelaskan dengan jelas!", date: "1 hari lalu" },
+        { id: 16, name: "Eko P.", avatar: "E", rating: 5, difficulty: "sedang", comment: "Materi sapaan sudah bagus, suka!", date: "3 hari lalu" },
+        { id: 17, name: "Nia S.", avatar: "N", rating: 5, difficulty: "mudah", comment: "Suka banget sama cara ngajarnya!", date: "5 hari lalu" },
+        { id: 18, name: "Fajar W.", avatar: "F", rating: 5, difficulty: "mudah", comment: "Rekomended buat pemula!", date: "1 minggu lalu" },
+        { id: 19, name: "Gita R.", avatar: "G", rating: 4, difficulty: "sulit", comment: "Bagus tapi perlu gerakan yang lebih lambat", date: "1 minggu lalu" },
+        { id: 20, name: "Hendra S.", avatar: "H", rating: 5, difficulty: "sedang", comment: "Mantap, sekarang bisa salam pake isyarat", date: "2 minggu lalu" },
+        { id: 21, name: "Indah P.", avatar: "I", rating: 4, difficulty: "mudah", comment: "Seru banget belajarnya!", date: "2 minggu lalu" }
+    ],
+    4: [ // Kata Sehari-hari
+        { id: 22, name: "Joko S.", avatar: "J", rating: 5, difficulty: "mudah", comment: "Makan, minum, tidur, pergi - semua kata sehari-hari lengkap!", date: "2 hari lalu" },
+        { id: 23, name: "Kiki A.", avatar: "K", rating: 4, difficulty: "sulit", comment: "Beberapa gerakan mirip, perlu lebih teliti", date: "4 hari lalu" },
+        { id: 24, name: "Lina M.", avatar: "L", rating: 5, difficulty: "mudah", comment: "Videonya keren, bisa diputar ulang terus!", date: "6 hari lalu" },
+        { id: 25, name: "Mona S.", avatar: "M", rating: 4, difficulty: "sedang", comment: "Membantu banget buat sehari-hari", date: "1 minggu lalu" },
+        { id: 26, name: "Nanda R.", avatar: "N", rating: 5, difficulty: "mudah", comment: "Akhirnya bisa komunikasi sederhana!", date: "1 minggu lalu" }
+    ],
+    5: [ // Keluarga & Kerabat
+        { id: 27, name: "Siti N.", avatar: "S", rating: 5, difficulty: "mudah", comment: "Ayah, Ibu, Kakak, Adik - semua dijelaskan dengan baik", date: "2 hari lalu" },
+        { id: 28, name: "Teguh P.", avatar: "T", rating: 4, difficulty: "sedang", comment: "Materi keluarga bagus, butuh latihan biar hafal", date: "5 hari lalu" },
+        { id: 29, name: "Umi K.", avatar: "U", rating: 5, difficulty: "mudah", comment: "Sekarang bisa cerita tentang keluarga!", date: "1 minggu lalu" },
+        { id: 30, name: "Vino G.", avatar: "V", rating: 4, difficulty: "sedang", comment: "Penjelasannya jelas, suka!", date: "1 minggu lalu" },
+        { id: 31, name: "Winda F.", avatar: "W", rating: 5, difficulty: "mudah", comment: "Materi keluarga sangat membantu", date: "2 minggu lalu" },
+        { id: 32, name: "Xavier P.", avatar: "X", rating: 5, difficulty: "mudah", comment: "Sekarang bisa kenalin anggota keluarga", date: "2 minggu lalu" }
+    ],
+    6: [ // Warna & Bentuk
+        { id: 33, name: "Yanto S.", avatar: "Y", rating: 5, difficulty: "mudah", comment: "Merah, biru, kuning, hijau - warna-warnanya seru!", date: "1 hari lalu" },
+        { id: 34, name: "Zaki M.", avatar: "Z", rating: 5, difficulty: "sedang", comment: "Materi keren, lanjutkan!", date: "3 hari lalu" },
+        { id: 35, name: "Ayu W.", avatar: "A", rating: 4, difficulty: "sulit", comment: "Bentuk lingkaran dan segitiga agak sulit dibedakan", date: "4 hari lalu" },
+        { id: 36, name: "Bayu S.", avatar: "B", rating: 5, difficulty: "mudah", comment: "Belajar warna jadi menyenangkan!", date: "5 hari lalu" },
+        { id: 37, name: "Cindy L.", avatar: "C", rating: 5, difficulty: "mudah", comment: "Suka banget sama materi warnanya", date: "1 minggu lalu" }
+    ],
+    7: [ // Perasaan & Emosi
+        { id: 38, name: "Doni P.", avatar: "D", rating: 5, difficulty: "mudah", comment: "Senang, sedih, marah - semua dijelaskan dengan ekspresi yang jelas!", date: "2 hari lalu" },
+        { id: 39, name: "Eva M.", avatar: "E", rating: 4, difficulty: "sedang", comment: "Materi emosi bagus, perlu lebih banyak contoh", date: "4 hari lalu" },
+        { id: 40, name: "Fanny R.", avatar: "F", rating: 5, difficulty: "mudah", comment: "Sekarang bisa ungkapin perasaan pake isyarat!", date: "5 hari lalu" },
+        { id: 41, name: "Galih S.", avatar: "G", rating: 5, difficulty: "mudah", comment: "Keren banget materinya", date: "1 minggu lalu" }
+    ],
+    8: [ // Arah & Lokasi
+        { id: 42, name: "Hana K.", avatar: "H", rating: 4, difficulty: "sulit", comment: "Kanan, kiri, atas, bawah - agak sulit membedakan", date: "2 hari lalu" },
+        { id: 43, name: "Irfan M.", avatar: "I", rating: 5, difficulty: "sedang", comment: "Penjelasan arahnya jelas", date: "3 hari lalu" },
+        { id: 44, name: "Jihan N.", avatar: "J", rating: 5, difficulty: "mudah", comment: "Sekarang bisa nunjuk arah pake isyarat!", date: "5 hari lalu" },
+        { id: 45, name: "Karin W.", avatar: "K", rating: 4, difficulty: "sedang", comment: "Materi bagus, perbanyak latihan ya", date: "1 minggu lalu" }
+    ]
+};
+
+// State
+let selectedMateriId = 1;
+let currentSearch = "";
+let currentDifficultyFilter = "all";
+let currentRatingFilter = "all";
+
+// DOM Elements
+let videoListEl;
+let reviewsListEl;
+let selectedVideoTitleEl;
+let reviewCountEl;
+let videoCountEl;
+let modal;
+let toast;
+let totalVideosEl, totalReviewsEl, avgRatingEl, totalStudentsEl;
+
+// Helper: Get stars string
+function getStars(rating) {
+    const fullStar = "★";
+    const emptyStar = "☆";
+    return fullStar.repeat(rating) + emptyStar.repeat(5 - rating);
+}
+
+// Helper: Get difficulty class
+function getDifficultyClass(difficulty) {
+    switch(difficulty) {
+        case 'mudah': return 'difficulty-mudah';
+        case 'sedang': return 'difficulty-sedang';
+        case 'sulit': return 'difficulty-sulit';
+        default: return 'difficulty-sedang';
+    }
+}
+
+// Helper: Get difficulty icon
+function getDifficultyIcon(difficulty) {
+    switch(difficulty) {
+        case 'mudah': return '👍';
+        case 'sedang': return '⚡';
+        case 'sulit': return '💪';
+        default: return '📚';
+    }
+}
+
+// Helper: Get difficulty label
+function getDifficultyLabel(difficulty) {
+    switch(difficulty) {
+        case 'mudah': return 'MUDAH';
+        case 'sedang': return 'SEDANG';
+        case 'sulit': return 'SULIT';
+        default: return 'SEDANG';
+    }
+}
+
+// Show toast notification
+function showToast(message) {
+    toast.textContent = message;
+    toast.classList.add('show');
+    setTimeout(() => {
+        toast.classList.remove('show');
+    }, 3000);
+}
+
+// Get average rating for a video
+function getAvgRating(videoId) {
+    const reviews = reviewsData[videoId] || [];
+    if (reviews.length === 0) return "0.0";
+    const avg = reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length;
+    return avg.toFixed(1);
+}
+
+// Update statistics
+function updateStats() {
+    let totalReviews = 0;
+    let totalRating = 0;
+    let totalStudents = 0;
     
-    // ========== DATA VIDEO (MATERI BAHASA ISYARAT) ==========
-    const videoData = [
-        { id: 1, title: 'Huruf A - Z (Alfabet)', date: '12 Okt 2024', icon: '🖐️', avgRating: 4.9 },
-        { id: 2, title: 'Angka 1-10', date: '10 Okt 2024', icon: '🔢', avgRating: 4.8 },
-        { id: 3, title: 'Salam & Sapaan', date: '08 Okt 2024', icon: '👋', avgRating: 4.9 },
-        { id: 4, title: 'Percakapan Sehari-hari', date: '05 Okt 2024', icon: '💬', avgRating: 4.7 },
-        { id: 5, title: 'Ekspresi & Emosi', date: '02 Okt 2024', icon: '😊', avgRating: 4.8 }
-    ];
-    
-    // ========== DATA REVIEW MURID ==========
-    const reviewsData = {
-        1: [ // Huruf A - Z (Alfabet)
-            { id: 1, name: 'Rina S.', avatar: '👩', rating: 5, difficulty: 'sedang', comment: 'Materinya jelas dan mudah dipahami! Terima kasih', date: '2 hari lalu' },
-            { id: 2, name: 'Budi A.', avatar: '👦', rating: 5, difficulty: 'mudah', comment: 'Gampang ditiru, contohnya membantu banget!', date: '3 hari lalu' },
-            { id: 3, name: 'Lusi M.', avatar: '👩', rating: 4, difficulty: 'sulit', comment: 'Beberapa bagian perlu dijelaskan lagi ya guru', date: '5 hari lalu' },
-            { id: 4, name: 'Ahmad Fauzi', avatar: '👦', rating: 5, difficulty: 'mudah', comment: 'Cepat hafal huruf isyarat, terima kasih bu!', date: '1 minggu lalu' }
-        ],
-        2: [ // Angka 1-10
-            { id: 1, name: 'Siti Nurhaliza', avatar: '👩', rating: 5, difficulty: 'mudah', comment: 'Angkanya mudah diingat, praktiknya seru!', date: '1 hari lalu' },
-            { id: 2, name: 'Dewi Lestari', avatar: '👩', rating: 4, difficulty: 'sedang', comment: 'Materi bagus, tambahin contoh angka belasan', date: '3 hari lalu' },
-            { id: 3, name: 'Rizky Pratama', avatar: '👦', rating: 5, difficulty: 'mudah', comment: 'Suka banget sama cara ngajarnya', date: '4 hari lalu' }
-        ],
-        3: [ // Salam & Sapaan
-            { id: 1, name: 'Aisyah Putri', avatar: '👩', rating: 5, difficulty: 'mudah', comment: 'Salam dan sapaan lengkap, praktis digunakan', date: '2 hari lalu' },
-            { id: 2, name: 'Fajar R.', avatar: '👦', rating: 4, difficulty: 'sedang', comment: 'Mantap, tambahin video percakapan salam', date: '4 hari lalu' },
-            { id: 3, name: 'Nadia A.', avatar: '👩', rating: 5, difficulty: 'mudah', comment: 'Gurunya asik, mudah diikuti', date: '1 minggu lalu' }
-        ],
-        4: [ // Percakapan Sehari-hari
-            { id: 1, name: 'Bagas Putra', avatar: '👦', rating: 4, difficulty: 'sedang', comment: 'Percakapannya berguna untuk sehari-hari', date: '3 hari lalu' },
-            { id: 2, name: 'Mega C.', avatar: '👩', rating: 5, difficulty: 'mudah', comment: 'Langsung bisa praktek dengan teman', date: '5 hari lalu' }
-        ],
-        5: [ // Ekspresi & Emosi
-            { id: 1, name: 'Eko P.', avatar: '👦', rating: 5, difficulty: 'mudah', comment: 'Ekspresinya lucu dan mudah diingat', date: '2 hari lalu' },
-            { id: 2, name: 'Lina M.', avatar: '👩', rating: 4, difficulty: 'sedang', comment: 'Bagus, tapi perlu lebih banyak contoh', date: '4 hari lalu' },
-            { id: 3, name: 'Andi S.', avatar: '👦', rating: 5, difficulty: 'mudah', comment: 'Membantu banget buat komunikasi sehari-hari', date: '1 minggu lalu' }
-        ]
-    };
-    
-    let currentVideoId = 1;
-    
-    // DOM Elements
-    const videoList = document.getElementById('videoList');
-    const reviewList = document.getElementById('reviewList');
-    const selectedVideoTitle = document.getElementById('selectedVideoTitle');
-    const toast = document.getElementById('toastNotif');
-    
-    // Helper: Render Stars
-    function renderStars(rating) {
-        let stars = '';
-        for (let i = 1; i <= 5; i++) {
-            stars += i <= rating ? '★' : '☆';
-        }
-        return stars;
+    for (const materiId in reviewsData) {
+        const reviews = reviewsData[materiId];
+        totalReviews += reviews.length;
+        totalRating += reviews.reduce((sum, r) => sum + r.rating, 0);
+        totalStudents += reviews.length * 2; // dummy: estimasi murid
     }
     
-    // Helper: Get Difficulty Class
-    function getDifficultyClass(difficulty) {
-        if (difficulty === 'mudah') return 'difficulty-mudah';
-        if (difficulty === 'sedang') return 'difficulty-sedang';
-        return 'difficulty-sulit';
-    }
+    const avgRating = totalReviews > 0 ? (totalRating / totalReviews).toFixed(1) : 0;
     
-    // Helper: Show Toast
-    function showToast(message, type = 'info') {
-        if (!toast) return;
-        let bgColor = '#1A1F36';
-        if (type === 'success') bgColor = '#22C55E';
-        if (type === 'error') bgColor = '#DC2626';
-        if (type === 'warning') bgColor = '#D97706';
-        toast.style.background = bgColor;
-        toast.textContent = message;
-        toast.classList.add('show');
-        setTimeout(() => { toast.classList.remove('show'); }, 3000);
-    }
+    if (totalVideosEl) totalVideosEl.textContent = materiData.length;
+    if (totalReviewsEl) totalReviewsEl.textContent = totalReviews;
+    if (avgRatingEl) avgRatingEl.textContent = avgRating;
+    if (totalStudentsEl) totalStudentsEl.textContent = totalStudents;
+    if (videoCountEl) videoCountEl.textContent = `${materiData.length} Materi`;
+}
+
+// Render materi list
+function renderMateriList() {
+    videoListEl.innerHTML = materiData.map(materi => `
+        <div class="video-item ${materi.id === selectedMateriId ? 'active' : ''}" data-id="${materi.id}">
+            <div class="video-info">
+                <div class="video-title">${materi.icon} ${materi.title}</div>
+                <div class="video-date">📅 ${materi.date}</div>
+            </div>
+            <div class="video-stats">
+                <span class="star">⭐</span>
+                <span>${getAvgRating(materi.id)}</span>
+            </div>
+        </div>
+    `).join('');
     
-    // ========== RENDER DAFTAR VIDEO ==========
-    function renderVideoList() {
-        if (!videoList) return;
-        
-        videoList.innerHTML = '';
-        videoData.forEach(video => {
-            const div = document.createElement('div');
-            div.className = `video-item ${currentVideoId === video.id ? 'active' : ''}`;
-            div.onclick = () => selectVideo(video.id);
-            div.innerHTML = `
-                <div class="video-left">
-                    <div class="video-icon">${video.icon}</div>
-                    <div class="video-info">
-                        <div class="video-title">${video.title}</div>
-                        <div class="video-date">${video.date}</div>
-                    </div>
-                </div>
-                <div class="video-rating">⭐ ${video.avgRating}</div>
-            `;
-            videoList.appendChild(div);
-        });
-    }
-    
-    // ========== RENDER REVIEWS ==========
-    function renderReviews(videoId) {
-        if (!reviewList) return;
-        
-        const reviews = reviewsData[videoId] || [];
-        
-        if (reviews.length === 0) {
-            reviewList.innerHTML = `
-                <div class="empty-state">
-                    <div class="empty-icon">📭</div>
-                    <p>Belum ada ulasan untuk video ini</p>
-                </div>
-            `;
-            return;
-        }
-        
-        reviewList.innerHTML = '';
-        reviews.forEach(review => {
-            const div = document.createElement('div');
-            div.className = 'review-item';
-            div.onclick = () => showReviewDetail(review);
-            div.innerHTML = `
-                <div class="review-header">
-                    <div class="reviewer-info">
-                        <div class="reviewer-avatar">${review.avatar}</div>
-                        <div>
-                            <div class="reviewer-name">${review.name}</div>
-                            <div class="review-date">${review.date}</div>
-                        </div>
-                    </div>
-                    <div class="review-stars">${renderStars(review.rating)}</div>
-                </div>
-                <div>
-                    <span class="review-difficulty ${getDifficultyClass(review.difficulty)}">📊 ${review.difficulty === 'mudah' ? 'Mudah' : review.difficulty === 'sedang' ? 'Sedang' : 'Sulit'}</span>
-                </div>
-                <div class="review-comment">"${review.comment}"</div>
-            `;
-            reviewList.appendChild(div);
-        });
-    }
-    
-    // ========== SELECT VIDEO ==========
-    function selectVideo(videoId) {
-        currentVideoId = videoId;
-        const selectedVideo = videoData.find(v => v.id === videoId);
-        
-        if (selectedVideo) {
-            selectedVideoTitle.innerHTML = `💬 Ulasan: ${selectedVideo.title}`;
-        }
-        
-        // Update active class
-        document.querySelectorAll('.video-item').forEach((item, index) => {
-            if (index + 1 === videoId) {
-                item.classList.add('active');
-            } else {
-                item.classList.remove('active');
+    // Add click events
+    document.querySelectorAll('.video-item').forEach(item => {
+        item.addEventListener('click', () => {
+            const id = parseInt(item.dataset.id);
+            if (!isNaN(id) && id !== selectedMateriId) {
+                selectedMateriId = id;
+                renderMateriList();
+                renderReviews();
+                const materi = materiData.find(m => m.id === id);
+                showToast(`📖 Menampilkan review untuk: ${materi.title}`);
             }
         });
-        
-        // Render reviews
-        renderReviews(videoId);
-        
-        showToast(`Menampilkan ulasan untuk "${selectedVideo?.title}"`, 'info');
+    });
+}
+
+// Render reviews
+function renderReviews() {
+    let reviews = reviewsData[selectedMateriId] || [];
+    const materi = materiData.find(m => m.id === selectedMateriId);
+    
+    // Apply filters
+    if (currentDifficultyFilter !== "all") {
+        reviews = reviews.filter(r => r.difficulty === currentDifficultyFilter);
+    }
+    if (currentRatingFilter !== "all") {
+        reviews = reviews.filter(r => r.rating === parseInt(currentRatingFilter));
+    }
+    if (currentSearch) {
+        reviews = reviews.filter(r => 
+            r.name.toLowerCase().includes(currentSearch.toLowerCase()) ||
+            r.comment.toLowerCase().includes(currentSearch.toLowerCase())
+        );
     }
     
-    // ========== MODAL DETAIL REVIEW ==========
-    const modal = document.getElementById('reviewModal');
-    const modalBody = document.getElementById('modalBody');
-    const modalClose = document.querySelector('.modal-close');
+    if (selectedVideoTitleEl) {
+        selectedVideoTitleEl.textContent = materi ? materi.title : "- Pilih Materi -";
+    }
+    if (reviewCountEl) {
+        reviewCountEl.textContent = `${reviews.length} Reviews`;
+    }
     
-    function showReviewDetail(review) {
-        if (!modal || !modalBody) return;
-        
-        modalBody.innerHTML = `
-            <div style="text-align: center;">
-                <div style="width: 70px; height: 70px; background: #2D3C6A; border-radius: 35px; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 32px;">${review.avatar}</div>
-                <h3 style="margin-bottom: 8px; color: #1A1F36;">${review.name}</h3>
-                <div style="color: #FFB800; font-size: 20px; margin-bottom: 12px;">${renderStars(review.rating)}</div>
-                <div style="margin-bottom: 16px;">
-                    <span class="review-difficulty ${getDifficultyClass(review.difficulty)}" style="padding: 6px 16px;">📊 ${review.difficulty === 'mudah' ? 'Mudah' : review.difficulty === 'sedang' ? 'Sedang' : 'Sulit'}</span>
-                </div>
-                <div style="background: #F8FAFF; padding: 16px; border-radius: 16px; margin-bottom: 16px;">
-                    <p style="color: #4A5A7A; font-style: italic;">"${review.comment}"</p>
-                </div>
-                <div style="color: #7A8BB7; font-size: 12px;">📅 ${review.date}</div>
+    if (reviews.length === 0) {
+        reviewsListEl.innerHTML = `
+            <div class="empty-state">
+                <div class="empty-icon">📭</div>
+                <p>Belum ada review untuk materi ini</p>
+                <p style="font-size: 12px; margin-top: 8px;">Jadilah yang pertama memberikan feedback!</p>
             </div>
         `;
-        
-        modal.style.display = 'block';
-        document.body.style.overflow = 'hidden';
+        return;
     }
     
-    function closeModal() {
-        if (modal) {
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
+    reviewsListEl.innerHTML = reviews.map(review => `
+        <div class="review-item" data-review-id="${review.id}">
+            <div class="review-header">
+                <div class="reviewer-info">
+                    <div class="reviewer-avatar">${review.avatar}</div>
+                    <div class="reviewer-details">
+                        <h4>${review.name}</h4>
+                        <div class="review-date">📅 ${review.date}</div>
+                    </div>
+                </div>
+                <div class="review-stars">${getStars(review.rating)}</div>
+            </div>
+            <div class="review-difficulty ${getDifficultyClass(review.difficulty)}">
+                ${getDifficultyIcon(review.difficulty)} ${getDifficultyLabel(review.difficulty)}
+            </div>
+            <div class="review-comment">
+                💬 "${review.comment}"
+            </div>
+        </div>
+    `).join('');
+    
+    // Add click event for review items
+    document.querySelectorAll('.review-item').forEach(item => {
+        item.addEventListener('click', () => {
+            const reviewId = parseInt(item.dataset.reviewId);
+            const review = reviews.find(r => r.id === reviewId);
+            if (review) {
+                showReviewDetail(review);
+            }
+        });
+    });
+}
+
+// Show review detail modal
+function showReviewDetail(review) {
+    const modalBody = document.getElementById('modalBody');
+    if (!modalBody) return;
+    
+    modalBody.innerHTML = `
+        <div class="detail-row">
+            <div class="detail-label">👤 Nama Murid</div>
+            <div class="detail-value"><strong>${review.name}</strong></div>
+        </div>
+        <div class="detail-row">
+            <div class="detail-label">⭐ Rating</div>
+            <div class="detail-value modal-stars">${getStars(review.rating)} (${review.rating}/5)</div>
+        </div>
+        <div class="detail-row">
+            <div class="detail-label">📊 Tingkat Kesulitan</div>
+            <div class="detail-value">
+                <span class="review-difficulty ${getDifficultyClass(review.difficulty)}">
+                    ${getDifficultyIcon(review.difficulty)} ${getDifficultyLabel(review.difficulty)}
+                </span>
+            </div>
+        </div>
+        <div class="detail-row">
+            <div class="detail-label">💬 Ulasan / Komentar</div>
+            <div class="detail-value">"${review.comment}"</div>
+        </div>
+        <div class="detail-row">
+            <div class="detail-label">📅 Tanggal Review</div>
+            <div class="detail-value">${review.date}</div>
+        </div>
+    `;
+    
+    if (modal) modal.style.display = "block";
+}
+
+// Setup filters
+function setupFilters() {
+    const searchInput = document.getElementById('searchReview');
+    const filterDifficulty = document.getElementById('filterDifficulty');
+    const filterRating = document.getElementById('filterRating');
+    
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            currentSearch = e.target.value;
+            renderReviews();
+        });
     }
     
-    if (modalClose) modalClose.onclick = closeModal;
-    window.onclick = function(e) {
-        if (e.target === modal) closeModal();
+    if (filterDifficulty) {
+        filterDifficulty.addEventListener('change', (e) => {
+            currentDifficultyFilter = e.target.value;
+            renderReviews();
+            const text = e.target.value === 'all' ? 'Semua' : e.target.options[e.target.selectedIndex].text.split(' ')[0];
+            showToast(`🔍 Menampilkan review dengan tingkat kesulitan: ${text}`);
+        });
     }
     
-    // ========== INITIAL RENDER ==========
-    renderVideoList();
-    renderReviews(1); // Tampilkan review video pertama
+    if (filterRating) {
+        filterRating.addEventListener('change', (e) => {
+            currentRatingFilter = e.target.value;
+            renderReviews();
+            if (e.target.value !== 'all') {
+                showToast(`⭐ Menampilkan review rating ${e.target.value} bintang`);
+            } else {
+                showToast(`⭐ Menampilkan semua review`);
+            }
+        });
+    }
+}
+
+// Close modal
+function closeModal() {
+    if (modal) modal.style.display = "none";
+}
+
+// Initialize
+document.addEventListener('DOMContentLoaded', () => {
+    // Get DOM elements
+    videoListEl = document.getElementById('videoList');
+    reviewsListEl = document.getElementById('reviewsList');
+    selectedVideoTitleEl = document.getElementById('selectedVideoTitle');
+    reviewCountEl = document.getElementById('reviewCount');
+    videoCountEl = document.getElementById('videoCount');
+    modal = document.getElementById('reviewModal');
+    toast = document.getElementById('toastNotification');
     
-    console.log('✅ Halaman Feedback & Rating siap!');
+    totalVideosEl = document.getElementById('totalVideos');
+    totalReviewsEl = document.getElementById('totalReviews');
+    avgRatingEl = document.getElementById('avgRating');
+    totalStudentsEl = document.getElementById('totalStudents');
+    
+    // Render all
+    renderMateriList();
+    renderReviews();
+    updateStats();
+    setupFilters();
+    
+    // Modal close
+    const closeBtn = document.querySelector('.modal-close');
+    if (closeBtn) closeBtn.onclick = closeModal;
+    window.onclick = (e) => { if (e.target === modal) closeModal(); };
+    
+    console.log('✨ Feedback & Rating Guru - Ready ✨');
+    console.log(`📚 Total materi: ${materiData.length}, 💬 Total reviews: ${Object.values(reviewsData).flat().length}`);
 });
