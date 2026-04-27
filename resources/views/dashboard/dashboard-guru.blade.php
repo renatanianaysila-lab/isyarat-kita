@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="{{ asset('css/sections/kelola-kuis-guru.css') }}">
   <link rel="stylesheet" href="{{ asset('css/sections/monitoring-murid-guru.css') }}">
   <link rel="stylesheet" href="{{ asset('css/sections/feedback-rating-guru.css') }}">
+<<<<<<< Updated upstream
   <link rel="stylesheet" href="{{ asset('css/sections/transaksi-guru.css') }}">
   <link rel="stylesheet" href="{{ asset('css/sections/profil-guru-section.css') }}">
 
@@ -104,6 +105,9 @@
       width: 100%;
     }
   </style>
+=======
+  <link rel="stylesheet" href="{{ asset('css/sections/guru-profile.css') }}">
+>>>>>>> Stashed changes
 </head>
 
 <body>
@@ -192,10 +196,15 @@
         @include('sections.monitoring-murid-guru')
       @elseif($menu == 'feedback')
         @include('sections.feedback-rating-guru')
+<<<<<<< Updated upstream
       @elseif($menu == 'transaksi')
         @include('sections.transaksi-guru')
       @elseif($menu == 'profil')
         @include('sections.profil-guru-section')
+=======
+      @elseif($menu == 'profile')
+        @include('sections.guru-profile')
+>>>>>>> Stashed changes
       @else
 
         <!-- Greeting -->
@@ -543,6 +552,7 @@
   <script src="{{ asset('js/dashboard/dashboard-guru.js') }}"></script>
   <script src="{{ asset('js/sections/transaksi-guru.js') }}"></script>
   <script src="{{ asset('js/sections/feedback-rating-guru.js') }}"></script>
+  <script src="{{ asset('js/sections/guru-profile.js') }}"></script>
 
 </body>
 </html>
