@@ -550,10 +550,10 @@
   </div>
 
   <!-- JS -->
-<!-- JS -->
-<script src="{{ asset('js/layout/sidebar-guru.js') }}"></script>
-<script src="{{ asset('js/dashboard/dashboard-guru.js') }}"></script>
-<script src="{{ asset('js/sections/transaksi-guru.js') }}"></script>
+  <script src="{{ asset('js/layout/sidebar-guru.js') }}"></script>
+  <script src="{{ asset('js/dashboard/dashboard-guru.js') }}"></script>
+  <script src="{{ asset('js/sections/transaksi-guru.js') }}"></script>
+  <script src="{{ asset('js/sections/feedback-rating-guru.js') }}"></script>
 
 </body>
 </html>
