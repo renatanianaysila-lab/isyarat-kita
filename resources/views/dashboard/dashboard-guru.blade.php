@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="{{ asset('css/sections/kelola-kuis-guru.css') }}">
   <link rel="stylesheet" href="{{ asset('css/sections/monitoring-murid-guru.css') }}">
   <link rel="stylesheet" href="{{ asset('css/sections/transaksi-guru.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/sections/feedback-rating-guru.css') }}">
 </head>
 
 <body>
@@ -52,7 +53,7 @@
         </div>
       </header>
 
-          <!-- CONTENT -->
+      <!-- CONTENT -->
       @if($menu == 'paket')
         @include('sections.kelola-paket-guru')
       @elseif($menu == 'video')
@@ -63,6 +64,8 @@
         @include('sections.monitoring-murid-guru')
       @elseif($menu == 'transaksi')
         @include('sections.transaksi-guru')
+      @elseif($menu == 'feedback')
+        @include('sections.feedback-rating-guru')
       @else
         @include('dashboard.dashboard-content-guru')
       @endif
@@ -71,10 +74,10 @@
   </div>
 
   <!-- JS -->
-<!-- JS -->
-<script src="{{ asset('js/layout/sidebar-guru.js') }}"></script>
-<script src="{{ asset('js/dashboard/dashboard-guru.js') }}"></script>
-<script src="{{ asset('js/sections/transaksi-guru.js') }}"></script>
+  <script src="{{ asset('js/layout/sidebar-guru.js') }}"></script>
+  <script src="{{ asset('js/dashboard/dashboard-guru.js') }}"></script>
+  <script src="{{ asset('js/sections/transaksi-guru.js') }}"></script>
+  <script src="{{ asset('js/sections/feedback-rating-guru.js') }}"></script>
 
 </body>
 </html>
