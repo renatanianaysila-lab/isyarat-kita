@@ -1,8 +1,3 @@
-// ========================================
-// FEEDBACK & RATING GURU - JAVASCRIPT
-// MATERI BAHASA ISYARAT BISINDO
-// ========================================
-
 // DATA MATERI BAHASA ISYARAT
 const materiData = [
     { id: 1, title: "Pengenalan Huruf A - Z", date: "10/12/2024", icon: "🔤", avgRating: 4.9, totalReviews: 8 },
