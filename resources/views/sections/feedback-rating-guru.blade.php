@@ -1,3 +1,7 @@
+@push('styles')
+<link rel="stylesheet" href="{{ asset('css/sections/feedback-guru.css') }}">
+@endpush
+
 <div class="fb-page">
 
   {{-- HEADER --}}
