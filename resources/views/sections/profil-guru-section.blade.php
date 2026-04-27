@@ -113,48 +113,47 @@
   </div>
 </section>
 
-  <section class="profile-card">
-    <div class="profile-card-head">
-      <h2>Pencapaian</h2>
-      <a href="#" class="profile-link">Lihat Semua ›</a>
-    </div>
+<section class="profile-card">
+  <div class="profile-card-head">
+    <h2>Pencapaian</h2>
+    <a href="#" class="profile-link">Lihat Semua ›</a>
+  </div>
 
-    <div class="achievement-list">
-      <div class="achievement-item">
-        <span class="achievement-icon yellow">🏅</span>
-        <div>
-          <div class="title">Guru Inspiratif</div>
-          <div class="desc">Mendapatkan rating 4.5 ke atas dari 100 ulasan</div>
-        </div>
-        <div class="date">10 Mei 2024</div>
+  <div class="achievement-list">
+    <div class="achievement-item">
+      <span class="achievement-icon yellow">🏅</span>
+      <div>
+        <div class="title">Guru Inspiratif</div>
+        <div class="desc">Mendapatkan rating 4.5 ke atas dari 100 ulasan</div>
       </div>
-      <div class="achievement-item">
-        <span class="achievement-icon green">📷</span>
-        <div>
-          <div class="title">Kreator Aktif</div>
-          <div class="desc">Mengunggah lebih dari 20 video pembelajaran</div>
-        </div>
-        <div class="date">22 April 2024</div>
-      </div>
-      <div class="achievement-item">
-        <span class="achievement-icon purple">⭐</span>
-        <div>
-          <div class="title">Pendidik Berdedikasi</div>
-          <div class="desc">Mengajar lebih dari 1000 murid</div>
-        </div>
-        <div class="date">5 April 2024</div>
-      </div>
-      <div class="achievement-item">
-        <span class="achievement-icon blue">✚</span>
-        <div>
-          <div class="title">Ahli Kuis</div>
-          <div class="desc">Membuat lebih dari 25 kuis interaktif</div>
-        </div>
-        <div class="date">28 Maret 2024</div>
-      </div>
+      <div class="date">10 Mei 2024</div>
     </div>
-  </section>
-</div>
+    <div class="achievement-item">
+      <span class="achievement-icon green">📷</span>
+      <div>
+        <div class="title">Kreator Aktif</div>
+        <div class="desc">Mengunggah lebih dari 20 video pembelajaran</div>
+      </div>
+      <div class="date">22 April 2024</div>
+    </div>
+    <div class="achievement-item">
+      <span class="achievement-icon purple">⭐</span>
+      <div>
+        <div class="title">Pendidik Berdedikasi</div>
+        <div class="desc">Mengajar lebih dari 1000 murid</div>
+      </div>
+      <div class="date">5 April 2024</div>
+    </div>
+    <div class="achievement-item">
+      <span class="achievement-icon blue">✚</span>
+      <div>
+        <div class="title">Ahli Kuis</div>
+        <div class="desc">Membuat lebih dari 25 kuis interaktif</div>
+      </div>
+      <div class="date">28 Maret 2024</div>
+    </div>
+  </div>
+</section>
 
 <div class="profile-lower-grid">
   <section class="profile-card">
@@ -191,33 +190,4 @@
       <div class="activity-item-profile"><span>Mengunggah video baru</span><span>18 Mei 2024, 09:45</span></div>
       <div class="activity-item-profile"><span>Membuat kuis baru</span><span>17 Mei 2024, 16:20</span></div>
       <div class="activity-item-profile"><span>Membalas feedback murid</span><span>17 Mei 2024, 14:10</span></div>
-      <div class="activity-item-profile"><span>Update profil</span><span>16 Mei 2024, 11:05</span></div>
-    </div>
-  </section>
-</div>
-
-<section class="profile-card profile-performance">
-  <h2>Ringkasan Kinerja</h2>
-  <div class="performance-grid">
-    <div class="performance-item">
-      <div class="perf-title">Waktu Mengajar</div>
-      <div class="perf-value">48 jam 20 menit</div>
-      <div class="perf-sub positive">+12% dari 30 hari sebelumnya</div>
-    </div>
-    <div class="performance-item">
-      <div class="perf-title">Video Ditonton</div>
-      <div class="perf-value">15.320</div>
-      <div class="perf-sub positive">+18% dari 30 hari sebelumnya</div>
-    </div>
-    <div class="performance-item">
-      <div class="perf-title">Kuis Dikerjakan</div>
-      <div class="perf-value">8.450</div>
-      <div class="perf-sub positive">+22% dari 30 hari sebelumnya</div>
-    </div>
-    <div class="performance-item">
-      <div class="perf-title">Feedback Positif</div>
-      <div class="perf-value">468</div>
-      <div class="perf-sub positive">+15% dari 30 hari sebelumnya</div>
-    </div>
-  </div>
-</section>
+      <div class="activity-item-profile"><span>Update profil</span><span>16 Mei 2024, 11:
