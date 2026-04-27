@@ -63,9 +63,6 @@
 <section class="profile-card">
   <div class="profile-tabs">
     <span class="active">Informasi Pribadi</span>
-    <span>Informasi Akademik</span>
-    <span>Informasi Akun</span>
-    <span>Keamanan</span>
   </div>
 
   <div class="profile-form-table-wrap">
@@ -154,40 +151,3 @@
     </div>
   </div>
 </section>
-
-<div class="profile-lower-grid">
-  <section class="profile-card">
-    <h2>Pengaturan Akun</h2>
-    <div class="settings-list">
-      <div class="settings-item"><span>Ubah Password</span><span>›</span></div>
-      <div class="settings-item"><span>Notifikasi</span><span>›</span></div>
-      <div class="settings-item"><span>Bahasa</span><span>Bahasa Indonesia</span></div>
-      <div class="settings-item"><span>Tema</span><span>Terang</span></div>
-      <div class="settings-item danger"><span>Hapus Akun</span><span>›</span></div>
-    </div>
-  </section>
-
-  <section class="profile-card">
-    <div class="profile-card-head">
-      <h2>Perangkat Terhubung</h2>
-      <a href="#" class="profile-link">Lihat Semua ›</a>
-    </div>
-    <div class="device-list">
-      <div class="device-item"><span>Windows - Chrome</span><span class="active-now">Aktif Sekarang</span></div>
-      <div class="device-item"><span>iPhone 13 - Safari</span><span>2 jam lalu</span></div>
-      <div class="device-item"><span>Android - Chrome</span><span>1 hari lalu</span></div>
-    </div>
-    <button class="profile-danger-btn">Keluar dari Semua Perangkat</button>
-  </section>
-
-  <section class="profile-card">
-    <div class="profile-card-head">
-      <h2>Aktivitas Terakhir</h2>
-      <a href="#" class="profile-link">Lihat Semua ›</a>
-    </div>
-    <div class="activity-list-profile">
-      <div class="activity-item-profile"><span>Login ke akun</span><span>18 Mei 2024, 10:30</span></div>
-      <div class="activity-item-profile"><span>Mengunggah video baru</span><span>18 Mei 2024, 09:45</span></div>
-      <div class="activity-item-profile"><span>Membuat kuis baru</span><span>17 Mei 2024, 16:20</span></div>
-      <div class="activity-item-profile"><span>Membalas feedback murid</span><span>17 Mei 2024, 14:10</span></div>
-      <div class="activity-item-profile"><span>Update profil</span><span>16 Mei 2024, 11:
