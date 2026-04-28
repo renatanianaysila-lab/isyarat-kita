@@ -1,10 +1,14 @@
-// DOM Elements
+// ========================================
+// DASHBOARD CONTENT GURU - JAVASCRIPT
+// ========================================
+
+// DOM Elements - Menggunakan selector modal yang baru
 const modal = document.getElementById('uploadModal');
 const tambahMateriBtn = document.getElementById('tambahMateriBtn');
-const modalClose = document.querySelector('.modal-close');
+const modalClose = document.querySelector('.modal-upload-close');
 const cancelModalBtn = document.getElementById('cancelModalBtn');
 const uploadForm = document.getElementById('uploadForm');
-const fileUploadArea = document.getElementById('fileUploadArea');
+const fileUploadArea = document.querySelector('.file-upload-area-upload');
 const fileVideo = document.getElementById('fileVideo');
 const fileNameDisplay = document.getElementById('fileNameDisplay');
 const toast = document.getElementById('toastNotification');
@@ -15,19 +19,25 @@ let selectedFile = null;
 // Open Modal
 if (tambahMateriBtn) {
     tambahMateriBtn.addEventListener('click', function() {
-        modal.style.display = 'block';
-        document.body.style.overflow = 'hidden';
+        if (modal) {
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
     });
 }
 
 // Close Modal functions
 function closeModal() {
-    modal.style.display = 'none';
-    document.body.style.overflow = 'auto';
-    uploadForm.reset();
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+    if (uploadForm) uploadForm.reset();
     selectedFile = null;
-    fileNameDisplay.style.display = 'none';
-    fileNameDisplay.textContent = '';
+    if (fileNameDisplay) {
+        fileNameDisplay.style.display = 'none';
+        fileNameDisplay.textContent = '';
+    }
     if (fileUploadArea) {
         fileUploadArea.style.borderColor = '#CBD5E1';
         fileUploadArea.style.background = '#FAFBFE';
@@ -37,17 +47,16 @@ function closeModal() {
 if (modalClose) modalClose.addEventListener('click', closeModal);
 if (cancelModalBtn) cancelModalBtn.addEventListener('click', closeModal);
 
-// Close modal when clicking outside
-window.addEventListener('click', function(e) {
-    if (e.target === modal) {
-        closeModal();
-    }
-});
+// Close modal when clicking on overlay
+const modalOverlay = document.querySelector('.modal-upload-overlay');
+if (modalOverlay) {
+    modalOverlay.addEventListener('click', closeModal);
+}
 
 // File upload area click handler
 if (fileUploadArea) {
     fileUploadArea.addEventListener('click', function() {
-        fileVideo.click();
+        if (fileVideo) fileVideo.click();
     });
 }
 
@@ -55,20 +64,20 @@ if (fileUploadArea) {
 if (fileUploadArea) {
     fileUploadArea.addEventListener('dragover', function(e) {
         e.preventDefault();
-        this.style.borderColor = '#2D3C6A';
-        this.style.background = '#F0F3FE';
+        this.style.borderColor = '#2563EB';
+        this.style.background = '#EFF6FF';
     });
 
     fileUploadArea.addEventListener('dragleave', function(e) {
         e.preventDefault();
         this.style.borderColor = '#CBD5E1';
-        this.style.background = '#FAFBFE';
+        this.style.background = '#F8FAFC';
     });
 
     fileUploadArea.addEventListener('drop', function(e) {
         e.preventDefault();
         this.style.borderColor = '#CBD5E1';
-        this.style.background = '#FAFBFE';
+        this.style.background = '#F8FAFC';
         
         const files = e.dataTransfer.files;
         if (files.length > 0) {
@@ -89,9 +98,13 @@ if (fileVideo) {
 // Handle file selection
 function handleFileSelection(file) {
     const allowedTypes = ['video/mp4', 'video/quicktime', 'video/x-msvideo', 'video/mov', 'video/avi'];
-    const maxSize = 500 * 1024 * 1024;
+    const maxSize = 500 * 1024 * 1024; // 500MB
     
-    if (!allowedTypes.includes(file.type) && !file.name.match(/\.(mp4|mov|avi|mkv|webm)$/i)) {
+    // Cek ekstensi file
+    const allowedExtensions = ['mp4', 'mov', 'avi', 'mkv', 'webm'];
+    const fileExtension = file.name.split('.').pop().toLowerCase();
+    
+    if (!allowedTypes.includes(file.type) && !allowedExtensions.includes(fileExtension)) {
         showToast('❌ Format file tidak didukung. Gunakan MP4, MOV, atau AVI.', 'error');
         return;
     }
@@ -103,13 +116,16 @@ function handleFileSelection(file) {
     
     selectedFile = file;
     const fileSize = formatFileSize(file.size);
-    fileNameDisplay.textContent = `📹 ${file.name} (${fileSize})`;
-    fileNameDisplay.style.display = 'block';
-    fileNameDisplay.style.color = '#0A7B4B';
+    if (fileNameDisplay) {
+        fileNameDisplay.textContent = `📹 ${file.name} (${fileSize})`;
+        fileNameDisplay.style.display = 'block';
+        fileNameDisplay.style.color = '#0A7B4B';
+    }
     
     showToast(`✅ File "${file.name}" siap diupload`, 'success');
 }
 
+// Format file size
 function formatFileSize(bytes) {
     if (bytes === 0) return '0 Bytes';
     const k = 1024;
@@ -118,43 +134,11 @@ function formatFileSize(bytes) {
     return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
 }
 
-// Submit form - DUMMY UPLOAD
-if (uploadForm) {
-    uploadForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const judul = document.getElementById('judulVideo').value;
-        const deskripsi = document.getElementById('deskripsi').value;
-        
-        if (!judul) {
-            showToast('⚠️ Masukkan judul video!', 'warning');
-            return;
-        }
-        
-        if (!selectedFile) {
-            showToast('⚠️ Pilih file video terlebih dahulu!', 'warning');
-            return;
-        }
-        
-        showToast(`📤 Mengupload "${judul}"...`, 'info');
-        
-        setTimeout(() => {
-            let message = `✅ Berhasil! Video "${judul}" telah diupload`;
-            if (deskripsi) {
-                message += ` dengan deskripsi: "${deskripsi.substring(0, 50)}${deskripsi.length > 50 ? '...' : ''}"`;
-            }
-            message += ` (File: ${selectedFile.name})`;
-            showToast(message, 'success');
-            closeModal();
-        }, 1500);
-    });
-}
-
 // Show Toast Notification
 function showToast(message, type = 'info') {
     if (!toast) return;
     
-    let bgColor = '#1A1F36';
+    let bgColor = '#1E293B';
     if (type === 'success') bgColor = '#0A7B4B';
     if (type === 'error') bgColor = '#DC2626';
     if (type === 'warning') bgColor = '#D97706';
@@ -166,6 +150,44 @@ function showToast(message, type = 'info') {
     setTimeout(() => {
         toast.classList.remove('show');
     }, 3000);
+}
+
+// Submit form - DUMMY UPLOAD
+if (uploadForm) {
+    uploadForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const judul = document.getElementById('judulVideo');
+        const deskripsi = document.getElementById('deskripsi');
+        
+        if (!judul || !judul.value.trim()) {
+            showToast('⚠️ Masukkan judul video!', 'warning');
+            return;
+        }
+        
+        if (!selectedFile) {
+            showToast('⚠️ Pilih file video terlebih dahulu!', 'warning');
+            return;
+        }
+        
+        showToast(`📤 Mengupload "${judul.value}"...`, 'info');
+        
+        // Simulasi upload (dummy)
+        setTimeout(() => {
+            let message = `✅ Berhasil! Video "${judul.value}" telah diupload`;
+            if (deskripsi && deskripsi.value) {
+                const descText = deskripsi.value.substring(0, 50);
+                message += ` dengan deskripsi: "${descText}${deskripsi.value.length > 50 ? '...' : ''}"`;
+            }
+            message += ` (File: ${selectedFile.name})`;
+            showToast(message, 'success');
+            closeModal();
+            
+            // Reset selected file
+            selectedFile = null;
+            if (fileVideo) fileVideo.value = '';
+        }, 1500);
+    });
 }
 
 // Tombol Lihat Semua Aktivitas
@@ -197,5 +219,5 @@ if (lihatRatingBtn) {
 
 // Inisialisasi
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('IsyaratKita Dashboard siap!');
+    console.log('✨ IsyaratKita Dashboard Guru siap!');
 });

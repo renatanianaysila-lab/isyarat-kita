@@ -245,38 +245,39 @@
 </div>
 
 <!-- MODAL UPLOAD MATERI -->
-<div id="uploadModal" class="modal">
-  <div class="modal-content">
-    <div class="modal-header">
+<div id="uploadModal" class="modal-upload">
+  <div class="modal-upload-overlay"></div>
+  <div class="modal-upload-container">
+    <div class="modal-upload-header">
       <h3>📤 Upload Materi Baru</h3>
-      <span class="modal-close">&times;</span>
+      <button class="modal-upload-close">&times;</button>
     </div>
-    <div class="modal-body">
+    <div class="modal-upload-body">
       <form id="uploadForm" enctype="multipart/form-data">
-        <div class="form-group">
+        <div class="form-group-upload">
           <label>Judul Video</label>
           <input type="text" id="judulVideo" placeholder="Contoh: Huruf A, Salam Pagi, Angka 1-10" required>
         </div>
-        <div class="form-group">
+        <div class="form-group-upload">
           <label>Upload File Video</label>
-          <div class="file-upload-area" id="fileUploadArea">
+          <div class="file-upload-area-upload" id="fileUploadArea">
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#7A8BB7" stroke-width="1.5">
               <path d="M12 3v12m0 0-3-3m3 3 3-3" />
               <rect x="2" y="5" width="20" height="14" rx="2" />
             </svg>
             <p>Klik atau drag & drop file video</p>
-            <span class="file-hint">MP4, MOV, AVI (Max 500MB)</span>
+            <span class="file-hint-upload">MP4, MOV, AVI (Max 500MB)</span>
             <input type="file" id="fileVideo" accept="video/mp4,video/mov,video/avi,video/mkv,video/webm" style="display:none">
           </div>
-          <div id="fileNameDisplay" class="file-name-display"></div>
+          <div id="fileNameDisplay" class="file-name-display-upload"></div>
         </div>
-        <div class="form-group">
+        <div class="form-group-upload">
           <label>Deskripsi (opsional)</label>
           <textarea id="deskripsi" rows="3" placeholder="Tulis deskripsi singkat tentang video ini..."></textarea>
         </div>
-        <div class="modal-buttons">
-          <button type="button" class="btn-cancel" id="cancelModalBtn">Batal</button>
-          <button type="submit" class="btn-submit">Upload Materi</button>
+        <div class="modal-upload-buttons">
+          <button type="button" class="btn-cancel-upload" id="cancelModalBtn">Batal</button>
+          <button type="submit" class="btn-submit-upload">Upload Materi</button>
         </div>
       </form>
     </div>
