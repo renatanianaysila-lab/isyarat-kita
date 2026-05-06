@@ -3,6 +3,11 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfilController;
+use App\Http\Controllers\MuridController;
+use App\Http\Controllers\GuruController;
+use App\Http\Controllers\TransaksiController;
+use App\Http\Controllers\FeedbackController;
+use Illuminate\Support\Facades\Auth;
 
 // ===================== HALAMAN UTAMA =====================
 Route::get('/', function () {
@@ -15,35 +20,19 @@ Route::get('/login', function () {
 })->name('login');
 
 Route::post('/login', function (Request $request) {
-    $email = $request->email;
-    $password = $request->password;
+    $credentials = $request->only('email', 'password');
 
-    // Login dummy GURU
-    if ($email === 'guru@gmail.com' && $password === '12345678') {
-        session([
-            'dummy_login' => true,
-            'dummy_user' => [
-                'name' => 'Guru',
-                'email' => 'guru@gmail.com',
-                'role' => 'guru'
-            ]
-        ]);
+    if (Auth::attempt($credentials)) {
+        $request->session()->regenerate();
+        $user = Auth::user();
 
-        return redirect('/dashboard-guru');
-    }
-
-    // Login dummy MURID
-    if ($email === 'murid@gmail.com' && $password === '12345678') {
-        session([
-            'dummy_login' => true,
-            'dummy_user' => [
-                'name' => 'Murid',
-                'email' => 'murid@gmail.com',
-                'role' => 'murid'
-            ]
-        ]);
-
-        return redirect('/dashboard-murid');
+        if ($user->role === 'guru') {
+            return redirect('/dashboard-guru');
+        } elseif ($user->role === 'admin') {
+            return redirect('/dashboard-admin');
+        } else {
+            return redirect('/dashboard-murid');
+        }
     }
 
     return back()->withErrors([
@@ -55,39 +44,66 @@ Route::get('/register', function () {
     return view('auth.register');
 })->name('register');
 
-// ===================== LOGOUT (POST METHOD) =====================
+Route::post('/register', function (Request $request) {
+    $request->validate([
+        'name'     => 'required|string|max:255',
+        'email'    => 'required|email|unique:users',
+        'password' => 'required|min:8|confirmed',
+        'role'     => 'required|in:murid,guru',
+    ]);
+
+    $user = \App\Models\User::create([
+        'name'     => $request->name,
+        'email'    => $request->email,
+        'password' => bcrypt($request->password),
+        'role'     => $request->role,
+    ]);
+
+    Auth::login($user);
+
+    if ($user->role === 'guru') {
+        return redirect('/dashboard-guru');
+    }
+    return redirect('/dashboard-murid');
+})->name('register.post');
+
+// ===================== LOGOUT =====================
 Route::get('/logout', function (Request $request) {
-    session()->forget('dummy_login');
-    session()->forget('dummy_user');
+    Auth::logout();
+    $request->session()->invalidate();
+    $request->session()->regenerateToken();
     return redirect('/login');
 })->name('logout');
 
 // ===================== DASHBOARD MURID =====================
-Route::get('/dashboard-murid', function () {
-    if (!session('dummy_login')) {
-        return redirect('/login');
-    }
-    return view('dashboard.dashboard-murid');
-})->name('dashboard.murid');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard-murid', [MuridController::class, 'dashboard'])->name('dashboard.murid');
+    Route::get('/dashboard-murid/materi', [MuridController::class, 'materi'])->name('murid.materi');
+    Route::get('/dashboard-murid/history', [MuridController::class, 'history'])->name('murid.history');
+    Route::get('/dashboard-murid/katalog', [MuridController::class, 'katalog'])->name('murid.katalog');
+    Route::get('/dashboard-murid/feedback', [FeedbackController::class, 'index'])->name('murid.feedback');
+    Route::post('/dashboard-murid/feedback', [FeedbackController::class, 'simpan'])->name('murid.feedback.simpan');
+});
 
 // ===================== DASHBOARD GURU =====================
-Route::get('/dashboard-guru', function () {
-    if (!session('dummy_login')) {
-        return redirect('/login');
-    }
-    return view('dashboard.dashboard-guru');
-})->name('dashboard.guru');
-
-// ===================== DASHBOARD KUIS =====================
-Route::get('/dashboard-kuis', function () {
-    if (!session('dummy_login')) {
-        return redirect('/login');
-    }
-    return view('dashboard.dashboard-kuis');
-})->name('dashboard.kuis');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard-guru', [GuruController::class, 'dashboard'])->name('dashboard.guru');
+    Route::get('/dashboard-guru/kelola-video', [GuruController::class, 'kelolaVideo'])->name('guru.kelola-video');
+    Route::post('/dashboard-guru/kelola-video', [GuruController::class, 'simpanVideo'])->name('guru.simpan-video');
+    Route::delete('/dashboard-guru/kelola-video/{id}', [GuruController::class, 'hapusVideo'])->name('guru.hapus-video');
+    Route::get('/dashboard-guru/monitoring', [GuruController::class, 'monitoringMurid'])->name('guru.monitoring');
+});
 
 // ===================== PROFIL =====================
-Route::put('/profil/update', [ProfilController::class, 'update'])->name('profil.update');
+Route::middleware(['auth'])->group(function () {
+    Route::put('/profil/update', [ProfilController::class, 'update'])->name('profil.update');
+    Route::get('/profil-guru', function () {
+        return view('sections.guru-profile');
+    })->name('profil.guru');
+    Route::get('/profil-guru/edit', function () {
+        return view('sections.edit-profile-guru');
+    })->name('profil.guru.edit');
+});
 
 // ===================== PAKET & PEMBAYARAN =====================
 Route::get('/paket', function () {
@@ -98,39 +114,26 @@ Route::get('/pembayaran', function () {
     return view('paket.pembayaran');
 })->name('pembayaran');
 
-Route::post('/proses-pembayaran', function () {
-    return redirect('/dashboard-murid?menu=materi')->with('success', 'Pembayaran berhasil! Selamat belajar!');
-})->name('proses.pembayaran');
+Route::middleware(['auth'])->post('/proses-pembayaran', [TransaksiController::class, 'beli'])->name('proses.pembayaran');
 
 // ===================== VIDEO PLAYER =====================
 Route::get('/video-player', function () {
     return view('belajar.video-player');
 })->name('video.player');
+
 Route::get('/video-player/{video}', function ($video) {
     return view('belajar.video-player', ['video' => $video]);
 })->name('video.player.detail');
 
-// ===================== KUIS ABJAD =====================
+// ===================== KUIS =====================
 Route::get('/kuis-abjad', function () {
     return view('belajar.kuis-abjad');
 })->name('kuis.abjad');
 
-// ===================== KUIS ANGKA =====================
 Route::get('/kuis-angka', function () {
     return view('belajar.kuis-angka');
 })->name('kuis.angka');
 
-// ===================== PROFIL GURU (HALAMAN TERPISAH) =====================
-Route::get('/profil-guru', function () {
-    if (!session('dummy_login')) {
-        return redirect('/login');
-    }
-    return view('sections.guru-profile');
-})->name('profil.guru');
-
-Route::get('/profil-guru/edit', function () {
-    if (!session('dummy_login')) {
-        return redirect('/login');
-    }
-    return view('sections.edit-profile-guru');
-})->name('profil.guru.edit');
+Route::get('/dashboard-kuis', function () {
+    return view('dashboard.dashboard-kuis');
+})->name('dashboard.kuis');
