@@ -9,6 +9,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
+            $table->enum('role', ['murid', 'guru', 'admin'])->default('murid')->after('email'); // ← tambahan
             $table->string('nama_lengkap')->nullable()->after('name');
             $table->date('tanggal_lahir')->nullable()->after('nama_lengkap');
             $table->string('jenis_kelamin')->nullable()->after('tanggal_lahir');
@@ -20,6 +21,7 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn([
+                'role',           // ← tambahan
                 'nama_lengkap',
                 'tanggal_lahir',
                 'jenis_kelamin',
