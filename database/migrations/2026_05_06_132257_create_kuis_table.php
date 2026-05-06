@@ -12,12 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('kuis', function (Blueprint $table) {
-        $table->id();
-        $table->foreignId('paket_id')->constrained('paket')->onDelete('cascade');
-        $table->string('judul_kuis');
-        $table->text('deskripsi')->nullable();
-        $table->integer('durasi_menit')->default(30);
-        $table->integer('passing_score')->default(70);
+        $table->id('kuis_id');
+        $table->foreignId('paket_id')->constrained('paket_pembelajaran', 'paket_id')->onDelete('cascade');
+        $table->foreignId('guru_id')->constrained('guru', 'guru_id')->onDelete('cascade');
+        $table->string('judul_kuis', 100);
+        $table->longText('deskripsi')->nullable();
+        $table->integer('durasi_menit')->nullable();
+        $table->decimal('nilai_minimum', 5, 2)->default(0);
         $table->timestamps();
     });
     }
