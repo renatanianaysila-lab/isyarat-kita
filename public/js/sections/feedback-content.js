@@ -220,3 +220,39 @@ document.addEventListener('DOMContentLoaded', () => {
     initFilters();
     document.getElementById('kirimFeedbackBtn')?.addEventListener('click', kirimFeedback);
 });
+
+import { api } from './services/api-service.js';
+
+async function syncFeedbackToAPI() {
+    const feedbacksFromStorage = localStorage.getItem('isyaratkita_feedbacks');
+    if (feedbacksFromStorage) {
+        const feedbacks = JSON.parse(feedbacksFromStorage);
+        const latestFeedback = feedbacks[feedbacks.length - 1];
+        
+        if (latestFeedback) {
+            const result = await api.createPost({
+                title: `Feedback: ${latestFeedback.materi}`,
+                body: `Rating: ${latestFeedback.rating}/5\nKesulitan: ${latestFeedback.kesulitan}\nKomentar: ${latestFeedback.komentar}`,
+                userId: 1
+            });
+            
+            if (result.success) {
+                console.log('✅ Feedback synced to API');
+                localStorage.setItem('last_sync_time', new Date().toISOString());
+            }
+        }
+    }
+}
+
+async function loadFeedbackFromAPI() {
+    const result = await api.getComments();
+    if (result.success) {
+        const apiFeedbacks = result.data.slice(0, 5);
+        console.log('📋 Feedback from API:', apiFeedbacks.length);
+        return apiFeedbacks;
+    }
+    return [];
+}
+
+window.syncFeedbackToAPI = syncFeedbackToAPI;
+window.loadFeedbackFromAPI = loadFeedbackFromAPI;
