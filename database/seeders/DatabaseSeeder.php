@@ -20,6 +20,14 @@ class DatabaseSeeder extends Seeder
             GuruSeeder::class, 
             MuridSeeder::class,
             PaketPembelajaranSeeder::class,
+            VideoMateriSeeder::class, 
+            KuisSeeder::class, 
+            AksesPaketSeeder::class,  
+            DetailAksesVideoSeeder::class,  
+            TransaksiPembelianSeeder::class,
+            PembayaranSeeder::class, 
+            DetailTransaksiSeeder::class,  
+            ProgressBelajarSeeder::class,
         ]);
     }
 }
