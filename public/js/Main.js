@@ -82,3 +82,47 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+import { api } from './services/api-service.js';
+import { runAllDemos } from './demo-api.js';
+
+async function loadAPIExamples() {
+    console.log('🚀 Loading REST API Examples...');
+    
+    const usersResult = await api.getUsers();
+    if (usersResult.success) {
+        console.log('✅ API Users Loaded:', usersResult.data.length, 'users');
+        console.log('📋 First user:', usersResult.data[0]?.name);
+    }
+    
+    const postsResult = await api.getPosts();
+    if (postsResult.success) {
+        console.log('✅ API Posts Loaded:', postsResult.data.length, 'posts');
+    }
+}
+
+async function submitToAPI(data) {
+    const result = await api.createPost({
+        title: data.title || 'Feedback dari Murid',
+        body: data.body || 'Materi bagus dan mudah dipahami',
+        userId: 1
+    });
+    
+    if (result.success) {
+        console.log('✅ Feedback sent to API:', result.data);
+        return true;
+    }
+    return false;
+}
+
+window.loadAPIExamples = loadAPIExamples;
+window.submitToAPI = submitToAPI;
+window.runAllDemos = runAllDemos;
+
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('✨ API Service Ready');
+    console.log('💡 Type: loadAPIExamples() to test API');
+    console.log('💡 Type: runAllDemos() to run all examples');
+});
+
+loadAPIExamples();

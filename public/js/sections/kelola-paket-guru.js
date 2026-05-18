@@ -237,3 +237,46 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('✅ Fitur interaktif siap digunakan!');
     
 });
+
+import { api } from './services/api-service.js';
+
+async function syncPaketToAPI() {
+    const rows = document.querySelectorAll('.paket-table tbody tr');
+    const paketData = [];
+    
+    rows.forEach(row => {
+        const nameEl = row.querySelector('.paket-name');
+        const emailEl = row.querySelector('.paket-class');
+        const statusSpan = row.querySelector('.paket-badge');
+        
+        if (nameEl && emailEl) {
+            paketData.push({
+                name: nameEl.textContent,
+                email: emailEl.textContent,
+                status: statusSpan?.textContent.trim() || 'Aktif'
+            });
+        }
+    });
+    
+    const result = await api.createPost({
+        title: 'Paket Data Sync',
+        body: JSON.stringify(paketData),
+        userId: 1
+    });
+    
+    if (result.success) {
+        console.log('✅ Paket data synced to API:', paketData.length, 'items');
+    }
+}
+
+async function loadPaketFromAPI() {
+    const result = await api.getPosts();
+    if (result.success) {
+        console.log('📦 Paket data from API:', result.data.length);
+        return result.data;
+    }
+    return [];
+}
+
+window.syncPaketToAPI = syncPaketToAPI;
+window.loadPaketFromAPI = loadPaketFromAPI;
