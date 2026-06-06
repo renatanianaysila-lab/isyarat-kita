@@ -1,6 +1,6 @@
 <nav class="navbar">
   <div class="logo-container">
-    <img src="{{ asset('img/logo.png') }}" alt="Logo" class="logo-img">
+    <img src="{{ asset('img/img/LOGO.png') }}" alt="Logo IsyaratKita" style="width: 50px; height: auto;">
   </div>
 
   <div class="nav-links">
