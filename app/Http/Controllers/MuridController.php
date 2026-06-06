@@ -1,10 +1,11 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\VideoMateri;
 use App\Models\ProgressBelajar;
-use App\Models\HasilKuis;
+// use App\Models\HasilKuis; // Dimatikan sementara karena tabel tidak ada
 use App\Models\Transaksi;
 use App\Models\Paket;
 
@@ -13,14 +14,22 @@ class MuridController extends Controller
     public function dashboard()
     {
         $murid = auth()->user();
+        
+        // Mengambil data progress belajar murid
         $progress = ProgressBelajar::where('murid_id', $murid->id)->with('video')->get();
-        $hasilKuis = HasilKuis::where('murid_id', $murid->id)->with('kuis')->get();
+        
+        // Dimatikan sementara karena tabel hasil_kuis tidak ada di migrasi
+        // $hasilKuis = HasilKuis::where('murid_id', $murid->id)->with('kuis')->get();
+        $hasilKuis = collect(); // Membuat koleksi kosong agar variabel $hasilKuis tidak error di view
+        
         $transaksi = Transaksi::where('murid_id', $murid->id)->with('paket')->get();
 
         $totalVideo = $progress->count();
         $videoSelesai = $progress->where('status', 'selesai')->count();
         $waktuBelajar = $progress->sum('durasi_ditonton');
-        $rataKuis = $hasilKuis->avg('skor');
+        
+        // Beri nilai default 0 agar di halaman dashboard tidak kosong/error
+        $rataKuis = 0; 
 
         return view('dashboard.dashboard-murid', compact(
             'murid', 'progress', 'hasilKuis', 'transaksi',
@@ -45,7 +54,11 @@ class MuridController extends Controller
     {
         $murid = auth()->user();
         $historyVideo = ProgressBelajar::where('murid_id', $murid->id)->with('video')->latest()->get();
-        $historyKuis = HasilKuis::where('murid_id', $murid->id)->with('kuis')->latest()->get();
+        
+        // Dimatikan sementara karena model HasilKuis belum siap tabelnya
+        // $historyKuis = HasilKuis::where('murid_id', $murid->id)->with('kuis')->latest()->get();
+        $historyKuis = collect(); // Koleksi kosong biar halaman history ga error
+        
         $historyBeli = Transaksi::where('murid_id', $murid->id)->with('paket')->latest()->get();
 
         return view('sections.history-content', compact('historyVideo', 'historyKuis', 'historyBeli'));
