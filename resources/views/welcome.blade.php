@@ -21,7 +21,7 @@
 
     <!-- PAGE 1 - HOME -->
     <div class="HOME-PAGE" id="home" style="position: relative; width: 100%;">
-      <img class="BACKGROUND" src="{{ asset('img/img/BACKGROUND.png') }}" alt="background">
+      <img class="BACKGROUND" src="/img/img/BACKGROUND.png" alt="background">
       
       <div class="text-wrapper-7">IsyaratKita</div>
 
@@ -90,19 +90,19 @@
       
       <div class="fitur-container">
         <div class="fitur-card">
-          <img src="{{ asset('img/img/video.png') }}" alt="Video">
+          <img src="/img/img/video.png" alt="Video">
           <div class="kelas-video">Kelas Video Interaktif</div>
           <p>Materi bahasa isyarat dari tingkat dasar hingga lanjutan, disajikan melalui video interaktif yang mudah dipahami.</p>
         </div>
 
         <div class="fitur-card">
-          <img src="{{ asset('img/img/quiz.png') }}" alt="Quiz">
+          <img src="/img/img/quiz.png" alt="Quiz">
           <div class="kuis-evaluasi">Kuis & Evaluasi Pemahaman</div>
           <p>Latihan dan kuis interaktif untuk menguji pemahaman serta memantau progres belajar secara sistematis.</p>
         </div>
 
         <div class="fitur-card">
-          <img src="{{ asset('img/img/social-justice.png') }}" alt="Community">
+          <img src="/img/img/social-justice.png" alt="Community">
           <div class="komunitas-dukungan">Komunitas & Dukungan Belajar</div>
           <p>Ruang diskusi untuk berbagi pengalaman dan membangun komunikasi inklusif bersama sesama pembelajar dan pengajar.</p>
         </div>
@@ -146,7 +146,7 @@
 
     <!-- PAGE 5 - LAST -->
     <div class="lastt" id="last" style="position: relative; width: 100%;">
-      <img class="BACKGROUND" src="{{ asset('img/img/BACKGROUND.png') }}" alt="background">
+      <img class="BACKGROUND" src="/img/img/BACKGROUND.png" alt="background">
 
       <div class="siap-mulai-belajar-bahasa-isyarat">
         Siap Mulai Belajar Bahasa Isyarat?
