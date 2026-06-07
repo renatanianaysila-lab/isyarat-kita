@@ -61,4 +61,4 @@
     </div>
 </div>
 
-<script src="{{ asset('js/sections/feedback-content.js') }}"></script>
+<script src="/js/sections/feedback-content.js"></script>
