@@ -12,12 +12,12 @@
   <!-- HALAMAN LOGIN -->
   <div class="LOGIN">
     <!-- Background -->
-    <img class="BACKGROUND" src="{{ asset('img/BACKGROUND.png') }}" alt="background">
+    <img class="BACKGROUND" src="{{ asset('img/img/BACKGROUND.png') }}" alt="background">
 
     <!-- Navbar -->
     <nav class="navbar">
       <div class="logo-container">
-        <img src="{{ asset('img/logo.png') }}" alt="IsyaratKita Logo" class="logo-img">
+        <img src="{{ asset('img/img/LOGO.png') }}" alt="IsyaratKita Logo" class="logo-img" style="width: 120px; height: auto;">
       </div>
 
       <div class="nav-links">
