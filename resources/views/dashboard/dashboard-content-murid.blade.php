@@ -4,7 +4,6 @@
 </div>
 
 <div class="grid-2">
-    <!-- PROGRESS -->
     <section class="card progress-card-custom">
         <div class="card-head">
             <h2>Progress Belajar Hari Ini</h2>
@@ -96,7 +95,6 @@
         </div>
     </section>
 
-    <!-- PAKET DIMILIKI -->
     <section class="card">
         <div class="card-head">
             <h2>Paket yang Dimiliki</h2>
@@ -141,9 +139,11 @@
     <section class="card materi-card">
         <div class="materi-tag">Materi Terakhir</div>
         <div class="materi-body">
-            <div class="thumb"></div>
+            <div class="thumb" style="overflow: hidden;">
+                <img src="{{ asset('img/img/video.png') }}" alt="Materi" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
             <div class="materi-info">
-                <div class="materi-title">Judul atau Deskripsi Materi</div>
+                <div class="materi-title">Pengenalan Isyarat Isyarat Kita</div>
                 <div class="materi-time">⏱ 8 Menit</div>
             </div>
         </div>
@@ -153,10 +153,12 @@
     <section class="card materi-card">
         <div class="materi-tag">Materi Selanjutnya</div>
         <div class="materi-body">
-            <div class="thumb"></div>
+            <div class="thumb" style="overflow: hidden;">
+                <img src="{{ asset('img/img/video.png') }}" alt="Materi" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
             <div class="materi-info">
-                <div class="materi-title">Judul atau Deskripsi Materi</div>
-                <div class="materi-time">⏱ 8 Menit</div>
+                <div class="materi-title">Alfabet Bahasa Isyarat SIBI</div>
+                <div class="materi-time">⏱ 15 Menit</div>
             </div>
         </div>
         <a href="?menu=materi" class="btn full">Lanjutkan Belajar</a>

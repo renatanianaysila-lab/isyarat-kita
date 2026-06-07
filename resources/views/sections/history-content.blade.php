@@ -31,7 +31,9 @@
         <div class="history-list">
             <a href="{{ url('/video-player?video=angka-1-10') }}" class="history-card">
                 <div class="history-left">
-                    <div class="history-thumb"></div>
+                    <div class="history-thumb">
+                        <img src="{{ asset('img/img/video.png') }}" alt="Thumbnail" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                    </div>
                     <div class="history-info">
                         <h4>Angka 1-10</h4>
                         <p>15 Desember 2025 • 07:10</p>
@@ -43,7 +45,9 @@
 
             <a href="{{ url('/video-player?video=abjad-az') }}" class="history-card">
                 <div class="history-left">
-                    <div class="history-thumb"></div>
+                    <div class="history-thumb">
+                        <img src="{{ asset('img/img/video.png') }}" alt="Thumbnail" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                    </div>
                     <div class="history-info">
                         <h4>Huruf A-Z</h4>
                         <p>14 Desember 2025 • 05:45</p>
@@ -55,7 +59,9 @@
 
             <a href="{{ url('/video-player?video=percakapan-dasar') }}" class="history-card">
                 <div class="history-left">
-                    <div class="history-thumb"></div>
+                    <div class="history-thumb">
+                        <img src="{{ asset('img/img/video.png') }}" alt="Thumbnail" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                    </div>
                     <div class="history-info">
                         <h4>Percakapan Dasar</h4>
                         <p>12 Desember 2025 • 11:15</p>
@@ -67,7 +73,9 @@
 
             <a href="{{ url('/video-player?video=ekspresi-dasar') }}" class="history-card">
                 <div class="history-left">
-                    <div class="history-thumb"></div>
+                    <div class="history-thumb">
+                        <img src="{{ asset('img/img/video.png') }}" alt="Thumbnail" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                    </div>
                     <div class="history-info">
                         <h4>Ekspresi Dasar</h4>
                         <p>11 Desember 2024 • 14:50</p>
@@ -122,7 +130,9 @@
         <div class="history-list">
             <div class="history-card">
                 <div class="history-left">
-                    <div class="history-thumb"></div>
+                    <div class="history-thumb">
+                        <img src="{{ asset('img/img/premium.png') }}" alt="Paket" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                    </div>
                     <div class="history-info">
                         <h4>Paket Premium</h4>
                         <p>10 Desember 2024 • 09:20</p>
@@ -134,7 +144,9 @@
 
             <div class="history-card">
                 <div class="history-left">
-                    <div class="history-thumb"></div>
+                    <div class="history-thumb">
+                        <img src="{{ asset('img/img/premium.png') }}" alt="Paket" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                    </div>
                     <div class="history-info">
                         <h4>Paket Premium</h4>
                         <p>05 November 2025 • 15:00</p>

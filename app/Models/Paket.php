@@ -6,7 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Paket extends Model
 {
-    protected $table = 'paket';
+    protected $table = 'paket_pembelajaran';
+    
+    // FIX TAMBAHAN: Mengunci nama kolom primary key database ke 'paket_id'
+    protected $primaryKey = 'paket_id'; 
+    
     protected $fillable = ['nama_paket', 'tipe', 'deskripsi', 'harga', 'durasi_bulan', 'status_paket'];
 
     public function videoMateri()
@@ -22,5 +26,5 @@ class Paket extends Model
     public function transaksi()
     {
         return $this->hasMany(Transaksi::class, 'paket_id');
-    }//
+    }
 }

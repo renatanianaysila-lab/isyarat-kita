@@ -1,7 +1,7 @@
 <div class="katalog-container">
     <div class="header">
         <div class="logo-container">
-            <img src="{{ asset('img/LOGO.png') }}" alt="IsyaratKita Logo" class="logo-img">
+            <img src="{{ asset('img/img/LOGO.png') }}" alt="IsyaratKita Logo" class="logo-img">
         </div>
         <h1 class="title">Pilih Paket Belajar</h1>
         <p class="subtitle">Mulai dari dasar hingga komunikasi profesional</p>

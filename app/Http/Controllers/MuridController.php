@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\VideoMateri;
 use App\Models\ProgressBelajar;
-// use App\Models\HasilKuis; // Dimatikan sementara karena tabel tidak ada
 use App\Models\Transaksi;
 use App\Models\Paket;
 
@@ -15,21 +14,20 @@ class MuridController extends Controller
     {
         $murid = auth()->user();
         
-        // Mengambil data progress belajar murid
-        $progress = ProgressBelajar::where('murid_id', $murid->id)->with('video')->get();
+        // FIX 1: Mengambil data progress belajar akumulasi (Tanpa .with('video') karena tidak ada kolom video_id)
+        $progressData = ProgressBelajar::where('murid_id', $murid->id)->first();
         
-        // Dimatikan sementara karena tabel hasil_kuis tidak ada di migrasi
-        // $hasilKuis = HasilKuis::where('murid_id', $murid->id)->with('kuis')->get();
-        $hasilKuis = collect(); // Membuat koleksi kosong agar variabel $hasilKuis tidak error di view
-        
+        $hasilKuis = collect(); 
         $transaksi = Transaksi::where('murid_id', $murid->id)->with('paket')->get();
 
-        $totalVideo = $progress->count();
-        $videoSelesai = $progress->where('status', 'selesai')->count();
-        $waktuBelajar = $progress->sum('durasi_ditonton');
-        
-        // Beri nilai default 0 agar di halaman dashboard tidak kosong/error
-        $rataKuis = 0; 
+        // FIX 2: Ambil kalkulasi angka langsung dari kolom akumulasi database kamu
+        $totalVideo   = $progressData ? $progressData->total_video : 0;
+        $videoSelesai = $progressData ? $progressData->video_ditonton : 0;
+        $waktuBelajar = $progressData ? $progressData->progress_persen : 0; // Menggunakan progress persen sebagai indikator
+        $rataKuis     = $progressData ? $progressData->skor_kuis : 0; 
+
+        // Buat koleksi kosong agar variabel $progress di view tidak memicu error undefined
+        $progress = $progressData ? collect([$progressData]) : collect();
 
         return view('dashboard.dashboard-murid', compact(
             'murid', 'progress', 'hasilKuis', 'transaksi',
@@ -45,7 +43,10 @@ class MuridController extends Controller
             ->pluck('paket_id');
 
         $videos = VideoMateri::whereIn('paket_id', $transaksi)->get();
-        $progress = ProgressBelajar::where('murid_id', $murid->id)->pluck('status', 'video_id');
+        
+        // FIX 3: Karena statusnya global akumulasi, kita beri status default 'selesai' jika murid sudah punya progress
+        $hasProgress = ProgressBelajar::where('murid_id', $murid->id)->exists();
+        $progress = $hasProgress ? 'selesai' : 'belum';
 
         return view('sections.materi-content', compact('videos', 'progress'));
     }
@@ -53,13 +54,11 @@ class MuridController extends Controller
     public function history()
     {
         $murid = auth()->user();
-        $historyVideo = ProgressBelajar::where('murid_id', $murid->id)->with('video')->latest()->get();
         
-        // Dimatikan sementara karena model HasilKuis belum siap tabelnya
-        // $historyKuis = HasilKuis::where('murid_id', $murid->id)->with('kuis')->latest()->get();
-        $historyKuis = collect(); // Koleksi kosong biar halaman history ga error
-        
-        $historyBeli = Transaksi::where('murid_id', $murid->id)->with('paket')->latest()->get();
+        // FIX 4: Mengambil riwayat akumulasi tanpa memanggil relasi video yang tidak ada
+        $historyVideo = ProgressBelajar::where('murid_id', $murid->id)->latest()->get();
+        $historyKuis  = collect(); 
+        $historyBeli  = Transaksi::where('murid_id', $murid->id)->with('paket')->latest()->get();
 
         return view('sections.history-content', compact('historyVideo', 'historyKuis', 'historyBeli'));
     }

@@ -40,18 +40,18 @@
       <header class="topbar">
         <div class="search">
           <input type="text" placeholder="Cari materi, murid, atau kuis..." />
-          <img class="search-img" src="{{ asset('img/search-visual.png') }}" alt="Search">
+          <img class="search-img" src="{{ asset('img/img/search-visual.png') }}" alt="Search">
         </div>
 
         <div class="top-actions">
           <button class="icon-btn" title="Notifikasi">
-            <img class="top-icon" src="{{ asset('img/notification-01.png') }}" alt="">
+            <img class="top-icon" src="{{ asset('img/img/notification-01.png') }}" alt="">
           </button>
           <button class="icon-btn" title="Bantuan">
-            <img class="top-icon" src="{{ asset('img/help-circle.png') }}" alt="">
+            <img class="top-icon" src="{{ asset('img/img/help-circle.png') }}" alt="">
           </button>
           <div class="profile-mini">
-            <img class="avatar-img" src="{{ asset('img/user.png') }}" alt="">
+            <img class="avatar-img" src="{{ asset('img/img/user.png') }}" alt="">
           </div>
         </div>
       </header>

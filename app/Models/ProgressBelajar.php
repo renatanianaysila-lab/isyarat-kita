@@ -7,15 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class ProgressBelajar extends Model
 {
     protected $table = 'progress_belajar';
-    protected $fillable = ['murid_id', 'video_id', 'status', 'durasi_ditonton', 'terakhir_ditonton'];
+    protected $primaryKey = 'progress_id'; // Sesuai file migrasimu
+
+    protected $fillable = ['murid_id', 'progress_persen', 'video_ditonton', 'total_video', 'skor_kuis', 'last_watch'];
 
     public function murid()
     {
-        return $this->belongsTo(User::class, 'murid_id');
+        // Menghubungkan ke model Murid menggunakan foreign key murid_id
+        return $this->belongsTo(Murid::class, 'murid_id', 'murid_id');
     }
-
-    public function video()
-    {
-        return $this->belongsTo(VideoMateri::class, 'video_id');
-    }//
 }

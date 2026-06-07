@@ -24,7 +24,16 @@ class Transaksi extends Model
 
     public function paket()
     {
-        return $this->belongsToMany(Paket::class, 'detail_transaksi', 'transaksi_id', 'paket_id');
+        // FIX FINAL: Tambahkan parameter 'transaksi_id' (foreign key Transaksi) dan 'paket_id' (foreign key Paket)
+        // Serta definisikan primary key asal dan tujuan agar Laravel tidak mencari kolom '.id'
+        return $this->belongsToMany(
+            Paket::class, 
+            'detail_transaksi', 
+            'transaksi_id', 
+            'paket_id', 
+            'transaksi_id', 
+            'paket_id'
+        )->withTimestamps();
     }
 
     public function detailTransaksi()
