@@ -1,7 +1,7 @@
 FROM php:8.2-fpm-alpine
 
-# Install ekstensi yang dibutuhkan Laravel (Menggunakan mariadb-client untuk alpine)
-RUN apk add --no-cache nginx wget supervisor text-base curl git libpng-dev libxml2-dev zip unzip mariadb-client postgresql-dev
+# Install ekstensi (Sudah dihapus text-base yang bikin eror)
+RUN apk add --no-cache nginx wget supervisor curl git libpng-dev libxml2-dev zip unzip mariadb-client postgresql-dev
 RUN docker-php-ext-install pdo pdo_mysql pdo_pgsql bcmath
 
 # Set folder kerja
