@@ -133,3 +133,13 @@ Route::get('/kuis-angka', function () {
 Route::get('/dashboard-kuis', function () {
     return view('dashboard.dashboard-kuis');
 })->name('dashboard.kuis');
+
+// ===================== DISKUSI =====================
+Route::middleware(['auth'])->post('/diskusi', function (Request $request) {
+    \App\Models\Diskusi::create([
+        'user_id'      => auth()->id(),
+        'video_param'  => $request->video_param,
+        'isi_komentar' => $request->isi_komentar,
+    ]);
+    return back();
+})->name('diskusi.simpan');

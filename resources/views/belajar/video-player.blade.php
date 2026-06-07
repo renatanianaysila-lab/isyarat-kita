@@ -143,23 +143,34 @@
         </div>
         
         <div class="discussion">
-            <h3><i class="fas fa-comments"></i> Diskusi & catatan</h3>
-            <div class="comment-box">
-                <div class="comment-avatar"><i class="fas fa-user"></i></div>
-                <textarea class="comment-input" placeholder="Tulis pertanyaan atau catatan..." rows="2"></textarea>
-                <button class="send-btn"><i class="fas fa-paper-plane"></i> Kirim</button>
+    <h3><i class="fas fa-comments"></i> Diskusi & catatan</h3>
+    
+    <form method="POST" action="/diskusi" class="comment-box">
+        @csrf
+        <input type="hidden" name="video_param" value="{{ $videoParam }}">
+        <div class="comment-avatar"><i class="fas fa-user"></i></div>
+        <textarea class="comment-input" name="isi_komentar" placeholder="Tulis pertanyaan atau catatan..." rows="2" required></textarea>
+        <button type="submit" class="send-btn"><i class="fas fa-paper-plane"></i> Kirim</button>
+    </form>
+    
+    <div class="comment-thread">
+        @php
+            $diskusi = \App\Models\Diskusi::where('video_param', $videoParam)
+                        ->with('user')
+                        ->latest()
+                        ->get();
+        @endphp
+
+        @forelse($diskusi as $komentar)
+            <div class="comment-item">
+                <div class="comment-avatar">{{ strtoupper(substr($komentar->user->name, 0, 1)) }}</div>
+                <p><strong>{{ $komentar->user->name }}:</strong> "{{ $komentar->isi_komentar }}"</p>
             </div>
-            <div class="comment-thread">
-                <div class="comment-item">
-                    <div class="comment-avatar guru">R</div>
-                    <p><strong>Rina (siswa):</strong> "Gerakan tangan harus dominan kanan atau kiri ya?"</p>
-                </div>
-                <div class="comment-item">
-                    <div class="comment-avatar">G</div>
-                    <p><strong>Guru:</strong> "Gunakan tangan yang paling nyaman buat kamu (tangan dominan). Yang penting konsisten."</p>
-                </div>
-            </div>
-        </div>
+        @empty
+            <p style="color: #94a3b8; font-size: 0.9rem;">Belum ada komentar. Jadilah yang pertama!</p>
+        @endforelse
+    </div>
+</div>
     </div>
 
     <div style="margin-top: 24px; text-align: center; font-size: 0.95rem; color:#5f7d9c; border-top: 1px solid #e6f0fa; padding-top: 20px;">
