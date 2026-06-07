@@ -21,6 +21,15 @@
   <link rel="stylesheet" href="{{ asset('css/sections/feedback-rating-guru.css') }}">
   <link rel="stylesheet" href="{{ asset('css/sections/guru-profile.css') }}">
   <link rel="stylesheet" href="{{ asset('css/sections/edit-profile-guru.css') }}">
+
+  <style>
+    /* SOLUSI KONSISTENSI: Mengunci warna background seluruh area konten dashboard */
+    /* Mengikuti warna abu-abu kebiruan muda estetik dari menu Kelola Paket */
+    body, main.main {
+        background-color: #f4f7fc !important;
+        min-height: 100vh;
+    }
+  </style>
 </head>
 
 <body>
