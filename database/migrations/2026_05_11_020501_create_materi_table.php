@@ -11,8 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('materis', function (Blueprint $table) {
-            $table->id();
+        Schema::create('materi', function (Blueprint $table) {
+            $table->id('materi_id');
+
+            $table->foreignId('paket_id')
+                ->constrained('paket_pembelajaran', 'paket_id')
+                ->onDelete('cascade');
+
+            $table->string('judul_materi', 100);
+            $table->longText('deskripsi_materi')->nullable();
+            $table->string('thumbnail', 150)->nullable();
+            $table->integer('urutan')->default(1);
+            $table->enum('status_materi', ['aktif', 'nonaktif'])->default('aktif');
+
             $table->timestamps();
         });
     }
@@ -22,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('materis');
+        Schema::dropIfExists('materi');
     }
 };
