@@ -6,17 +6,14 @@
     <title>Materi IsyaratKita · Pemutar Video Pembelajaran</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
-    <link rel="stylesheet" href="{{ asset('css/belajar/video-player.css') }}">
+    <link rel="stylesheet" href="/css/belajar/video-player.css">
 </head>
 <body>
 <div class="video-container">
 
     @php
-        // 1. Ambil parameter 'video' dari URL, default-nya ke 'abjad-az'
         $videoParam = request('video', 'abjad-az');
         
-        // 2. Tentukan ID Video YouTube dan Informasi Judul secara dinamis
         if ($videoParam == 'abjad-az') {
             $youtubeId = 'Hx8IU6CfMIM';
             $currentTitle = '1. Abjad A-Z';
@@ -66,7 +63,6 @@
                         allowfullscreen>
                 </iframe>
             </div>
-            
             <div style="margin-top: 10px; font-size: 0.85rem; color: #5f7d9c; font-style: italic;">
                 * Memutar media streaming YouTube BISINDO Original.
             </div>
@@ -148,21 +144,19 @@
         
         <div class="discussion">
             <h3><i class="fas fa-comments"></i> Diskusi & catatan</h3>
-            
             <div class="comment-box">
                 <div class="comment-avatar"><i class="fas fa-user"></i></div>
                 <textarea class="comment-input" placeholder="Tulis pertanyaan atau catatan..." rows="2"></textarea>
                 <button class="send-btn"><i class="fas fa-paper-plane"></i> Kirim</button>
             </div>
-            
             <div class="comment-thread">
                 <div class="comment-item">
                     <div class="comment-avatar guru">R</div>
-                    <p><strong>Rina (siswa):</strong> “Gerakan tangan harus dominan kanan atau kiri ya?”</p>
+                    <p><strong>Rina (siswa):</strong> "Gerakan tangan harus dominan kanan atau kiri ya?"</p>
                 </div>
                 <div class="comment-item">
                     <div class="comment-avatar">G</div>
-                    <p><strong>Guru:</strong> “Gunakan tangan yang paling nyaman buat kamu (tangan dominan). Yang penting konsisten.”</p>
+                    <p><strong>Guru:</strong> "Gunakan tangan yang paling nyaman buat kamu (tangan dominan). Yang penting konsisten."</p>
                 </div>
             </div>
         </div>
@@ -172,6 +166,5 @@
         <span><i class="fas fa-hands-asl-interpreting" style="color:#F9C80E;"></i> IsyaratKita</span>
     </div>
 </div>
-
 </body>
 </html>

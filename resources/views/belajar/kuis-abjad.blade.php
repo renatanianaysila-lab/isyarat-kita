@@ -8,10 +8,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
-    <link rel="stylesheet" href="{{ asset('css/belajar/kuis-abjad.css') }}">
+    <link rel="stylesheet" href="/css/belajar/kuis-abjad.css">
 
     <style>
-        /* CSS Tambahan Kilat untuk Efek Interaktif & Halaman Skor */
         .option-btn { transition: all 0.2s ease; cursor: pointer; }
         .option-btn.correct { background-color: #2e7d32 !important; color: white !important; border-color: #1b5e20 !important; }
         .option-btn.wrong { background-color: #c62828 !important; color: white !important; border-color: #b71c1c !important; }
@@ -31,7 +30,7 @@
 
         <div class="quiz-header">
             <div class="logo">
-                <img src="{{ asset('img/img/LOGO.png') }}" alt="IsyaratKita Logo" class="logo-img" style="width: 120px; height: auto;">
+                <img src="/img/img/LOGO.png" alt="IsyaratKita Logo" class="logo-img" style="width: 120px; height: auto;">
             </div>
             <p class="quiz-subtitle">Uji pemahaman abjad A-Z dalam bahasa isyarat BISINDO</p>
         </div>
@@ -86,33 +85,12 @@
     </div>
 
     <script>
-        
         const quizData = [
-            {
-                image: "{{ asset('img/img/abjad_bisindo.jpg') }}",
-                options: ["A", "B", "C", "D"],
-                correct: 0 // Jawaban benar: A
-            },
-            {
-                image: "{{ asset('img/img/abjad_bisindo.jpg') }}",
-                options: ["F", "B", "K", "M"],
-                correct: 1 // Jawaban benar: B
-            },
-            {
-                image: "{{ asset('img/img/abjad_bisindo.jpg') }}",
-                options: ["Z", "Y", "C", "X"],
-                correct: 2 // Jawaban benar: C
-            },
-            {
-                image: "{{ asset('img/img/abjad_bisindo.jpg') }}",
-                options: ["E", "D", "H", "L"],
-                correct: 1 // Jawaban benar: D
-            },
-            {
-                image: "{{ asset('img/img/abjad_bisindo.jpg') }}",
-                options: ["P", "Q", "R", "Z"],
-                correct: 3 // Jawaban benar: Z
-            }
+            { image: "/img/img/abjad_bisindo.jpg", options: ["A", "B", "C", "D"], correct: 0 },
+            { image: "/img/img/abjad_bisindo.jpg", options: ["F", "B", "K", "M"], correct: 1 },
+            { image: "/img/img/abjad_bisindo.jpg", options: ["Z", "Y", "C", "X"], correct: 2 },
+            { image: "/img/img/abjad_bisindo.jpg", options: ["E", "D", "H", "L"], correct: 1 },
+            { image: "/img/img/abjad_bisindo.jpg", options: ["P", "Q", "R", "Z"], correct: 3 }
         ];
 
         let currentIndex = 0;
@@ -126,65 +104,43 @@
 
         function showQuestion() {
             const currentData = quizData[currentIndex];
-            
-            // Atur teks header progress
             document.getElementById('currentSoal').innerText = currentIndex + 1;
-            
-            // Set gambar dan opsi jawaban
             document.getElementById('quizImage').src = currentData.image;
             
             const buttons = document.querySelectorAll('#optionsGrid .option-btn');
             buttons.forEach((btn, index) => {
                 btn.innerText = currentData.options[index];
-                btn.className = "option-btn"; // reset class warna hijau/merah
+                btn.className = "option-btn";
                 btn.disabled = false;
                 
-                // Jika soal ini sudah pernah dijawab sebelumnya
                 if (userAnswers[currentIndex] !== null) {
                     btn.disabled = true;
-                    if (index === currentData.correct) {
-                        btn.classList.add('correct');
-                    }
-                    if (userAnswers[currentIndex] === index && index !== currentData.correct) {
-                        btn.classList.add('wrong');
-                    }
+                    if (index === currentData.correct) btn.classList.add('correct');
+                    if (userAnswers[currentIndex] === index && index !== currentData.correct) btn.classList.add('wrong');
                 }
             });
 
-            // Atur tombol navigasi
             document.getElementById('prevBtn').disabled = currentIndex === 0;
             if (currentIndex === quizData.length - 1) {
                 document.getElementById('nextBtn').innerHTML = 'Selesai Kuis <i class="fas fa-flag-checkered"></i>';
             } else {
                 document.getElementById('nextBtn').innerHTML = 'Selanjutnya <i class="fas fa-chevron-right"></i>';
             }
-
-            // Update status tombol nomor di bawah
             updateNumberTrack();
         }
 
         function checkAnswer(selectedIndex) {
-            if (userAnswers[currentIndex] !== null) return; // cegah isi ulang
-
+            if (userAnswers[currentIndex] !== null) return;
             userAnswers[currentIndex] = selectedIndex;
             const currentData = quizData[currentIndex];
             const buttons = document.querySelectorAll('#optionsGrid .option-btn');
-
-            // Beri warna validasi instan (Hijau/Merah)
             buttons.forEach((btn, index) => {
                 btn.disabled = true;
-                if (index === currentData.correct) {
-                    btn.classList.add('correct');
-                }
-                if (index === selectedIndex && selectedIndex !== currentData.correct) {
-                    btn.classList.add('wrong');
-                }
+                if (index === currentData.correct) btn.classList.add('correct');
+                if (index === selectedIndex && selectedIndex !== currentData.correct) btn.classList.add('wrong');
             });
-
-            // Update jumlah soal terjawab
             const totalAnswered = userAnswers.filter(ans => ans !== null).length;
             document.getElementById('answeredCount').innerText = `${totalAnswered} Terjawab`;
-            
             updateNumberTrack();
         }
 
@@ -204,10 +160,7 @@
                 const btn = document.createElement('button');
                 btn.className = 'num-btn';
                 btn.innerText = index + 1;
-                btn.onclick = () => {
-                    currentIndex = index;
-                    showQuestion();
-                };
+                btn.onclick = () => { currentIndex = index; showQuestion(); };
                 container.appendChild(btn);
             });
         }
@@ -226,9 +179,7 @@
             quizData.forEach((data, index) => {
                 if (userAnswers[index] === data.correct) correctCount++;
             });
-
             const finalScore = Math.round((correctCount / quizData.length) * 100);
-            
             document.getElementById('quizActiveArea').style.display = 'none';
             document.getElementById('quizResultArea').style.display = 'block';
             document.getElementById('quizScore').innerText = finalScore;
@@ -244,7 +195,6 @@
             initQuiz();
         }
 
-        // Jalankan kuis saat halaman selesai dimuat
         document.addEventListener("DOMContentLoaded", initQuiz);
     </script>
 </body>

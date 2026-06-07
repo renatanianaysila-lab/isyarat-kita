@@ -5,40 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IsyaratKita - Kuis Angka 1-10</title>
     
-    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
-    <!-- CSS -->
-    <link rel="stylesheet" href="{{ asset('css/belajar/kuis-angka.css') }}">
+    <link rel="stylesheet" href="/css/belajar/kuis-angka.css">
 
     <style>
-        /* CSS Tambahan untuk Efek Interaktif, Perbaikan Kontainer Gambar, & Halaman Skor */
         .option-btn { transition: all 0.2s ease; cursor: pointer; }
         .option-btn.correct { background-color: #2e7d32 !important; color: white !important; border-color: #1b5e20 !important; }
         .option-btn.wrong { background-color: #c62828 !important; color: white !important; border-color: #b71c1c !important; }
-        
-        /* FIX: Tampilan kontainer gambar agar bersih, presisi, dan tidak terpotong */
-        .image-placeholder { 
-            height: 240px; 
-            background: #f8fafc; 
-            border: 2px dashed #cbd5e1; 
-            border-radius: 12px; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            overflow: hidden; 
-            position: relative; 
-            margin-bottom: 20px; 
-        }
-
-        /* Styling gambar agar proporsional di tengah */
-        #quizImage {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-
+        .image-placeholder { height: 240px; background: #f8fafc; border: 2px dashed #cbd5e1; border-radius: 12px; display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; margin-bottom: 20px; }
+        #quizImage { max-width: 100%; max-height: 100%; object-fit: contain; }
         .num-btn { width: 35px; height: 35px; margin: 5px; border: 1px solid #cbd5e1; background: white; border-radius: 5px; cursor: pointer; }
         .num-btn.active { background: #1e5abc; color: white; border-color: #1e5abc; font-weight: bold; }
         .num-btn.answered { border-color: #1e5abc; color: #1e5abc; }
@@ -55,7 +32,7 @@
 
         <div class="quiz-header">
             <div class="logo">
-                <img src="{{ asset('img/img/LOGO.png') }}" alt="IsyaratKita Logo" class="logo-img" style="width: 120px; height: auto;">
+                <img src="/img/img/LOGO.png" alt="IsyaratKita Logo" class="logo-img" style="width: 120px; height: auto;">
             </div>
             <p class="quiz-subtitle">Uji pemahaman angka 1-10 dalam bahasa isyarat BISINDO</p>
         </div>
@@ -110,33 +87,12 @@
     </div>
 
     <script>
-        // Bank Soal Kuis Angka (Menembak file gambar terpisah sesuai nama aset asli kamu)
         const quizData = [
-            {
-                image: "{{ asset('img/img/angka1_kuis.jpg') }}",
-                options: ["2", "5", "1", "3"],
-                correct: 2 // Opsi indeks ke-2 adalah "1"
-            },
-            {
-                image: "{{ asset('img/img/angka3_kuis.jpg') }}",
-                options: ["4", "3", "6", "8"],
-                correct: 1 // Opsi indeks ke-1 adalah "3"
-            },
-            {
-                image: "{{ asset('img/img/angka5_kuis.jpg') }}",
-                options: ["5", "7", "2", "9"],
-                correct: 0 // Opsi indeks ke-0 adalah "5"
-            },
-            {
-                image: "{{ asset('img/img/angka6_kuis.jpg') }}",
-                options: ["10", "4", "6", "1"],
-                correct: 2 // Opsi indeks ke-2 adalah "6"
-            },
-            {
-                image: "{{ asset('img/img/angka8_kuis.jpg') }}",
-                options: ["7", "6", "5", "8"],
-                correct: 3 // Opsi indeks ke-3 adalah "8"
-            }
+            { image: "/img/img/angka1_kuis.jpg", options: ["2", "5", "1", "3"], correct: 2 },
+            { image: "/img/img/angka3_kuis.jpg", options: ["4", "3", "6", "8"], correct: 1 },
+            { image: "/img/img/angka5_kuis.jpg", options: ["5", "7", "2", "9"], correct: 0 },
+            { image: "/img/img/angka6_kuis.jpg", options: ["10", "4", "6", "1"], correct: 2 },
+            { image: "/img/img/angka8_kuis.jpg", options: ["7", "6", "5", "8"], correct: 3 }
         ];
 
         let currentIndex = 0;
@@ -151,25 +107,17 @@
         function showQuestion() {
             const currentData = quizData[currentIndex];
             document.getElementById('currentSoal').innerText = currentIndex + 1;
-            
-            // FIX: Set sumber gambar kustom tanpa manipulasi CSS potong koordinat lembaran
-            const imgEl = document.getElementById('quizImage');
-            imgEl.src = currentData.image;
+            document.getElementById('quizImage').src = currentData.image;
             
             const buttons = document.querySelectorAll('#optionsGrid .option-btn');
             buttons.forEach((btn, index) => {
                 btn.innerText = currentData.options[index];
-                btn.className = "option-btn"; 
+                btn.className = "option-btn";
                 btn.disabled = false;
-                
                 if (userAnswers[currentIndex] !== null) {
                     btn.disabled = true;
-                    if (index === currentData.correct) {
-                        btn.classList.add('correct');
-                    }
-                    if (userAnswers[currentIndex] === index && index !== currentData.correct) {
-                        btn.classList.add('wrong');
-                    }
+                    if (index === currentData.correct) btn.classList.add('correct');
+                    if (userAnswers[currentIndex] === index && index !== currentData.correct) btn.classList.add('wrong');
                 }
             });
 
@@ -179,38 +127,26 @@
             } else {
                 document.getElementById('nextBtn').innerHTML = 'Selanjutnya <i class="fas fa-chevron-right"></i>';
             }
-
             updateNumberTrack();
         }
 
         function checkAnswer(selectedIndex) {
             if (userAnswers[currentIndex] !== null) return;
-
             userAnswers[currentIndex] = selectedIndex;
             const currentData = quizData[currentIndex];
             const buttons = document.querySelectorAll('#optionsGrid .option-btn');
-
             buttons.forEach((btn, index) => {
                 btn.disabled = true;
-                if (index === currentData.correct) {
-                    btn.classList.add('correct');
-                }
-                if (index === selectedIndex && selectedIndex !== currentData.correct) {
-                    btn.classList.add('wrong');
-                }
+                if (index === currentData.correct) btn.classList.add('correct');
+                if (index === selectedIndex && selectedIndex !== currentData.correct) btn.classList.add('wrong');
             });
-
             const totalAnswered = userAnswers.filter(ans => ans !== null).length;
             document.getElementById('answeredCount').innerText = `${totalAnswered} Terjawab`;
-            
             updateNumberTrack();
         }
 
         function navigateQuestion(direction) {
-            if (direction === 1 && currentIndex === quizData.length - 1) {
-                showResults();
-                return;
-            }
+            if (direction === 1 && currentIndex === quizData.length - 1) { showResults(); return; }
             currentIndex += direction;
             showQuestion();
         }
@@ -222,10 +158,7 @@
                 const btn = document.createElement('button');
                 btn.className = 'num-btn';
                 btn.innerText = index + 1;
-                btn.onclick = () => {
-                    currentIndex = index;
-                    showQuestion();
-                };
+                btn.onclick = () => { currentIndex = index; showQuestion(); };
                 container.appendChild(btn);
             });
         }
@@ -241,12 +174,8 @@
 
         function showResults() {
             let correctCount = 0;
-            quizData.forEach((data, index) => {
-                if (userAnswers[index] === data.correct) correctCount++;
-            });
-
+            quizData.forEach((data, index) => { if (userAnswers[index] === data.correct) correctCount++; });
             const finalScore = Math.round((correctCount / quizData.length) * 100);
-            
             document.getElementById('quizActiveArea').style.display = 'none';
             document.getElementById('quizResultArea').style.display = 'block';
             document.getElementById('quizScore').innerText = finalScore;
