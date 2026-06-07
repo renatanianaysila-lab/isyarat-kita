@@ -46,24 +46,20 @@ Route::get('/register', function () {
 
 Route::post('/register', function (Request $request) {
     $request->validate([
-        'name'     => 'required|string|max:255',
+        'nama_depan' => 'required|string|max:255',
+        'nama_belakang' => 'required|string|max:255',
         'email'    => 'required|email|unique:users',
         'password' => 'required|min:8|confirmed',
-        'role'     => 'required|in:murid,guru',
     ]);
 
     $user = \App\Models\User::create([
-        'name'     => $request->name,
+        'name'     => $request->nama_depan . ' ' . $request->nama_belakang,
         'email'    => $request->email,
         'password' => bcrypt($request->password),
-        'role'     => $request->role,
     ]);
 
     Auth::login($user);
 
-    if ($user->role === 'guru') {
-        return redirect('/dashboard-guru');
-    }
     return redirect('/dashboard-murid');
 })->name('register.post');
 
