@@ -9,16 +9,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="{{ asset('css/layout/sidebar-murid.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/dashboard/dashboard-murid.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/dashboard/dashboard-content-murid.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/sections/profil-content.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/sections/materi-content.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/sections/kuis-content.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/sections/history-content.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/sections/feedback-content.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/sections/katalog.css') }}">
-</head>
+<link rel="stylesheet" href="/css/layout/sidebar-murid.css">
+<link rel="stylesheet" href="/css/dashboard/dashboard-murid.css">
+<link rel="stylesheet" href="/css/dashboard/dashboard-content-murid.css">
+<link rel="stylesheet" href="/css/sections/profil-content.css">
+<link rel="stylesheet" href="/css/sections/materi-content.css">
+<link rel="stylesheet" href="/css/sections/kuis-content.css">
+<link rel="stylesheet" href="/css/sections/history-content.css">
+<link rel="stylesheet" href="/css/sections/feedback-content.css">
+<link rel="stylesheet" href="/css/sections/katalog.css">
 
 <body>
   <div class="app">
@@ -59,13 +58,13 @@
 
           <div class="top-actions">
             <button class="icon-btn" title="Notifikasi">
-              <img class="top-icon" src="{{ asset('img/img/notification-01.png') }}" alt="">
+              <img class="top-icon" src="/img/img/notification-01.png" alt="">
             </button>
             <button class="icon-btn" title="Bantuan">
-              <img class="top-icon" src="{{ asset('img/img/help-circle.png') }}" alt="">
+              <img class="top-icon" src="/img/img/help-circle.png" alt="">
             </button>
             <div class="profile-mini">
-              <img class="avatar-img" src="{{ asset('img/img/user.png') }}" alt="">
+              <img class="avatar-img" src="/img/img/user.png" alt="">
             </div>
           </div>
         </header>
