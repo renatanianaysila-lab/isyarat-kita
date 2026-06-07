@@ -19,7 +19,6 @@
 
   <div style="display: flex; flex-direction: column; width: 100%; min-height: 100vh; overflow-x: hidden; position: relative;">
 
-    <!-- PAGE 1 - HOME -->
     <div class="HOME-PAGE" id="home" style="position: relative; width: 100%;">
       <img class="BACKGROUND" src="/img/img/BACKGROUND.png" alt="background">
       
