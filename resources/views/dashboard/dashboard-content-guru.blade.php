@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ asset('css/dashboard/dashboard-content-guru.css') }}">
+  <link rel="stylesheet" href="/css/dashboard/dashboard-content-guru.css">
 </head>
 <body>
 <div class="dashboard-container">
@@ -287,6 +287,6 @@
 <!-- TOAST NOTIFICATION -->
 <div id="toastNotification" class="toast-notification"></div>
 
-<script src="{{ asset('js/dashboard/dashboard-content-guru.js') }}"></script>
+<script src="/js/dashboard/dashboard-content-guru.js"></script>
 </body>
 </html>
