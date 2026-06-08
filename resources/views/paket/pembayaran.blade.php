@@ -9,7 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- CSS Pembayaran -->
-    <link rel="stylesheet" href="{{ asset('css/paket/pembayaran.css') }}">
+    <link rel="stylesheet" href="/css/paket/pembayaran.css">
+
 </head>
 <body>
     <div class="payment-container">
@@ -46,7 +47,7 @@
             <!-- Payment Header dengan Logo -->
             <div class="payment-header">
                 <h1 class="section-title">Metode Pembayaran</h1>
-                <img src="{{ asset('img/LOGO.png') }}" alt="IsyaratKita" class="payment-logo">
+                <img src="/img/img/LOGO.png" alt="IsyaratKita" class="payment-logo" style="width: 120px; height: auto;">
             </div>
             
             <!-- Two Column Layout -->
