@@ -10,21 +10,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
   <link rel="stylesheet" href="/css/layout/sidebar-guru.css">
-<link rel="stylesheet" href="/css/dashboard/dashboard-guru.css">
-<link rel="stylesheet" href="/css/sections/kelola-paket-guru.css">
-<link rel="stylesheet" href="/css/sections/kelola-video-guru.css">
-<link rel="stylesheet" href="/css/sections/kelola-kuis-guru.css">
-<link rel="stylesheet" href="/css/sections/monitoring-murid-guru.css">
-<link rel="stylesheet" href="/css/sections/transaksi-guru.css">
-<link rel="stylesheet" href="/css/sections/feedback-rating-guru.css">
-<link rel="stylesheet" href="/css/sections/guru-profile.css">
-<link rel="stylesheet" href="/css/sections/edit-profile-guru.css">
+  <link rel="stylesheet" href="/css/dashboard/dashboard-guru.css">
+  <link rel="stylesheet" href="/css/sections/kelola-paket-guru.css">
+  <link rel="stylesheet" href="/css/sections/kelola-video-guru.css">
+  <link rel="stylesheet" href="/css/sections/kelola-kuis-guru.css">
+  <link rel="stylesheet" href="/css/sections/monitoring-murid-guru.css">
+  <link rel="stylesheet" href="/css/sections/transaksi-guru.css">
+  <link rel="stylesheet" href="/css/sections/feedback-rating-guru.css">
+  <link rel="stylesheet" href="/css/sections/guru-profile.css">
+  <link rel="stylesheet" href="/css/sections/edit-profile-guru.css">
 
   <style>
-    /* SOLUSI KONSISTENSI: Mengunci warna background seluruh area konten dashboard */
-    /* Mengikuti warna abu-abu kebiruan muda estetik dari menu Kelola Paket */
     body, main.main {
         background-color: #f4f7fc !important;
         min-height: 100vh;
@@ -39,17 +36,14 @@
 
   <div class="app">
 
-    <!-- SIDEBAR -->
     @include('layouts.sidebar-guru')
 
-    <!-- MAIN CONTENT -->
     <main class="main">
 
-      <!-- TOPBAR -->
       <header class="topbar">
         <div class="search">
           <input type="text" placeholder="Cari materi, murid, atau kuis..." />
-         <img class="search-img" src="/img/img/search-visual.png" alt="Search">
+          <img class="search-img" src="/img/img/search-visual.png" alt="Search">
         </div>
 
         <div class="top-actions">
@@ -65,7 +59,6 @@
         </div>
       </header>
 
-      <!-- CONTENT -->
       @if($menu == 'paket')
         @include('sections.kelola-paket-guru')
       @elseif($menu == 'video')
@@ -89,29 +82,25 @@
     </main>
   </div>
 
-  <!-- JS -->
   @if($menu == 'paket')
-    <script src="{{ asset('js/sections/kelola-paket-guru.js') }}"></script>
+    <script src="/js/sections/kelola-paket-guru.js"></script>
   @elseif($menu == 'video')
-    <script src="{{ asset('js/sections/kelola-video-guru.js') }}"></script>
+    <script src="/js/sections/kelola-video-guru.js"></script>
   @elseif($menu == 'kuis')
-    <script src="{{ asset('js/sections/kelola-kuis-guru.js') }}"></script>
+    <script src="/js/sections/kelola-kuis-guru.js"></script>
   @elseif($menu == 'monitoring')
-    <script src="{{ asset('js/sections/monitoring-murid-guru.js') }}"></script>
+    <script src="/js/sections/monitoring-murid-guru.js"></script>
   @elseif($menu == 'transaksi')
-    <script src="{{ asset('js/sections/transaksi-guru.js') }}"></script>
+    <script src="/js/sections/transaksi-guru.js"></script>
   @elseif($menu == 'feedback')
-    <script src="{{ asset('js/sections/feedback-rating-guru.js') }}"></script>
+    <script src="/js/sections/feedback-rating-guru.js"></script>
   @elseif($menu == 'profile')
-    <script src="{{ asset('js/sections/guru-profile.js') }}"></script>
+    <script src="/js/sections/guru-profile.js"></script>
   @elseif($menu == 'edit-profile')
-    <script src="{{ asset('js/sections/edit-profile-guru.js') }}"></script>
+    <script src="/js/sections/edit-profile-guru.js"></script>
   @endif
 
-  <!-- Sidebar JS (selalu di-load) -->
-  <script src="/js/sections/kelola-paket-guru.js"></script>
-{{-- dst sesuai kondisi masing-masing --}}
-<script src="/js/layout/sidebar-guru.js"></script>
+  <script src="/js/layout/sidebar-guru.js"></script>
 
 </body>
 </html>
