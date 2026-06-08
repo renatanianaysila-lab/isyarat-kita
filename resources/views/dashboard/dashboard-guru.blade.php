@@ -11,16 +11,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="{{ asset('css/layout/sidebar-guru.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/dashboard/dashboard-guru.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/sections/kelola-paket-guru.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/sections/kelola-video-guru.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/sections/kelola-kuis-guru.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/sections/monitoring-murid-guru.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/sections/transaksi-guru.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/sections/feedback-rating-guru.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/sections/guru-profile.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/sections/edit-profile-guru.css') }}">
+  <link rel="stylesheet" href="/css/layout/sidebar-guru.css">
+<link rel="stylesheet" href="/css/dashboard/dashboard-guru.css">
+<link rel="stylesheet" href="/css/sections/kelola-paket-guru.css">
+<link rel="stylesheet" href="/css/sections/kelola-video-guru.css">
+<link rel="stylesheet" href="/css/sections/kelola-kuis-guru.css">
+<link rel="stylesheet" href="/css/sections/monitoring-murid-guru.css">
+<link rel="stylesheet" href="/css/sections/transaksi-guru.css">
+<link rel="stylesheet" href="/css/sections/feedback-rating-guru.css">
+<link rel="stylesheet" href="/css/sections/guru-profile.css">
+<link rel="stylesheet" href="/css/sections/edit-profile-guru.css">
 
   <style>
     /* SOLUSI KONSISTENSI: Mengunci warna background seluruh area konten dashboard */
@@ -49,18 +49,18 @@
       <header class="topbar">
         <div class="search">
           <input type="text" placeholder="Cari materi, murid, atau kuis..." />
-          <img class="search-img" src="{{ asset('img/img/search-visual.png') }}" alt="Search">
+         <img class="search-img" src="/img/img/search-visual.png" alt="Search">
         </div>
 
         <div class="top-actions">
           <button class="icon-btn" title="Notifikasi">
-            <img class="top-icon" src="{{ asset('img/img/notification-01.png') }}" alt="">
+            <img class="top-icon" src="/img/img/notification-01.png" alt="">
           </button>
           <button class="icon-btn" title="Bantuan">
-            <img class="top-icon" src="{{ asset('img/img/help-circle.png') }}" alt="">
+            <img class="top-icon" src="/img/img/help-circle.png" alt="">
           </button>
           <div class="profile-mini">
-            <img class="avatar-img" src="{{ asset('img/img/user.png') }}" alt="">
+            <img class="avatar-img" src="/img/img/user.png" alt="">
           </div>
         </div>
       </header>
@@ -109,7 +109,9 @@
   @endif
 
   <!-- Sidebar JS (selalu di-load) -->
-  <script src="{{ asset('js/layout/sidebar-guru.js') }}"></script>
+  <script src="/js/sections/kelola-paket-guru.js"></script>
+{{-- dst sesuai kondisi masing-masing --}}
+<script src="/js/layout/sidebar-guru.js"></script>
 
 </body>
 </html>
